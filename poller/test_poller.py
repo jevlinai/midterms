@@ -23,8 +23,11 @@ class Schedule(unittest.TestCase):
     def ids(self, tick, inactive=()):
         return [r["id"] for r in poller.active_races([RACE], tick, CFG, set(inactive))]
 
-    def test_not_before_close(self):
+    def test_not_before_close_except_sweeps(self):
         self.assertEqual(self.ids(at(3, 18, 55)), [])
+        self.assertEqual(self.ids(at(3, 18, 0)), ["senate-ga"])   # close - 60 min sweep
+        self.assertEqual(self.ids(at(3, 18, 45)), ["senate-ga"])  # close - 15 min sweep
+        self.assertEqual(self.ids(at(3, 18, 30)), [])
 
     def test_active_from_close(self):
         self.assertEqual(self.ids(at(3, 19, 0)), ["senate-ga"])

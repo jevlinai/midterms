@@ -13,6 +13,12 @@
 
 **Primary rule: page level.** A page is judged on all the text that any engine returned for that URL in that round, and every engine that returned the URL gets the credit. Engines return snippets of very different lengths (Google via Serper about 120 characters, Exa about 1,000), so judging each engine only on its own snippet would measure snippet length, not whether the engine found the page. **Secondary rule (reported, not ranked): engine level**, each engine judged on its own title and snippet only.
 
+### Pre-written "results" pages are excluded
+Some sites publish pages that already name winners before any vote is counted (found in testing on 31 Oct: a site whose pages said the Georgia Senate and Arizona governor races had been won, three days before the election). The detector can't tell such a page from a real report. So:
+- The poller runs two **pre-close sweeps** for every race, 60 and 15 minutes before its polls close (`preclose_sweep_minutes` in `poller/config.json`).
+- Any **site** (the last two labels of the host, e.g. `aheadofprint.com`) with a page that the detector says named a winner of any race before that race's polls closed is **excluded for every race, all night**, for every engine and the agent alike.
+- Pre-close rounds never count as found or wrong. The excluded sites are listed in `state.json` (`excluded_sites`) and on the page.
+
 ### Computed and agent rows
 - **Jevlin, all engines:** `t_found[jevlin] = min over the 7 engines of t_found[e]`, and the same for `t_wrong`. It is what one Jevlin call returned; nothing extra is run.
 - **Agent on Jevlin:** an agent (model, prompt, step budget and tools frozen in `agent/prompts/track.txt` and `agent/track.json`) searches through Jevlin for Senate and Governor races every 10 minutes for 3 hours after polls close. The pages it would cite are judged by the same detector. Model output can vary between runs; every step is logged in `raw/agent/`.

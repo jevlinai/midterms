@@ -82,6 +82,11 @@ def active_races(races, tick, cfg, inactive):
             continue
         close = parse_time(r["poll_close_et"])
         if tick < close:
+            # Pre-close sweeps: pages that already name a winner before polls close can't be
+            # reporting a result, so build_state excludes their sites (docs/SCORING.md).
+            if any(tick == round_start(close - dt.timedelta(minutes=m), cfg["night"]["round_minutes"])
+                   for m in cfg.get("preclose_sweep_minutes", [])):
+                out.append(r)
             continue
         if tick < close + dt.timedelta(hours=night_h):
             out.append(r)

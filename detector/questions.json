@@ -1,7 +1,7 @@
 {
  "_doc": "Pre-registered detector questions for TypeSafe Jev (POST /v1/systemone). Frozen at the pre-registration commit. {race}, {election}, {candidates} are filled per race by detector/jev.py. The detector never sees AP's call: it reports which candidate (if any) a page says won, and build_state compares that with the confirmed winner afterwards.",
  "model": "jev-latest",
- "model_pin_note": "At the freeze, replace jev-latest with the exact version the API reports (e.g. jev-1.13.0) and record it in PREREGISTRATION.md.",
+ "model_pin_note": "At the freeze, replace jev-latest with the exact version the API reports (jev-1.14.0 answered on 31 Oct) and record it in PREREGISTRATION.md.",
  "election": "the United States general election held on 3 November 2026",
  "questions": {
   "winner": {

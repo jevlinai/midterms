@@ -12,7 +12,10 @@ Scoring mode (pre-registered, docs/SCORING.md):
          own snippet would reward snippet length, not finding the page.
   engine (secondary) each engine judged on its own title + snippet only.
 
-  python3 -I detector/detect.py [--mode page|engine] [--once]
+  uv run python detector/detect.py [--mode page|engine] [--once]
+
+Run it with the project's Python (uv, 3.12): the system Python 3.15 / OpenSSL 4 on the dev Mac fails
+the TLS handshake with api.typesafe.ai.
 """
 import argparse
 import concurrent.futures as cf

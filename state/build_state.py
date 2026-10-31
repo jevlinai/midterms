@@ -20,6 +20,7 @@ import pathlib
 import re
 import statistics
 import sys
+import urllib.parse
 import urllib.request
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
@@ -67,7 +68,46 @@ def read_findings(path):
     return out
 
 
+def site(url):
+    """Registrable site of a URL, approximated as the last two host labels (1m.aheadofprint.com -> aheadofprint.com)."""
+    host = urllib.parse.urlsplit(url or "").netloc.lower().split(":")[0]
+    return ".".join(host.split(".")[-2:])
+
+
+def preclose_exclusions(races, findings):
+    """Sites with any page the detector says named a winner before that race's polls closed.
+    No page can report a result before polls close, so these sites are excluded for every race."""
+    out = {}
+    for race_id, by_engine in findings.items():
+        r = races.get(race_id)
+        if not r:
+            continue
+        close = dt.datetime.fromisoformat(r["poll_close_et"])
+        for rows in by_engine.values():
+            for t, _, _, urls in rows:
+                if t < close:
+                    for u in (x for us in urls.values() for x in us):
+                        out.setdefault(site(u), {"first_seen": iso(t), "race_id": race_id, "url": u})
+    return out
+
+
+def apply_exclusions(findings, excluded):
+    """Drop named URLs from excluded sites; a candidate stays named only if some other URL names them."""
+    out = {}
+    for race_id, by_engine in findings.items():
+        out[race_id] = {}
+        for e, rows in by_engine.items():
+            new_rows = []
+            for t, _, st, urls in rows:
+                kept = {c: [u for u in us if site(u) not in excluded] for c, us in urls.items()}
+                kept = {c: us for c, us in kept.items() if us}
+                new_rows.append((t, set(kept), st, kept))
+            out[race_id][e] = new_rows
+    return out
+
+
 def engine_result(rows, winner, close, call_t, others):
+    rows = [x for x in rows if x[0] >= close]  # pre-close sweep rounds never count
     found = next(((t, urls) for t, named, st, urls in rows if st == "ok" and winner in named), None)
     wrong = next((t for t, named, st, _ in rows if st == "ok" and named & others), None)
     t = found[0] if found else None
@@ -86,6 +126,8 @@ def twice_in_a_row(rows, winner):
 
 
 def build(races, findings, confirmed, pending, prereg, now):
+    excluded = preclose_exclusions(races, findings)
+    findings = apply_exclusions(findings, excluded)
     out_races, inactive = [], []
     for r in races.values():
         close = dt.datetime.fromisoformat(r["poll_close_et"])
@@ -158,6 +200,7 @@ def build(races, findings, confirmed, pending, prereg, now):
         "summary": {"races": len(out_races), "polls_closed": sum(x["status"] != "open" for x in out_races),
                     "called": len(called), "leader": ranked[0]["engine"] if ranked else None},
         "races": out_races, "leaderboard": board,
+        "excluded_sites": [{"site": s, **v} for s, v in sorted(excluded.items())],
     }
     return state, inactive
 

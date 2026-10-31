@@ -60,7 +60,8 @@ def decide(resp, rule=QUESTIONS["rule"]):
 
 
 class Jev:
-    def __init__(self, cache_path=ROOT / "state" / "detector.sqlite", key=None, transport=None):
+    def __init__(self, cache_path=None, key=None, transport=None):
+        cache_path = cache_path or os.environ.get("DETECTOR_CACHE") or ROOT / "state" / "detector.sqlite"
         self.key = key or os.environ.get("TYPESAFE_API_KEY")
         self.transport = transport  # tests inject a function(request_dict) -> response_dict
         cache_path = pathlib.Path(cache_path)

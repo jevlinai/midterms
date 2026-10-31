@@ -67,3 +67,25 @@ class Build(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PrecloseExclusion(unittest.TestCase):
+    def test_site_naming_winner_before_close_is_excluded_everywhere(self):
+        fake = "https://1m.fakeprint.example/article/x"
+        real = "https://apnews.com/article/y"
+        def r(hh, mm, urls):
+            return (t(hh, mm), set(urls), "ok", urls)
+        f = {e: [r(18, 0, {}), r(19, 0, {}), r(19, 5, {"Ada Alpha": [real]})] for e in SEVEN}
+        # exa returned a pre-written page naming the winner an hour before polls closed, and again after.
+        f["exa"] = [r(18, 0, {"Ada Alpha": [fake]}), r(19, 0, {"Ada Alpha": [fake.replace("1m.", "1y.")]}),
+                    r(19, 5, {"Ada Alpha": [real]})]
+        s, _ = build(RACES, {"senate-zz": f}, {"senate-zz": conf(["one", "two"])}, {}, PRE, NOW)
+        race = next(x for x in s["races"] if x["id"] == "senate-zz")
+        self.assertEqual(race["engines"]["exa"]["minutes_after_close"], 5)  # not 0: the fake page doesn't count
+        self.assertEqual([x["site"] for x in s["excluded_sites"]], ["fakeprint.example"])
+
+    def test_preclose_rounds_never_count_as_found(self):
+        f = {e: [(t(18, 45), {"Ada Alpha"}, "ok", {"Ada Alpha": ["https://apnews.com/a"]})] for e in SEVEN}
+        s, _ = build(RACES, {"senate-zz": f}, {"senate-zz": conf(["one", "two"])}, {}, PRE, NOW)
+        race = next(x for x in s["races"] if x["id"] == "senate-zz")
+        self.assertIsNone(race["engines"]["exa"]["found_at"])
