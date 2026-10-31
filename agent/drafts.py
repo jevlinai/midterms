@@ -23,7 +23,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from agent import config
-from agent.guard import check_post, weighted_length
+from agent.guard import check_post, check_summary_post, weighted_length
 from agent.store import Store, now_iso
 from agent.xpost import TWEETS_URL, XClient, XError
 
@@ -78,11 +78,21 @@ class Drafts:
         tmp.write_text(json.dumps(d, ensure_ascii=False, indent=2) + "\n")
         os.replace(tmp, p)
 
+    @staticmethod
+    def guard(d: dict, state: dict) -> tuple[bool, list[str]]:
+        """The guard for this kind of draft: a race post, or a results-thread post."""
+        if d.get("kind") == "thread":
+            return check_summary_post(d["text"], state, repo_url=d.get("repo_url"))
+        return check_post(d["text"], d["race_id"], state)
+
     def add(self, race_id: str, text: str, state: dict, *, source: str = "agent",
-            reply_to_tweet_id: str | None = None, reply_to_draft: str | None = None) -> dict:
-        """Queue a draft with its guard result. The same race+text twice returns the existing draft."""
+            reply_to_tweet_id: str | None = None, reply_to_draft: str | None = None, kind: str = "race",
+            thread_id: str | None = None, position: int | None = None, of: int | None = None,
+            repo_url: str | None = None) -> dict:
+        """Queue a draft with its guard result. The same race+text twice returns the existing draft.
+        Thread drafts use the thread id in place of race_id."""
         text = text.strip()
-        ok, reasons = check_post(text, race_id, state)
+        ok, reasons = self.guard({"kind": kind, "text": text, "race_id": race_id, "repo_url": repo_url}, state)
         key = attempt_key(race_id, text)
         draft_id = f"{race_id}-{key[:8]}"
         p = self.path(draft_id)
@@ -92,7 +102,9 @@ class Drafts:
              "guard": {"ok": ok, "reasons": reasons, "checked_at": now_iso()},
              "status": "queued", "created_at": now_iso(), "attempt_key": key,
              "reply_to_tweet_id": reply_to_tweet_id, "reply_to_draft": reply_to_draft,
-             "published": None, "rejected": None}
+             "published": None, "rejected": None, "kind": kind}
+        if kind == "thread":
+            d.update(thread_id=thread_id, position=position, of=of, repo_url=repo_url)
         self._save(d)
         return d
 
@@ -136,7 +148,7 @@ class Drafts:
         if d["status"] == "published":
             raise NotAuthorized(f"{draft_id} is already published: {d['published']['url']}")
 
-        ok, reasons = check_post(d["text"], d["race_id"], state)
+        ok, reasons = self.guard(d, state)
         d["guard"] = {"ok": ok, "reasons": reasons, "checked_at": now_iso()}
         self._save(d)
         if not ok:

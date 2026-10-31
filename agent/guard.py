@@ -401,3 +401,152 @@ def check_answer(text: str, state: dict) -> list[str]:
             if c.get("name") and _word_re(c["name"]).search(text):
                 problems.append(f"names {c['name']!r} from {race['id']}, which is not called")
     return problems
+
+
+# ---------- results thread (Wed morning): posts about the leaderboard, not one race ----------
+
+SINGLE_KINDS = ("baseline", "computed", "agent")
+THREAD_VOCAB = {"Which", "We", "AI", "Fastest", "Median", "One", "Agent", "Every", "Full", "Race", "Method",
+                "Taking", "SHA-256", "Senate", "Governor"}
+_HASH_RE = re.compile(r"\b[0-9a-f]{8,64}\b")
+_SHA_LABEL = re.compile(r"SHA-256", re.IGNORECASE)
+_AI_CLAIM = re.compile(r"faster than Google", re.IGNORECASE)
+_GOOGLE_CLAIM = re.compile(r"\bGoogle (?:\(via Serper\) )?was (?:faster|as fast)", re.IGNORECASE)
+
+
+def board_rows(state: dict) -> dict[str, dict]:
+    return {r["engine"]: r for r in state.get("leaderboard", []) if r.get("engine")}
+
+
+def single_engines(state: dict) -> list[str]:
+    """The measured single-query engines (the 7), excluding the computed union and the agent."""
+    return [e["id"] for e in state.get("engines", []) if not e.get("computed") and not e.get("agent")]
+
+
+def results_outcome(state: dict) -> dict:
+    """Which pre-written thread the leaderboard supports. AI search is "faster" only if the fastest
+    AI engine, or the agent, has a strictly lower median minutes-after-close than Google (via Serper).
+    A tie goes to Google: we never claim AI was faster unless the median says so. `jevlin` is reported
+    beside it but never decides, because it includes Google."""
+    rows = board_rows(state)
+    emap = engine_map(state)
+    baseline = next((k for k, v in emap.items() if v.get("baseline")), "serper")
+    inf = float("inf")
+    med = lambda e: (rows.get(e) or {}).get("median_minutes_after_close")
+    key = lambda e: (med(e) if med(e) is not None else inf, -((rows.get(e) or {}).get("found_first") or 0),
+                     (rows.get(e) or {}).get("wrong") or 0, e)
+    ai = [e for e in single_engines(state) if e != baseline and e in rows]
+    if not ai or baseline not in rows:
+        raise ValueError("the leaderboard has no AI engine or no Google (via Serper) row")
+    best = min(ai, key=key)
+    g = med(baseline) if med(baseline) is not None else inf
+    contenders = [e for e in (best, "agent") if e in rows and med(e) is not None]
+    if med(best) is None and g == inf:
+        raise ValueError("no engine found any result; there is no thread to write")
+    faster = sorted((e for e in contenders if med(e) < g), key=key)
+    ai_faster = bool(faster)
+    return {"version": "ai_faster" if ai_faster else "google_faster", "best": best, "baseline": baseline,
+            "lead": faster[0] if faster else best,  # the engine the headline shows against Google
+            "tie": not ai_faster and med(best) is not None and med(best) == g,
+            "agent_faster": "agent" in contenders and med("agent") < g}
+
+
+def check_summary_post(text: str, state: dict, *, repo_url: str | None = None) -> tuple[bool, list[str]]:
+    """The guard for a results-thread post. Numbers next to an engine must be that engine's leaderboard
+    numbers ("N min" = median minutes after close, "N min ahead of Google" = median lead, "N wrong" =
+    wrong answers, anything else one of its row's values); other numbers must be totals from the
+    state. No candidate names, no commentary, only known links, and the headline must be the one the
+    leaderboard supports."""
+    reasons: list[str] = []
+    text = text.strip()
+    if not text:
+        return False, ["empty post"]
+    if (n := weighted_length(text)) > MAX_WEIGHTED:
+        reasons.append(f"too long: {n} of {MAX_WEIGHTED} (links count 23)")
+    prereg = state.get("prereg") or {}
+    allowed_prefixes = [_norm_url(u) for u in (repo_url, prereg.get("url")) if u]
+    for u in _urls(text):
+        if _host(u) in ALLOWED_HOSTS or any(_norm_url(u).startswith(p) for p in allowed_prefixes):
+            continue
+        reasons.append(f"link not allowed: {u} (only jevlin.ai, the repo and the pre-registration)")
+    body = _blank(text, [m.span() for m in URL_RE.finditer(text)])
+    for m in _BANNED_RE.finditer(body):
+        reasons.append(f"commentary, prediction or party word: {m.group(0)!r}")
+    for m in _BANNED_SYMBOLS.finditer(body):
+        reasons.append(f"party label or emoji not allowed: {m.group(0)!r}")
+    if m := OTHER_SEARCH.search(body):
+        reasons.append(f"names a search engine that is not in the measurement: {m.group(0)!r}")
+    for race in state.get("races", []):
+        for c in race.get("candidates") or []:
+            if c.get("name") and _word_re(c["name"]).search(body):
+                reasons.append(f"names candidate {c['name']!r}; the thread is about search, not candidates")
+
+    # the hash: only a prefix of the pre-registration hash
+    sha = (prereg.get("sha256") or "").lower()
+    spans = [m.span() for m in _SHA_LABEL.finditer(body)]
+    for m in _HASH_RE.finditer(body):
+        if any(ch in "abcdef" for ch in m.group(0)) or len(m.group(0)) >= 12:
+            if sha and sha.startswith(m.group(0)):
+                spans.append(m.span())
+            else:
+                reasons.append(f"{m.group(0)!r} is not the pre-registration hash")
+                spans.append(m.span())
+    body = _blank(body, spans)
+
+    # names
+    vocab = VOCAB | THREAD_VOCAB | {w for label, _ in _labels(state) for w in re.split(r"[\s(),]+", label) if w}
+    for m in CAP_RUN.finditer(body):
+        if [w for w in m.group(0).split() if w.strip(".,:;!?'\"()") not in vocab]:
+            reasons.append(f"unrecognised name {m.group(0)!r}")
+
+    # headline
+    try:
+        out = results_outcome(state)
+    except ValueError as e:
+        return False, reasons + [str(e)]
+    if _AI_CLAIM.search(body) and out["version"] != "ai_faster":
+        reasons.append("says AI search was faster than Google, but the leaderboard says Google was as fast or faster")
+    if _GOOGLE_CLAIM.search(body) and out["version"] != "google_faster":
+        reasons.append("says Google was faster, but the leaderboard says an AI search was faster")
+
+    # numbers, per engine segment
+    rows = board_rows(state)
+    mentions = engine_mentions(body, state)
+    bounds = [m.start() for m in re.finditer(r"\n|\.\s", body)]
+    segs = []
+    for i, (pos, eid) in enumerate(mentions):
+        nxt = [p for p in [*(p for p, _ in mentions[i + 1:]), *bounds] if p > pos]
+        segs.append((pos, min(nxt) if nxt else len(body), eid))
+    claimed = []
+    for a, b, eid in segs:
+        row = rows.get(eid)
+        seg = body[a:b]
+        for m in re.finditer(r"(?<![\w.])(\d+(?:\.\d+)?)\s*(?:min\b(\s+ahead of Google)?|wrong\b)?", seg):
+            claimed.append((a + m.start(), a + m.end()))
+            if row is None:
+                reasons.append(f"{eid} has no leaderboard row for {m.group(0)!r}")
+                continue
+            v = float(m.group(1))
+            tol = 0.5 * 10 ** -len((m.group(1).split(".") + [""])[1]) + 1e-9
+            word = m.group(0)[len(m.group(1)):].strip().lower()
+            if word.startswith("min") and m.group(2):
+                want, what = row.get("median_lead_vs_google"), "median lead over Google"
+            elif word.startswith("min"):
+                want, what = row.get("median_minutes_after_close"), "median minutes after poll close"
+            elif word == "wrong":
+                want, what = row.get("wrong"), "wrong answers"
+            else:
+                vals = [x for k, x in row.items() if isinstance(x, (int, float)) and not isinstance(x, bool)
+                        and k != "cost_per_check_usd"] + list((row.get("found_within") or {}).values())
+                if not any(abs(x - v) <= tol for x in vals):
+                    reasons.append(f"{m.group(0)!r} is not one of {eid}'s leaderboard numbers")
+                continue
+            if want is None or abs(float(want) - v) > tol:
+                reasons.append(f"{m.group(0)!r} does not match {eid}'s {what} ({want})")
+    rest = _blank(body, claimed)
+    summary = state.get("summary") or {}
+    totals = [float(x) for x in summary.values() if isinstance(x, (int, float)) and not isinstance(x, bool)]
+    totals.append(float(len(single_engines(state))))
+    for raw in check_text(rest, totals).unsupported:
+        reasons.append(f"number {raw!r} is not a total in the results")
+    return (not reasons), list(dict.fromkeys(reasons))

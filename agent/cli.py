@@ -8,6 +8,8 @@
   call-finder [--once] [--races a,b] [--fetch]
                                  find AP calls for closed, uncalled races -> state/proposals.json
                                  (validated proposals only; every outcome -> state/call_finder.jsonl)
+  thread                         draft the results thread (the version the leaderboard supports) -> queue,
+                                 and both versions -> notes/thread-draft.md (needs MIDTERMS_REPO_URL)
   track [--once] [--races a,b] --budget-usd N [--dry-run]
                                  the pre-registered agent track (agent/track.json) -> raw/agent/
 
@@ -139,6 +141,24 @@ def cmd_call_finder(a) -> int:
     return 0
 
 
+def cmd_thread(a) -> int:
+    from agent import thread
+    from agent.drafts import Drafts
+    from agent.guard import results_outcome
+
+    state, repo = _state(), thread.repo_url()
+    out = results_outcome(state)
+    path = thread.notes_path()
+    thread.write_notes(path, state, repo)
+    queued = thread.queue_thread(state, Drafts(), repo)
+    print(f"the leaderboard supports: {out['version']} (fastest AI engine: {out['best']})")
+    print(f"both versions written to {path}")
+    for d in queued:
+        print(f"queued {d['id']} ({d['position']}/{d['of']}){' reply to ' + d['reply_to_draft'] if d['reply_to_draft'] else ''}")
+    print("publish them in order: uv run midterms publish <id> --by NAME (each part replies to the previous one)")
+    return 0
+
+
 def cmd_track(a) -> int:
     from agent import track
     from agent.call_finder import load_races
@@ -195,6 +215,8 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop searching when this run's Jevlin spend reaches this (default 1.00)")
     s.add_argument("--interval", type=int, default=300, help="seconds between rounds (default 300)")
     s.set_defaults(fn=cmd_call_finder)
+    s = sub.add_parser("thread", help="draft the results thread from the final state -> queue + notes/thread-draft.md")
+    s.set_defaults(fn=cmd_thread)
     s = sub.add_parser("track", help="the pre-registered agent track (Agent on Jevlin) -> raw/agent/")
     s.add_argument("--once", action="store_true", help="one round now for the given races, ignoring poll close")
     s.add_argument("--races", help="comma-separated race ids (Senate and Governor only)")

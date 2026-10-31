@@ -28,7 +28,7 @@ def isolated(tmp_path, monkeypatch):
     for k in ("MIDTERMS_PUBLISH_LIVE", "MIDTERMS_MODEL", "MIDTERMS_CALL_FINDER_MODEL", "ANTHROPIC_API_KEY",
               "MIDTERMS_RUN_CAP_USD", "MIDTERMS_DAILY_CAP_USD", "MIDTERMS_TOTAL_CAP_USD",
               "MIDTERMS_X_API_KEY", "MIDTERMS_X_API_SECRET", "MIDTERMS_X_ACCESS_TOKEN", "MIDTERMS_X_ACCESS_SECRET",
-              "MIDTERMS_AGENT_JEVLIN_KEY"):
+              "MIDTERMS_AGENT_JEVLIN_KEY", "MIDTERMS_REPO_URL", "MIDTERMS_THREAD_NOTES"):
         monkeypatch.delenv(k, raising=False)
 
     def no_network(*a, **kw):
