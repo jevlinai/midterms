@@ -457,7 +457,7 @@ def run_check(race: dict, tick: datetime, *, cfg: dict, client: JevlinClient, je
     try:
         if rec["first_search"] == "reuse_poller":
             opts = cfg["first_search_options"]
-            base = poller_baseline(Path(poller_dir or config.ROOT / opts["poller_raw_dir"]), race["id"], tick,
+            base = poller_baseline(Path(poller_dir or (config.raw_root() if opts["poller_raw_dir"] == "raw" else config.ROOT / opts["poller_raw_dir"])), race["id"], tick,
                                    opts["max_age_minutes"])
             if base is None:
                 rec.update(status="no_baseline", error=f"no usable poller record for {race['id']} in the "
@@ -590,7 +590,7 @@ def run(*, cfg: dict, races: list[dict], once: bool, budget_usd: float, model: s
     budget = Budget.from_env(store, label)
     jevlin = JevlinSpend(store, run_id, budget_usd)
     client = client or JevlinClient(base_url=cfg["jevlin"]["base_url"], timeout=cfg["jevlin"]["timeout_seconds"])
-    raw_dir = Path(raw_dir or config.ROOT / cfg["output"]["raw_dir"])
+    raw_dir = Path(raw_dir or (config.raw_root() / "agent" if cfg["output"]["raw_dir"] == "raw/agent" else config.ROOT / cfg["output"]["raw_dir"]))
     if label != cfg["model"]:
         log(f"WARNING: model {label!r} is not the pre-registered {cfg['model']!r}; these records are not the "
             "pre-registered track")

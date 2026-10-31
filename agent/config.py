@@ -19,6 +19,12 @@ def state_path() -> Path:
     return _path("MIDTERMS_STATE", ROOT / "state" / "state.json")
 
 
+def raw_root() -> Path:
+    """Root of the raw data (poller files and raw/agent). Override for tests and rehearsals so their
+    records never land in the election-night dataset."""
+    return _path("MIDTERMS_RAW_DIR", ROOT / "raw")
+
+
 def races_path() -> Path:
     return _path("MIDTERMS_RACES", ROOT / "data" / "races.json")
 
