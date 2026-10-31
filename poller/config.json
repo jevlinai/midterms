@@ -1,0 +1,28 @@
+{
+ "endpoint": "https://api.jevlin.ai/v1/search",
+ "providers": [
+  "exa",
+  "brave",
+  "parallel-search",
+  "perplexity-search",
+  "serper",
+  "tinyfish",
+  "telem"
+ ],
+ "tier": "max",
+ "recency": "day",
+ "view": "merged",
+ "merged_limit": 50,
+ "night": {
+  "round_minutes": 5,
+  "active_hours": 12
+ },
+ "followup": {
+  "round_minutes": 60,
+  "ends_at": "2026-11-11T09:00:00-05:00"
+ },
+ "spread_fraction": 0.6,
+ "timeout_seconds": 60,
+ "max_workers": 16,
+ "est_cost_per_check_usd": 0.025
+}

@@ -15,7 +15,7 @@ One race, one round, 7 engines:
 | telem | $0.0025 |
 | serper (Google) | $0.0003 |
 | tinyfish | $0 |
-| **Total** | **≈ $0.025** |
+| **Total** | **≈ $0.025 listed; $0.02735 measured** |
 
 Adding exa-lite ($0.004) and parallel-fast ($0.001) brings it to about $0.030, but they share indexes with exa and parallel, so leave them out.
 
