@@ -16,3 +16,4 @@ state/*.progress.json
 state/drafts/
 .venv/
 state/agent.sqlite*
+detector/eval/*.sqlite

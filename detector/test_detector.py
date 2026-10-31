@@ -40,7 +40,7 @@ class Filter(unittest.TestCase):
 def fake_jev(answer_for):
     """A transport that returns a fixed answer per page text keyword."""
     def transport(req):
-        page = req["state"]["page"]
+        page = req["state"]["page"]["text"]
         for kw, (choice, p, this_e, call) in answer_for.items():
             if kw in page:
                 return {"model": "jev-test", "usage": {"input_tokens": 100},
@@ -61,9 +61,11 @@ class Rule(unittest.TestCase):
     def test_rule(self):
         self.assertEqual(decide(self.ans("Ann Other", 0.95, 0.95, 0.9)), "Ann Other")
         self.assertIsNone(decide(self.ans("Ann Other", 0.6, 0.95, 0.9)))   # unsure who
-        self.assertIsNone(decide(self.ans("Ann Other", 0.95, 0.3, 0.9)))   # wrong election (e.g. 2020)
+        self.assertIsNone(decide(self.ans("Ann Other", 0.95, 0.2, 0.9)))   # wrong election (e.g. 2020)
         self.assertIsNone(decide(self.ans("Ann Other", 0.95, 0.95, 0.2)))  # a lead, not a call
         self.assertIsNone(decide(self.ans("none", 0.99, 0.95, 0.9)))
+        a = self.ans("Ann Other", 0.95, 0.95, 0.9); a["answers"]["other_opponent"] = {"noul": 0.98}
+        self.assertIsNone(decide(a))  # beat someone who isn't a candidate: a different election
 
 
 RACE = {"id": "senate-zz", "name": "Example Senate", "office": "senate", "state": "AK", "district": None,
@@ -107,6 +109,14 @@ class Credit(unittest.TestCase):
         f = judge_record(rec, RACE, self.jev, "engine", self.pool)
         self.assertIn("Ann Other", f["engines"]["exa"]["named"])
         self.assertEqual(f["engines"]["serper"]["named"], {})
+
+    def test_publish_date_is_given_to_the_model(self):
+        seen = []
+        jev = Jev(cache_path=pathlib.Path(self.tmp.name) / "d.sqlite",
+                  transport=lambda req: seen.append(req["state"]["page"]["published"]) or fake_jev({})(req))
+        rec = record({"exa": [{"url": "https://apnews.com/a", "title": "t", "snippet": "AP: Ann Other wins", "published": "2022-11-09T06:02:18Z"}]})
+        judge_record(rec, RACE, jev, "page", self.pool)
+        self.assertEqual(seen, ["2022-11-09T06:02:18Z"])
 
     def test_cache(self):
         rec = record({"exa": [{"url": "https://apnews.com/x", "title": "t", "snippet": "AP: Ann Other wins"}]})

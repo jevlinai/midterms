@@ -23,7 +23,7 @@ ENDPOINT = os.environ.get("TYPESAFE_ENDPOINT", "https://api.typesafe.ai") + "/v1
 PRICE_PER_MTOK_IN = 0.042  # Jev rate card: $42 per billion input tokens; output free
 
 
-def build_request(race, candidates, page_text, election=QUESTIONS["election"]):
+def build_request(race, candidates, page_text, election=QUESTIONS["election"], published=None):
     qs = QUESTIONS["questions"]
     tmpl = qs["winner"]["criteria_template"]
     criteria = {c["name"]: tmpl["candidate"].format(name=c["name"], party=c.get("party") or "no party") for c in candidates}
@@ -32,15 +32,27 @@ def build_request(race, candidates, page_text, election=QUESTIONS["election"]):
         "model": QUESTIONS["model"],
         "state": {
             "race": {"name": race["name"], "office": race["office"], "state": race["state"],
-                     "district": race.get("district"), "election": election},
-            "page": page_text,
+                     "district": race.get("district"), "election": election,
+                     "candidates": [c["name"] for c in candidates]},
+            "page": {"text": page_text, "published": published or "unknown"},
         },
         "questions": {
             "winner": {"type": "choice", "instructions": qs["winner"]["instructions"], "criteria": criteria},
             "this_election": {"type": "noul", "instructions": qs["this_election"]["instructions"]},
             "is_call": {"type": "noul", "instructions": qs["is_call"]["instructions"]},
+            "other_opponent": {"type": "noul", "instructions": qs["other_opponent"]["instructions"]},
         },
     }
+
+
+def dated_before(published_values, election_date=QUESTIONS["election_date"]):
+    """True when the engines reported at least one publish date for a page and ALL of them are before
+    election day. Such a page cannot report this election's result (pre-registered date rule)."""
+    days = []
+    for v in published_values:
+        if v and len(v) >= 10 and v[:4].isdigit():
+            days.append(v[:10])
+    return bool(days) and all(d < election_date for d in days)
 
 
 def decide(resp, rule=QUESTIONS["rule"]):
@@ -55,6 +67,8 @@ def decide(resp, rule=QUESTIONS["rule"]):
     if a["this_election"].get("noul", 0) < rule["this_election_min"]:
         return None
     if a["is_call"].get("noul", 0) < rule["is_call_min"]:
+        return None
+    if a.get("other_opponent", {}).get("noul", 0) > rule["other_opponent_max"]:
         return None
     return choice
 
@@ -75,9 +89,9 @@ class Jev:
     def cache_key(req):
         return hashlib.sha256(json.dumps(req, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
 
-    def check(self, race, candidates, page_text):
+    def check(self, race, candidates, page_text, published=None):
         """Returns (named_winner_or_None, response, cached)."""
-        req = build_request(race, candidates, page_text)
+        req = build_request(race, candidates, page_text, published=published)
         k = self.cache_key(req)
         with self.lock:
             row = self.db.execute("select response from verdicts where k=?", (k,)).fetchone()

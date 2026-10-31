@@ -68,7 +68,7 @@ def judge_record(rec, race, jev, mode, pool):
     for e, v in engines.items():
         finding["engines"][e] = {"status": v["status"], "results": len(v["items"]), "named": {}, "filter_hits": 0}
 
-    # Units to judge: (text, [(engine, url)]).
+    # Units to judge: text -> {"who": [(engine, url)], "published": set of reported dates}.
     units = {}
     if mode == "page":
         pages = {}
@@ -77,26 +77,37 @@ def judge_record(rec, race, jev, mode, pool):
                 continue
             for c in v["items"]:
                 key = canon(c.get("url"))
-                pg = pages.setdefault(key, {"url": c.get("url"), "texts": [], "engines": set()})
+                pg = pages.setdefault(key, {"url": c.get("url"), "texts": [], "engines": set(), "published": set()})
                 t = item_text(c)
                 if t and t not in pg["texts"]:
                     pg["texts"].append(t)
                 pg["engines"].add(e)
+                if c.get("published"):
+                    pg["published"].add(c["published"])
         for pg in pages.values():
             text = "\n---\n".join(pg["texts"])[:PAGE_TEXT_CAP]
-            units.setdefault(text, []).extend((e, pg["url"]) for e in pg["engines"])
+            u = units.setdefault(text, {"who": [], "published": set()})
+            u["who"].extend((e, pg["url"]) for e in pg["engines"])
+            u["published"] |= pg["published"]
     else:
         for e, v in engines.items():
             if v["status"] != "ok":
                 continue
             for c in v["items"]:
-                units.setdefault(item_text(c)[:PAGE_TEXT_CAP], []).append((e, c.get("url")))
+                u = units.setdefault(item_text(c)[:PAGE_TEXT_CAP], {"who": [], "published": set()})
+                u["who"].append((e, c.get("url")))
+                if c.get("published"):
+                    u["published"].add(c["published"])
 
-    todo = [(text, who) for text, who in units.items() if text and textmatch.filter_hit(text, patterns)]
-    for _, who in todo:
-        for e, _ in who:
+    todo = []
+    for text, u in units.items():
+        if not text or not textmatch.filter_hit(text, patterns):
+            continue
+        for e, _ in u["who"]:
             finding["engines"][e]["filter_hits"] += 1
-    futs = {pool.submit(jev.check, race, race["candidates"], text): who for text, who in todo}
+        todo.append((text, u))
+    futs = {pool.submit(jev.check, race, race["candidates"], text, min(u["published"]) if u["published"] else None): u["who"]
+            for text, u in todo}
     for fut in cf.as_completed(futs):
         try:
             named, _, _ = fut.result()

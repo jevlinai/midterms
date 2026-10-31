@@ -6,7 +6,7 @@
  "questions": {
   "winner": {
    "type": "choice",
-   "instructions": "According to the text in `page`, who won `race.name` in `race.election`? Answer with a candidate only if the text says that candidate won, was elected, was re-elected, was declared or projected the winner, or that their opponent conceded. Leading, ahead, favored, early returns, partial counts, polls, forecasts and previews are not a win.",
+   "instructions": "According to `page.text`, who won `race.name` in `race.election`? Answer with a candidate only if the text says that candidate won, was elected, was re-elected, was declared or projected the winner, or that their opponent conceded. Leading, ahead, favored, early returns, partial counts, polls, forecasts and previews are not a win.",
    "criteria_template": {
     "candidate": "The text says {name} ({party}) won this race in this election.",
     "none": "The text does not say that any candidate won this race in this election: it shows leads, partial results, previews, polls or forecasts, or it is about a different election, year, office, state or district."
@@ -14,17 +14,23 @@
   },
   "this_election": {
    "type": "noul",
-   "instructions": "Is the text in `page` about `race.name` in `race.election`? It must be this office in this state (and district, for a House race), in the 3 November 2026 general election. A primary, a runoff held on another day, an earlier year's election, or a different race is not this election."
+   "instructions": "Is `page.text` about `race.name` in `race.election`? It must be this office in this state (and district, for a House race), in that election, not a primary, not a runoff held on another day, not an earlier year's election and not a different race. `page.published` is when the page was published, if known: a page published before `race.election` cannot report its result."
   },
   "is_call": {
    "type": "noul",
-   "instructions": "Does the text in `page` report a final outcome of `race.name` in `race.election`: a race call or projection by a news organisation, a concession, or a declared or certified winner? Vote leads, percentages counted so far, and predictions are not a final outcome."
+   "instructions": "Does `page.text` report a final outcome of `race.name` in `race.election`: a race call or projection by a news organisation, a concession, or a declared or certified winner? Vote leads, percentages counted so far, and predictions are not a final outcome."
+  },
+  "other_opponent": {
+   "type": "noul",
+   "instructions": "Does `page.text` say that the winner defeated, beat or ran against someone who is not listed in `race.candidates`? Answer yes if the main opponent named in the text is a person missing from `race.candidates` (a sign the text is about a different election)."
   }
  },
  "rule": {
-  "_doc": "A page NAMES candidate X as the winner when all three hold. Thresholds are validated on detector/testset.jsonl before the freeze.",
+  "_doc": "A page NAMES candidate X as the winner when all four answers pass. The page's reported publish date is given to the model (page.published) but is not a hard filter: engines' dates are often wrong (validation, detector/eval/RESULTS.md). Thresholds chosen on detector/eval before the freeze.",
   "winner_probability_min": 0.8,
-  "this_election_min": 0.8,
-  "is_call_min": 0.5
- }
+  "this_election_min": 0.4,
+  "is_call_min": 0.5,
+  "other_opponent_max": 0.5
+ },
+ "election_date": "2026-11-03"
 }

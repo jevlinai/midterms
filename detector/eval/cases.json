@@ -1,0 +1,188 @@
+{
+ "_doc": "Detector validation cases. Each case is a race, the election the detector is asked about, and search queries whose results become test pages. Positives can only come from an election that has happened, so the 'proxy' cases ask about the November 2025 elections; the '2026' cases ask about the real 2026 races with pages from other years or from primaries, which must all be judged 'no winner'. Labels are in testset.jsonl.",
+ "cases": [
+  {
+   "id": "va-gov-2025",
+   "kind": "proxy",
+   "race": {
+    "id": "proxy-va-gov",
+    "name": "Virginia governor",
+    "office": "governor",
+    "state": "VA",
+    "district": null
+   },
+   "election": "the Virginia general election held on 4 November 2025",
+   "candidates": [
+    {
+     "name": "Abigail Spanberger",
+     "surname": "Spanberger",
+     "party": "D"
+    },
+    {
+     "name": "Winsome Earle-Sears",
+     "surname": "Earle-Sears",
+     "party": "R"
+    }
+   ],
+   "queries": [
+    "AP race call Virginia governor 2025",
+    "Spanberger wins Virginia governor",
+    "Virginia governor election results November 2025",
+    "Virginia governor race 2025 early returns lead"
+   ],
+   "election_date": "2025-11-04"
+  },
+  {
+   "id": "nj-gov-2025",
+   "kind": "proxy",
+   "race": {
+    "id": "proxy-nj-gov",
+    "name": "New Jersey governor",
+    "office": "governor",
+    "state": "NJ",
+    "district": null
+   },
+   "election": "the New Jersey general election held on 4 November 2025",
+   "candidates": [
+    {
+     "name": "Mikie Sherrill",
+     "surname": "Sherrill",
+     "party": "D"
+    },
+    {
+     "name": "Jack Ciattarelli",
+     "surname": "Ciattarelli",
+     "party": "R"
+    }
+   ],
+   "queries": [
+    "AP race call New Jersey governor 2025",
+    "Sherrill wins Democratic primary New Jersey governor June 2025",
+    "Ciattarelli wins Republican primary New Jersey governor 2025",
+    "New Jersey governor election results 2025"
+   ],
+   "election_date": "2025-11-04"
+  },
+  {
+   "id": "nyc-mayor-2025",
+   "kind": "proxy",
+   "race": {
+    "id": "proxy-nyc-mayor",
+    "name": "New York City mayor",
+    "office": "mayor",
+    "state": "NY",
+    "district": null
+   },
+   "election": "the New York City general election held on 4 November 2025",
+   "candidates": [
+    {
+     "name": "Zohran Mamdani",
+     "surname": "Mamdani",
+     "party": "D"
+    },
+    {
+     "name": "Andrew Cuomo",
+     "surname": "Cuomo",
+     "party": "I"
+    },
+    {
+     "name": "Curtis Sliwa",
+     "surname": "Sliwa",
+     "party": "R"
+    }
+   ],
+   "queries": [
+    "AP race call New York City mayor 2025 general election",
+    "Mamdani wins Democratic primary New York City mayor June 2025"
+   ],
+   "election_date": "2025-11-04"
+  },
+  {
+   "id": "ga-sen-2026",
+   "kind": "2026",
+   "race": {
+    "id": "senate-ga",
+    "name": "Georgia U.S. Senate",
+    "office": "senate",
+    "state": "GA",
+    "district": null
+   },
+   "election": null,
+   "candidates": [
+    {
+     "name": "Jon Ossoff",
+     "surname": "Ossoff",
+     "party": "D"
+    },
+    {
+     "name": "Mike Collins",
+     "surname": "Collins",
+     "party": "R"
+    }
+   ],
+   "queries": [
+    "Ossoff wins Georgia Senate runoff January 2021",
+    "Collins wins Georgia Republican Senate primary 2026"
+   ],
+   "election_date": "2026-11-03"
+  },
+  {
+   "id": "az-gov-2026",
+   "kind": "2026",
+   "race": {
+    "id": "governor-az",
+    "name": "Arizona governor",
+    "office": "governor",
+    "state": "AZ",
+    "district": null
+   },
+   "election": null,
+   "candidates": [
+    {
+     "name": "Katie Hobbs",
+     "surname": "Hobbs",
+     "party": "D"
+    },
+    {
+     "name": "Andy Biggs",
+     "surname": "Biggs",
+     "party": "R"
+    }
+   ],
+   "queries": [
+    "Hobbs wins Arizona governor race 2022 Lake",
+    "Biggs wins Arizona Republican primary governor 2026",
+    "Arizona governor election results 2026"
+   ],
+   "election_date": "2026-11-03"
+  },
+  {
+   "id": "pa-sen-2024-vs-2026",
+   "kind": "2026",
+   "race": {
+    "id": "governor-pa",
+    "name": "Pennsylvania governor",
+    "office": "governor",
+    "state": "PA",
+    "district": null
+   },
+   "election": null,
+   "candidates": [
+    {
+     "name": "Josh Shapiro",
+     "surname": "Shapiro",
+     "party": "D"
+    },
+    {
+     "name": "Stacy Garrity",
+     "surname": "Garrity",
+     "party": "R"
+    }
+   ],
+   "queries": [
+    "Shapiro wins Pennsylvania governor 2022 Mastriano"
+   ],
+   "election_date": "2026-11-03"
+  }
+ ]
+}
