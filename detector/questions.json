@@ -1,0 +1,30 @@
+{
+ "_doc": "Pre-registered detector questions for TypeSafe Jev (POST /v1/systemone). Frozen at the pre-registration commit. {race}, {election}, {candidates} are filled per race by detector/jev.py. The detector never sees AP's call: it reports which candidate (if any) a page says won, and build_state compares that with the confirmed winner afterwards.",
+ "model": "jev-latest",
+ "model_pin_note": "At the freeze, replace jev-latest with the exact version the API reports (e.g. jev-1.13.0) and record it in PREREGISTRATION.md.",
+ "election": "the United States general election held on 3 November 2026",
+ "questions": {
+  "winner": {
+   "type": "choice",
+   "instructions": "According to the text in `page`, who won `race.name` in `race.election`? Answer with a candidate only if the text says that candidate won, was elected, was re-elected, was declared or projected the winner, or that their opponent conceded. Leading, ahead, favored, early returns, partial counts, polls, forecasts and previews are not a win.",
+   "criteria_template": {
+    "candidate": "The text says {name} ({party}) won this race in this election.",
+    "none": "The text does not say that any candidate won this race in this election: it shows leads, partial results, previews, polls or forecasts, or it is about a different election, year, office, state or district."
+   }
+  },
+  "this_election": {
+   "type": "noul",
+   "instructions": "Is the text in `page` about `race.name` in `race.election`? It must be this office in this state (and district, for a House race), in the 3 November 2026 general election. A primary, a runoff held on another day, an earlier year's election, or a different race is not this election."
+  },
+  "is_call": {
+   "type": "noul",
+   "instructions": "Does the text in `page` report a final outcome of `race.name` in `race.election`: a race call or projection by a news organisation, a concession, or a declared or certified winner? Vote leads, percentages counted so far, and predictions are not a final outcome."
+  }
+ },
+ "rule": {
+  "_doc": "A page NAMES candidate X as the winner when all three hold. Thresholds are validated on detector/testset.jsonl before the freeze.",
+  "winner_probability_min": 0.8,
+  "this_election_min": 0.8,
+  "is_call_min": 0.5
+ }
+}

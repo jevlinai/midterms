@@ -7,3 +7,10 @@ __pycache__/
 node_modules/
 .DS_Store
 notes/
+# runtime state (published separately after the night)
+state/*.json
+!state/example-state.json
+state/*.jsonl
+state/*.sqlite
+state/*.progress.json
+state/drafts/

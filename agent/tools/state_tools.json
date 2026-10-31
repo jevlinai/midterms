@@ -1,0 +1,50 @@
+{
+ "_doc": "Read-only tools over state.json (docs/STATE.md), shared by the Python agent (agent/) and the website's Ask function. They never return a winner for a race whose status is not 'called', and never return raw web text (titles/snippets): only ids, numbers, names from races.json, and URLs.",
+ "tools": [
+  {
+   "name": "get_race",
+   "description": "One race: status, candidates, the confirmed call (only if called), and per-engine found/wrong times in minutes.",
+   "input_schema": {"type": "object", "properties": {"race_id": {"type": "string", "description": "e.g. senate-ga, governor-az, house-ny-17"}}, "required": ["race_id"]}
+  },
+  {
+   "name": "list_races",
+   "description": "Races matching filters, as short rows (id, name, status, first engine, minutes). Use for questions about groups of races.",
+   "input_schema": {"type": "object", "properties": {
+     "office": {"type": "string", "enum": ["senate", "governor", "house"]},
+     "state": {"type": "string", "description": "two-letter state code"},
+     "status": {"type": "string", "enum": ["open", "closed", "called"]},
+     "first_engine": {"type": "string", "description": "only races this engine found first"},
+     "limit": {"type": "integer", "minimum": 1, "maximum": 60}
+   }}
+  },
+  {
+   "name": "leaderboard",
+   "description": "Per-engine totals: median minutes from poll close to found, races found first, lead over Google, never found, wrong answers, cost per check. Optionally for one office.",
+   "input_schema": {"type": "object", "properties": {"office": {"type": "string", "enum": ["senate", "governor", "house"]}}}
+  },
+  {
+   "name": "compare",
+   "description": "Head-to-head between two engines over called races both covered: races each was ahead, ties, median gap in minutes.",
+   "input_schema": {"type": "object", "properties": {
+     "engine_a": {"type": "string"}, "engine_b": {"type": "string"},
+     "office": {"type": "string", "enum": ["senate", "governor", "house"]}
+   }, "required": ["engine_a", "engine_b"]}
+  }
+ ],
+ "view_tool": {
+  "_doc": "Website only. The Ask agent calls this to drive the dashboard; the page applies it. Only these fields exist; the page ignores anything else.",
+  "name": "set_view",
+  "description": "Change what the reader sees on the dashboard to match your answer.",
+  "input_schema": {"type": "object", "properties": {
+    "tab": {"type": "string", "enum": ["senate", "house", "governor"]},
+    "highlight_races": {"type": "array", "items": {"type": "string"}, "maxItems": 60},
+    "highlight_engine": {"type": "string"},
+    "open_race": {"type": "string"},
+    "sort_leaderboard": {"type": "string", "enum": ["median_minutes_after_close", "found_first", "median_lead_vs_google", "wrong", "never_found"]},
+    "filter": {"type": "object", "properties": {
+      "status": {"type": "string", "enum": ["open", "closed", "called"]},
+      "first_engine": {"type": "string"}
+    }}
+  }}
+ }
+}
