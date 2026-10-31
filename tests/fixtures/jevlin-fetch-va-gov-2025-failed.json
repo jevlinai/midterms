@@ -1,0 +1,30 @@
+{
+ "request": {
+  "pages": [
+   {
+    "url": "https://apnews.com/article/virginia-governor-election-e965bd7b3081016e2e43bf107b236b82"
+   }
+  ],
+  "max_chars": 6000,
+  "query": "AP race call Spanberger"
+ },
+ "response": {
+  "request_id": "01a19384-b2ee-736e-bdfe-61f02b6d5015",
+  "pages": [
+   {
+    "source_id": "s_8f91c9a15b4d5ae98eb07ed5163dcc79",
+    "url": "https://apnews.com/article/virginia-governor-election-e965bd7b3081016e2e43bf107b236b82",
+    "status": "failed",
+    "next_offset": null,
+    "reason": "upstream_failed",
+    "cached": false,
+    "cost_micros": 0
+   }
+  ],
+  "usage": {
+   "cost_micros": 0,
+   "latency_ms": 2571
+  }
+ },
+ "_note": "Recorded 2026-11-01 from POST https://api.jevlin.ai/v1/fetch: the upstream failed for this page (free). Kept to test the fallback to search excerpts."
+}

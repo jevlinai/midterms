@@ -1,0 +1,233 @@
+{
+ "_note": "Recorded 2026-11-01 from POST https://api.jevlin.ai/v1/search for a PAST race (Virginia governor, 4 Nov 2025). Trimmed to the fields the call finder reads.",
+ "request": {
+  "query": "AP race call Virginia governor 2025",
+  "tier": "balanced",
+  "domain_filter": [
+   "apnews.com"
+  ],
+  "view": "merged",
+  "merged_limit": 10
+ },
+ "response": {
+  "request_id": "01a19384-57c9-7528-bfdb-7da68449c307",
+  "query": "AP race call Virginia governor 2025",
+  "decision": {
+   "tier": "balanced",
+   "providers": [
+    "exa",
+    "brave",
+    "parallel-search",
+    "perplexity-search"
+   ]
+  },
+  "usage": {
+   "cost_micros": 22000
+  },
+  "filters_applied": {
+   "domain_filter": {
+    "requested": [
+     "apnews.com"
+    ],
+    "sent_to": [
+     "exa",
+     "brave",
+     "parallel-search",
+     "perplexity-search"
+    ],
+    "not_sent": [],
+    "dropped": 0
+   }
+  },
+  "merged": [
+   {
+    "source_id": "s_8f91c9a15b4d5ae98eb07ed5163dcc79",
+    "url": "https://apnews.com/article/virginia-governor-election-e965bd7b3081016e2e43bf107b236b82",
+    "domain": "apnews.com",
+    "title": "AP Race Call: Democrat Abigail Spanberger elected Virginia governor | AP News",
+    "excerpt": "Here’s what that means](https://apnews.com/article/pope-leo ... [Politics](https://apnews.com/politics) # AP Race Call: Democrat Abigail Spanberger elected Virginia governor Add AP News on Google Add AP News as your preferred source to see more of our stories on Google. Share Comments Share ... WASHINGTON (AP) — Democrat Abigail Spanberger won the governor’s race in Virginia on Tuesday, defeating Republican Winsome Earle-Sears. Spanberger will succeed Republican Gov. Glenn Youngkin, who is not allowed to run for a second consecutive term. … AP Race Call: Democrat Abigail Spanberger elected Virginia governor | AP News # AP Race Call: Democrat Abigail Spanberger elected Virginia governor Updated 8:02 PM EDT, November 4, 2025 WASHINGTON … WASHINGTON (AP) — Democrat Abigail Spanberger won the governor’s race in Virginia on Tuesday, defeating Republican Winsome Earle-Sears. … Spanberger, a former case officer with the CIA, flipped a U.S. House seat in Northern Virginia in 2018 and retired from Congress in 2024 to run for governor. She will be the state’s first female governor. The Associated Press declared Spanberger the winner at 7:58 p.m. EST. ... Naturalized US citizens thought they…",
+    "found_by": [
+     {
+      "provider": "exa",
+      "rank": 1
+     },
+     {
+      "provider": "brave",
+      "rank": 2
+     },
+     {
+      "provider": "parallel-search",
+      "rank": 1
+     }
+    ],
+    "best_rank": 1
+   },
+   {
+    "source_id": "s_daa822202dbf1381c3b95a0bf35856e7",
+    "url": "https://apnews.com/article/virginia-first-female-governor-earlesears-spanberger-01f9854a94fdab6e5719096664ee9be1",
+    "domain": "apnews.com",
+    "title": "Democrat Abigail Spanberger elected Virginia governor | AP News",
+    "excerpt": "declared the winner of the ... **ELECTION DAY 2025:** Follow full coverage from The Associated Press [on our live blog](https://apnews.com/live/2025-election-updates-news) and [results pages.](https://apnews.com/projects/election-results-2025/) RICHMOND, Va. (AP) — Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, defeating Republican Lt. Gov. Winsome Earle-Sears to give Democrats a key victory heading into the 2026 midterm elections and make history as the first woman ever to lead the commonwealth. … # Abigail Spanberger elected Virginia governor in a historic first that boosts Democrats ahead of 2026 Former congresswoman Abigail Spanberger defeated Republican Lt. Gov. Winsome Earle-Sears, who was outraised by the Democrat and failed to earn the endorsement of President Donald Trump. Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, defeating Republican Lt. Gov. Winsome Earle-Sears to give Democrats a victory heading into the 2026 midterm elections and make history as the first woman ever to lead the commonwealth. Democrat Abigail Spanberger has won the governor’s race in Virginia, defeating Republican Winsome Earle-Sears. Spanberger is a f…",
+    "found_by": [
+     {
+      "provider": "exa",
+      "rank": 3
+     },
+     {
+      "provider": "brave",
+      "rank": 7
+     },
+     {
+      "provider": "parallel-search",
+      "rank": 2
+     }
+    ],
+    "best_rank": 2
+   },
+   {
+    "source_id": "s_f6f2f249210d5b1f25337dc1e356d6cd",
+    "url": "https://apnews.com/article/virginia-election-jay-jones-hashmi-abigail-spanberger-e29284ca7020cb9dbcf3adfdf2170a96",
+    "domain": "apnews.com",
+    "title": "Virginia voters elect barrier-breaking candidates | AP News",
+    "excerpt": "* [U.S. News](https://apnews.com/us-news) # Virginia election winners break race and gender barriers amid national scrutiny on diversity ## Virginia election winners break race and gender barriers amid national scrutiny on diversity 1 of 3 | Democrat Abigail Spanberger points out at the crowd after she was declared the winner of the ... Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, giving Democrats a key victory heading into the 2026 midterm elections and making history as the first woman ever to lead the Commonwealth. … ## Virginia’s first female governor Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, giving Democrats a key victory heading into the 2026 midterm elections and making history as the first woman ever to lead the Commonwealth. Her victory was decisive, with about 57% of the vote. The race was bound to make history regardless of who came out on top: Spanberger was running against Republican Lt. Gov. Winsome Earle-Sears, marking the first time two women were the front-runners in a general election for governor. In her acceptance speech, Spanberger recalled how her husband said to their three daughters, “Your mom … # Virgini…",
+    "found_by": [
+     {
+      "provider": "exa",
+      "rank": 5
+     },
+     {
+      "provider": "parallel-search",
+      "rank": 3
+     },
+     {
+      "provider": "perplexity-search",
+      "rank": 7
+     }
+    ],
+    "best_rank": 3
+   },
+   {
+    "source_id": "s_20a9a2c4b54b400b41970d43509eb4ef",
+    "url": "https://apnews.com/article/virginia-new-jersey-trump-election-democrat-republican-fad109893cfd4be5b49a5bb1b0138d8d",
+    "domain": "apnews.com",
+    "title": "Takeaways on Election Day 2025 | AP News",
+    "excerpt": "## Democrats dominate as economic woes take a toll on Trump’s GOP. Takeaways from Election Day 2025 1 of 6 | Democrats were elected mayor of New York and governor of New Jersey and Virginia on Tuesday. Read More ... Democrats on Tuesday won governor’s races in [Virginia](https://apnews.com/article/virginia-first-female-governor-earlesears-spanberger-01f9854a94fdab6e5719096664ee9be1) and [New ... ## A new Democratic playbook emerges Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, defeating Republican Lt. Gov. ... Above all, the Democrats in both … Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, defeating Republican Lt. Gov. Winsome Earle-Sears to give Democrats a victory heading into the 2026 midterm elections and make history as the first woman ever to lead the commonwealth. Former Rep. Abigail Spanberger will become Virginia’s next governor — and its first female chief executive — while Rep. Mikie Sherrill won the New Jersey governor’s office by running campaigns focused largely on the economy, public safety and health care. … Democrat Abigail Spanberger speaks on stage after she was declared the winner of the Virginia governor’s race d…",
+    "found_by": [
+     {
+      "provider": "exa",
+      "rank": 6
+     },
+     {
+      "provider": "brave",
+      "rank": 8
+     },
+     {
+      "provider": "parallel-search",
+      "rank": 4
+     }
+    ],
+    "best_rank": 4
+   },
+   {
+    "source_id": "s_013d504be769e2fd7559df07522e950e",
+    "url": "https://apnews.com/projects/election-results-2025/virginia",
+    "domain": "apnews.com",
+    "title": "2025 Virginia election results | AP News",
+    "excerpt": "177 years, AP has been the steady voice America turns to on election night. Our reporters, election analysts and graphics journalists simply tell you who won — no spin, no bias, just … See live results and county-level maps for the 2025 Virginia elections for governor, lieutenant governor and attorney general. … Election results and race calls from The Associated Press. … For 177 years, AP has been the steady voice America turns to on election night. Our reporters, election analysts and graphics journalists simply tell you who won — no spin, no bias, just facts. We're not owned by billionaires. We don't have an editorial agenda.",
+    "found_by": [
+     {
+      "provider": "exa",
+      "rank": 2
+     },
+     {
+      "provider": "brave",
+      "rank": 1
+     }
+    ],
+    "best_rank": 1
+   },
+   {
+    "source_id": "s_50c5c4aa977059baea0c70f99daae252",
+    "url": "https://apnews.com/video/ap-race-call-democrat-abigail-spanberger-elected-virginia-governor-500d39d7407942d5a54e87eec518f0bf",
+    "domain": "apnews.com",
+    "title": "AP Race Call: Democrat Abigail Spanberger elected Virginia governor | AP News",
+    "excerpt": "AP Race Call: Democrat Abigail Spanberger elected Virginia governor | AP News Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, defeating … Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, defeating Republican Lt. Gov. Winsome Earle-Sears to give Democrats a key victory heading into the 2026 midterm elections and make history as the first woman to lead the commonwealth. ... # AP Race Call: Democrat Abigail Spanberger elected Virginia governor Democrat Abigail Spanberger won the Virginia governor’s race Tuesday, defeating Republican Lt. Gov. Winsome Earle-Sears to give Democrats a key victory heading into the 2026 midterm elections and make history as the first woman to lead the commonwealth.",
+    "found_by": [
+     {
+      "provider": "exa",
+      "rank": 4
+     },
+     {
+      "provider": "perplexity-search",
+      "rank": 5
+     }
+    ],
+    "best_rank": 4
+   },
+   {
+    "source_id": "s_9cb3c798a992e7395eb09b70466884cf",
+    "url": "https://apnews.com/article/earlesears-spanberger-virginia-governor-election-trump-4d12737fe5f1912039d247ff00a1d9b1",
+    "domain": "apnews.com",
+    "title": "Winsome Earle-Sears is on the defensive in the race for Virginia governor | AP News",
+    "excerpt": "* [Politics](https://apnews.com/politics) # Republican Winsome Earle-Sears is on the defensive in Virginia’s race for governor ## Republican Winsome Earle-Sears is on the defensive in Virginia’s race for governor 1 of 2 | Republican Winsome Earle-Sears greets voters at her military-themed rally at Saucy’s Sit-Down Bar.B.Q in Hopewell, Va., on Aug. 1, 2025. (AP Photo/Olivia Diaz) [License this photo](https://newsroom.ap.org/editorial-photos-videos/detail?mediatype=photo&utm_source=apnews&utm_campaign=gallery&itemid=37470a6c0ceb48d684942dfc51c0ff0a) … Republican Winsome Earle-Sears says she's running her campaign for Virginia governor like a military-style operation. … 1, 2025. (AP Photo/Olivia Diaz) Read More ... Rep. Abigail Spanberger, D-Va., speaks during a news conference on Capitol Hill, Feb. 13, 2024, in Washington. (AP Photo/Mariam Zuhaib, File) Read More · Republican Winsome Earle-Sears is on the defensive in Virginia’s race for governor … Ever since Democrat Jimmy Carter won the White House in 1976, Virginia has backed a governor from the opposite party of a first-term president in the following year. Whatever the outcome in Virginia, 2025 is a special case, given the gap…",
+    "found_by": [
+     {
+      "provider": "brave",
+      "rank": 6
+     },
+     {
+      "provider": "parallel-search",
+      "rank": 5
+     }
+    ],
+    "best_rank": 5
+   },
+   {
+    "source_id": "s_4c6ca6cbd35479d411a909836f7b584f",
+    "url": "https://apnews.com/article/virginia-governors-race-government-shutdown-donald-trump-c51dbe8342f066c511841278a2b79479",
+    "domain": "apnews.com",
+    "title": "Virginia voters clap back on Trump's efforts to reshape government | AP News",
+    "excerpt": "1 of 6 | Sherry Kohan said at her Arlington, Virginia, polling place that she voted for Democratic candidate Abigail Spanberger for governor after blaming Republican leadership in Washington for the ... Spanberger speaks on stage after she was declared the winner of the Virginia governor’s race during an election night watch party Tuesday, Nov. 4, 2025, in Richmond, Va. ... An Associated Press analysis of Spanberger’s double-digit victory over Republican Lt. Gov. Winsome-Earle Sears showed a dramatic swing toward Democrats from four years ago, when Republican Glenn … # Virginia voters push back hard on Trump administration efforts to reshape federal government ## Virginia voters push back hard on Trump administration efforts to reshape federal government Sherry Kohan said at her Arlington, Virginia, polling place that she voted for Democratic candidate Abigail Spanberger for governor after blaming Republican leadership in Washington for the continued federal shutdown. ... (AP Photo/Helen Wieffering) 3 of 6 | People cheer as Democrat Abigail Spanberger speaks on stage after she was declared the winner of the Virginia governor’s race during an election night watch party Tuesday, Nov…",
+    "found_by": [
+     {
+      "provider": "parallel-search",
+      "rank": 7
+     },
+     {
+      "provider": "perplexity-search",
+      "rank": 6
+     }
+    ],
+    "best_rank": 6
+   },
+   {
+    "source_id": "s_f74ff689ce0024551fb5b87d572d78e3",
+    "url": "https://apnews.com/projects/election-results-2025/virginia?r=47225",
+    "domain": "apnews.com",
+    "title": "2025 Virginia election results",
+    "excerpt": "# Virginia Governor Abigail Spanberger wins. AP race call at 12:59 a.m. on Nov. 5, 2025. Certified results |candidate|votes|pct| |--|--|--| |Abigail Spanberger Dem|1,976,857|57.6%| |Winsome Earle-Sears GOP|1,449,586|42.2%| |Total Write-ins|6,897|0.2%| ... When the AP declared Spanberger the winner, she had a substantial lead in votes cast before Election Day and was running close with Earle-Sears among votes cast on Election Day. ... Lt. Gov. Winsome Earle-Sears is the Republican nominee. The Democratic nominee is Abigail Spanberger, a former member of the U.S. House. ... ### Ballots counted |candidate|votes|pct| |--|--|--| |Winsome Earle-Sears GOP|7,129|54.6%| |Abigail Spanberger Dem|5,925|45.4%| ... ## Key races |Poll Close|Race|Leader|EST. Votes Counted| |--|--|--|--| |12 a.m.|VA Governor »|Spanberger +15%|100%| |12 a.m.|VA Lieutenant Governor »|Hashmi +12%|100| ... ## When the nation waits for results, who do you trust? Election results and race calls from The Associated Press.",
+    "found_by": [
+     {
+      "provider": "perplexity-search",
+      "rank": 1
+     }
+    ],
+    "best_rank": 1
+   },
+   {
+    "source_id": "s_338315d7b5f1f73c546c13d2d8ff591a",
+    "url": "https://apnews.com/article/e965bd7b3081016e2e43bf107b236b82",
+    "domain": "apnews.com",
+    "title": "AP Race Call: Democrat Abigail Spanberger elected Virginia governor",
+    "excerpt": "AP Race Call: Democrat Abigail Spanberger elected Virginia governor | AP News - AP Top 25 Poll Alerts - - Alto funcionario del Vaticano dice que el cáncer de León XIV “cambia las reglas” del papado ... # AP Race Call: Democrat Abigail Spanberger elected Virginia governor Updated 1:02 AM UTC, November 5, 2025 WASHINGTON (AP) — Democrat Abigail Spanberger won the governor’s race in Virginia on Tuesday, defeating Republican Winsome Earle-Sears. Spanberger will succeed Republican Gov. Glenn Youngkin, who is not allowed to run for a second consecutive term. Her victory aligns with recent voting patterns in Virginia, which picks its governors the year after a presidential election and tends to elect someone of the opposite party of the president. Spanberger, a former case officer with the CIA, flipped a U.S. House seat in Northern Virginia in 2018 and retired from Congress in 2024 to run for governor. She will be the state’s first female governor. The Associated Press declared Spanberger the winner at 7:58 p.m. EST.",
+    "found_by": [
+     {
+      "provider": "perplexity-search",
+      "rank": 2
+     }
+    ],
+    "best_rank": 2
+   }
+  ]
+ }
+}

@@ -1,0 +1,178 @@
+"""`uv run midterms <command>`.
+
+  ask "question"                 answer from the live results (read-only tools)
+  draft-post RACE_ID             draft a post for a called race -> guard -> queue
+  drafts [--status S]            list the draft queue
+  publish ID --by NAME           a PERSON posts one draft to X (dry run unless MIDTERMS_PUBLISH_LIVE=true)
+  reject ID --by NAME            a person rejects a draft
+  call-finder [--once] [--races a,b] [--fetch]
+                                 find AP calls for closed, uncalled races -> state/proposals.json
+
+Env: MIDTERMS_MODEL (required for ask/draft-post/call-finder; "offline" is free),
+MIDTERMS_RUN_CAP_USD / MIDTERMS_DAILY_CAP_USD / MIDTERMS_TOTAL_CAP_USD (required for a billed
+model), MIDTERMS_STATE (default state/state.json).
+"""
+
+import argparse
+import json
+import os
+import sys
+from pathlib import Path
+
+from agent import config
+from agent.config import ConfigError
+
+
+def _state() -> dict:
+    from agent.state import load_state
+
+    return load_state()
+
+
+def cmd_ask(a) -> int:
+    from agent.guard import check_answer
+    from agent.models import PlannedCall
+    from agent.runtime import build_agent
+    from agent.state import state_tools
+
+    prompt = (Path(__file__).parent / "prompts" / "ask.txt").read_text()
+    agent = build_agent(state_tools(), prompt, plan=[PlannedCall("leaderboard", {})])
+    res = agent.run(a.question)
+    if res.status != "succeeded":
+        print(f"ask failed ({res.status}): {res.error}", file=sys.stderr)
+        return 1
+    if problems := check_answer(res.output or "", _state()):
+        print("The answer was withheld: it named a candidate in a race that has not been called. "
+              "Only AP calls confirmed by a person are shown.", file=sys.stderr)
+        for p in problems:
+            print(f"  - {p}", file=sys.stderr)
+        return 1
+    print(res.output)
+    return 0
+
+
+def cmd_draft_post(a) -> int:
+    from agent.drafts import Drafts
+    from agent.post_draft import draft_for_race
+
+    d = draft_for_race(a.race_id, _state(), Drafts())
+    print(f"queued {d['id']} ({d['source']}; guard {'pass' if d['guard']['ok'] else 'FAIL'})")
+    if d.get("agent_reasons"):
+        print("the agent's draft was not used: " + "; ".join(d["agent_reasons"]))
+    print("---\n" + d["text"] + "\n---")
+    print(f"publish with: uv run midterms publish {d['id']} --by NAME")
+    return 0
+
+
+def cmd_drafts(a) -> int:
+    from agent.drafts import Drafts
+
+    ds = Drafts().list(a.status)
+    if not ds:
+        print("no drafts")
+    for d in ds:
+        guard = "pass" if d["guard"]["ok"] else "FAIL"
+        extra = d["published"]["url"] if d.get("published") else (f"by {d['rejected']['by']}" if d.get("rejected") else "")
+        print(f"{d['id']}  {d['status']:<9}  guard {guard}  {d['source']:<8}  {d['created_at']}  {extra}")
+        print("    " + d["text"].replace("\n", "\n    "))
+    return 0
+
+
+def cmd_publish(a) -> int:
+    from agent.drafts import Drafts, NotAuthorized
+
+    drafts = Drafts()
+    try:
+        d = drafts.get(a.id)
+        print("---\n" + d["text"] + "\n---")
+        out = drafts.publish(a.id, by=a.by, state=_state(), retry_unsafe=a.retry_unsafe)
+    except NotAuthorized as e:
+        print(f"refused: {e}", file=sys.stderr)
+        return 2
+    if out.status == "dry_run":
+        print(out.detail)
+        print(json.dumps(out.plan, indent=2, ensure_ascii=False))
+        return 0
+    print(f"{out.status}: {out.detail}")
+    return 0 if out.status == "posted" else 1
+
+
+def cmd_reject(a) -> int:
+    from agent.drafts import Drafts, NotAuthorized
+
+    try:
+        d = Drafts().reject(a.id, a.by, a.reason)
+    except NotAuthorized as e:
+        print(f"refused: {e}", file=sys.stderr)
+        return 2
+    print(f"rejected {d['id']} by {d['rejected']['by']}")
+    return 0
+
+
+def cmd_call_finder(a) -> int:
+    from agent.budget import Budget
+    from agent.call_finder import CallFinder, load_races, loop, run_once
+    from agent.jevlin import JevlinClient
+    from agent.models import build_model
+    from agent.runtime import new_run_id
+    from agent.store import Store
+
+    model_id = config.model_name("MIDTERMS_CALL_FINDER_MODEL")
+    store = Store()
+    finder = CallFinder(client=JevlinClient(), model=build_model(model_id, max_tokens=1500),
+                        budget=Budget.from_env(store, model_id), store=store, races=load_races(),
+                        run_id=new_run_id("callfinder"), fetch=a.fetch, jevlin_cap_usd=a.jevlin_cap_usd)
+    race_ids = [r.strip() for r in a.races.split(",")] if a.races else None
+    if a.once:
+        results = run_once(finder, _state(), race_ids=race_ids, refresh=a.refresh)
+        for r in results:
+            print(f"{r['race_id']}: {r['status']} {r.get('winner') or ''} {'; '.join(r.get('reasons') or [])}")
+        print(f"{len(results)} races checked; Jevlin spend this run ${store.jevlin_spend_for_run(finder.run_id):.3f}; "
+              f"proposals in {config.proposals_path()}")
+        return 0
+    loop(finder, _state, interval_s=a.interval, race_ids=race_ids, refresh=a.refresh)
+    return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    p = argparse.ArgumentParser(prog="midterms", description="Jevlin midterms agent")
+    sub = p.add_subparsers(dest="cmd", required=True)
+    s = sub.add_parser("ask", help="ask about the results")
+    s.add_argument("question")
+    s.set_defaults(fn=cmd_ask)
+    s = sub.add_parser("draft-post", help="draft a post for a called race")
+    s.add_argument("race_id")
+    s.set_defaults(fn=cmd_draft_post)
+    s = sub.add_parser("drafts", help="list the draft queue")
+    s.add_argument("--status", choices=["queued", "published", "rejected"])
+    s.set_defaults(fn=cmd_drafts)
+    s = sub.add_parser("publish", help="a person posts one draft to X")
+    s.add_argument("id")
+    s.add_argument("--by", help="who is publishing (required)")
+    s.add_argument("--retry-unsafe", action="store_true",
+                   help="post even though an earlier attempt may have gone out (check X first)")
+    s.set_defaults(fn=cmd_publish)
+    s = sub.add_parser("reject", help="a person rejects a draft")
+    s.add_argument("id")
+    s.add_argument("--by", help="who is rejecting (required)")
+    s.add_argument("--reason")
+    s.set_defaults(fn=cmd_reject)
+    s = sub.add_parser("call-finder", help="find AP calls -> state/proposals.json")
+    s.add_argument("--once", action="store_true")
+    s.add_argument("--races", help="comma-separated race ids (default: every closed, uncalled race)")
+    s.add_argument("--fetch", action="store_true", help="also read the best AP pages in full (Jevlin fetch)")
+    s.add_argument("--refresh", action="store_true", help="search again even where a proposal is waiting")
+    s.add_argument("--jevlin-cap-usd", type=float, default=float(os.environ.get("MIDTERMS_CALL_FINDER_CAP_USD", "1.0")),
+                   help="stop searching when this run's Jevlin spend reaches this (default 1.00)")
+    s.add_argument("--interval", type=int, default=300, help="seconds between rounds (default 300)")
+    s.set_defaults(fn=cmd_call_finder)
+    a = p.parse_args(argv)
+    try:
+        return a.fn(a)
+    except (ConfigError, FileNotFoundError, ValueError) as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 2
+
+
+if __name__ == "__main__":
+    sys.exit(main())

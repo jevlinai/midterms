@@ -1,0 +1,36 @@
+[project]
+name = "jevlin-midterms"
+version = "0.1.0"
+description = "Election-night search race: which search engine finds each US midterm result first. Agent tooling built on Jevlin."
+authors = [{ name = "Hammad Tariq" }]
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = [
+    "anthropic>=1.17.0,<2",
+    "httpx>=0.28.1",
+    "langchain>=1.4.7",
+    "langchain-anthropic>=1.7.6",
+    "langgraph>=1.2.17",
+    "pydantic>=2.14.1",
+]
+
+[project.scripts]
+midterms = "agent.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.8.9,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "agent"
+module-root = ""
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: calls a real external API (run with -m live)"]
+addopts = "-m 'not live'"

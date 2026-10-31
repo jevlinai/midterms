@@ -1,0 +1,17 @@
+{
+ "_note": "A PAST race (Virginia governor, 4 Nov 2025) in the data/races.json shape, for the call-finder fixture only.",
+ "races": [
+  {
+   "id": "governor-va-2025",
+   "office": "governor",
+   "state": "VA",
+   "district": null,
+   "poll_close_et": "2025-11-04T19:00:00-05:00",
+   "candidates": [
+    {"name": "Abigail Spanberger", "surname": "Spanberger", "party": "D", "incumbent": false},
+    {"name": "Winsome Earle-Sears", "surname": "Earle-Sears", "party": "R", "incumbent": false}
+   ],
+   "query": "Virginia governor election results 2025"
+  }
+ ]
+}
