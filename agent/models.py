@@ -7,10 +7,10 @@ Adapted from agentville (hammadtq/agentville), src/agentville/runtime/models.py
 fixed text (`final_text`) or a plain report of the tool results. No network, no cost. It exists so
 the agent loop, budget and guard can be tested without an API key. It does not reason.
 
-A Claude model id ("claude-haiku-5-5", or "anthropic:claude-haiku-5-5"): Claude through
-langchain-anthropic. Notes for the current models: thinking cannot be disabled on Opus 5.5 /
+A Claude model id ("claude-sonnet-5-5", the approved model for the agents, or
+"anthropic:claude-sonnet-5-5"): Claude through langchain-anthropic. Notes for the current models: thinking cannot be disabled on Opus 5.5 /
 Sonnet 5.5, so depth is set with `effort` (MIDTERMS_EFFORT, default "low": these are short,
-bounded tasks); `temperature` is not sent (rejected); forced tool_choice is rejected, so it is
+bounded tasks, and Sonnet 5.5's own default is "high"); `temperature` is not sent (rejected); forced tool_choice is rejected, so it is
 never set. Opus 5.5 and Sonnet 5.5 get the server-side refusal fallback ("fallbacks": "default");
 Haiku 5.5 has none.
 """

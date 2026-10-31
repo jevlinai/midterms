@@ -10,8 +10,18 @@ Per race, per round:
   5. The code validates it: the winner must be one of the race's candidates in data/races.json;
      the URL must be an apnews.com page this search returned; the quote must appear word for word
      in that page's text and name the winner; the call time must be after poll close and not in
-     the future. Anything else is "rejected", with reasons.
-Results go to state/proposals.json (merged with what is there, written atomically).
+     the future. If the pages state no call time, the proposal still goes out with
+     ap_call_time null and call_time_missing true (the confirmer enters the time anyway).
+     Anything else is "rejected", with reasons.
+
+Output (the contract confirm/confirm.py reads):
+  state/proposals.json   a JSON object keyed by race_id, holding ONLY validated proposals:
+                         {race_id, winner, ap_call_time, ap_url, quote, found_at, search_request_id,
+                          call_time_missing}
+                         written atomically (temp file + os.replace). Merged with what is there.
+  state/call_finder.jsonl  one line per race per round, whatever the outcome (rejected, not_found,
+                         errors, with reasons), so a miss is visible without polluting proposals.json.
+Race names come from detector/races.py `load_races()`, so they match the rest of the repo.
 """
 
 import json
@@ -28,7 +38,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 from agent import config
 from agent.budget import Budget
-from agent.guard import ET, STATE_NAMES
+from agent.guard import ET
 from agent.jevlin import JevlinClient, JevlinError, cost_usd
 from agent.models import message_text, parse_json_object
 from agent.state import is_called
@@ -36,30 +46,30 @@ from agent.store import Store, now_iso
 
 PROMPT = (Path(__file__).parent / "prompts" / "call_finder.txt").read_text()
 OFFICE_ORDER = {"senate": 0, "governor": 1, "house": 2}
-OFFICE_WORD = {"senate": "Senate", "governor": "governor", "house": "House"}
 AP_HOSTS = ("apnews.com",)
 MAX_PAGE_CHARS = 6000
 MAX_PAGES_TO_MODEL = 6
+MAX_QUOTE_CHARS = 300
+PROPOSAL_FIELDS = ("race_id", "winner", "ap_call_time", "ap_url", "quote", "found_at", "search_request_id",
+                   "call_time_missing")
 
 
 # ---------- races ----------
 
 def load_races(path: Path | None = None) -> dict[str, dict]:
-    doc = json.loads(Path(path or config.races_path()).read_text())
-    races = doc["races"] if isinstance(doc, dict) else doc
-    return {r["id"]: r for r in races}
+    """data/races.json via the shared loader (it adds the display name as r["name"])."""
+    from detector.races import load_races as shared_load
+
+    return shared_load(Path(path or config.races_path()))
 
 
-def display_name(race: dict) -> str:
-    if race.get("name") and not race["name"].lower().startswith("test race"):
-        return race["name"]
-    st = STATE_NAMES.get((race.get("state") or "").upper(), race.get("state") or "")
-    if race.get("office") == "house":
-        d = race.get("district")
-        if d in ("AL", None):
-            return f"{st} at-large House"
-        return f"{st} District {int(d)} House" if str(d).isdigit() else f"{st} {d} House"
-    return f"{st} {OFFICE_WORD.get(race.get('office'), race.get('office') or '')}".strip()
+def display_name(entry: dict) -> str:
+    """The race's display name from the shared loader (data/races.json), never from state.json."""
+    if entry.get("name"):
+        return entry["name"]
+    from detector.races import display_name as shared_name
+
+    return shared_name(entry)
 
 
 def pending_races(state: dict, now: datetime, race_ids: list[str] | None = None) -> list[dict]:
@@ -144,8 +154,8 @@ def validate(raw: dict, race_entry: dict, pages: list[dict], *, poll_close: str 
     quote = str(raw.get("quote") or "")
     if not quote.strip():
         reasons.append("no quote")
-    elif len(quote) > 500:
-        reasons.append("quote is too long to be one sentence")
+    elif len(quote.strip()) > MAX_QUOTE_CHARS:
+        reasons.append(f"quote is longer than {MAX_QUOTE_CHARS} characters")
     elif page is not None:
         if norm(quote) not in norm(page["title"] + " " + page["text"]):
             reasons.append("quote does not appear word for word on that page")
@@ -154,7 +164,7 @@ def validate(raw: dict, race_entry: dict, pages: list[dict], *, poll_close: str 
 
     call_time = raw.get("ap_call_time")
     if call_time in (None, "", "null"):
-        call_time = None
+        call_time = None  # still proposed: the confirmer enters --time from AP's page
     else:
         try:
             t = datetime.fromisoformat(str(call_time))
@@ -170,7 +180,7 @@ def validate(raw: dict, race_entry: dict, pages: list[dict], *, poll_close: str 
     if reasons:
         return None, reasons
     return {"winner": cand["name"], "party": cand.get("party"), "ap_call_time": call_time,
-            "ap_url": page["url"], "quote": quote.strip()}, []
+            "ap_url": page["url"], "quote": quote.strip(), "call_time_missing": call_time is None}, []
 
 
 # ---------- one race ----------
@@ -205,7 +215,7 @@ class CallFinder:
         if (spent := self.store.jevlin_spend_for_run(self.run_id)) >= self.jevlin_cap_usd:
             return {**base, "status": "skipped", "reasons": [f"Jevlin cap for this run reached (${spent:.3f})"]}
 
-        body = self.search_body({**entry, "name": race.get("name")})
+        body = self.search_body(entry)
         rnd = now.astimezone(timezone.utc)
         rnd = rnd - timedelta(minutes=rnd.minute % self.round_minutes, seconds=rnd.second, microseconds=rnd.microsecond)
         try:
@@ -239,7 +249,7 @@ class CallFinder:
                     "model_output": {k: str(raw.get(k))[:300] for k in ("winner", "ap_call_time", "ap_url", "quote")}}
         if proposal is None:
             return {**base, "status": "not_found", "reasons": ["the model found no AP call on these pages"]}
-        return {**base, "status": "proposed", **proposal}
+        return {**base, "status": "proposed", **proposal, "found_at": now_iso()}
 
     def _fetch_into(self, pages: list[dict]) -> None:
         try:
@@ -258,55 +268,63 @@ class CallFinder:
         cands = "\n".join(f"- {c['name']}" for c in entry.get("candidates") or [])
         blocks = "\n\n".join(f'<page url="{p["url"]}">\n<title>{p["title"]}</title>\n{p["text"][:MAX_PAGE_CHARS]}\n</page>'
                              for p in pages[:MAX_PAGES_TO_MODEL])
-        return (f"Race: {display_name({**entry, 'name': race.get('name')})} (id {race['id']}), election year "
+        return (f"Race: {display_name(entry)} (id {race['id']}), election year "
                 f"{self.year}.\nPolls closed: {race.get('poll_close_et') or entry.get('poll_close_et')}\n"
                 f"Candidates (write the winner exactly as one of these):\n{cands}\n\nPages:\n{blocks}")
 
 
-# ---------- proposals file ----------
+# ---------- proposals file and log ----------
 
-def write_proposals(path: Path, results: list[dict]) -> dict:
+def read_proposals(path: Path) -> dict[str, dict]:
+    if not path.exists():
+        return {}
+    try:
+        doc = json.loads(path.read_text())
+    except ValueError:
+        return {}
+    return doc if isinstance(doc, dict) else {}
+
+
+def write_proposals(path: Path, results: list[dict]) -> dict[str, dict]:
+    """Merge validated proposals into state/proposals.json: {race_id: {contract fields}} and nothing else.
+    A later miss never removes a proposal (a person may be checking it); a new proposal for the same
+    race replaces it, keeping found_at when the winner and link are unchanged."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    doc = {"version": 1, "proposals": {}}
-    if path.exists():
-        try:
-            doc = json.loads(path.read_text())
-        except ValueError:
-            pass
-    doc.setdefault("proposals", {})
+    doc = read_proposals(path)
     for r in results:
-        prev = doc["proposals"].get(r["race_id"])
-        # A good proposal is not replaced by a later miss; a person may be checking it right now.
-        if prev and prev.get("status") == "proposed" and r["status"] != "proposed":
-            prev["last_checked_at"] = r["checked_at"]
+        if r.get("status") != "proposed":
             continue
-        doc["proposals"][r["race_id"]] = r
-    doc["generated_at"] = now_iso()
-    doc["_doc"] = ("Agent proposals for AP race calls. NOT calls: a person confirms each against AP in "
-                   "confirm/ before anything appears. This file is never read as a result.")
-    tmp = path.with_suffix(".json.tmp")
+        entry = {k: r.get(k) for k in PROPOSAL_FIELDS}
+        prev = doc.get(r["race_id"])
+        if prev and prev.get("winner") == entry["winner"] and prev.get("ap_url") == entry["ap_url"]:
+            entry["found_at"] = prev.get("found_at") or entry["found_at"]
+        doc[r["race_id"]] = entry
+    tmp = path.with_name(path.name + ".tmp")
     tmp.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n")
     os.replace(tmp, path)
     return doc
 
 
+def append_log(path: Path, results: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a") as f:
+        for r in results:
+            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+
+
 def run_once(finder: CallFinder, state: dict, *, race_ids: list[str] | None = None, now: datetime | None = None,
-             proposals_path: Path | None = None, refresh: bool = False) -> list[dict]:
+             proposals_path: Path | None = None, log_path: Path | None = None, refresh: bool = False) -> list[dict]:
     now = now or datetime.now(timezone.utc)
     path = Path(proposals_path or config.proposals_path())
-    existing = {}
-    if path.exists():
-        try:
-            existing = json.loads(path.read_text()).get("proposals", {})
-        except ValueError:
-            existing = {}
+    existing = read_proposals(path)
     results = []
     for race in pending_races(state, now, race_ids):
-        if not refresh and not race_ids and (existing.get(race["id"]) or {}).get("status") == "proposed":
-            continue  # waiting for a person
+        if not refresh and not race_ids and race["id"] in existing:
+            continue  # a proposal is waiting for a person
         results.append(finder.find(race, now))
     if results:
         write_proposals(path, results)
+        append_log(Path(log_path or config.call_finder_log_path()), results)
     return results
 
 

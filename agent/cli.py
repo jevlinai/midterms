@@ -7,8 +7,13 @@
   reject ID --by NAME            a person rejects a draft
   call-finder [--once] [--races a,b] [--fetch]
                                  find AP calls for closed, uncalled races -> state/proposals.json
+                                 (validated proposals only; every outcome -> state/call_finder.jsonl)
+  track [--once] [--races a,b] --budget-usd N [--dry-run]
+                                 the pre-registered agent track (agent/track.json) -> raw/agent/
 
-Env: MIDTERMS_MODEL (required for ask/draft-post/call-finder; "offline" is free),
+Env: MIDTERMS_MODEL (required for ask/draft-post/call-finder). The approved value is
+claude-sonnet-5-5; "offline" is free and calls no model. MIDTERMS_CALL_FINDER_MODEL overrides it
+for the call finder only.
 MIDTERMS_RUN_CAP_USD / MIDTERMS_DAILY_CAP_USD / MIDTERMS_TOTAL_CAP_USD (required for a billed
 model), MIDTERMS_STATE (default state/state.json).
 """
@@ -134,6 +139,30 @@ def cmd_call_finder(a) -> int:
     return 0
 
 
+def cmd_track(a) -> int:
+    from agent import track
+    from agent.call_finder import load_races
+
+    cfg = track.load_config()
+    races = track.eligible(load_races(), cfg)
+    if a.races:
+        want = [r.strip() for r in a.races.split(",") if r.strip()]
+        by_id = {r["id"]: r for r in races}
+        if bad := [r for r in want if r not in by_id]:
+            raise ValueError(f"not in the track (Senate and Governor races in data/races.json): {', '.join(bad)}")
+        races = [by_id[r] for r in want]
+    if a.dry_run:
+        print(json.dumps(track.dry_run(races, cfg), indent=2))
+        return 0
+    if a.budget_usd is None:
+        raise ConfigError("a live run needs --budget-usd (Jevlin spend cap for this run; CLAUDE.md rule 6)")
+    model = a.model or cfg["model"]
+    results = track.run(cfg=cfg, races=races, once=a.once, budget_usd=a.budget_usd, model=model)
+    for r in results:
+        print(json.dumps(r))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="midterms", description="Jevlin midterms agent")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -166,6 +195,13 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop searching when this run's Jevlin spend reaches this (default 1.00)")
     s.add_argument("--interval", type=int, default=300, help="seconds between rounds (default 300)")
     s.set_defaults(fn=cmd_call_finder)
+    s = sub.add_parser("track", help="the pre-registered agent track (Agent on Jevlin) -> raw/agent/")
+    s.add_argument("--once", action="store_true", help="one round now for the given races, ignoring poll close")
+    s.add_argument("--races", help="comma-separated race ids (Senate and Governor only)")
+    s.add_argument("--budget-usd", type=float, help="required: stop when this run's Jevlin spend reaches it")
+    s.add_argument("--dry-run", action="store_true", help="print the schedule's checks and Jevlin upper bound; no calls")
+    s.add_argument("--model", help="override the pre-registered model (rehearsals only; e.g. offline)")
+    s.set_defaults(fn=cmd_track)
     a = p.parse_args(argv)
     try:
         return a.fn(a)

@@ -35,14 +35,19 @@ def proposals_path() -> Path:
     return _path("MIDTERMS_PROPOSALS", ROOT / "state" / "proposals.json")
 
 
+def call_finder_log_path() -> Path:
+    return _path("MIDTERMS_CALL_FINDER_LOG", ROOT / "state" / "call_finder.jsonl")
+
+
 def model_name(env: str = "MIDTERMS_MODEL") -> str:
-    """The model id. Required, no default: the choice is pending with Hammad. "offline" is free."""
+    """The model id. Required, no default, so nothing is billed by accident. The approved value for
+    the agents is claude-sonnet-5-5 (Hammad, 1 Nov 2026). "offline" is free (tests, dry runs)."""
     m = (os.environ.get(env) or "").strip()
     if not m and env != "MIDTERMS_MODEL":
         m = (os.environ.get("MIDTERMS_MODEL") or "").strip()
     if not m:
-        raise ConfigError(f"{env} is not set. Use 'offline' for a free dry run, or a model id such as "
-                          "'claude-haiku-5-5' once the model and its price are approved.")
+        raise ConfigError(f"{env} is not set. Set MIDTERMS_MODEL=claude-sonnet-5-5 "
+                          "(the approved model; billed, needs the three caps), or 'offline' for a free dry run.")
     return m
 
 

@@ -23,6 +23,7 @@ def isolated(tmp_path, monkeypatch):
     monkeypatch.setenv("MIDTERMS_DB", str(tmp_path / "agent.sqlite"))
     monkeypatch.setenv("MIDTERMS_DRAFTS_DIR", str(tmp_path / "drafts"))
     monkeypatch.setenv("MIDTERMS_PROPOSALS", str(tmp_path / "proposals.json"))
+    monkeypatch.setenv("MIDTERMS_CALL_FINDER_LOG", str(tmp_path / "call_finder.jsonl"))
     monkeypatch.setenv("MIDTERMS_STATE", str(EXAMPLE_STATE))
     for k in ("MIDTERMS_PUBLISH_LIVE", "MIDTERMS_MODEL", "MIDTERMS_CALL_FINDER_MODEL", "ANTHROPIC_API_KEY",
               "MIDTERMS_RUN_CAP_USD", "MIDTERMS_DAILY_CAP_USD", "MIDTERMS_TOTAL_CAP_USD",

@@ -1,0 +1,52 @@
+{
+ "_doc": "PRE-REGISTERED configuration of the 'Agent on Jevlin' competitor (docs/SCORING.md, 'Computed and agent rows'). Hashed with the rest of the method before polls close; do not change after that without a public, timestamped log entry. Read by agent/track.py.",
+ "version": 1,
+ "model": "claude-sonnet-5-5",
+ "effort": "medium",
+ "max_tokens": 4000,
+ "prompt": "agent/prompts/track.txt",
+ "election_date": "2026-11-03",
+ "offices": ["senate", "governor"],
+ "round_minutes": 10,
+ "round_offset_minutes": 4,
+ "active_hours": 3,
+ "_schedule_note": "Rounds start at :04, :14, :24 ... (10-minute cadence, 4 minutes after the poller's :00/:10 rounds, so search 1 reuses the poller's :00/:10 record, 1 to 4 minutes old). A round id and each record's 'round' is the actual start (e.g. 20261103T1914), never the boundary; a check that starts more than a minute late is stamped with the next whole minute after it started, so the agent is never credited with a time before it searched. A race is checked from poll close + offset until 3 hours after that.",
+ "budget": {
+  "max_searches": 3,
+  "max_fetches": 2,
+  "max_pages_per_fetch": 2,
+  "max_model_calls": 8,
+  "_note": "Searches and fetches are per check (one race, one round). The first search, with the race's pre-registered query from data/races.json, is run by the code before the model starts and counts as search 1."
+ },
+ "jevlin": {
+  "base_url": "https://api.jevlin.ai",
+  "providers": ["exa", "brave", "parallel-search", "perplexity-search", "serper", "tinyfish", "telem"],
+  "tier": "max",
+  "recency": "day",
+  "view": "merged",
+  "merged_limit": 50,
+  "timeout_seconds": 60,
+  "fetch_max_chars": 10000,
+  "_note": "providers, tier, recency, view and merged_limit are identical to poller/config.json (tests/test_track.py checks this)."
+ },
+ "first_search": "reuse_poller",
+ "first_search_options": {
+  "poller_raw_dir": "raw",
+  "max_age_minutes": 10,
+  "_note": "reuse_poller: search 1 is the latest poller record for the race (raw/<ET date>/round-<id>.jsonl.gz, completed lines only, not a cache hit, HTTP 200) whose round start is at or before the agent round's start and at most max_age_minutes older. It costs the track $0 (the poller paid for it) and is logged by poller round and request_id. No such record: the check is 'no_baseline' and makes no call. 'live' sends the pre-registered query itself; only once Jevlin's cache-skip field is set in jevlin_extra_request_fields, because the router cache is shared with the poller. In both modes the model may not send a query that normalises (lowercase, collapsed whitespace) to the pre-registered query."
+ },
+ "jevlin_extra_request_fields": {},
+ "shown_to_model": {
+  "results_per_search": 15,
+  "chars_per_result": 700,
+  "chars_per_fetched_page": 6000
+ },
+ "output": {
+  "raw_dir": "raw/agent",
+  "max_items": 10,
+  "max_snippet_chars": 1000,
+  "cache_hit_voids_record": true,
+  "_note": "An item is kept only if its URL came back from one of this check's searches or fetches and its snippet appears word for word in the text Jevlin returned for that URL; its title is taken from Jevlin, not from the model. cache_hit_voids_record mirrors the poller: a record whose steps replayed a cached response is marked summary.cache_hit and build_state skips it."
+ },
+ "max_workers": 8
+}

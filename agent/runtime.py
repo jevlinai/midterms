@@ -79,7 +79,7 @@ class Agent:
 
 def build_agent(tools: list[BaseTool], system_prompt: str, *, model: str | BaseChatModel | None = None,
                 plan: list[PlannedCall] | None = None, final_text: str | None = None, budget: Budget | None = None,
-                store: Store | None = None, max_calls: int = 8) -> Agent:
+                store: Store | None = None, max_calls: int = 8, budget_step: str = "agent") -> Agent:
     for t in tools:
         if any(w in t.name.lower() for w in FORBIDDEN_TOOL_WORDS):
             raise ValueError(f"tool {t.name!r} looks like a side effect; the agent gets read-only tools only")
@@ -91,7 +91,7 @@ def build_agent(tools: list[BaseTool], system_prompt: str, *, model: str | BaseC
     if budget is None:
         budget = Budget.from_env(store or Store(), label if isinstance(label, str) else "offline")
     middleware: list[Any] = [ModelCallLimitMiddleware(run_limit=max_calls, exit_behavior="error"),
-                             BudgetMiddleware(budget)]
+                             BudgetMiddleware(budget, step=budget_step)]
     graph = create_agent(chat, tools, system_prompt=system_prompt, middleware=middleware,
                          context_schema=RunContext, name="midterms")
     return Agent(graph, label, max_calls)

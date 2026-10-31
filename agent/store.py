@@ -53,8 +53,18 @@ class Store:
         self.conn.close()
 
     def _exec(self, sql: str, args: tuple = ()) -> sqlite3.Cursor:
+        """A write. Reads go through _one/_all, which fetch under the same lock: the connection is
+        shared by the track's worker threads, and a fetch outside the lock can read another thread's rows."""
         with self._lock:
             return self.conn.execute(sql, args)
+
+    def _one(self, sql: str, args: tuple = ()) -> sqlite3.Row | None:
+        with self._lock:
+            return self.conn.execute(sql, args).fetchone()
+
+    def _all(self, sql: str, args: tuple = ()) -> list[sqlite3.Row]:
+        with self._lock:
+            return self.conn.execute(sql, args).fetchall()
 
     # spend ----------------------------------------------------------------------------------
 
@@ -64,8 +74,8 @@ class Store:
                     tokens.get("cache_write", 0), tokens.get("output", 0), usd, now_iso()))
 
     def _llm_sum(self, where: str, args: tuple) -> float:
-        r = self._exec(f"SELECT COALESCE(SUM(usd),0) AS s FROM spend WHERE model NOT LIKE ? AND {where}",
-                       (NON_LLM_PREFIX + "%", *args)).fetchone()
+        r = self._one(f"SELECT COALESCE(SUM(usd),0) AS s FROM spend WHERE model NOT LIKE ? AND {where}",
+                      (NON_LLM_PREFIX + "%", *args))
         return float(r["s"])
 
     def spend_for_run(self, run_id: str) -> float:
@@ -78,14 +88,22 @@ class Store:
         return self._llm_sum("at>=?", (t.astimezone(timezone.utc).isoformat(timespec="seconds"),))
 
     def jevlin_spend_for_run(self, run_id: str) -> float:
-        r = self._exec("SELECT COALESCE(SUM(usd),0) AS s FROM spend WHERE model LIKE ? AND run_id=?",
-                       (NON_LLM_PREFIX + "%", run_id)).fetchone()
+        r = self._one("SELECT COALESCE(SUM(usd),0) AS s FROM spend WHERE model LIKE ? AND run_id=?",
+                      (NON_LLM_PREFIX + "%", run_id))
         return float(r["s"])
+
+    def spend_by_step(self, run_id: str, step: str) -> dict:
+        """LLM tokens and dollars recorded under one step label (e.g. one track check)."""
+        r = self._one("SELECT COUNT(*) AS calls, COALESCE(SUM(input),0) AS input, COALESCE(SUM(cache_read),0) AS "
+                       "cache_read, COALESCE(SUM(cache_write),0) AS cache_write, COALESCE(SUM(output),0) AS output, "
+                       "COALESCE(SUM(usd),0) AS usd FROM spend WHERE run_id=? AND step=? AND model NOT LIKE ?",
+                      (run_id, step, NON_LLM_PREFIX + "%"))
+        return dict(r)
 
     # attempts -------------------------------------------------------------------------------
 
     def attempt(self, key: str) -> dict | None:
-        r = self._exec("SELECT * FROM attempts WHERE key=?", (key,)).fetchone()
+        r = self._one("SELECT * FROM attempts WHERE key=?", (key,))
         return dict(r) if r else None
 
     def upsert_attempt(self, key: str, *, draft_id: str, race_id: str, text_sha256: str, status: str,
@@ -98,5 +116,5 @@ class Store:
         self._exec(f"UPDATE attempts SET {', '.join(f'{k}=?' for k in cols)} WHERE key=?", (*cols.values(), key))
 
     def posted_for_race(self, race_id: str) -> list[dict]:
-        return [dict(r) for r in self._exec("SELECT * FROM attempts WHERE race_id=? AND status='posted'",
-                                            (race_id,)).fetchall()]
+        return [dict(r) for r in self._all("SELECT * FROM attempts WHERE race_id=? AND status='posted'",
+                                            (race_id,))]

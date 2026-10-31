@@ -88,8 +88,45 @@ def test_finds_the_ap_call_on_a_past_race(store, races, fake_jevlin, va_state):
     assert r["query"] == "AP race call Virginia governor 2025"
     assert fake_jevlin.paths == ["/v1/search"]
     assert store.jevlin_spend_for_run("cf_test") == pytest.approx(0.022)
+    # The contract confirm/confirm.py reads: keyed by race_id, exactly these fields, nothing else.
     doc = json.loads(config.proposals_path().read_text())
-    assert doc["proposals"]["governor-va-2025"]["status"] == "proposed" and "NOT calls" in doc["_doc"]
+    assert list(doc) == ["governor-va-2025"]
+    p = doc["governor-va-2025"]
+    assert set(p) == {"race_id", "winner", "ap_call_time", "ap_url", "quote", "found_at", "search_request_id",
+                      "call_time_missing"}
+    assert p["call_time_missing"] is False
+    assert p["winner"] == "Abigail Spanberger" and p["ap_call_time"].endswith("-05:00") and p["ap_url"] == AP_URL
+    assert p["search_request_id"] == fake_jevlin.search["response"]["request_id"] and len(p["quote"]) <= 300
+    datetime.fromisoformat(p["found_at"])
+    assert winner_is_a_listed_name(p, races)
+    assert not list(config.proposals_path().parent.glob("*.tmp"))  # atomic write left nothing behind
+
+
+def winner_is_a_listed_name(p, races):
+    return p["winner"] in {c["name"] for c in races[p["race_id"]]["candidates"]}
+
+
+def test_race_names_come_from_the_shared_loader(races):
+    from detector.races import display_name
+
+    assert races["governor-va-2025"]["name"] == display_name(races["governor-va-2025"]) == "Virginia governor"
+
+
+def test_only_valid_proposals_reach_proposals_json_and_every_outcome_is_logged(store, races, fake_jevlin, va_state):
+    run_once(make_finder(store, races, fake_jevlin, {**GOOD, "winner": "Glenn Youngkin"}), va_state, now=NOW)
+    assert json.loads(config.proposals_path().read_text()) == {}
+    [line] = config.call_finder_log_path().read_text().splitlines()
+    assert json.loads(line)["status"] == "rejected"
+
+
+def test_the_confirm_tool_reads_the_file(store, races, fake_jevlin, va_state, capsys):
+    from confirm import confirm
+
+    run_once(make_finder(store, races, fake_jevlin, GOOD), va_state, now=NOW)
+    proposals = json.loads(config.proposals_path().read_text())
+    confirm.cmd_show(races["governor-va-2025"], {}, proposals)
+    out = capsys.readouterr().out
+    assert "Agent proposal (NOT a confirmation" in out and "winner: Abigail Spanberger" in out
 
 
 def test_the_model_sees_only_ap_pages_and_the_candidate_list(store, races, fake_jevlin, va_state):
@@ -115,10 +152,18 @@ def test_rejects_a_winner_who_is_not_a_candidate(store, races, fake_jevlin, va_s
     ({"ap_call_time": "2025-11-04T18:00:00-05:00"}, "before poll close"),
     ({"ap_call_time": "2025-11-06T12:00:00-05:00"}, "in the future"),
     ({"ap_call_time": "7:58pm"}, "not ISO 8601"),
+    ({"quote": QUOTE + " " + "x" * 300}, "longer than 300"),
 ])
 def test_rejects_unsupported_details(store, races, fake_jevlin, va_state, bad, why):
     [r] = run_once(make_finder(store, races, fake_jevlin, {**GOOD, **bad}), va_state, now=NOW)
     assert r["status"] == "rejected" and any(why in x for x in r["reasons"]), r["reasons"]
+
+
+def test_a_missing_call_time_is_still_proposed_and_flagged(store, races, fake_jevlin, va_state):
+    [r] = run_once(make_finder(store, races, fake_jevlin, {**GOOD, "ap_call_time": None}), va_state, now=NOW)
+    assert r["status"] == "proposed"
+    p = json.loads(config.proposals_path().read_text())["governor-va-2025"]
+    assert p["ap_call_time"] is None and p["call_time_missing"] is True and p["winner"] == "Abigail Spanberger"
 
 
 def test_no_winner_from_the_model_is_not_found(store, races, fake_jevlin, va_state):
@@ -167,12 +212,14 @@ def test_a_waiting_proposal_is_not_searched_again(store, races, fake_jevlin, va_
     assert fake_jevlin.paths == ["/v1/search"]
 
 
-def test_a_later_miss_does_not_replace_a_good_proposal(isolated):
+def test_a_later_miss_does_not_remove_a_proposal_and_found_at_is_kept(isolated):
     path = isolated / "p.json"
-    write_proposals(path, [{"race_id": "x", "status": "proposed", "winner": "A", "checked_at": "t1"}])
-    write_proposals(path, [{"race_id": "x", "status": "not_found", "checked_at": "t2"}])
-    p = json.loads(path.read_text())["proposals"]["x"]
-    assert p["status"] == "proposed" and p["last_checked_at"] == "t2"
+    first = {"race_id": "x", "status": "proposed", "winner": "A", "ap_url": "u", "found_at": "t1"}
+    write_proposals(path, [first])
+    write_proposals(path, [{"race_id": "x", "status": "not_found"}, {**first, "found_at": "t2"}])
+    assert json.loads(path.read_text()) == {"x": {"race_id": "x", "winner": "A", "ap_call_time": None, "ap_url": "u",
+                                                  "quote": None, "found_at": "t1", "search_request_id": None,
+                                                  "call_time_missing": None}}
 
 
 def test_jevlin_cap_stops_searching(store, races, fake_jevlin, va_state):
