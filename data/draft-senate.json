@@ -1,0 +1,1436 @@
+{
+  "generated_at": "2026-10-31T16:30:51Z",
+  "count_note": "35 races: 33 regular Class II seats plus specials in Florida and Ohio, matching the Ballotpedia overview https://ballotpedia.org/United_States_Senate_elections,_2026. DRAFT: each entry needs a check by a person before use. Candidate lists exclude write-ins. poll_close_et is the LATEST close anywhere in the state; the networks often treat a state as 'closed' earlier.",
+  "races": [
+    {
+      "id": "senate-al",
+      "office": "senate",
+      "state": "AL",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Barry Moore",
+          "surname": "Moore",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Everett Wess",
+          "surname": "Wess",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "query": "Alabama Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Alabama,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Open seat: Tommy Tuberville (R) ran for governor. Polls close 7pm CT (8pm ET); AP says ET-zone portions of Chambers, Lee and Russell counties also close 7pm CT."
+    },
+    {
+      "id": "senate-ak",
+      "office": "senate",
+      "state": "AK",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-04T01:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Dan Sullivan",
+          "surname": "Sullivan",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Mary Peltola",
+          "surname": "Peltola",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Daniel J. Sullivan Jr.",
+          "surname": "Sullivan",
+          "party": null,
+          "incumbent": false
+        },
+        {
+          "name": "Gerald Heikes",
+          "surname": "Heikes",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "query": "Alaska Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://nbcnews.com/politics/2026-election/alaska-finalizes-senate-race-november-3-republicans-2-dan-sullivan-1-democrat-rcna595617",
+        "https://cbsnews.com/news/alaska-senate-two-dan-sullivans-mary-peltola"
+      ],
+      "notes": "Top-four primary, ranked-choice general; if no one passes 50% of first choices, the tabulation runs later, so the call may come days after election night. TWO CANDIDATES SURNAMED SULLIVAN: incumbent Sen. Dan S. Sullivan (R; ballot 'Sullivan, Dan S.', Ballotpedia 'Daniel S. Sullivan') and retired teacher Daniel J. Sullivan Jr. The surname filter cannot tell them apart; the detector must match the full name/incumbent. Party of Daniel J. Sullivan Jr. is null on purpose: Ballotpedia and NBC (1 Sep) list him as Republican, but CBS reports the sample ballot shows him with no party affiliation. DOJ has asked Alaska to segregate ballots ranking him, and the governor has ordered an investigation (late Oct 2026), so his ballot status may be litigated. Gerald Heikes (R) advanced after Democrat David Leslie withdrew. Most polls close 8pm AKST (midnight ET); the Aleutians west of 169.5W close 8pm HAST (1am ET Wed 4 Nov), which is the value used. Media treat the state as callable from midnight ET."
+    },
+    {
+      "id": "senate-ar",
+      "office": "senate",
+      "state": "AR",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:30:00-05:00",
+      "candidates": [
+        {
+          "name": "Tom Cotton",
+          "surname": "Cotton",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Hallie Shoffner",
+          "surname": "Shoffner",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Jeff Wadlin",
+          "surname": "Wadlin",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "query": "Arkansas Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Arkansas,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Ballotpedia flags the candidate list as possibly incomplete."
+    },
+    {
+      "id": "senate-co",
+      "office": "senate",
+      "state": "CO",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "John Hickenlooper",
+          "surname": "Hickenlooper",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Mark Baisley",
+          "surname": "Baisley",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Chris Baum",
+          "surname": "Baum",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Robert Chew",
+          "surname": "Chew",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Clinton Dale",
+          "surname": "Dale",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Joshua Kuebler",
+          "surname": "Kuebler",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Robert Wolfe",
+          "surname": "Wolfe",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Adam Withrow",
+          "surname": "Withrow",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Matthew Wood",
+          "surname": "Wood",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Colorado Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Colorado,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Other-party labels: Baum = Approval Voting Party, Chew = Colorado Forward Party, Withrow = Unity Party. Dale, Kuebler, Wolfe listed Unaffiliated; Wood listed Independent. Ballotpedia flags the list as possibly incomplete. Write-in candidates listed by Ballotpedia are excluded. Mostly mail voting; ballots due 7pm MT (9pm ET)."
+    },
+    {
+      "id": "senate-de",
+      "office": "senate",
+      "state": "DE",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Chris Coons",
+          "surname": "Coons",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Michael Katz",
+          "surname": "Katz",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "query": "Delaware Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Delaware,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Three unaffiliated write-in candidates are excluded. Ballotpedia flags the list as possibly incomplete."
+    },
+    {
+      "id": "senate-fl-special",
+      "office": "senate",
+      "state": "FL",
+      "district": null,
+      "special": true,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Ashley Moody",
+          "surname": "Moody",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Angela Nixon",
+          "surname": "Nixon",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Neil Gillespie",
+          "surname": "Gillespie",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Florida Senate special election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_special_election_in_Florida,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Special election for the rest of Marco Rubio's term (ends Jan 2029). Moody was appointed in Jan 2025 (Ballotpedia lists 'Ashley B. Moody'). Gillespie is No Party Affiliation. Most polls close 7pm ET; the western panhandle (CT) closes 8pm ET, which is the value used."
+    },
+    {
+      "id": "senate-ga",
+      "office": "senate",
+      "state": "GA",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T19:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Jon Ossoff",
+          "surname": "Ossoff",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Mike Collins",
+          "surname": "Collins",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Allen Buckley",
+          "surname": "Buckley",
+          "party": "L",
+          "incumbent": false
+        },
+        {
+          "name": "Elbert Bartell",
+          "surname": "Bartell",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Chris Capparell",
+          "surname": "Capparell",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Georgia Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://georgia.gov/events/2026-12-01/election-day-general-election-runoff"
+      ],
+      "notes": "Majority required: if no candidate passes 50%, a runoff between the top two is held on 1 Dec 2026, so election night may produce no winner. Note surname 'Collins' also appears in the Maine race (Susan Collins). Write-in candidates listed by Ballotpedia are excluded."
+    },
+    {
+      "id": "senate-id",
+      "office": "senate",
+      "state": "ID",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T23:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Jim Risch",
+          "surname": "Risch",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Todd Achilles",
+          "surname": "Achilles",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Natalie Fleming",
+          "surname": "Fleming",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Matt Loesby",
+          "surname": "Loesby",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "query": "Idaho Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Idaho,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "No Democratic nominee on the general ballot per Ballotpedia. Southern Idaho (MT) closes 8pm MT (10pm ET); the northern panhandle (PT) closes 8pm PT (11pm ET), which is the value used. Networks treat most polls as closed at 10pm ET."
+    },
+    {
+      "id": "senate-il",
+      "office": "senate",
+      "state": "IL",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Juliana Stratton",
+          "surname": "Stratton",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Don Tracy",
+          "surname": "Tracy",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Whitfield Harrington Jr.",
+          "surname": "Harrington",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "query": "Illinois Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Illinois,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://cbsnews.com/chicago/news/who-is-running-us-senate-illinois-general-election-2026",
+        "https://will.illinois.edu/21stshow/story/we-interviewed-all-three-candidates-for-u.s-senate-in-illinois-hear-the-highlights"
+      ],
+      "notes": "Open seat: Dick Durbin (D) retiring. Harrington is the American Center Party nominee. The fetched Ballotpedia page was truncated before the general-election table; the three-candidate list comes from the Ballotpedia search summary and CBS Chicago ('three candidates are on the ballot')."
+    },
+    {
+      "id": "senate-ia",
+      "office": "senate",
+      "state": "IA",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Josh Turek",
+          "surname": "Turek",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Ashley Hinson",
+          "surname": "Hinson",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Thomas Laehn",
+          "surname": "Laehn",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "query": "Iowa Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Iowa,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Open seat: Joni Ernst (R) not running. Polls close 8pm CT."
+    },
+    {
+      "id": "senate-ks",
+      "office": "senate",
+      "state": "KS",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Roger Marshall",
+          "surname": "Marshall",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Adam Hamilton",
+          "surname": "Hamilton",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "David Graham",
+          "surname": "Graham",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "query": "Kansas Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Kansas,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Polls close 7pm local; the western MT-zone counties close 7pm MT (9pm ET), which is the value used (most of the state closes 8pm ET). Counties may keep polls open until 8pm CT. Note surname 'Graham' also appears in South Carolina (Darline Graham)."
+    },
+    {
+      "id": "senate-ky",
+      "office": "senate",
+      "state": "KY",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T19:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Charles Booker",
+          "surname": "Booker",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Andy Barr",
+          "surname": "Barr",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Christopher Campbell",
+          "surname": "Campbell",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "query": "Kentucky Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Kentucky,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Open seat: Mitch McConnell (R) retiring. Campbell is the Kentucky Party nominee. Write-in Thomas Murphy excluded. Eastern-zone polls close 6pm ET; central-zone polls close 6pm CT (7pm ET), which is the value used. Note surname 'Booker' also appears in New Jersey (Cory Booker)."
+    },
+    {
+      "id": "senate-la",
+      "office": "senate",
+      "state": "LA",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Julia Letlow",
+          "surname": "Letlow",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Jamie Davis",
+          "surname": "Davis",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "query": "Louisiana Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Louisiana,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://sos.la.gov/elections-voting/closed-party-primary-elections"
+      ],
+      "notes": "First use of Louisiana's closed party primaries for U.S. Senate; incumbent Bill Cassidy (R) lost the Republican primary. The November general is decided by plurality, with no runoff (Louisiana SOS). Polls close 8pm CT."
+    },
+    {
+      "id": "senate-me",
+      "office": "senate",
+      "state": "ME",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Susan Collins",
+          "surname": "Collins",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Troy Jackson",
+          "surname": "Jackson",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "query": "Maine Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://apnews.com/article/maine-collins-jackson-dunlap-lepage-pingree-charles-0738e23c17299037479d9807d7f7bb62"
+      ],
+      "notes": "Ranked-choice voting: if no one passes 50% of first choices, the RCV tabulation happens days later, so the call may be delayed. Troy Jackson replaced Graham Platner as Democratic nominee on 25 Jul 2026. Ballotpedia lists six others, all write-ins (excluded). Note surname 'Collins' also appears in Georgia (Mike Collins)."
+    },
+    {
+      "id": "senate-ma",
+      "office": "senate",
+      "state": "MA",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Ed Markey",
+          "surname": "Markey",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "John Deaton",
+          "surname": "Deaton",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Philip Devincentis",
+          "surname": "Devincentis",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Joseph Tache",
+          "surname": "Tache",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Shiva Ayyadurai",
+          "surname": "Ayyadurai",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Morgan Dawicki",
+          "surname": "Dawicki",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Massachusetts Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Massachusetts,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Devincentis = American Independent Party; Tache = Party for Socialism and Liberation. Ballotpedia lists the incumbent as 'Edward J. Markey'."
+    },
+    {
+      "id": "senate-mi",
+      "office": "senate",
+      "state": "MI",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Abdul El-Sayed",
+          "surname": "El-Sayed",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Mike Rogers",
+          "surname": "Rogers",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Douglas P. Marsh",
+          "surname": "Marsh",
+          "party": "G",
+          "incumbent": false
+        },
+        {
+          "name": "Lydia Christensen",
+          "surname": "Christensen",
+          "party": "L",
+          "incumbent": false
+        },
+        {
+          "name": "Timothy Long",
+          "surname": "Long",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "query": "Michigan Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Open seat: Gary Peters (D) retiring. Long is the U.S. Taxpayers Party nominee. The candidate list comes from the Ballotpedia page summary; the fetched page was truncated before the candidate table. Most polls close 8pm ET; four western Upper Peninsula counties (CT) close 8pm CT (9pm ET), which is the value used."
+    },
+    {
+      "id": "senate-mn",
+      "office": "senate",
+      "state": "MN",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Peggy Flanagan",
+          "surname": "Flanagan",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Michele Tafoya",
+          "surname": "Tafoya",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Rebecca Whiting",
+          "surname": "Whiting",
+          "party": "L",
+          "incumbent": false
+        },
+        {
+          "name": "Marisa Simonetti",
+          "surname": "Simonetti",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Minnesota Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Minnesota,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Open seat: Tina Smith (D) retiring. Write-in Alycia Gruenhagen excluded. Polls close 8pm CT."
+    },
+    {
+      "id": "senate-ms",
+      "office": "senate",
+      "state": "MS",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Cindy Hyde-Smith",
+          "surname": "Hyde-Smith",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Scott Colom",
+          "surname": "Colom",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Ty Pinkins",
+          "surname": "Pinkins",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Mississippi Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Mississippi,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": null
+    },
+    {
+      "id": "senate-mt",
+      "office": "senate",
+      "state": "MT",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T22:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Kurt Alme",
+          "surname": "Alme",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Alani Bankhead",
+          "surname": "Bankhead",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Seth Bodnar",
+          "surname": "Bodnar",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Kyle Austin",
+          "surname": "Austin",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "query": "Montana Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://lccountymt.gov/files/assets/county/v/1/treasurer-clerk-and-recorder/documents/elections/sample-ballots/2026-general-publication-ballot.pdf",
+        "https://candidatefiling.mt.gov/candidatefiling/CandidateList.aspx?e=450002987"
+      ],
+      "notes": "Open seat: Steve Daines (R) not on the ballot. The Lewis and Clark County publication ballot lists exactly these four; write-in Jami Woodman is excluded. Polls close 8pm MT."
+    },
+    {
+      "id": "senate-ne",
+      "office": "senate",
+      "state": "NE",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Pete Ricketts",
+          "surname": "Ricketts",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Dan Osborn",
+          "surname": "Osborn",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Chuck Conboy",
+          "surname": "Conboy",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Mike Marvin",
+          "surname": "Marvin",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Robin Richards",
+          "surname": "Richards",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "query": "Nebraska Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "No Democratic nominee; Osborn is listed as Nonpartisan/independent. Conboy = America First Party Nebraska; Marvin = Legal Marijuana Now Party; Richards = Nebraska Working People Party. All polls close at the same moment: 8pm CT / 7pm MT (9pm ET)."
+    },
+    {
+      "id": "senate-nh",
+      "office": "senate",
+      "state": "NH",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Chris Pappas",
+          "surname": "Pappas",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "John E. Sununu",
+          "surname": "Sununu",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Edmond Laplante",
+          "surname": "Laplante",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "query": "New Hampshire Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Open seat: Jeanne Shaheen (D) retiring. Sununu is former Sen. John E. Sununu. Laplante = Constitution Party. Poll hours vary by town (polls cannot close before 7pm); Green Papers gives 8pm ET as the media closing time ('reportedly')."
+    },
+    {
+      "id": "senate-nj",
+      "office": "senate",
+      "state": "NJ",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Cory Booker",
+          "surname": "Booker",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Justin Murphy",
+          "surname": "Murphy",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Veronica Fernandez",
+          "surname": "Fernandez",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Joanne Kuniansky",
+          "surname": "Kuniansky",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "query": "New Jersey Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_New_Jersey,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Fernandez = End the Corruption! Party; Kuniansky = Socialist Workers Party. Note surname 'Booker' also appears in Kentucky (Charles Booker)."
+    },
+    {
+      "id": "senate-nm",
+      "office": "senate",
+      "state": "NM",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Ben Ray Luján",
+          "surname": "Luján",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Larry E. Marker",
+          "surname": "Marker",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "query": "New Mexico Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_New_Mexico,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "The surname filter should also match the unaccented 'Lujan'."
+    },
+    {
+      "id": "senate-nc",
+      "office": "senate",
+      "state": "NC",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T19:30:00-05:00",
+      "candidates": [
+        {
+          "name": "Roy Cooper",
+          "surname": "Cooper",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Michael Whatley",
+          "surname": "Whatley",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Brian McGinnis",
+          "surname": "McGinnis",
+          "party": "G",
+          "incumbent": false
+        },
+        {
+          "name": "Shannon Bray",
+          "surname": "Bray",
+          "party": "L",
+          "incumbent": false
+        },
+        {
+          "name": "Shaunesi Deberry",
+          "surname": "Deberry",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "North Carolina Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_North_Carolina,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Open seat: Thom Tillis (R) retiring. The list comes from the Ballotpedia page text ('Cooper, Whatley and three other candidates'); the fetched page was truncated before the candidate table."
+    },
+    {
+      "id": "senate-oh-special",
+      "office": "senate",
+      "state": "OH",
+      "district": null,
+      "special": true,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T19:30:00-05:00",
+      "candidates": [
+        {
+          "name": "Jon Husted",
+          "surname": "Husted",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Sherrod Brown",
+          "surname": "Brown",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Bill Redpath",
+          "surname": "Redpath",
+          "party": "L",
+          "incumbent": false
+        },
+        {
+          "name": "Gregory Levy",
+          "surname": "Levy",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Ohio Senate special election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_special_election_in_Ohio,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Special election for the rest of JD Vance's term (ends Jan 2029). Husted was appointed in Jan 2025. Three independent write-ins excluded. Polls close 7:30pm ET. Note surname 'Brown' also appears in Texas (Ted Brown, L)."
+    },
+    {
+      "id": "senate-ok",
+      "office": "senate",
+      "state": "OK",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Kevin Hern",
+          "surname": "Hern",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "N'Kiyla Thomas",
+          "surname": "Thomas",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Sevier White",
+          "surname": "White",
+          "party": "L",
+          "incumbent": false
+        },
+        {
+          "name": "Ron Meinhardt",
+          "surname": "Meinhardt",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Curtis Stinnett",
+          "surname": "Stinnett",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Oklahoma Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Oklahoma,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://oklahoma.gov/oag/news/newsroom/2026/october/drummond-nov-3-winner-will-fill-remainder-of-u-s-senate-term.html",
+        "https://cbsnews.com/news/alan-armstrong-oklahoma-senator-markwayne-mullin"
+      ],
+      "notes": "Regular election for the seat Markwayne Mullin left to become DHS Secretary. Appointed Sen. Alan Armstrong (R, since Mar 2026) is not a candidate, so there is no incumbent on the ballot. Per the Oklahoma AG's opinion of 29 Oct 2026, the 3 Nov winner also fills the rest of the current term; there is no separate special election. Polls close 7pm CT."
+    },
+    {
+      "id": "senate-or",
+      "office": "senate",
+      "state": "OR",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T23:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Jeff Merkley",
+          "surname": "Merkley",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "David Brock Smith",
+          "surname": "Smith",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Gary Dye",
+          "surname": "Dye",
+          "party": "L",
+          "incumbent": false
+        },
+        {
+          "name": "Chris Henry",
+          "surname": "Henry",
+          "party": "G",
+          "incumbent": false
+        }
+      ],
+      "query": "Oregon Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Oregon,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Merkley is cross-nominated by the Working Families Party; Henry by the Pacific Green and Progressive parties. Surname 'Smith' is very common, so the detector should match the full name 'Brock Smith'. Vote by mail; ballots due 8pm local. Most of the state is PT (11pm ET, the value used); Malheur County (MT) closes 10pm ET."
+    },
+    {
+      "id": "senate-ri",
+      "office": "senate",
+      "state": "RI",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Jack Reed",
+          "surname": "Reed",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Raymond McKay",
+          "surname": "McKay",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Michael Bahry",
+          "surname": "Bahry",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Rhode Island Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Rhode_Island,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": null
+    },
+    {
+      "id": "senate-sc",
+      "office": "senate",
+      "state": "SC",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T19:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Darline Graham",
+          "surname": "Graham",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Annie Andrews",
+          "surname": "Andrews",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Mark Hackett",
+          "surname": "Hackett",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Kasie Whitener",
+          "surname": "Whitener",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "query": "South Carolina Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_South_Carolina,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://governor.sc.gov/news/2026-07/gov-mcmaster-appoints-darline-graham-us-senate",
+        "https://news.ballotpedia.org/2026/07/16/lindsey-grahams-death-will-set-off-a-special-primary-election-for-a-senate-seat-thats-open-for-the-second-time-since-1956"
+      ],
+      "notes": "Sen. Lindsey Graham (R) died on 11 Jul 2026. Gov. McMaster appointed his sister Darline Graham (also styled Darline Graham Nordone), who was sworn in on 14 Jul 2026 and won the special Republican primary and runoff to replace him on the November ballot. Hackett = Constitution Party. Write-in Catherine Fleming Bruce (D) excluded. Not confirmed whether the 3 Nov winner also fills the rest of the current term before 3 Jan 2027; no separate special election is listed. Note surname 'Graham' also appears in Kansas (David Graham, L)."
+    },
+    {
+      "id": "senate-sd",
+      "office": "senate",
+      "state": "SD",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Mike Rounds",
+          "surname": "Rounds",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Brian Bengs",
+          "surname": "Bengs",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "South Dakota Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_South_Dakota,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "No Democratic nominee. Polls close 7pm local; the western MT-zone part closes 9pm ET, which is the value used (the CT part closes 8pm ET)."
+    },
+    {
+      "id": "senate-tn",
+      "office": "senate",
+      "state": "TN",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T20:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Bill Hagerty",
+          "surname": "Hagerty",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Marquita Bradshaw",
+          "surname": "Bradshaw",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Tharon Chandler",
+          "surname": "Chandler",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Andrew Gerena",
+          "surname": "Gerena",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Jeremy Hearn",
+          "surname": "Hearn",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Robert Jones",
+          "surname": "Jones",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "James Macon III",
+          "surname": "Macon",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Yoshi Matthews",
+          "surname": "Matthews",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "David Sutman Jr.",
+          "surname": "Sutman",
+          "party": "I",
+          "incumbent": false
+        },
+        {
+          "name": "Catherine Whitson",
+          "surname": "Whitson",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "query": "Tennessee Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Tennessee,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Eight independents are on the ballot per Ballotpedia. All polls close at the same moment: 8pm ET / 7pm CT."
+    },
+    {
+      "id": "senate-tx",
+      "office": "senate",
+      "state": "TX",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Ken Paxton",
+          "surname": "Paxton",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "James Talarico",
+          "surname": "Talarico",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Ted Brown",
+          "surname": "Brown",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "query": "Texas Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+        "https://electionresults.sos.state.tx.us/results.html"
+      ],
+      "notes": "Incumbent John Cornyn (R) lost the Republican primary runoff to Paxton. The Texas SOS results page lists Paxton, Talarico and Brown plus write-ins (excluded); Ballotpedia's 'five other candidates' includes write-ins. Most polls close 7pm CT (8pm ET); El Paso and Hudspeth (MT) close 9pm ET, which is the value used. Note surname 'Brown' also appears in Ohio (Sherrod Brown)."
+    },
+    {
+      "id": "senate-va",
+      "office": "senate",
+      "state": "VA",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T19:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Mark Warner",
+          "surname": "Warner",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Bert Mizusawa",
+          "surname": "Mizusawa",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "query": "Virginia Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Virginia,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": null
+    },
+    {
+      "id": "senate-wv",
+      "office": "senate",
+      "state": "WV",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T19:30:00-05:00",
+      "candidates": [
+        {
+          "name": "Shelley Moore Capito",
+          "surname": "Capito",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Rachel Fetty Anderson",
+          "surname": "Anderson",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "S. Marshall Wilson",
+          "surname": "Wilson",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "query": "West Virginia Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_West_Virginia,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Wilson = Constitution Party. Write-in Rio Phillips excluded. Fox lists the Democrat as 'Rachel Anderson'. Green Papers marks the 7:30pm ET close as 'reportedly'; Ballotpedia gives 6:30am to 7:30pm."
+    },
+    {
+      "id": "senate-wy",
+      "office": "senate",
+      "state": "WY",
+      "district": null,
+      "special": false,
+      "uncontested": false,
+      "poll_close_et": "2026-11-03T21:00:00-05:00",
+      "candidates": [
+        {
+          "name": "Harriet Hageman",
+          "surname": "Hageman",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "James Byrd",
+          "surname": "Byrd",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "query": "Wyoming Senate election results 2026",
+      "sources": [
+        "https://ballotpedia.org/United_States_Senate_election_in_Wyoming,_2026",
+        "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+        "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+      ],
+      "notes": "Open seat: Cynthia Lummis (R) not on the ballot; Hageman is the at-large U.S. Representative."
+    }
+  ]
+}

@@ -1,0 +1,1467 @@
+{
+ "generated_at": "2026-10-31T16:32:06Z",
+ "source_overview": "https://ballotpedia.org/Gubernatorial_elections,_2026",
+ "races": [
+  {
+   "id": "governor-al",
+   "office": "governor",
+   "state": "AL",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Doug Jones",
+     "surname": "Jones",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Tommy Tuberville",
+     "surname": "Tuberville",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Alabama governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Alabama_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Write-in Ronald Burnette Jr. (Independent) excluded. Polls close 7pm CT statewide (8pm ET)."
+  },
+  {
+   "id": "governor-ak",
+   "office": "governor",
+   "state": "AK",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-04T01:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jonathan Kreiss-Tomkins",
+     "surname": "Kreiss-Tomkins",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "David Bronson",
+     "surname": "Bronson",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Treg Taylor",
+     "surname": "Taylor",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Bernadette Wilson",
+     "surname": "Wilson",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Alaska governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Alaska_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://alaskabeacon.com/2026/08/31/last-day-shakeup-in-alaskas-race-for-governor-puts-disqualified-candidates-wife-on-the-ballot",
+    "https://adn.com/politics/2026/08/28/tom-begich-says-he-will-withdraw-from-alaska-governors-race",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Top-four primary; general uses ranked-choice voting, so the result may take days (RCV tabulation). Tom Begich (D), second in the primary, withdrew by 31 Aug 2026 and is off the ballot; Bernadette Wilson moved up. Latest close is 1am ET Wed 4 Nov (Aleutians, Hawaii-Aleutian time); most of Alaska closes at midnight ET. Surname 'Wilson' also appears in SC governor race (different state)."
+  },
+  {
+   "id": "governor-az",
+   "office": "governor",
+   "state": "AZ",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Katie Hobbs",
+     "surname": "Hobbs",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Andy Biggs",
+     "surname": "Biggs",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Risa Lombardo",
+     "surname": "Lombardo",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Teri Hourihan",
+     "surname": "Hourihan",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Arizona governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Arizona_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Teri Hourihan is No Labels Party (party=other). Write-ins Gertritrude Gonzalez and Alice Novoa (R) excluded. Leezah Sun (I) withdrew. Ballotpedia notes its candidate list may not be complete."
+  },
+  {
+   "id": "governor-ar",
+   "office": "governor",
+   "state": "AR",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:30:00-05:00",
+   "candidates": [
+    {
+     "name": "Sarah Huckabee Sanders",
+     "surname": "Sanders",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Fredrick Love",
+     "surname": "Love",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Colt Shelby",
+     "surname": "Shelby",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Arkansas governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Arkansas_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": null
+  },
+  {
+   "id": "governor-ca",
+   "office": "governor",
+   "state": "CA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Xavier Becerra",
+     "surname": "Becerra",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Steve Hilton",
+     "surname": "Hilton",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "California governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/California_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Top-two general election (both advanced from the 2 June top-two primary). Counting typically takes days to weeks."
+  },
+  {
+   "id": "governor-co",
+   "office": "governor",
+   "state": "CO",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Phil Weiser",
+     "surname": "Weiser",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Victor Marx",
+     "surname": "Marx",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Stephen Hamilton",
+     "surname": "Hamilton",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Erik Underwood",
+     "surname": "Underwood",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Mulder",
+     "surname": "Mulder",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Greg Lopez",
+     "surname": "Lopez",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jeff Peckman",
+     "surname": "Peckman",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Colorado governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Colorado_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Party=other: Stephen Hamilton (American Constitution Party), Erik Underwood (Approval Voting Party), Jeff Peckman (Unity Party). Greg Lopez is Unaffiliated. Ballotpedia notes list may not be complete."
+  },
+  {
+   "id": "governor-ct",
+   "office": "governor",
+   "state": "CT",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Ned Lamont",
+     "surname": "Lamont",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Ryan Fazio",
+     "surname": "Fazio",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Connecticut governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Connecticut_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Lamont also on Working Families Party line; Fazio also on Independent Party of Connecticut line. Zenobia Adgers and Christian Noe (both Independent) are named in Ballotpedia's summary sentence, but the candidate table marks their tickets '(Write-in)'; excluded pending check against the CT Secretary of State list."
+  },
+  {
+   "id": "governor-fl",
+   "office": "governor",
+   "state": "FL",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "David Jolly",
+     "surname": "Jolly",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Byron Donalds",
+     "surname": "Donalds",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Scott Jewett",
+     "surname": "Jewett",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Dean Abrams",
+     "surname": "Abrams",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Charles Burkett",
+     "surname": "Burkett",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jeffrey Datto",
+     "surname": "Datto",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Moliere Dimanche",
+     "surname": "Dimanche",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Frank Russo",
+     "surname": "Russo",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Florida governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Florida_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Five No Party Affiliation candidates mapped to I. Write-ins Kathy Anderson and Erik Morris excluded. Panhandle on Central time; statewide close 8pm ET. Ballotpedia notes list may not be complete."
+  },
+  {
+   "id": "governor-ga",
+   "office": "governor",
+   "state": "GA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Keisha Lance Bottoms",
+     "surname": "Bottoms",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Rick Jackson",
+     "surname": "Jackson",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Georgia governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Georgia_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Georgia requires a majority in the general; if no candidate exceeds 50% a runoff follows. Rick Jackson won the 16 June Republican primary runoff over Burt Jones."
+  },
+  {
+   "id": "governor-hi",
+   "office": "governor",
+   "state": "HI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-04T00:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Joshua Green",
+     "surname": "Green",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Gary Cordery",
+     "surname": "Cordery",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Hawaii governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Hawaii_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia's general table lists only these two candidates. Polls close 7pm HST = midnight ET (Wed 4 Nov)."
+  },
+  {
+   "id": "governor-id",
+   "office": "governor",
+   "state": "ID",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Brad Little",
+     "surname": "Little",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Terri Pickens",
+     "surname": "Pickens",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Pro-Life",
+     "surname": "Pro-Life",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Paul Sand",
+     "surname": "Sand",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "John R. Stegner",
+     "surname": "Stegner",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Idaho governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Idaho_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "'Pro-Life' is the candidate's legal name (Constitution Party; party=other). John R. Stegner is Unaffiliated. Write-in Jacob Burnett excluded. Northern panhandle on Pacific time; latest close 11pm ET. Ballotpedia notes list may not be complete."
+  },
+  {
+   "id": "governor-il",
+   "office": "governor",
+   "state": "IL",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "JB Pritzker",
+     "surname": "Pritzker",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Darren Bailey",
+     "surname": "Bailey",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Collin Corbett",
+     "surname": "Corbett",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Illinois governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Illinois_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Seven write-in candidates excluded (incl. Mike Vick, Griselda Romero). Ballotpedia notes list may not be complete."
+  },
+  {
+   "id": "governor-ia",
+   "office": "governor",
+   "state": "IA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Rob Sand",
+     "surname": "Sand",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Zach Lahn",
+     "surname": "Lahn",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Iowa governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Iowa_gubernatorial_election,_2026",
+    "https://sos.iowa.gov/sites/default/files/2026-08/2026%20General%20-%20Candidate%20List%20Database%20-%20All%20Elections_1.pdf",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia's page text was truncated before the general-election table; candidates confirmed from the Iowa SOS general-election candidate list (updated 19 Aug 2026) and Ballotpedia's summary sentence. Libertarian ticket (Nicholas Gluba) was removed from the ballot by the State Objection Panel."
+  },
+  {
+   "id": "governor-ks",
+   "office": "governor",
+   "state": "KS",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Cindy Holscher",
+     "surname": "Holscher",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ty Masterson",
+     "surname": "Masterson",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Kansas governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Kansas_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Four western counties on Mountain time; latest close 9pm ET."
+  },
+  {
+   "id": "governor-me",
+   "office": "governor",
+   "state": "ME",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Hannah Pingree",
+     "surname": "Pingree",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Bobby Charles",
+     "surname": "Charles",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Richard Bennett",
+     "surname": "Bennett",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Maine governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Maine_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Write-ins Randy Wilcox (R) and John Glowa (I) excluded. Ballotpedia shows ranked-choice rounds for the June primaries; check whether RCV applies to this general (Maine's governor general has been decided by plurality)."
+  },
+  {
+   "id": "governor-md",
+   "office": "governor",
+   "state": "MD",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Wes Moore",
+     "surname": "Moore",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Dan Cox",
+     "surname": "Cox",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Andy Ellis",
+     "surname": "Ellis",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Cathy White",
+     "surname": "White",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Maryland governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Maryland_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Cathy White is Working Class Party (party=other)."
+  },
+  {
+   "id": "governor-ma",
+   "office": "governor",
+   "state": "MA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Maura Healey",
+     "surname": "Healey",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Michael Minogue",
+     "surname": "Minogue",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Andrea James",
+     "surname": "James",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Massachusetts governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Massachusetts_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Andrea James is Unenrolled (mapped to I). Surname 'James' also used by MI Republican candidate (different state)."
+  },
+  {
+   "id": "governor-mi",
+   "office": "governor",
+   "state": "MI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jocelyn Benson",
+     "surname": "Benson",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "John James",
+     "surname": "James",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Douglas Campbell",
+     "surname": "Campbell",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Anthony Hudson",
+     "surname": "Hudson",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Donna Brandenburg",
+     "surname": "Brandenburg",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Michigan governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Michigan_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://michiganpublic.org/politics-government/2026-10-26/michigan-governor-candidates-2026",
+    "https://app.miottawa.org/ElectionManagement/viewPublicFile.action?viewFile=%2Fmnt%2Fottawa-apps%2Fcontent%2FappImages%2FElectionManagement%2FcandidateFile-226.pdf",
+    "https://ballotpedia.org/Michigan_gubernatorial_election,_2026_(August_4_Democratic_primary)",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia's page text was truncated before the table ('Benson, James and five other candidates', which likely includes write-ins). Five ballot candidates confirmed by Michigan Public (26 Oct 2026) and the Ottawa County candidate list. Donna Brandenburg is U.S. Taxpayers Party (party=other). Michigan Public marks the Libertarian Party with an asterisk that was not explained in the text retrieved; Hudson is listed on the Ottawa County ballot list. Four Upper Peninsula counties on Central time; latest close 9pm ET."
+  },
+  {
+   "id": "governor-mn",
+   "office": "governor",
+   "state": "MN",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Amy Klobuchar",
+     "surname": "Klobuchar",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Lisa Demuth",
+     "surname": "Demuth",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Steven Young",
+     "surname": "Young",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "query": "Minnesota governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Minnesota_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Incumbent Tim Walz is not on the ballot. Steven Young is Green."
+  },
+  {
+   "id": "governor-ne",
+   "office": "governor",
+   "state": "NE",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jim Pillen",
+     "surname": "Pillen",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Lynne Walz",
+     "surname": "Walz",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brett Lindstrom",
+     "surname": "Lindstrom",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Rick Beard",
+     "surname": "Beard",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Nebraska governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Nebraska_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Party=other: Brett Lindstrom (America First Party Nebraska), Rick Beard (Legal Marijuana Now Party). Central and Mountain zones close together at 9pm ET."
+  },
+  {
+   "id": "governor-nv",
+   "office": "governor",
+   "state": "NV",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T22:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Joe Lombardo",
+     "surname": "Lombardo",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Aaron Ford",
+     "surname": "Ford",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Danielle Ford",
+     "surname": "Ford",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Nevada governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Nevada_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Danielle Ford is No Political Party (mapped to I). SURNAME COLLISION: Aaron Ford (D) and Danielle Ford (I) share the surname 'Ford'; the winner detector must match full names in Nevada."
+  },
+  {
+   "id": "governor-nh",
+   "office": "governor",
+   "state": "NH",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Kelly Ayotte",
+     "surname": "Ayotte",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Cinde Warmington",
+     "surname": "Warmington",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Stephen Villee",
+     "surname": "Villee",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "New Hampshire governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/New_Hampshire_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Closing times vary by town (some 7pm, the remaining 8pm ET per The Hill); latest close used. Congress Countdown lists 7pm, which is the earliest close only."
+  },
+  {
+   "id": "governor-nm",
+   "office": "governor",
+   "state": "NM",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Debra Haaland",
+     "surname": "Haaland",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Gregg Hull",
+     "surname": "Hull",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "New Mexico governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/New_Mexico_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia lists the Democratic nominee as Debra Haaland; the press often uses Deb Haaland."
+  },
+  {
+   "id": "governor-ny",
+   "office": "governor",
+   "state": "NY",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Kathy Hochul",
+     "surname": "Hochul",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Bruce Blakeman",
+     "surname": "Blakeman",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "New York governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/New_York_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Hochul also on Working Families Party line; Blakeman also on Conservative and Vote Affordable lines. Write-ins Jonathan Makeley (Prohibition) and Jean Anglade excluded."
+  },
+  {
+   "id": "governor-oh",
+   "office": "governor",
+   "state": "OH",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "candidates": [
+    {
+     "name": "Amy Acton",
+     "surname": "Acton",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Vivek Ramaswamy",
+     "surname": "Ramaswamy",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Don Kissick",
+     "surname": "Kissick",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Ohio governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Ohio_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://boe.woodcountyohio.gov/DocumentCenter/View/1006/Candidate-List",
+    "https://boe.ohio.gov/ashtabula/c/upload/Election_Candidates.pdf",
+    "https://cleveland.com/open/2026/10/who-is-running-for-ohio-governor-in-2026-meet-the-candidates.html",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia's page text was truncated before the table; candidates confirmed from the Wood County Board of Elections certified list (26 Aug 2026) and the Ashtabula County list. Write-in tickets (e.g., Timothy Grady, Heather Hill) excluded."
+  },
+  {
+   "id": "governor-ok",
+   "office": "governor",
+   "state": "OK",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Cyndi Munson",
+     "surname": "Munson",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Mike Mazzei",
+     "surname": "Mazzei",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Robert Brooks",
+     "surname": "Brooks",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Orlando Lynn Bush",
+     "surname": "Bush",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jerry Griffin",
+     "surname": "Griffin",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Oklahoma governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Oklahoma_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Mike Mazzei is the Republican nominee after the 25 Aug Republican primary runoff against Gentner Drummond. Incumbent Kevin Stitt is term-limited."
+  },
+  {
+   "id": "governor-or",
+   "office": "governor",
+   "state": "OR",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Tina Kotek",
+     "surname": "Kotek",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Christine Drazan",
+     "surname": "Drazan",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Brett Smith",
+     "surname": "Smith",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "query": "Oregon governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Oregon_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Kotek also on Working Families Party line; Drazan also on Libertarian line. Brett Smith is Pacific Green Party (mapped to G). Mostly vote-by-mail; latest close 11pm ET (Pacific)."
+  },
+  {
+   "id": "governor-pa",
+   "office": "governor",
+   "state": "PA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Josh Shapiro",
+     "surname": "Shapiro",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Stacy Garrity",
+     "surname": "Garrity",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Anthony Dastra",
+     "surname": "Dastra",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Ken Krawchuk",
+     "surname": "Krawchuk",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Pennsylvania governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": null
+  },
+  {
+   "id": "governor-ri",
+   "office": "governor",
+   "state": "RI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Helena Foulkes",
+     "surname": "Foulkes",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Aaron Guckian",
+     "surname": "Guckian",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Ken Block",
+     "surname": "Block",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jasjit Gotra",
+     "surname": "Gotra",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Christopher Reynolds",
+     "surname": "Reynolds",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Rhode Island governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Rhode_Island_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Incumbent Daniel McKee is not on the general ballot. Three Independents on ballot."
+  },
+  {
+   "id": "governor-sc",
+   "office": "governor",
+   "state": "SC",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jermaine Johnson",
+     "surname": "Johnson",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Alan Wilson",
+     "surname": "Wilson",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Walid Hakim",
+     "surname": "Hakim",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Michael Addison",
+     "surname": "Addison",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "South Carolina governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/South_Carolina_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Michael Addison is United Citizens Party (party=other)."
+  },
+  {
+   "id": "governor-sd",
+   "office": "governor",
+   "state": "SD",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Larry Rhoden",
+     "surname": "Rhoden",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Dan Ahlers",
+     "surname": "Ahlers",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "query": "South Dakota governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/South_Dakota_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Larry Rhoden won a Republican primary runoff against Toby Doeden. Dan Ahlers advanced from the Democratic primary without appearing on the primary ballot."
+  },
+  {
+   "id": "governor-tn",
+   "office": "governor",
+   "state": "TN",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jerri Green",
+     "surname": "Green",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Marsha Blackburn",
+     "surname": "Blackburn",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Misam Abidi",
+     "surname": "Abidi",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Dean Brewer",
+     "surname": "Brewer",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Ray Brown",
+     "surname": "Brown",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "David Hatley",
+     "surname": "Hatley",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Wendell Jackson",
+     "surname": "Jackson",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Charles Morgan",
+     "surname": "Morgan",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Eddie Lee Murphy",
+     "surname": "Murphy",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Lauren Pinkston",
+     "surname": "Pinkston",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Victor Scoggin",
+     "surname": "Scoggin",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Dave Seeman",
+     "surname": "Seeman",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Karl Smithson",
+     "surname": "Smithson",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "L. Webb Taylor",
+     "surname": "Taylor",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Robert Vick",
+     "surname": "Vick",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Tennessee governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Tennessee_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Thirteen Independents on ballot per Ballotpedia; three write-ins excluded (Carlton Boleyjack, Stephen Maxwell, Jason Smith). Eastern and Central zones close together at 8pm ET. Surname 'Green' also used by HI incumbent (different state); 'Jackson' also in GA."
+  },
+  {
+   "id": "governor-tx",
+   "office": "governor",
+   "state": "TX",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Greg Abbott",
+     "surname": "Abbott",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Gina Hinojosa",
+     "surname": "Hinojosa",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Pat Dixon",
+     "surname": "Dixon",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Texas governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Texas_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Four write-in Independents excluded. El Paso and Hudspeth counties on Mountain time; latest close 9pm ET. Ballotpedia notes list may not be complete."
+  },
+  {
+   "id": "governor-vt",
+   "office": "governor",
+   "state": "VT",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Phil Scott",
+     "surname": "Scott",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Amanda Janoo",
+     "surname": "Janoo",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Dean Roy",
+     "surname": "Roy",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "June Goodband",
+     "surname": "Goodband",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Brian Judd",
+     "surname": "Judd",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Vermont governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Vermont_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "If no candidate wins a majority, the Vermont General Assembly elects the governor. Party=other: Dean Roy (Freedom and Unity Party), June Goodband (Green Mountain Peace and Justice Party). Brian Judd is Independent."
+  },
+  {
+   "id": "governor-wi",
+   "office": "governor",
+   "state": "WI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "David Crowley",
+     "surname": "Crowley",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Tom Tiffany",
+     "surname": "Tiffany",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Wisconsin governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Wisconsin_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Mark Grimek (Constitution Party) and Jamie Jo Carothers (Independent) are marked write-in in Ballotpedia's table and are excluded. Incumbent Tony Evers is not running."
+  },
+  {
+   "id": "governor-wy",
+   "office": "governor",
+   "state": "WY",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Ken Casner",
+     "surname": "Casner",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Barlow",
+     "surname": "Barlow",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Rebecca Bextel",
+     "surname": "Bextel",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Wyoming governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Wyoming_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Rebecca Bextel is Constitution Party (party=other)."
+  }
+ ]
+}

@@ -1,0 +1,602 @@
+{
+ "source": "https://cookpolitical.com/print/ratings/races/house?date=20261030",
+ "rating_date": "2026-10-30",
+ "selection": "Cook Likely, Lean and Toss Up (both parties)",
+ "races": [
+  {
+   "id": "house-ca-13",
+   "state": "CA",
+   "district": "13",
+   "cook_rating": "likely_d",
+   "cook_label": "Gray"
+  },
+  {
+   "id": "house-ca-45",
+   "state": "CA",
+   "district": "45",
+   "cook_rating": "likely_d",
+   "cook_label": "Tran"
+  },
+  {
+   "id": "house-in-01",
+   "state": "IN",
+   "district": "01",
+   "cook_rating": "likely_d",
+   "cook_label": "Mrvan"
+  },
+  {
+   "id": "house-mi-08",
+   "state": "MI",
+   "district": "08",
+   "cook_rating": "likely_d",
+   "cook_label": "McDonald Rivet"
+  },
+  {
+   "id": "house-mn-02",
+   "state": "MN",
+   "district": "02",
+   "cook_rating": "likely_d",
+   "cook_label": "OPEN (Craig)"
+  },
+  {
+   "id": "house-ne-02",
+   "state": "NE",
+   "district": "02",
+   "cook_rating": "likely_d",
+   "cook_label": "OPEN (Bacon)"
+  },
+  {
+   "id": "house-nh-01",
+   "state": "NH",
+   "district": "01",
+   "cook_rating": "likely_d",
+   "cook_label": "OPEN (Pappas)"
+  },
+  {
+   "id": "house-nj-09",
+   "state": "NJ",
+   "district": "09",
+   "cook_rating": "likely_d",
+   "cook_label": "Pou"
+  },
+  {
+   "id": "house-nv-01",
+   "state": "NV",
+   "district": "01",
+   "cook_rating": "likely_d",
+   "cook_label": "Titus"
+  },
+  {
+   "id": "house-nv-03",
+   "state": "NV",
+   "district": "03",
+   "cook_rating": "likely_d",
+   "cook_label": "Lee"
+  },
+  {
+   "id": "house-nv-04",
+   "state": "NV",
+   "district": "04",
+   "cook_rating": "likely_d",
+   "cook_label": "Horsford"
+  },
+  {
+   "id": "house-ny-03",
+   "state": "NY",
+   "district": "03",
+   "cook_rating": "likely_d",
+   "cook_label": "Suozzi"
+  },
+  {
+   "id": "house-ny-04",
+   "state": "NY",
+   "district": "04",
+   "cook_rating": "likely_d",
+   "cook_label": "Gillen"
+  },
+  {
+   "id": "house-ny-19",
+   "state": "NY",
+   "district": "19",
+   "cook_rating": "likely_d",
+   "cook_label": "Riley"
+  },
+  {
+   "id": "house-oh-01",
+   "state": "OH",
+   "district": "01",
+   "cook_rating": "likely_d",
+   "cook_label": "Landsman"
+  },
+  {
+   "id": "house-oh-13",
+   "state": "OH",
+   "district": "13",
+   "cook_rating": "likely_d",
+   "cook_label": "Sykes"
+  },
+  {
+   "id": "house-tx-28",
+   "state": "TX",
+   "district": "28",
+   "cook_rating": "likely_d",
+   "cook_label": "Cuellar"
+  },
+  {
+   "id": "house-va-07",
+   "state": "VA",
+   "district": "07",
+   "cook_rating": "likely_d",
+   "cook_label": "Vindman"
+  },
+  {
+   "id": "house-az-01",
+   "state": "AZ",
+   "district": "01",
+   "cook_rating": "lean_d",
+   "cook_label": "OPEN (Schweikert)"
+  },
+  {
+   "id": "house-az-06",
+   "state": "AZ",
+   "district": "06",
+   "cook_rating": "lean_d",
+   "cook_label": "Ciscomani"
+  },
+  {
+   "id": "house-ca-48",
+   "state": "CA",
+   "district": "48",
+   "cook_rating": "lean_d",
+   "cook_label": "OPEN (Issa)"
+  },
+  {
+   "id": "house-co-08",
+   "state": "CO",
+   "district": "08",
+   "cook_rating": "lean_d",
+   "cook_label": "Evans"
+  },
+  {
+   "id": "house-fl-25",
+   "state": "FL",
+   "district": "25",
+   "cook_rating": "lean_d",
+   "cook_label": "Moskowitz"
+  },
+  {
+   "id": "house-ia-01",
+   "state": "IA",
+   "district": "01",
+   "cook_rating": "lean_d",
+   "cook_label": "Miller-Meeks"
+  },
+  {
+   "id": "house-ia-03",
+   "state": "IA",
+   "district": "03",
+   "cook_rating": "lean_d",
+   "cook_label": "Nunn"
+  },
+  {
+   "id": "house-nc-11",
+   "state": "NC",
+   "district": "11",
+   "cook_rating": "lean_d",
+   "cook_label": "OPEN (Edwards)"
+  },
+  {
+   "id": "house-nj-07",
+   "state": "NJ",
+   "district": "07",
+   "cook_rating": "lean_d",
+   "cook_label": "Kean Jr."
+  },
+  {
+   "id": "house-nm-02",
+   "state": "NM",
+   "district": "02",
+   "cook_rating": "lean_d",
+   "cook_label": "Vasquez"
+  },
+  {
+   "id": "house-oh-09",
+   "state": "OH",
+   "district": "09",
+   "cook_rating": "lean_d",
+   "cook_label": "Kaptur"
+  },
+  {
+   "id": "house-pa-07",
+   "state": "PA",
+   "district": "07",
+   "cook_rating": "lean_d",
+   "cook_label": "Mackenzie"
+  },
+  {
+   "id": "house-pa-08",
+   "state": "PA",
+   "district": "08",
+   "cook_rating": "lean_d",
+   "cook_label": "Bresnahan"
+  },
+  {
+   "id": "house-pa-10",
+   "state": "PA",
+   "district": "10",
+   "cook_rating": "lean_d",
+   "cook_label": "Perry"
+  },
+  {
+   "id": "house-tx-34",
+   "state": "TX",
+   "district": "34",
+   "cook_rating": "lean_d",
+   "cook_label": "Gonzalez"
+  },
+  {
+   "id": "house-va-02",
+   "state": "VA",
+   "district": "02",
+   "cook_rating": "lean_d",
+   "cook_label": "Kiggans"
+  },
+  {
+   "id": "house-wa-03",
+   "state": "WA",
+   "district": "03",
+   "cook_rating": "lean_d",
+   "cook_label": "Perez"
+  },
+  {
+   "id": "house-wi-03",
+   "state": "WI",
+   "district": "03",
+   "cook_rating": "lean_d",
+   "cook_label": "Van Orden"
+  },
+  {
+   "id": "house-fl-14",
+   "state": "FL",
+   "district": "14",
+   "cook_rating": "toss_up_d",
+   "cook_label": "Castor"
+  },
+  {
+   "id": "house-fl-22",
+   "state": "FL",
+   "district": "22",
+   "cook_rating": "toss_up_d",
+   "cook_label": "OPEN (Frankel)"
+  },
+  {
+   "id": "house-nc-01",
+   "state": "NC",
+   "district": "01",
+   "cook_rating": "toss_up_d",
+   "cook_label": "Davis"
+  },
+  {
+   "id": "house-tx-35",
+   "state": "TX",
+   "district": "35",
+   "cook_rating": "toss_up_d",
+   "cook_label": "OPEN (Casar)"
+  },
+  {
+   "id": "house-ca-22",
+   "state": "CA",
+   "district": "22",
+   "cook_rating": "toss_up_r",
+   "cook_label": "Valadao"
+  },
+  {
+   "id": "house-co-05",
+   "state": "CO",
+   "district": "05",
+   "cook_rating": "toss_up_r",
+   "cook_label": "Crank"
+  },
+  {
+   "id": "house-ia-02",
+   "state": "IA",
+   "district": "02",
+   "cook_rating": "toss_up_r",
+   "cook_label": "OPEN (Hinson)"
+  },
+  {
+   "id": "house-ky-06",
+   "state": "KY",
+   "district": "06",
+   "cook_rating": "toss_up_r",
+   "cook_label": "OPEN (Barr)"
+  },
+  {
+   "id": "house-mi-04",
+   "state": "MI",
+   "district": "04",
+   "cook_rating": "toss_up_r",
+   "cook_label": "Huizenga"
+  },
+  {
+   "id": "house-mi-07",
+   "state": "MI",
+   "district": "07",
+   "cook_rating": "toss_up_r",
+   "cook_label": "Barrett"
+  },
+  {
+   "id": "house-mi-10",
+   "state": "MI",
+   "district": "10",
+   "cook_rating": "toss_up_r",
+   "cook_label": "OPEN (James)"
+  },
+  {
+   "id": "house-mt-01",
+   "state": "MT",
+   "district": "01",
+   "cook_rating": "toss_up_r",
+   "cook_label": "OPEN (Zinke)"
+  },
+  {
+   "id": "house-ny-17",
+   "state": "NY",
+   "district": "17",
+   "cook_rating": "toss_up_r",
+   "cook_label": "Lawler"
+  },
+  {
+   "id": "house-oh-07",
+   "state": "OH",
+   "district": "07",
+   "cook_rating": "toss_up_r",
+   "cook_label": "Miller"
+  },
+  {
+   "id": "house-pa-01",
+   "state": "PA",
+   "district": "01",
+   "cook_rating": "toss_up_r",
+   "cook_label": "Fitzpatrick"
+  },
+  {
+   "id": "house-sc-01",
+   "state": "SC",
+   "district": "01",
+   "cook_rating": "toss_up_r",
+   "cook_label": "OPEN (Mace)"
+  },
+  {
+   "id": "house-tx-15",
+   "state": "TX",
+   "district": "15",
+   "cook_rating": "toss_up_r",
+   "cook_label": "De La Cruz"
+  },
+  {
+   "id": "house-va-01",
+   "state": "VA",
+   "district": "01",
+   "cook_rating": "toss_up_r",
+   "cook_label": "Wittman"
+  },
+  {
+   "id": "house-ak-al",
+   "state": "AK",
+   "district": "AL",
+   "cook_rating": "lean_r",
+   "cook_label": "Begich III"
+  },
+  {
+   "id": "house-al-02",
+   "state": "AL",
+   "district": "02",
+   "cook_rating": "lean_r",
+   "cook_label": "Figures"
+  },
+  {
+   "id": "house-az-02",
+   "state": "AZ",
+   "district": "02",
+   "cook_rating": "lean_r",
+   "cook_label": "Crane"
+  },
+  {
+   "id": "house-co-04",
+   "state": "CO",
+   "district": "04",
+   "cook_rating": "lean_r",
+   "cook_label": "Boebert"
+  },
+  {
+   "id": "house-fl-07",
+   "state": "FL",
+   "district": "07",
+   "cook_rating": "lean_r",
+   "cook_label": "OPEN (Mills)"
+  },
+  {
+   "id": "house-fl-09",
+   "state": "FL",
+   "district": "09",
+   "cook_rating": "lean_r",
+   "cook_label": "Soto"
+  },
+  {
+   "id": "house-fl-13",
+   "state": "FL",
+   "district": "13",
+   "cook_rating": "lean_r",
+   "cook_label": "Luna"
+  },
+  {
+   "id": "house-fl-27",
+   "state": "FL",
+   "district": "27",
+   "cook_rating": "lean_r",
+   "cook_label": "Salazar"
+  },
+  {
+   "id": "house-in-05",
+   "state": "IN",
+   "district": "05",
+   "cook_rating": "lean_r",
+   "cook_label": "Spartz"
+  },
+  {
+   "id": "house-me-02",
+   "state": "ME",
+   "district": "02",
+   "cook_rating": "lean_r",
+   "cook_label": "OPEN (Golden)"
+  },
+  {
+   "id": "house-mn-01",
+   "state": "MN",
+   "district": "01",
+   "cook_rating": "lean_r",
+   "cook_label": "Finstad"
+  },
+  {
+   "id": "house-nv-02",
+   "state": "NV",
+   "district": "02",
+   "cook_rating": "lean_r",
+   "cook_label": "OPEN (Amodei)"
+  },
+  {
+   "id": "house-ny-21",
+   "state": "NY",
+   "district": "21",
+   "cook_rating": "lean_r",
+   "cook_label": "OPEN (Stefanik)"
+  },
+  {
+   "id": "house-oh-10",
+   "state": "OH",
+   "district": "10",
+   "cook_rating": "lean_r",
+   "cook_label": "Turner"
+  },
+  {
+   "id": "house-oh-15",
+   "state": "OH",
+   "district": "15",
+   "cook_rating": "lean_r",
+   "cook_label": "Carey"
+  },
+  {
+   "id": "house-tx-23",
+   "state": "TX",
+   "district": "23",
+   "cook_rating": "lean_r",
+   "cook_label": "VACANT"
+  },
+  {
+   "id": "house-wi-01",
+   "state": "WI",
+   "district": "01",
+   "cook_rating": "lean_r",
+   "cook_label": "Steil"
+  },
+  {
+   "id": "house-ar-02",
+   "state": "AR",
+   "district": "02",
+   "cook_rating": "likely_r",
+   "cook_label": "Hill"
+  },
+  {
+   "id": "house-co-03",
+   "state": "CO",
+   "district": "03",
+   "cook_rating": "likely_r",
+   "cook_label": "Hurd"
+  },
+  {
+   "id": "house-fl-16",
+   "state": "FL",
+   "district": "16",
+   "cook_rating": "likely_r",
+   "cook_label": "OPEN (Buchanan)"
+  },
+  {
+   "id": "house-ks-02",
+   "state": "KS",
+   "district": "02",
+   "cook_rating": "likely_r",
+   "cook_label": "Schmidt"
+  },
+  {
+   "id": "house-mo-02",
+   "state": "MO",
+   "district": "02",
+   "cook_rating": "likely_r",
+   "cook_label": "Wagner"
+  },
+  {
+   "id": "house-nc-03",
+   "state": "NC",
+   "district": "03",
+   "cook_rating": "likely_r",
+   "cook_label": "Murphy"
+  },
+  {
+   "id": "house-nc-05",
+   "state": "NC",
+   "district": "05",
+   "cook_rating": "likely_r",
+   "cook_label": "Foxx"
+  },
+  {
+   "id": "house-nc-09",
+   "state": "NC",
+   "district": "09",
+   "cook_rating": "likely_r",
+   "cook_label": "Hudson"
+  },
+  {
+   "id": "house-nc-13",
+   "state": "NC",
+   "district": "13",
+   "cook_rating": "likely_r",
+   "cook_label": "Knott"
+  },
+  {
+   "id": "house-ne-01",
+   "state": "NE",
+   "district": "01",
+   "cook_rating": "likely_r",
+   "cook_label": "Flood"
+  },
+  {
+   "id": "house-nj-02",
+   "state": "NJ",
+   "district": "02",
+   "cook_rating": "likely_r",
+   "cook_label": "Van Drew"
+  },
+  {
+   "id": "house-tx-09",
+   "state": "TX",
+   "district": "09",
+   "cook_rating": "likely_r",
+   "cook_label": "OPEN (Green)"
+  },
+  {
+   "id": "house-va-05",
+   "state": "VA",
+   "district": "05",
+   "cook_rating": "likely_r",
+   "cook_label": "McGuire"
+  },
+  {
+   "id": "house-wa-05",
+   "state": "WA",
+   "district": "05",
+   "cook_rating": "likely_r",
+   "cook_label": "Baumgartner"
+  }
+ ]
+}

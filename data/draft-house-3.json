@@ -1,0 +1,882 @@
+{
+ "generated_at": "2026-10-31T18:46:49Z",
+ "races": [
+  {
+   "id": "house-ar-02",
+   "office": "house",
+   "state": "AR",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "French Hill",
+     "surname": "Hill",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Chris Jones",
+     "surname": "Jones",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Arkansas%27_2nd_Congressional_District_election,_2026"
+   ]
+  },
+  {
+   "id": "house-az-06",
+   "office": "house",
+   "state": "AZ",
+   "district": "06",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Juan Ciscomani",
+     "surname": "Ciscomani",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "JoAnna Mendoza",
+     "surname": "Mendoza",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Gary Swing",
+     "surname": "Swing",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Jereme Peters",
+     "surname": "Peters",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Arizona%27s_6th_Congressional_District_election,_2026",
+    "https://app.enhancedvoting.com/results/public/cochise-county-az/elections/110326GeneralElection/ballot-items/01000000-f0c4-e619-1c5f-08df29429bc7",
+    "https://azluminaria.org/2026/10/13/arizona-district-6-voter-guide-where-ciscomani-mendoza-swing-stand"
+   ],
+   "notes": "Ballot name for Peters: Jereme Lance Peters. Write-in: Michael Dorland (Independent), listed by Ballotpedia as a write-in; left out. Cochise County's results page lists him alongside the printed candidates, so worth a human check that he is write-in only."
+  },
+  {
+   "id": "house-ca-45",
+   "office": "house",
+   "state": "CA",
+   "district": "45",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Derek Tran",
+     "surname": "Tran",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Chuong Vo",
+     "surname": "Vo",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/California%27s_45th_Congressional_District_election,_2026"
+   ],
+   "notes": "California top-two system: Tran and Vo advanced from the top-two primary. District boundaries changed for 2026."
+  },
+  {
+   "id": "house-co-04",
+   "office": "house",
+   "state": "CO",
+   "district": "04",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Lauren Boebert",
+     "surname": "Boebert",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Eileen Laubacher",
+     "surname": "Laubacher",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Douglas Mangeris",
+     "surname": "Mangeris",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Colorado%27s_4th_Congressional_District_election,_2026",
+    "https://www.cpr.org/2026/09/25/vg-2026-4th-congressional-district-third-party-voter-guide/"
+   ],
+   "notes": "Write-in: Luis Galvan (R), marked write-in by Ballotpedia; left out. A Morgan County ballot proof lists only Boebert, Laubacher and Mangeris."
+  },
+  {
+   "id": "house-fl-07",
+   "office": "house",
+   "state": "FL",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Bale Dalton",
+     "surname": "Dalton",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ryan Elijah",
+     "surname": "Elijah",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Christopher Dennison",
+     "surname": "Dennison",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_7th_Congressional_District_election,_2026",
+    "https://politico.com/news/2026/08/18/cory-mills-lost-primary-01041302"
+   ],
+   "notes": "No incumbent on the ballot: Rep. Cory Mills (R) lost the 18 Aug 2026 Republican primary to Ryan Elijah."
+  },
+  {
+   "id": "house-fl-14",
+   "office": "house",
+   "state": "FL",
+   "district": "14",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Kathy Castor",
+     "surname": "Castor",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Mike Beltran",
+     "surname": "Beltran",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Brian Lambert",
+     "surname": "Lambert",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_14th_Congressional_District_election,_2026"
+   ],
+   "notes": "Write-ins: Salomon Hernandez and Keith Varian (both No Party Affiliation), qualified write-ins per Ballotpedia; left out. Florida uses a new 2026 congressional map."
+  },
+  {
+   "id": "house-fl-25",
+   "office": "house",
+   "state": "FL",
+   "district": "25",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jared Moskowitz",
+     "surname": "Moskowitz",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Scott Singer",
+     "surname": "Singer",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Peter Jassenoff",
+     "surname": "Jassenoff",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_25th_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia name: Jared Evan Moskowitz. Moskowitz currently represents the 23rd District; Florida adopted a new map in 2026 and he is running in the redrawn 25th (Ballotpedia marks him as incumbent). Write-in: Michaelangelo Hamilton (No Party Affiliation); left out."
+  },
+  {
+   "id": "house-ia-02",
+   "office": "house",
+   "state": "IA",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Lindsay James",
+     "surname": "James",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Joe Mitchell",
+     "surname": "Mitchell",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Rick Stewart",
+     "surname": "Stewart",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Dave Bushaw",
+     "surname": "Bushaw",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Iowa%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat: incumbent Ashley Hinson (R) not running for re-election. Bushaw is listed as No Party / independent. Surname 'James' is also a common first name; the text filter may get false matches."
+  },
+  {
+   "id": "house-in-05",
+   "office": "house",
+   "state": "IN",
+   "district": "05",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Victoria Spartz",
+     "surname": "Spartz",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "J.D. Ford",
+     "surname": "Ford",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Indiana%27s_5th_Congressional_District_election,_2026"
+   ]
+  },
+  {
+   "id": "house-me-02",
+   "office": "house",
+   "state": "ME",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Matthew Dunlap",
+     "surname": "Dunlap",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Paul LePage",
+     "surname": "LePage",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Maine%27s_2nd_Congressional_District_election,_2026",
+    "https://themainemonitor.org/2nd-congressional-elections",
+    "https://themainemonitor.org/ranked-choice-voting-guide-2026"
+   ],
+   "notes": "Open seat: incumbent Jared Golden (D) did not seek re-election. Maine uses ranked-choice voting for House general elections, so a winner may need an RCV tabulation if no one gets a majority of first choices. Press name for Dunlap is often 'Matt Dunlap'. Write-in: Gregory A. Ward (Independent), declared write-in; left out."
+  },
+  {
+   "id": "house-mi-08",
+   "office": "house",
+   "state": "MI",
+   "district": "08",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Kristen McDonald Rivet",
+     "surname": "McDonald Rivet",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Thomas J. Smith",
+     "surname": "Smith",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Jim Casha",
+     "surname": "Casha",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "C. Mia Pettus",
+     "surname": "Pettus",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Kathy Goodwin",
+     "surname": "Goodwin",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Michigan%27s_8th_Congressional_District_election,_2026",
+    "https://app.enhancedvoting.com/results/public/saginaw-county-mi/elections/_20261016111322/ballot-items/01000000-e2ab-6738-4485-08df2b9273ae",
+    "https://michiganpublic.org/politics-government/2026-08-05/republican-congressional-candidate-wins-8th-district-primary-even-though-he-dropped-out"
+   ],
+   "notes": "Goodwin is the Working Class Party nominee. Smith suspended his campaign in mid-July but still won the 4 Aug Republican primary and is on the general ballot; Michigan Public reported in October that he is campaigning against McDonald Rivet. Press often say 'Tom Smith'; the surname 'Smith' is common, so the text filter may get false matches."
+  },
+  {
+   "id": "house-mn-02",
+   "office": "house",
+   "state": "MN",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Matt Little",
+     "surname": "Little",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Pratt",
+     "surname": "Pratt",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Minnesota%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat: incumbent Angie Craig (D) is running for US Senate. Little is the DFL (Minnesota's Democratic Party) nominee. The surname 'Little' is a common word, so the text filter may get false matches."
+  },
+  {
+   "id": "house-nc-01",
+   "office": "house",
+   "state": "NC",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Donald Davis",
+     "surname": "Davis",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Laurie Buckhout",
+     "surname": "Buckhout",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Tom Bailey",
+     "surname": "Bailey",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_1st_Congressional_District_election,_2026"
+   ],
+   "notes": "District boundaries redrawn for 2026."
+  },
+  {
+   "id": "house-nc-09",
+   "office": "house",
+   "state": "NC",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Richard Hudson",
+     "surname": "Hudson",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Richard Ojeda",
+     "surname": "Ojeda",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_9th_Congressional_District_election,_2026"
+   ],
+   "notes": "Both candidates' first name is Richard; match on surname."
+  },
+  {
+   "id": "house-ne-01",
+   "office": "house",
+   "state": "NE",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mike Flood",
+     "surname": "Flood",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Christopher Backemeyer",
+     "surname": "Backemeyer",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Dan Hartong",
+     "surname": "Hartong",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Nik Sandman",
+     "surname": "Sandman",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nebraska%27s_1st_Congressional_District_election,_2026",
+    "https://nebraskaexaminer.com/voter-guides/contests/2026-general-u-s-house-district-1",
+    "https://votesee.org/ballot/nebraska/district-1"
+   ],
+   "notes": "Hartong is the America First Party (Nebraska) nominee; some sources list him as Daniel Hartong. Press often say 'Chris Backemeyer'. 'Flood' is a common word, so the text filter may get false matches."
+  },
+  {
+   "id": "house-nj-02",
+   "office": "house",
+   "state": "NJ",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jeff Van Drew",
+     "surname": "Van Drew",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Zack Mullock",
+     "surname": "Mullock",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ramon Mora Jr.",
+     "surname": "Mora",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_Jersey%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Mora is an independent; New Jersey Globe reported in June 2026 that he stays on the ballot."
+  },
+  {
+   "id": "house-nm-02",
+   "office": "house",
+   "state": "NM",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Gabriel Vasquez",
+     "surname": "Vasquez",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Greg Cunningham",
+     "surname": "Cunningham",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_Mexico%27s_2nd_Congressional_District_election,_2026"
+   ]
+  },
+  {
+   "id": "house-nv-03",
+   "office": "house",
+   "state": "NV",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Susie Lee",
+     "surname": "Lee",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Marty O'Donnell",
+     "surname": "O'Donnell",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Jon Kamerath",
+     "surname": "Kamerath",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nevada%27s_3rd_Congressional_District_election,_2026"
+   ],
+   "notes": "Kamerath is the Independent American Party nominee. 'Lee' is a common name, so the text filter may get false matches."
+  },
+  {
+   "id": "house-ny-04",
+   "office": "house",
+   "state": "NY",
+   "district": "04",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Laura Gillen",
+     "surname": "Gillen",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Jeanine Driscoll",
+     "surname": "Driscoll",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Blay Tarnoff",
+     "surname": "Tarnoff",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_York%27s_4th_Congressional_District_election,_2026",
+    "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
+   ],
+   "notes": "NY fusion voting, per the state certification (7 Oct 2026): Gillen on the Democratic line only (no Working Families candidate); Driscoll on Republican and Conservative lines; Tarnoff on the Libertarian line."
+  },
+  {
+   "id": "house-ny-21",
+   "office": "house",
+   "state": "NY",
+   "district": "21",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Blake Gendebien",
+     "surname": "Gendebien",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Anthony Constantino",
+     "surname": "Constantino",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_York%27s_21st_Congressional_District_election,_2026",
+    "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
+   ],
+   "notes": "Open seat: incumbent Elise Stefanik (R) not running for re-election. NY fusion voting, per the state certification: Constantino on Republican and Taxpayer Rights lines; no Conservative or Working Families candidate. Write-in: Christopher Schmidt (Independent), not on the state certification; left out."
+  },
+  {
+   "id": "house-oh-09",
+   "office": "house",
+   "state": "OH",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Marcy Kaptur",
+     "surname": "Kaptur",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Derek Merrin",
+     "surname": "Merrin",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_9th_Congressional_District_election,_2026"
+   ],
+   "notes": "Write-in: Kathy McKinstry (Independent); left out. Ohio redrew its congressional map in October 2025."
+  },
+  {
+   "id": "house-oh-15",
+   "office": "house",
+   "state": "OH",
+   "district": "15",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mike Carey",
+     "surname": "Carey",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Don Leonard",
+     "surname": "Leonard",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brennan Barrington",
+     "surname": "Barrington",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_15th_Congressional_District_election,_2026"
+   ],
+   "notes": "Write-ins: Gary Josephson and Samuel Ronan (both Independent); left out. County ballots list Carey, Leonard and Barrington plus a write-in line. Ohio redrew its congressional map in October 2025."
+  },
+  {
+   "id": "house-pa-08",
+   "office": "house",
+   "state": "PA",
+   "district": "08",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Rob Bresnahan",
+     "surname": "Bresnahan",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Paige Cognetti",
+     "surname": "Cognetti",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania%27s_8th_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia name: Rob Bresnahan Jr."
+  },
+  {
+   "id": "house-tx-09",
+   "office": "house",
+   "state": "TX",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Leticia Gutierrez",
+     "surname": "Gutierrez",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Alex Mealer",
+     "surname": "Mealer",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_9th_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat: Rep. Al Green (D), who held the old 9th, is not on this ballot; Texas redrew its map mid-decade. Mealer's full first name is Alexandra. Ballotpedia notes 'the candidate list in this election may not be complete'."
+  },
+  {
+   "id": "house-tx-28",
+   "office": "house",
+   "state": "TX",
+   "district": "28",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Henry Cuellar",
+     "surname": "Cuellar",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Tano Tijerina",
+     "surname": "Tijerina",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Marlon Duran",
+     "surname": "Duran",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_28th_Congressional_District_election,_2026"
+   ],
+   "notes": "District redrawn in Texas's mid-decade redistricting."
+  },
+  {
+   "id": "house-va-01",
+   "office": "house",
+   "state": "VA",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Rob Wittman",
+     "surname": "Wittman",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Shannon Taylor",
+     "surname": "Taylor",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Virginia%27s_1st_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia name: Robert J. Wittman. 'Taylor' is also a common first name, so the text filter may get false matches."
+  },
+  {
+   "id": "house-va-07",
+   "office": "house",
+   "state": "VA",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Eugene Vindman",
+     "surname": "Vindman",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Douglas Ollivant",
+     "surname": "Ollivant",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Taner Demirci Lopez",
+     "surname": "Lopez",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Alaha Ahrar",
+     "surname": "Ahrar",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Joshua Ertle",
+     "surname": "Ertle",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Randall Terry",
+     "surname": "Terry",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Virginia%27s_7th_Congressional_District_election,_2026",
+    "https://elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-all-offices",
+    "https://vpap.org/offices/us-representative-7/elections",
+    "https://virginiamercury.com/voter-guides/contests/general-election-7th-congressional-district"
+   ],
+   "notes": "Six candidates on the ballot. Press names: 'Doug Ollivant', 'Taner Lopez', 'Josh Ertle'. Virginia Mercury (12 Oct) reports Ollivant is staying in the race after a cancer diagnosis. 'Terry' is also a common first name, so the text filter may get false matches."
+  },
+  {
+   "id": "house-wi-01",
+   "office": "house",
+   "state": "WI",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Bryan Steil",
+     "surname": "Steil",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Mitchell Berman",
+     "surname": "Berman",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Wisconsin%27s_1st_Congressional_District_election,_2026"
+   ]
+  }
+ ]
+}

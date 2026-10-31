@@ -1,0 +1,6486 @@
+{
+ "generated_at": "2026-10-31",
+ "status": "draft: every Senate and Governor entry and every competitive House entry needs a person to check it",
+ "sources_overview": [
+  "https://ballotpedia.org/Gubernatorial_elections,_2026",
+  "35 races: 33 regular Class II seats plus specials in Florida and Ohio, matching the Ballotpedia overview https://ballotpedia.org/United_States_Senate_elections,_2026. DRAFT: each entry needs a check by a person before use. Candidate lists exclude write-ins. poll_close_et is the LATEST close anywhere in the state; the networks often treat a state as 'closed' earlier."
+ ],
+ "races": [
+  {
+   "id": "senate-ak",
+   "office": "senate",
+   "state": "AK",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-04T01:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Dan Sullivan",
+     "surname": "Sullivan",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Mary Peltola",
+     "surname": "Peltola",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Daniel J. Sullivan Jr.",
+     "surname": "Sullivan",
+     "party": null,
+     "incumbent": false
+    },
+    {
+     "name": "Gerald Heikes",
+     "surname": "Heikes",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Alaska Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://nbcnews.com/politics/2026-election/alaska-finalizes-senate-race-november-3-republicans-2-dan-sullivan-1-democrat-rcna595617",
+    "https://cbsnews.com/news/alaska-senate-two-dan-sullivans-mary-peltola"
+   ],
+   "notes": "Top-four primary, ranked-choice general; if no one passes 50% of first choices, the tabulation runs later, so the call may come days after election night. TWO CANDIDATES SURNAMED SULLIVAN: incumbent Sen. Dan S. Sullivan (R; ballot 'Sullivan, Dan S.', Ballotpedia 'Daniel S. Sullivan') and retired teacher Daniel J. Sullivan Jr. The surname filter cannot tell them apart; the detector must match the full name/incumbent. Party of Daniel J. Sullivan Jr. is null on purpose: Ballotpedia and NBC (1 Sep) list him as Republican, but CBS reports the sample ballot shows him with no party affiliation. DOJ has asked Alaska to segregate ballots ranking him, and the governor has ordered an investigation (late Oct 2026), so his ballot status may be litigated. Gerald Heikes (R) advanced after Democrat David Leslie withdrew. Most polls close 8pm AKST (midnight ET); the Aleutians west of 169.5W close 8pm HAST (1am ET Wed 4 Nov), which is the value used. Media treat the state as callable from midnight ET.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-al",
+   "office": "senate",
+   "state": "AL",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Barry Moore",
+     "surname": "Moore",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Everett Wess",
+     "surname": "Wess",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "query": "Alabama Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Alabama,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Open seat: Tommy Tuberville (R) ran for governor. Polls close 7pm CT (8pm ET); AP says ET-zone portions of Chambers, Lee and Russell counties also close 7pm CT.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ar",
+   "office": "senate",
+   "state": "AR",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:30:00-05:00",
+   "candidates": [
+    {
+     "name": "Tom Cotton",
+     "surname": "Cotton",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Hallie Shoffner",
+     "surname": "Shoffner",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Jeff Wadlin",
+     "surname": "Wadlin",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Arkansas Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Arkansas,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Ballotpedia flags the candidate list as possibly incomplete.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-co",
+   "office": "senate",
+   "state": "CO",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "John Hickenlooper",
+     "surname": "Hickenlooper",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Mark Baisley",
+     "surname": "Baisley",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Chris Baum",
+     "surname": "Baum",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Robert Chew",
+     "surname": "Chew",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Clinton Dale",
+     "surname": "Dale",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Joshua Kuebler",
+     "surname": "Kuebler",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Robert Wolfe",
+     "surname": "Wolfe",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Adam Withrow",
+     "surname": "Withrow",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Matthew Wood",
+     "surname": "Wood",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Colorado Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Colorado,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Other-party labels: Baum = Approval Voting Party, Chew = Colorado Forward Party, Withrow = Unity Party. Dale, Kuebler, Wolfe listed Unaffiliated; Wood listed Independent. Ballotpedia flags the list as possibly incomplete. Write-in candidates listed by Ballotpedia are excluded. Mostly mail voting; ballots due 7pm MT (9pm ET).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-de",
+   "office": "senate",
+   "state": "DE",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Chris Coons",
+     "surname": "Coons",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Michael Katz",
+     "surname": "Katz",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Delaware Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Delaware,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Three unaffiliated write-in candidates are excluded. Ballotpedia flags the list as possibly incomplete.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-fl-special",
+   "office": "senate",
+   "state": "FL",
+   "district": null,
+   "special": true,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Ashley Moody",
+     "surname": "Moody",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Angela Nixon",
+     "surname": "Nixon",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Neil Gillespie",
+     "surname": "Gillespie",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Florida Senate special election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_special_election_in_Florida,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Special election for the rest of Marco Rubio's term (ends Jan 2029). Moody was appointed in Jan 2025 (Ballotpedia lists 'Ashley B. Moody'). Gillespie is No Party Affiliation. Most polls close 7pm ET; the western panhandle (CT) closes 8pm ET, which is the value used.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ga",
+   "office": "senate",
+   "state": "GA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jon Ossoff",
+     "surname": "Ossoff",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Mike Collins",
+     "surname": "Collins",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Allen Buckley",
+     "surname": "Buckley",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Elbert Bartell",
+     "surname": "Bartell",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Chris Capparell",
+     "surname": "Capparell",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Georgia Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://georgia.gov/events/2026-12-01/election-day-general-election-runoff"
+   ],
+   "notes": "Majority required: if no candidate passes 50%, a runoff between the top two is held on 1 Dec 2026, so election night may produce no winner. Note surname 'Collins' also appears in the Maine race (Susan Collins). Write-in candidates listed by Ballotpedia are excluded.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ia",
+   "office": "senate",
+   "state": "IA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Josh Turek",
+     "surname": "Turek",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ashley Hinson",
+     "surname": "Hinson",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Thomas Laehn",
+     "surname": "Laehn",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Iowa Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Iowa,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Open seat: Joni Ernst (R) not running. Polls close 8pm CT.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-id",
+   "office": "senate",
+   "state": "ID",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jim Risch",
+     "surname": "Risch",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Todd Achilles",
+     "surname": "Achilles",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Natalie Fleming",
+     "surname": "Fleming",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Matt Loesby",
+     "surname": "Loesby",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Idaho Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Idaho,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "No Democratic nominee on the general ballot per Ballotpedia. Southern Idaho (MT) closes 8pm MT (10pm ET); the northern panhandle (PT) closes 8pm PT (11pm ET), which is the value used. Networks treat most polls as closed at 10pm ET.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-il",
+   "office": "senate",
+   "state": "IL",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Juliana Stratton",
+     "surname": "Stratton",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Don Tracy",
+     "surname": "Tracy",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Whitfield Harrington Jr.",
+     "surname": "Harrington",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Illinois Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Illinois,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://cbsnews.com/chicago/news/who-is-running-us-senate-illinois-general-election-2026",
+    "https://will.illinois.edu/21stshow/story/we-interviewed-all-three-candidates-for-u.s-senate-in-illinois-hear-the-highlights"
+   ],
+   "notes": "Open seat: Dick Durbin (D) retiring. Harrington is the American Center Party nominee. The fetched Ballotpedia page was truncated before the general-election table; the three-candidate list comes from the Ballotpedia search summary and CBS Chicago ('three candidates are on the ballot').",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ks",
+   "office": "senate",
+   "state": "KS",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Roger Marshall",
+     "surname": "Marshall",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Adam Hamilton",
+     "surname": "Hamilton",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "David Graham",
+     "surname": "Graham",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Kansas Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Kansas,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Polls close 7pm local; the western MT-zone counties close 7pm MT (9pm ET), which is the value used (most of the state closes 8pm ET). Counties may keep polls open until 8pm CT. Note surname 'Graham' also appears in South Carolina (Darline Graham).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ky",
+   "office": "senate",
+   "state": "KY",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Charles Booker",
+     "surname": "Booker",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Andy Barr",
+     "surname": "Barr",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Christopher Campbell",
+     "surname": "Campbell",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Kentucky Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Kentucky,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Open seat: Mitch McConnell (R) retiring. Campbell is the Kentucky Party nominee. Write-in Thomas Murphy excluded. Eastern-zone polls close 6pm ET; central-zone polls close 6pm CT (7pm ET), which is the value used. Note surname 'Booker' also appears in New Jersey (Cory Booker).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-la",
+   "office": "senate",
+   "state": "LA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Julia Letlow",
+     "surname": "Letlow",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Jamie Davis",
+     "surname": "Davis",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "query": "Louisiana Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Louisiana,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://sos.la.gov/elections-voting/closed-party-primary-elections"
+   ],
+   "notes": "First use of Louisiana's closed party primaries for U.S. Senate; incumbent Bill Cassidy (R) lost the Republican primary. The November general is decided by plurality, with no runoff (Louisiana SOS). Polls close 8pm CT.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ma",
+   "office": "senate",
+   "state": "MA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Ed Markey",
+     "surname": "Markey",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "John Deaton",
+     "surname": "Deaton",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Philip Devincentis",
+     "surname": "Devincentis",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Joseph Tache",
+     "surname": "Tache",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Shiva Ayyadurai",
+     "surname": "Ayyadurai",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Morgan Dawicki",
+     "surname": "Dawicki",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Massachusetts Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Massachusetts,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Devincentis = American Independent Party; Tache = Party for Socialism and Liberation. Ballotpedia lists the incumbent as 'Edward J. Markey'.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-me",
+   "office": "senate",
+   "state": "ME",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Susan Collins",
+     "surname": "Collins",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Troy Jackson",
+     "surname": "Jackson",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "query": "Maine Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://apnews.com/article/maine-collins-jackson-dunlap-lepage-pingree-charles-0738e23c17299037479d9807d7f7bb62"
+   ],
+   "notes": "Ranked-choice voting: if no one passes 50% of first choices, the RCV tabulation happens days later, so the call may be delayed. Troy Jackson replaced Graham Platner as Democratic nominee on 25 Jul 2026. Ballotpedia lists six others, all write-ins (excluded). Note surname 'Collins' also appears in Georgia (Mike Collins).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-mi",
+   "office": "senate",
+   "state": "MI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Abdul El-Sayed",
+     "surname": "El-Sayed",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Mike Rogers",
+     "surname": "Rogers",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Douglas P. Marsh",
+     "surname": "Marsh",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Lydia Christensen",
+     "surname": "Christensen",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Timothy Long",
+     "surname": "Long",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Michigan Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Open seat: Gary Peters (D) retiring. Long is the U.S. Taxpayers Party nominee. The candidate list comes from the Ballotpedia page summary; the fetched page was truncated before the candidate table. Most polls close 8pm ET; four western Upper Peninsula counties (CT) close 8pm CT (9pm ET), which is the value used.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-mn",
+   "office": "senate",
+   "state": "MN",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Peggy Flanagan",
+     "surname": "Flanagan",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Michele Tafoya",
+     "surname": "Tafoya",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Rebecca Whiting",
+     "surname": "Whiting",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Marisa Simonetti",
+     "surname": "Simonetti",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Minnesota Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Minnesota,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Open seat: Tina Smith (D) retiring. Write-in Alycia Gruenhagen excluded. Polls close 8pm CT.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ms",
+   "office": "senate",
+   "state": "MS",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Cindy Hyde-Smith",
+     "surname": "Hyde-Smith",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Scott Colom",
+     "surname": "Colom",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ty Pinkins",
+     "surname": "Pinkins",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Mississippi Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Mississippi,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": null,
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-mt",
+   "office": "senate",
+   "state": "MT",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T22:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Kurt Alme",
+     "surname": "Alme",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Alani Bankhead",
+     "surname": "Bankhead",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Seth Bodnar",
+     "surname": "Bodnar",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Kyle Austin",
+     "surname": "Austin",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Montana Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://lccountymt.gov/files/assets/county/v/1/treasurer-clerk-and-recorder/documents/elections/sample-ballots/2026-general-publication-ballot.pdf",
+    "https://candidatefiling.mt.gov/candidatefiling/CandidateList.aspx?e=450002987"
+   ],
+   "notes": "Open seat: Steve Daines (R) not on the ballot. The Lewis and Clark County publication ballot lists exactly these four; write-in Jami Woodman is excluded. Polls close 8pm MT.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-nc",
+   "office": "senate",
+   "state": "NC",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "candidates": [
+    {
+     "name": "Roy Cooper",
+     "surname": "Cooper",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Michael Whatley",
+     "surname": "Whatley",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Brian McGinnis",
+     "surname": "McGinnis",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Shannon Bray",
+     "surname": "Bray",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Shaunesi Deberry",
+     "surname": "Deberry",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "North Carolina Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_North_Carolina,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Open seat: Thom Tillis (R) retiring. The list comes from the Ballotpedia page text ('Cooper, Whatley and three other candidates'); the fetched page was truncated before the candidate table.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ne",
+   "office": "senate",
+   "state": "NE",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Pete Ricketts",
+     "surname": "Ricketts",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Dan Osborn",
+     "surname": "Osborn",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Chuck Conboy",
+     "surname": "Conboy",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Mike Marvin",
+     "surname": "Marvin",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Robin Richards",
+     "surname": "Richards",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Nebraska Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "No Democratic nominee; Osborn is listed as Nonpartisan/independent. Conboy = America First Party Nebraska; Marvin = Legal Marijuana Now Party; Richards = Nebraska Working People Party. All polls close at the same moment: 8pm CT / 7pm MT (9pm ET).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-nh",
+   "office": "senate",
+   "state": "NH",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Chris Pappas",
+     "surname": "Pappas",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "John E. Sununu",
+     "surname": "Sununu",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Edmond Laplante",
+     "surname": "Laplante",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "New Hampshire Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Open seat: Jeanne Shaheen (D) retiring. Sununu is former Sen. John E. Sununu. Laplante = Constitution Party. Poll hours vary by town (polls cannot close before 7pm); Green Papers gives 8pm ET as the media closing time ('reportedly').",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-nj",
+   "office": "senate",
+   "state": "NJ",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Cory Booker",
+     "surname": "Booker",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Justin Murphy",
+     "surname": "Murphy",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Veronica Fernandez",
+     "surname": "Fernandez",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Joanne Kuniansky",
+     "surname": "Kuniansky",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "New Jersey Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_New_Jersey,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Fernandez = End the Corruption! Party; Kuniansky = Socialist Workers Party. Note surname 'Booker' also appears in Kentucky (Charles Booker).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-nm",
+   "office": "senate",
+   "state": "NM",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Ben Ray Luján",
+     "surname": "Luján",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Larry E. Marker",
+     "surname": "Marker",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "New Mexico Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_New_Mexico,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "The surname filter should also match the unaccented 'Lujan'.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-oh-special",
+   "office": "senate",
+   "state": "OH",
+   "district": null,
+   "special": true,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "candidates": [
+    {
+     "name": "Jon Husted",
+     "surname": "Husted",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Sherrod Brown",
+     "surname": "Brown",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Bill Redpath",
+     "surname": "Redpath",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Gregory Levy",
+     "surname": "Levy",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Ohio Senate special election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_special_election_in_Ohio,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Special election for the rest of JD Vance's term (ends Jan 2029). Husted was appointed in Jan 2025. Three independent write-ins excluded. Polls close 7:30pm ET. Note surname 'Brown' also appears in Texas (Ted Brown, L).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ok",
+   "office": "senate",
+   "state": "OK",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Kevin Hern",
+     "surname": "Hern",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "N'Kiyla Thomas",
+     "surname": "Thomas",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Sevier White",
+     "surname": "White",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Ron Meinhardt",
+     "surname": "Meinhardt",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Curtis Stinnett",
+     "surname": "Stinnett",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Oklahoma Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Oklahoma,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://oklahoma.gov/oag/news/newsroom/2026/october/drummond-nov-3-winner-will-fill-remainder-of-u-s-senate-term.html",
+    "https://cbsnews.com/news/alan-armstrong-oklahoma-senator-markwayne-mullin"
+   ],
+   "notes": "Regular election for the seat Markwayne Mullin left to become DHS Secretary. Appointed Sen. Alan Armstrong (R, since Mar 2026) is not a candidate, so there is no incumbent on the ballot. Per the Oklahoma AG's opinion of 29 Oct 2026, the 3 Nov winner also fills the rest of the current term; there is no separate special election. Polls close 7pm CT.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-or",
+   "office": "senate",
+   "state": "OR",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jeff Merkley",
+     "surname": "Merkley",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "David Brock Smith",
+     "surname": "Smith",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Gary Dye",
+     "surname": "Dye",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Chris Henry",
+     "surname": "Henry",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "query": "Oregon Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Oregon,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Merkley is cross-nominated by the Working Families Party; Henry by the Pacific Green and Progressive parties. Surname 'Smith' is very common, so the detector should match the full name 'Brock Smith'. Vote by mail; ballots due 8pm local. Most of the state is PT (11pm ET, the value used); Malheur County (MT) closes 10pm ET.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-ri",
+   "office": "senate",
+   "state": "RI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jack Reed",
+     "surname": "Reed",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Raymond McKay",
+     "surname": "McKay",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Michael Bahry",
+     "surname": "Bahry",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Rhode Island Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Rhode_Island,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": null,
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-sc",
+   "office": "senate",
+   "state": "SC",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Darline Graham",
+     "surname": "Graham",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Annie Andrews",
+     "surname": "Andrews",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Mark Hackett",
+     "surname": "Hackett",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Kasie Whitener",
+     "surname": "Whitener",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "South Carolina Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_South_Carolina,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://governor.sc.gov/news/2026-07/gov-mcmaster-appoints-darline-graham-us-senate",
+    "https://news.ballotpedia.org/2026/07/16/lindsey-grahams-death-will-set-off-a-special-primary-election-for-a-senate-seat-thats-open-for-the-second-time-since-1956"
+   ],
+   "notes": "Sen. Lindsey Graham (R) died on 11 Jul 2026. Gov. McMaster appointed his sister Darline Graham (also styled Darline Graham Nordone), who was sworn in on 14 Jul 2026 and won the special Republican primary and runoff to replace him on the November ballot. Hackett = Constitution Party. Write-in Catherine Fleming Bruce (D) excluded. Not confirmed whether the 3 Nov winner also fills the rest of the current term before 3 Jan 2027; no separate special election is listed. Note surname 'Graham' also appears in Kansas (David Graham, L).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-sd",
+   "office": "senate",
+   "state": "SD",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Mike Rounds",
+     "surname": "Rounds",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Brian Bengs",
+     "surname": "Bengs",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "South Dakota Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_South_Dakota,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "No Democratic nominee. Polls close 7pm local; the western MT-zone part closes 9pm ET, which is the value used (the CT part closes 8pm ET).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-tn",
+   "office": "senate",
+   "state": "TN",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Bill Hagerty",
+     "surname": "Hagerty",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Marquita Bradshaw",
+     "surname": "Bradshaw",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Tharon Chandler",
+     "surname": "Chandler",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Andrew Gerena",
+     "surname": "Gerena",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jeremy Hearn",
+     "surname": "Hearn",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Robert Jones",
+     "surname": "Jones",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "James Macon III",
+     "surname": "Macon",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Yoshi Matthews",
+     "surname": "Matthews",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "David Sutman Jr.",
+     "surname": "Sutman",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Catherine Whitson",
+     "surname": "Whitson",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Tennessee Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Tennessee,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Eight independents are on the ballot per Ballotpedia. All polls close at the same moment: 8pm ET / 7pm CT.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-tx",
+   "office": "senate",
+   "state": "TX",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Ken Paxton",
+     "surname": "Paxton",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "James Talarico",
+     "surname": "Talarico",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ted Brown",
+     "surname": "Brown",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Texas Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc",
+    "https://electionresults.sos.state.tx.us/results.html"
+   ],
+   "notes": "Incumbent John Cornyn (R) lost the Republican primary runoff to Paxton. The Texas SOS results page lists Paxton, Talarico and Brown plus write-ins (excluded); Ballotpedia's 'five other candidates' includes write-ins. Most polls close 7pm CT (8pm ET); El Paso and Hudspeth (MT) close 9pm ET, which is the value used. Note surname 'Brown' also appears in Ohio (Sherrod Brown).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-va",
+   "office": "senate",
+   "state": "VA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Mark Warner",
+     "surname": "Warner",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Bert Mizusawa",
+     "surname": "Mizusawa",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Virginia Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Virginia,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": null,
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-wv",
+   "office": "senate",
+   "state": "WV",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "candidates": [
+    {
+     "name": "Shelley Moore Capito",
+     "surname": "Capito",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Rachel Fetty Anderson",
+     "surname": "Anderson",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "S. Marshall Wilson",
+     "surname": "Wilson",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "West Virginia Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_West_Virginia,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Wilson = Constitution Party. Write-in Rio Phillips excluded. Fox lists the Democrat as 'Rachel Anderson'. Green Papers marks the 7:30pm ET close as 'reportedly'; Ballotpedia gives 6:30am to 7:30pm.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "senate-wy",
+   "office": "senate",
+   "state": "WY",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Harriet Hageman",
+     "surname": "Hageman",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "James Byrd",
+     "surname": "Byrd",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "query": "Wyoming Senate election results 2026",
+   "sources": [
+    "https://ballotpedia.org/United_States_Senate_election_in_Wyoming,_2026",
+    "https://ballotpedia.org/State_Poll_Opening_and_Closing_Times_(2026)",
+    "https://thegreenpapers.com/G26/closing.phtml?format=gc"
+   ],
+   "notes": "Open seat: Cynthia Lummis (R) not on the ballot; Hageman is the at-large U.S. Representative.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ak",
+   "office": "governor",
+   "state": "AK",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-04T01:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jonathan Kreiss-Tomkins",
+     "surname": "Kreiss-Tomkins",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "David Bronson",
+     "surname": "Bronson",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Treg Taylor",
+     "surname": "Taylor",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Bernadette Wilson",
+     "surname": "Wilson",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Alaska governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Alaska_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://alaskabeacon.com/2026/08/31/last-day-shakeup-in-alaskas-race-for-governor-puts-disqualified-candidates-wife-on-the-ballot",
+    "https://adn.com/politics/2026/08/28/tom-begich-says-he-will-withdraw-from-alaska-governors-race",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Top-four primary; general uses ranked-choice voting, so the result may take days (RCV tabulation). Tom Begich (D), second in the primary, withdrew by 31 Aug 2026 and is off the ballot; Bernadette Wilson moved up. Latest close is 1am ET Wed 4 Nov (Aleutians, Hawaii-Aleutian time); most of Alaska closes at midnight ET. Surname 'Wilson' also appears in SC governor race (different state).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-al",
+   "office": "governor",
+   "state": "AL",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Doug Jones",
+     "surname": "Jones",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Tommy Tuberville",
+     "surname": "Tuberville",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Alabama governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Alabama_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Write-in Ronald Burnette Jr. (Independent) excluded. Polls close 7pm CT statewide (8pm ET).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ar",
+   "office": "governor",
+   "state": "AR",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:30:00-05:00",
+   "candidates": [
+    {
+     "name": "Sarah Huckabee Sanders",
+     "surname": "Sanders",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Fredrick Love",
+     "surname": "Love",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Colt Shelby",
+     "surname": "Shelby",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Arkansas governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Arkansas_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": null,
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-az",
+   "office": "governor",
+   "state": "AZ",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Katie Hobbs",
+     "surname": "Hobbs",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Andy Biggs",
+     "surname": "Biggs",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Risa Lombardo",
+     "surname": "Lombardo",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Teri Hourihan",
+     "surname": "Hourihan",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Arizona governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Arizona_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Teri Hourihan is No Labels Party (party=other). Write-ins Gertritrude Gonzalez and Alice Novoa (R) excluded. Leezah Sun (I) withdrew. Ballotpedia notes its candidate list may not be complete.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ca",
+   "office": "governor",
+   "state": "CA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Xavier Becerra",
+     "surname": "Becerra",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Steve Hilton",
+     "surname": "Hilton",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "California governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/California_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Top-two general election (both advanced from the 2 June top-two primary). Counting typically takes days to weeks.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-co",
+   "office": "governor",
+   "state": "CO",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Phil Weiser",
+     "surname": "Weiser",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Victor Marx",
+     "surname": "Marx",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Stephen Hamilton",
+     "surname": "Hamilton",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Erik Underwood",
+     "surname": "Underwood",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Mulder",
+     "surname": "Mulder",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Greg Lopez",
+     "surname": "Lopez",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jeff Peckman",
+     "surname": "Peckman",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Colorado governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Colorado_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Party=other: Stephen Hamilton (American Constitution Party), Erik Underwood (Approval Voting Party), Jeff Peckman (Unity Party). Greg Lopez is Unaffiliated. Ballotpedia notes list may not be complete.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ct",
+   "office": "governor",
+   "state": "CT",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Ned Lamont",
+     "surname": "Lamont",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Ryan Fazio",
+     "surname": "Fazio",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Connecticut governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Connecticut_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Lamont also on Working Families Party line; Fazio also on Independent Party of Connecticut line. Zenobia Adgers and Christian Noe (both Independent) are named in Ballotpedia's summary sentence, but the candidate table marks their tickets '(Write-in)'; excluded pending check against the CT Secretary of State list.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-fl",
+   "office": "governor",
+   "state": "FL",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "David Jolly",
+     "surname": "Jolly",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Byron Donalds",
+     "surname": "Donalds",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Scott Jewett",
+     "surname": "Jewett",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Dean Abrams",
+     "surname": "Abrams",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Charles Burkett",
+     "surname": "Burkett",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jeffrey Datto",
+     "surname": "Datto",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Moliere Dimanche",
+     "surname": "Dimanche",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Frank Russo",
+     "surname": "Russo",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Florida governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Florida_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Five No Party Affiliation candidates mapped to I. Write-ins Kathy Anderson and Erik Morris excluded. Panhandle on Central time; statewide close 8pm ET. Ballotpedia notes list may not be complete.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ga",
+   "office": "governor",
+   "state": "GA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Keisha Lance Bottoms",
+     "surname": "Bottoms",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Rick Jackson",
+     "surname": "Jackson",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Georgia governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Georgia_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Georgia requires a majority in the general; if no candidate exceeds 50% a runoff follows. Rick Jackson won the 16 June Republican primary runoff over Burt Jones.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-hi",
+   "office": "governor",
+   "state": "HI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-04T00:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Joshua Green",
+     "surname": "Green",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Gary Cordery",
+     "surname": "Cordery",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Hawaii governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Hawaii_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia's general table lists only these two candidates. Polls close 7pm HST = midnight ET (Wed 4 Nov).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ia",
+   "office": "governor",
+   "state": "IA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Rob Sand",
+     "surname": "Sand",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Zach Lahn",
+     "surname": "Lahn",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Iowa governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Iowa_gubernatorial_election,_2026",
+    "https://sos.iowa.gov/sites/default/files/2026-08/2026%20General%20-%20Candidate%20List%20Database%20-%20All%20Elections_1.pdf",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia's page text was truncated before the general-election table; candidates confirmed from the Iowa SOS general-election candidate list (updated 19 Aug 2026) and Ballotpedia's summary sentence. Libertarian ticket (Nicholas Gluba) was removed from the ballot by the State Objection Panel.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-id",
+   "office": "governor",
+   "state": "ID",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Brad Little",
+     "surname": "Little",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Terri Pickens",
+     "surname": "Pickens",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Pro-Life",
+     "surname": "Pro-Life",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Paul Sand",
+     "surname": "Sand",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "John R. Stegner",
+     "surname": "Stegner",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Idaho governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Idaho_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "'Pro-Life' is the candidate's legal name (Constitution Party; party=other). John R. Stegner is Unaffiliated. Write-in Jacob Burnett excluded. Northern panhandle on Pacific time; latest close 11pm ET. Ballotpedia notes list may not be complete.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-il",
+   "office": "governor",
+   "state": "IL",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "JB Pritzker",
+     "surname": "Pritzker",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Darren Bailey",
+     "surname": "Bailey",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Collin Corbett",
+     "surname": "Corbett",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Illinois governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Illinois_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Seven write-in candidates excluded (incl. Mike Vick, Griselda Romero). Ballotpedia notes list may not be complete.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ks",
+   "office": "governor",
+   "state": "KS",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Cindy Holscher",
+     "surname": "Holscher",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ty Masterson",
+     "surname": "Masterson",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Kansas governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Kansas_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Four western counties on Mountain time; latest close 9pm ET.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ma",
+   "office": "governor",
+   "state": "MA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Maura Healey",
+     "surname": "Healey",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Michael Minogue",
+     "surname": "Minogue",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Andrea James",
+     "surname": "James",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Massachusetts governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Massachusetts_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Andrea James is Unenrolled (mapped to I). Surname 'James' also used by MI Republican candidate (different state).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-md",
+   "office": "governor",
+   "state": "MD",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Wes Moore",
+     "surname": "Moore",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Dan Cox",
+     "surname": "Cox",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Andy Ellis",
+     "surname": "Ellis",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Cathy White",
+     "surname": "White",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Maryland governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Maryland_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Cathy White is Working Class Party (party=other).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-me",
+   "office": "governor",
+   "state": "ME",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Hannah Pingree",
+     "surname": "Pingree",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Bobby Charles",
+     "surname": "Charles",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Richard Bennett",
+     "surname": "Bennett",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Maine governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Maine_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Write-ins Randy Wilcox (R) and John Glowa (I) excluded. Ballotpedia shows ranked-choice rounds for the June primaries; Maine's ranked-choice voting covers primaries and federal general elections, not the governor's general election, which is decided by plurality.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-mi",
+   "office": "governor",
+   "state": "MI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jocelyn Benson",
+     "surname": "Benson",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "John James",
+     "surname": "James",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Douglas Campbell",
+     "surname": "Campbell",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Anthony Hudson",
+     "surname": "Hudson",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Donna Brandenburg",
+     "surname": "Brandenburg",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Michigan governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Michigan_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://michiganpublic.org/politics-government/2026-10-26/michigan-governor-candidates-2026",
+    "https://app.miottawa.org/ElectionManagement/viewPublicFile.action?viewFile=%2Fmnt%2Fottawa-apps%2Fcontent%2FappImages%2FElectionManagement%2FcandidateFile-226.pdf",
+    "https://ballotpedia.org/Michigan_gubernatorial_election,_2026_(August_4_Democratic_primary)",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia's page text was truncated before the table ('Benson, James and five other candidates', which likely includes write-ins). Five ballot candidates confirmed by Michigan Public (26 Oct 2026) and the Ottawa County candidate list. Donna Brandenburg is U.S. Taxpayers Party (party=other). Michigan Public marks the Libertarian Party with an asterisk that was not explained in the text retrieved; Hudson is listed on the Ottawa County ballot list. Four Upper Peninsula counties on Central time; latest close 9pm ET.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-mn",
+   "office": "governor",
+   "state": "MN",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Amy Klobuchar",
+     "surname": "Klobuchar",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Lisa Demuth",
+     "surname": "Demuth",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Steven Young",
+     "surname": "Young",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "query": "Minnesota governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Minnesota_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Incumbent Tim Walz is not on the ballot. Steven Young is Green.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ne",
+   "office": "governor",
+   "state": "NE",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jim Pillen",
+     "surname": "Pillen",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Lynne Walz",
+     "surname": "Walz",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brett Lindstrom",
+     "surname": "Lindstrom",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Rick Beard",
+     "surname": "Beard",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Nebraska governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Nebraska_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Party=other: Brett Lindstrom (America First Party Nebraska), Rick Beard (Legal Marijuana Now Party). Central and Mountain zones close together at 9pm ET.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-nh",
+   "office": "governor",
+   "state": "NH",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Kelly Ayotte",
+     "surname": "Ayotte",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Cinde Warmington",
+     "surname": "Warmington",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Stephen Villee",
+     "surname": "Villee",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "New Hampshire governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/New_Hampshire_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Closing times vary by town (some 7pm, the remaining 8pm ET per The Hill); latest close used. Congress Countdown lists 7pm, which is the earliest close only.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-nm",
+   "office": "governor",
+   "state": "NM",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Debra Haaland",
+     "surname": "Haaland",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Gregg Hull",
+     "surname": "Hull",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "New Mexico governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/New_Mexico_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia lists the Democratic nominee as Debra Haaland; the press often uses Deb Haaland.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-nv",
+   "office": "governor",
+   "state": "NV",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T22:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Joe Lombardo",
+     "surname": "Lombardo",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Aaron Ford",
+     "surname": "Ford",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Danielle Ford",
+     "surname": "Ford",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Nevada governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Nevada_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Danielle Ford is No Political Party (mapped to I). SURNAME COLLISION: Aaron Ford (D) and Danielle Ford (I) share the surname 'Ford'; the winner detector must match full names in Nevada.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ny",
+   "office": "governor",
+   "state": "NY",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Kathy Hochul",
+     "surname": "Hochul",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Bruce Blakeman",
+     "surname": "Blakeman",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "New York governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/New_York_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Hochul also on Working Families Party line; Blakeman also on Conservative and Vote Affordable lines. Write-ins Jonathan Makeley (Prohibition) and Jean Anglade excluded.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-oh",
+   "office": "governor",
+   "state": "OH",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "candidates": [
+    {
+     "name": "Amy Acton",
+     "surname": "Acton",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Vivek Ramaswamy",
+     "surname": "Ramaswamy",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Don Kissick",
+     "surname": "Kissick",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Ohio governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Ohio_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://boe.woodcountyohio.gov/DocumentCenter/View/1006/Candidate-List",
+    "https://boe.ohio.gov/ashtabula/c/upload/Election_Candidates.pdf",
+    "https://cleveland.com/open/2026/10/who-is-running-for-ohio-governor-in-2026-meet-the-candidates.html",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Ballotpedia's page text was truncated before the table; candidates confirmed from the Wood County Board of Elections certified list (26 Aug 2026) and the Ashtabula County list. Write-in tickets (e.g., Timothy Grady, Heather Hill) excluded.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ok",
+   "office": "governor",
+   "state": "OK",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Cyndi Munson",
+     "surname": "Munson",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Mike Mazzei",
+     "surname": "Mazzei",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Robert Brooks",
+     "surname": "Brooks",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Orlando Lynn Bush",
+     "surname": "Bush",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jerry Griffin",
+     "surname": "Griffin",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Oklahoma governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Oklahoma_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Mike Mazzei is the Republican nominee after the 25 Aug Republican primary runoff against Gentner Drummond. Incumbent Kevin Stitt is term-limited.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-or",
+   "office": "governor",
+   "state": "OR",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Tina Kotek",
+     "surname": "Kotek",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Christine Drazan",
+     "surname": "Drazan",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Brett Smith",
+     "surname": "Smith",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "query": "Oregon governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Oregon_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Kotek also on Working Families Party line; Drazan also on Libertarian line. Brett Smith is Pacific Green Party (mapped to G). Mostly vote-by-mail; latest close 11pm ET (Pacific).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-pa",
+   "office": "governor",
+   "state": "PA",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Josh Shapiro",
+     "surname": "Shapiro",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Stacy Garrity",
+     "surname": "Garrity",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Anthony Dastra",
+     "surname": "Dastra",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Ken Krawchuk",
+     "surname": "Krawchuk",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Pennsylvania governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": null,
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-ri",
+   "office": "governor",
+   "state": "RI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Helena Foulkes",
+     "surname": "Foulkes",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Aaron Guckian",
+     "surname": "Guckian",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Ken Block",
+     "surname": "Block",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Jasjit Gotra",
+     "surname": "Gotra",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Christopher Reynolds",
+     "surname": "Reynolds",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Rhode Island governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Rhode_Island_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Incumbent Daniel McKee is not on the general ballot. Three Independents on ballot.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-sc",
+   "office": "governor",
+   "state": "SC",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jermaine Johnson",
+     "surname": "Johnson",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Alan Wilson",
+     "surname": "Wilson",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Walid Hakim",
+     "surname": "Hakim",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Michael Addison",
+     "surname": "Addison",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "South Carolina governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/South_Carolina_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Michael Addison is United Citizens Party (party=other).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-sd",
+   "office": "governor",
+   "state": "SD",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Larry Rhoden",
+     "surname": "Rhoden",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Dan Ahlers",
+     "surname": "Ahlers",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "query": "South Dakota governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/South_Dakota_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Larry Rhoden won a Republican primary runoff against Toby Doeden. Dan Ahlers advanced from the Democratic primary without appearing on the primary ballot.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-tn",
+   "office": "governor",
+   "state": "TN",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Jerri Green",
+     "surname": "Green",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Marsha Blackburn",
+     "surname": "Blackburn",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Misam Abidi",
+     "surname": "Abidi",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Dean Brewer",
+     "surname": "Brewer",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Ray Brown",
+     "surname": "Brown",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "David Hatley",
+     "surname": "Hatley",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Wendell Jackson",
+     "surname": "Jackson",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Charles Morgan",
+     "surname": "Morgan",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Eddie Lee Murphy",
+     "surname": "Murphy",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Lauren Pinkston",
+     "surname": "Pinkston",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Victor Scoggin",
+     "surname": "Scoggin",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Dave Seeman",
+     "surname": "Seeman",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Karl Smithson",
+     "surname": "Smithson",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "L. Webb Taylor",
+     "surname": "Taylor",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Robert Vick",
+     "surname": "Vick",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Tennessee governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Tennessee_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Thirteen Independents on ballot per Ballotpedia; three write-ins excluded (Carlton Boleyjack, Stephen Maxwell, Jason Smith). Eastern and Central zones close together at 8pm ET. Surname 'Green' also used by HI incumbent (different state); 'Jackson' also in GA.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-tx",
+   "office": "governor",
+   "state": "TX",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Greg Abbott",
+     "surname": "Abbott",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Gina Hinojosa",
+     "surname": "Hinojosa",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Pat Dixon",
+     "surname": "Dixon",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "query": "Texas governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Texas_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Four write-in Independents excluded. El Paso and Hudspeth counties on Mountain time; latest close 9pm ET. Ballotpedia notes list may not be complete.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-vt",
+   "office": "governor",
+   "state": "VT",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Phil Scott",
+     "surname": "Scott",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Amanda Janoo",
+     "surname": "Janoo",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Dean Roy",
+     "surname": "Roy",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "June Goodband",
+     "surname": "Goodband",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Brian Judd",
+     "surname": "Judd",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "query": "Vermont governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Vermont_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "If no candidate wins a majority, the Vermont General Assembly elects the governor. Party=other: Dean Roy (Freedom and Unity Party), June Goodband (Green Mountain Peace and Justice Party). Brian Judd is Independent.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-wi",
+   "office": "governor",
+   "state": "WI",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "David Crowley",
+     "surname": "Crowley",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Tom Tiffany",
+     "surname": "Tiffany",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "query": "Wisconsin governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Wisconsin_gubernatorial_and_lieutenant_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Mark Grimek (Constitution Party) and Jamie Jo Carothers (Independent) are marked write-in in Ballotpedia's table and are excluded. Incumbent Tony Evers is not running.",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "governor-wy",
+   "office": "governor",
+   "state": "WY",
+   "district": null,
+   "special": false,
+   "uncontested": false,
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "candidates": [
+    {
+     "name": "Ken Casner",
+     "surname": "Casner",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Barlow",
+     "surname": "Barlow",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Rebecca Bextel",
+     "surname": "Bextel",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "query": "Wyoming governor election results 2026",
+   "sources": [
+    "https://ballotpedia.org/Wyoming_gubernatorial_election,_2026",
+    "https://thehill.com/homenews/campaign/6175621-midterm-elections-polls-close-results",
+    "https://congresscountdown.com/info/poll-closing-times"
+   ],
+   "notes": "Rebecca Bextel is Constitution Party (party=other).",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ak-al",
+   "office": "house",
+   "state": "AK",
+   "district": "AL",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Nick Begich",
+     "surname": "Begich",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Bill Hill",
+     "surname": "Hill",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Hafner",
+     "surname": "Hafner",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Jim McDermott",
+     "surname": "McDermott",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/United_States_House_of_Representatives_election_in_Alaska,_2026",
+    "https://ballotpedia.org/Alaska%27s_At-Large_Congressional_District",
+    "https://alaskapublic.org/news/politics/elections/2026-09-01/in-alaskas-u-s-house-race-a-libertarian-and-a-federal-inmate-advance-after-late-withdrawals",
+    "https://elections.alaska.gov/election-candidates"
+   ],
+   "notes": "Ranked-choice general election (top-four primary on 18 Aug 2026); a winner may not be known until RCV tabulation, which Alaska runs after all ballots arrive. Ballotpedia lists Begich as Nicholas Begich. Bill Hill is nonpartisan (mapped to I). After the primary, John Brendan Williams (D, 5th place) and Matthew Schultz (D) withdrew, and McDermott (L, 8th place) moved onto the general ballot. News reports say Hafner is in federal prison; he is on the ballot. Lady Donna Dutchess is a write-in (excluded). Tom Begich withdrew from the governor's race by 31 Aug and is off the ballot (see governor-ak sources), but older pages about him will still match 'Begich', so match the full name; 'Hill' is a common word.",
+   "poll_close_et": "2026-11-04T01:00:00-05:00",
+   "query": "Alaska at-large congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-al-02",
+   "office": "house",
+   "state": "AL",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Shomari Figures",
+     "surname": "Figures",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Rhett Marques",
+     "surname": "Marques",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Alabama%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Alabama redrew its map in May 2026 (reinstating a 2023 map after Louisiana v. Callais); primary moved to Aug 11, 2026. Ballotpedia lists only these two general-election candidates; not cross-checked against the Alabama SOS list.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Alabama 2nd congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ar-02",
+   "office": "house",
+   "state": "AR",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "French Hill",
+     "surname": "Hill",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Chris Jones",
+     "surname": "Jones",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Arkansas%27_2nd_Congressional_District_election,_2026"
+   ],
+   "poll_close_et": "2026-11-03T20:30:00-05:00",
+   "query": "Arkansas 2nd congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "notes": "",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-az-01",
+   "office": "house",
+   "state": "AZ",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Amish Shah",
+     "surname": "Shah",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Jay Feely",
+     "surname": "Feely",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Monica Alponte",
+     "surname": "Alponte",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Arizona%27s_1st_Congressional_District_election,_2026",
+    "https://azmirror.com/voter-guides/contests/congressional-district-1",
+    "https://app.enhancedvoting.com/results/public/Arizona/110326GeneralElection"
+   ],
+   "notes": "Open seat (incumbent David Schweikert not running for re-election). Ballot name for Feely is 'Thomas \"Jay\" Feely IV'. Write-ins excluded: Gage Thunder (no party preference) and Dev Gupta (independent).",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Arizona 1st congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-az-02",
+   "office": "house",
+   "state": "AZ",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Eli Crane",
+     "surname": "Crane",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Jonathan Nez",
+     "surname": "Nez",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Curtis Goodwin",
+     "surname": "Goodwin",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Arizona%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Arizona SOS results page lists Crane, Nez, Goodwin plus write-in lines. One aggregator (bipartisan.org) labels Goodwin (I); Ballotpedia and others list him as Libertarian.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Arizona 2nd congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-az-06",
+   "office": "house",
+   "state": "AZ",
+   "district": "06",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Juan Ciscomani",
+     "surname": "Ciscomani",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "JoAnna Mendoza",
+     "surname": "Mendoza",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Gary Swing",
+     "surname": "Swing",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Jereme Peters",
+     "surname": "Peters",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Arizona%27s_6th_Congressional_District_election,_2026",
+    "https://app.enhancedvoting.com/results/public/cochise-county-az/elections/110326GeneralElection/ballot-items/01000000-f0c4-e619-1c5f-08df29429bc7",
+    "https://azluminaria.org/2026/10/13/arizona-district-6-voter-guide-where-ciscomani-mendoza-swing-stand"
+   ],
+   "notes": "Ballot name for Peters: Jereme Lance Peters. Write-in: Michael Dorland (Independent), listed by Ballotpedia as a write-in; left out. Cochise County's results page lists him alongside the printed candidates, so worth a human check that he is write-in only.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Arizona 6th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ca-13",
+   "office": "house",
+   "state": "CA",
+   "district": "13",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Adam Gray",
+     "surname": "Gray",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Kevin Lincoln II",
+     "surname": "Lincoln",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/California%27s_13th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/California%27s_13th_Congressional_District"
+   ],
+   "notes": "Top-two general election. Not cross-checked against the California Secretary of State list. California counts late mail ballots for weeks; calls can come days after the election.",
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "query": "California 13th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ca-22",
+   "office": "house",
+   "state": "CA",
+   "district": "22",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "David Valadao",
+     "surname": "Valadao",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Randy Villegas",
+     "surname": "Villegas",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/California%27s_22nd_Congressional_District_election,_2026"
+   ],
+   "notes": "California top-two system: these two advanced from the June primary. Ballotpedia lists him as David G. Valadao.",
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "query": "California 22nd congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ca-45",
+   "office": "house",
+   "state": "CA",
+   "district": "45",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Derek Tran",
+     "surname": "Tran",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Chuong Vo",
+     "surname": "Vo",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/California%27s_45th_Congressional_District_election,_2026"
+   ],
+   "notes": "California top-two system: Tran and Vo advanced from the top-two primary. District boundaries changed for 2026.",
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "query": "California 45th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ca-48",
+   "office": "house",
+   "state": "CA",
+   "district": "48",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Marni von Wilpert",
+     "surname": "von Wilpert",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Jim Desmond",
+     "surname": "Desmond",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/California%27s_48th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/California%27s_48th_Congressional_District"
+   ],
+   "notes": "Open seat (Darrell Issa not running). Top-two general election (primary 2 Jun 2026). Not cross-checked against the California Secretary of State list. The detector should also match 'Wilpert' (press may write 'Von Wilpert').",
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "query": "California 48th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-co-03",
+   "office": "house",
+   "state": "CO",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jeff Hurd",
+     "surname": "Hurd",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Dwayne Romero",
+     "surname": "Romero",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Cory Robertson",
+     "surname": "Robertson",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Clifton Brown",
+     "surname": "Brown",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Colorado%27s_3rd_Congressional_District_election,_2026",
+    "https://coloradosos.gov/pubs/elections/vote/generalCandidates.html"
+   ],
+   "notes": "Colorado SOS official list (certified Sept 4): Dwayne L. Romero (D), Jeff Hurd (R), Cory Robertson (Libertarian), Clifton Brown (Unaffiliated, mapped to I). 'Brown' is a common surname; the detector filter may need the full name.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Colorado 3rd congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-co-04",
+   "office": "house",
+   "state": "CO",
+   "district": "04",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Lauren Boebert",
+     "surname": "Boebert",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Eileen Laubacher",
+     "surname": "Laubacher",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Douglas Mangeris",
+     "surname": "Mangeris",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Colorado%27s_4th_Congressional_District_election,_2026",
+    "https://www.cpr.org/2026/09/25/vg-2026-4th-congressional-district-third-party-voter-guide/"
+   ],
+   "notes": "Write-in: Luis Galvan (R), marked write-in by Ballotpedia; left out. A Morgan County ballot proof lists only Boebert, Laubacher and Mangeris.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Colorado 4th congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-co-05",
+   "office": "house",
+   "state": "CO",
+   "district": "05",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jeff Crank",
+     "surname": "Crank",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Jessica Killin",
+     "surname": "Killin",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Christopher Mitchell",
+     "surname": "Mitchell",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Mark Elworth Jr.",
+     "surname": "Elworth",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Colorado%27s_5th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/Colorado%27s_5th_Congressional_District",
+    "https://votesee.org/ballot/colorado/district-5"
+   ],
+   "notes": "Mitchell is the American Constitution Party nominee (party 'other'). Steven Fuller (unaffiliated) is a write-in (excluded). 'Crank' is a common word. Not cross-checked against the Colorado Secretary of State list.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Colorado 5th congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-co-08",
+   "office": "house",
+   "state": "CO",
+   "district": "08",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Gabe Evans",
+     "surname": "Evans",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Manny Rutinel",
+     "surname": "Rutinel",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Dave Wood",
+     "surname": "Wood",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Colorado%27s_8th_Congressional_District_election,_2026",
+    "https://coloradosos.gov/pubs/elections/vote/generalCandidates.html"
+   ],
+   "notes": "Colorado SOS lists the Libertarian as 'Dave Wood'; Ballotpedia uses 'David Wood'. No write-ins listed for CD8 on the SOS list.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Colorado 8th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-fl-07",
+   "office": "house",
+   "state": "FL",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Bale Dalton",
+     "surname": "Dalton",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ryan Elijah",
+     "surname": "Elijah",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Christopher Dennison",
+     "surname": "Dennison",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_7th_Congressional_District_election,_2026",
+    "https://politico.com/news/2026/08/18/cory-mills-lost-primary-01041302"
+   ],
+   "notes": "No incumbent on the ballot: Rep. Cory Mills (R) lost the 18 Aug 2026 Republican primary to Ryan Elijah.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Florida 7th congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-fl-09",
+   "office": "house",
+   "state": "FL",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Darren Soto",
+     "surname": "Soto",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Dan Green",
+     "surname": "Green",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_9th_Congressional_District_election,_2026",
+    "https://dos.elections.myflorida.com/candidates/CanList.asp?elecid=20261103-GEN"
+   ],
+   "notes": "Confirmed against the Florida Division of Elections general election candidate list (both qualified). 'Green' is a common word and a party name; the detector filter should require the full name or context.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Florida 9th congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-fl-13",
+   "office": "house",
+   "state": "FL",
+   "district": "13",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Anna Paulina Luna",
+     "surname": "Luna",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Leela Gray",
+     "surname": "Gray",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Tony D'Arrigo",
+     "surname": "D'Arrigo",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_13th_Congressional_District_election,_2026",
+    "https://dos.elections.myflorida.com/candidates/CanList.asp?elecid=20261103-GEN"
+   ],
+   "notes": "Florida DOS lists D'Arrigo as NPA (No Party Affiliation, mapped to I). Confirmed against the FL DOS candidate list.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Florida 13th congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-fl-14",
+   "office": "house",
+   "state": "FL",
+   "district": "14",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Kathy Castor",
+     "surname": "Castor",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Mike Beltran",
+     "surname": "Beltran",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Brian Lambert",
+     "surname": "Lambert",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_14th_Congressional_District_election,_2026"
+   ],
+   "notes": "Write-ins: Salomon Hernandez and Keith Varian (both No Party Affiliation), qualified write-ins per Ballotpedia; left out. Florida uses a new 2026 congressional map.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Florida 14th congressional district election results 2026",
+   "cook_rating": "toss_up_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-fl-16",
+   "office": "house",
+   "state": "FL",
+   "district": "16",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Sydney Gruters",
+     "surname": "Gruters",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Kelly Kirschner",
+     "surname": "Kirschner",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Mark Davis",
+     "surname": "Davis",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_16th_Congressional_District_election,_2026",
+    "https://dos.elections.myflorida.com/candidates/CanList.asp?elecid=20261103-GEN",
+    "https://wgcu.org/elections/2026-10-16/three-very-different-candidates-vying-for-congress-in-florida-district-16"
+   ],
+   "notes": "Open seat (Vern Buchanan retiring). Confirmed against the Florida Division of Elections list. Mark Davis is No Party Affiliation (mapped to I). Surname 'Gruters' is shared with Joe Gruters, who is not a candidate in this race.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Florida 16th congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-fl-22",
+   "office": "house",
+   "state": "FL",
+   "district": "22",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Pia Dandiya",
+     "surname": "Dandiya",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Casey Askar",
+     "surname": "Askar",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_22nd_Congressional_District_election,_2026",
+    "https://dos.elections.myflorida.com/candidates/CanList.asp?elecid=20261103-GEN"
+   ],
+   "notes": "Open seat. FL DOS candidate list shows only Askar (REP) and Dandiya (DEM) qualified for the general in District 22, no NPA or write-in. Note: Lois Frankel appears on the FL DOS list as the Democratic nominee in District 23, not 22, so she is running in a different district rather than retiring; check that the 'OPEN (Frankel)' label is right for this numbering.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Florida 22nd congressional district election results 2026",
+   "cook_rating": "toss_up_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-fl-25",
+   "office": "house",
+   "state": "FL",
+   "district": "25",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jared Moskowitz",
+     "surname": "Moskowitz",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Scott Singer",
+     "surname": "Singer",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Peter Jassenoff",
+     "surname": "Jassenoff",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_25th_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia name: Jared Evan Moskowitz. Moskowitz currently represents the 23rd District; Florida adopted a new map in 2026 and he is running in the redrawn 25th (Ballotpedia marks him as incumbent). Write-in: Michaelangelo Hamilton (No Party Affiliation); left out.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Florida 25th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-fl-27",
+   "office": "house",
+   "state": "FL",
+   "district": "27",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Maria Elvira Salazar",
+     "surname": "Salazar",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Eliott Rodriguez",
+     "surname": "Rodriguez",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_27th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/Florida%27s_27th_Congressional_District",
+    "https://votesee.org/ballot/florida/district-27"
+   ],
+   "notes": "Press often writes 'María Elvira Salazar' (accent). Some outlets misspell Rodriguez's first name as 'Elliott'. This district's row in the Florida Division of Elections list was past the fetch limit and was not read directly.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Florida 27th congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ia-01",
+   "office": "house",
+   "state": "IA",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mariannette Miller-Meeks",
+     "surname": "Miller-Meeks",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Christina Bohannan",
+     "surname": "Bohannan",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Michael Bridgford",
+     "surname": "Bridgford",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Iowa%27s_1st_Congressional_District_election,_2026",
+    "https://sos.iowa.gov/sites/default/files/2026-08/2026%20General%20-%20Candidate%20List%20Database%20-%20All%20Elections_1.pdf"
+   ],
+   "notes": "Iowa SOS lists Bridgford as 'No Party' (mapped to I). Third Miller-Meeks vs Bohannan contest.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Iowa 1st congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ia-02",
+   "office": "house",
+   "state": "IA",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Lindsay James",
+     "surname": "James",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Joe Mitchell",
+     "surname": "Mitchell",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Rick Stewart",
+     "surname": "Stewart",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Dave Bushaw",
+     "surname": "Bushaw",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Iowa%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat: incumbent Ashley Hinson (R) not running for re-election. Bushaw is listed as No Party / independent. Surname 'James' is also a common first name; the text filter may get false matches.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Iowa 2nd congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ia-03",
+   "office": "house",
+   "state": "IA",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Zach Nunn",
+     "surname": "Nunn",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Sarah Trone Garriott",
+     "surname": "Trone Garriott",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Iowa%27s_3rd_Congressional_District_election,_2026",
+    "https://iowacapitaldispatch.com/voter-guides/contests/2026-us-house-district-3-general"
+   ],
+   "notes": "Two-candidate race per Ballotpedia and local press. The detector should match 'Trone Garriott' and 'Garriott'. Not cross-checked against the Iowa Secretary of State list.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Iowa 3rd congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-in-01",
+   "office": "house",
+   "state": "IN",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Frank Mrvan",
+     "surname": "Mrvan",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Barb Regnitz",
+     "surname": "Regnitz",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Indiana%27s_1st_Congressional_District_election,_2026"
+   ],
+   "notes": "Write-in candidates excluded: Alexander Degman (Independent) and James Johnson (Independent), per Ballotpedia. Not cross-checked against the Indiana Election Division list.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Indiana 1st congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-in-05",
+   "office": "house",
+   "state": "IN",
+   "district": "05",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Victoria Spartz",
+     "surname": "Spartz",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "J.D. Ford",
+     "surname": "Ford",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Indiana%27s_5th_Congressional_District_election,_2026"
+   ],
+   "poll_close_et": "2026-11-03T18:00:00-05:00",
+   "query": "Indiana 5th congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "notes": "",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ks-02",
+   "office": "house",
+   "state": "KS",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Derek Schmidt",
+     "surname": "Schmidt",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Don Coover",
+     "surname": "Coover",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "John Hauer",
+     "surname": "Hauer",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Kansas%27_2nd_Congressional_District_election,_2026",
+    "https://myvoteinfo.voteks.org/VoterView/Ballot/GetSampleBallotImage?SampleBallotKey=11072081",
+    "https://kansasreflector.com/voter-guides/2026-kansas-general-election"
+   ],
+   "notes": "Confirmed against an official Kansas sample ballot (search snippet: Hauer L, Schmidt R, Coover D).",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Kansas 2nd congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ky-06",
+   "office": "house",
+   "state": "KY",
+   "district": "06",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Zach Dembo",
+     "surname": "Dembo",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ralph Alvarado",
+     "surname": "Alvarado",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Pete Lynch",
+     "surname": "Lynch",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Jay Bowman",
+     "surname": "Bowman",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Kentucky%27s_6th_Congressional_District_election,_2026",
+    "https://spectrumnews1.com/ky/louisville/news/2026/10/27/kentucky-sixth-toss-up"
+   ],
+   "notes": "Open seat (Andy Barr not running for re-election to the House). Pete Lynch is the Kentucky Party nominee ('other'). Robert Quigley (Independent) is marked as a write-in candidate by Ballotpedia and excluded; the Kentucky Lantern voter guide lists him among candidates, so check whether his name is printed on the ballot. Some aggregators list Lynch as Independent.",
+   "poll_close_et": "2026-11-03T18:00:00-05:00",
+   "query": "Kentucky 6th congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-me-02",
+   "office": "house",
+   "state": "ME",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Matthew Dunlap",
+     "surname": "Dunlap",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Paul LePage",
+     "surname": "LePage",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Maine%27s_2nd_Congressional_District_election,_2026",
+    "https://themainemonitor.org/2nd-congressional-elections",
+    "https://themainemonitor.org/ranked-choice-voting-guide-2026"
+   ],
+   "notes": "Open seat: incumbent Jared Golden (D) did not seek re-election. Maine uses ranked-choice voting for House general elections, so a winner may need an RCV tabulation if no one gets a majority of first choices. Press name for Dunlap is often 'Matt Dunlap'. Write-in: Gregory A. Ward (Independent), declared write-in; left out.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Maine 2nd congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-mi-04",
+   "office": "house",
+   "state": "MI",
+   "district": "04",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Bill Huizenga",
+     "surname": "Huizenga",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Sean McCann",
+     "surname": "McCann",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Shafina Barnett",
+     "surname": "Barnett",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Michigan%27s_4th_Congressional_District_election,_2026",
+    "https://mi-boe.entellitrak.com/etk-mi-boe-prod/page.request.do?electionType=GEN&electionYear=2026&page=page.miboePublicReport"
+   ],
+   "notes": "Confirmed against the Michigan Bureau of Elections general election candidate listing (McCann D, Huizenga R, Barnett Green).",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Michigan 4th congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-mi-07",
+   "office": "house",
+   "state": "MI",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Tom Barrett",
+     "surname": "Barrett",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "William Lawrence",
+     "surname": "Lawrence",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Shane Dedrick",
+     "surname": "Dedrick",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Felix Thibodeau",
+     "surname": "Thibodeau",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Michigan%27s_7th_Congressional_District_election,_2026",
+    "https://cdn.oaklandcountymi.gov/oakland-sitefinity-prod/docs/default-source/clerk/official-candidate-list.pdf?sfvrsn=d12ce45c_1",
+    "https://michiganadvance.com/voter-guides/contests/7th-district-representative-in-congress"
+   ],
+   "notes": "Felix Thibodeau is the Working Class Party nominee ('other'). Confirmed against the Oakland County official candidate list (Dem Lawrence, Rep Barrett, Grn Dedrick, WC Thibodeau). Lawrence also goes by 'Will Lawrence' in the press.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Michigan 7th congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-mi-08",
+   "office": "house",
+   "state": "MI",
+   "district": "08",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Kristen McDonald Rivet",
+     "surname": "McDonald Rivet",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Thomas J. Smith",
+     "surname": "Smith",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Jim Casha",
+     "surname": "Casha",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "C. Mia Pettus",
+     "surname": "Pettus",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Kathy Goodwin",
+     "surname": "Goodwin",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Michigan%27s_8th_Congressional_District_election,_2026",
+    "https://app.enhancedvoting.com/results/public/saginaw-county-mi/elections/_20261016111322/ballot-items/01000000-e2ab-6738-4485-08df2b9273ae",
+    "https://michiganpublic.org/politics-government/2026-08-05/republican-congressional-candidate-wins-8th-district-primary-even-though-he-dropped-out"
+   ],
+   "notes": "Goodwin is the Working Class Party nominee. Smith suspended his campaign in mid-July but still won the 4 Aug Republican primary and is on the general ballot; Michigan Public reported in October that he is campaigning against McDonald Rivet. Press often say 'Tom Smith'; the surname 'Smith' is common, so the text filter may get false matches.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Michigan 8th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-mi-10",
+   "office": "house",
+   "state": "MI",
+   "district": "10",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Michael Bouchard",
+     "surname": "Bouchard",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Christina Hines",
+     "surname": "Hines",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Kwabena Nkromo",
+     "surname": "Nkromo",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Mike Saliba",
+     "surname": "Saliba",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Andrea Kirby",
+     "surname": "Kirby",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Michigan%27s_10th_Congressional_District_election,_2026",
+    "https://mlive.com/news/detroit/2026/10/the-5-candidates-vying-to-replace-us-rep-john-james.html",
+    "https://mi-boe.entellitrak.com/etk-mi-boe-prod/page.request.do?electionType=GEN&electionYear=2026&page=page.miboePublicReport"
+   ],
+   "notes": "Open seat (incumbent John James not running for re-election). Kirby is the Working Class Party nominee (party 'other'). Press names vary: 'Christina Bertrand Hines' and 'Michael Bouchard Jr.' (MLive). This district's row in the state listing was past the fetch limit; five candidates agree across Ballotpedia, MLive and a results-page template.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Michigan 10th congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-mn-01",
+   "office": "house",
+   "state": "MN",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Brad Finstad",
+     "surname": "Finstad",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Jake Johnson",
+     "surname": "Johnson",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Minnesota%27s_1st_Congressional_District_election,_2026"
+   ],
+   "notes": "Johnson is the DFL (Democratic-Farmer-Labor) nominee, mapped to D. Ballotpedia and votesee list two candidates; one aggregator says 3 candidates, so check the Minnesota SOS list for a minor-party entry. 'Johnson' is a very common surname; the filter may need the full name.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Minnesota 1st congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-mn-02",
+   "office": "house",
+   "state": "MN",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Matt Little",
+     "surname": "Little",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Pratt",
+     "surname": "Pratt",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Minnesota%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat: incumbent Angie Craig (D) is running for US Senate. Little is the DFL (Minnesota's Democratic Party) nominee. The surname 'Little' is a common word, so the text filter may get false matches.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Minnesota 2nd congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-mo-02",
+   "office": "house",
+   "state": "MO",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Ann Wagner",
+     "surname": "Wagner",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Fred Wellman",
+     "surname": "Wellman",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brandon Daugherty",
+     "surname": "Daugherty",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Missouri%27s_2nd_Congressional_District_election,_2026",
+    "https://myleaderpaper.com/news/three-face-off-for-2nd-congressional-district-seat/article_040f9694-849a-47cd-aeb5-8df9e1622cf7.html"
+   ],
+   "notes": "Ballotpedia lists Wellman as Frederick Wellman; the press uses Fred. Not cross-checked against the Missouri Secretary of State list.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Missouri 2nd congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-mt-01",
+   "office": "house",
+   "state": "MT",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Sam Forstag",
+     "surname": "Forstag",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Aaron Flint",
+     "surname": "Flint",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Nick Sheedy",
+     "surname": "Sheedy",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Montana%27s_1st_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat (Ryan Zinke not running). Sample ballot text and Ballotpedia list Sheedy as Libertarian; one aggregator lists him as Ind. Not cross-checked against the Montana SOS certified list.",
+   "poll_close_et": "2026-11-03T22:00:00-05:00",
+   "query": "Montana 1st congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nc-01",
+   "office": "house",
+   "state": "NC",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Donald Davis",
+     "surname": "Davis",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Laurie Buckhout",
+     "surname": "Buckhout",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Tom Bailey",
+     "surname": "Bailey",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_1st_Congressional_District_election,_2026"
+   ],
+   "notes": "District boundaries redrawn for 2026.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "North Carolina 1st congressional district election results 2026",
+   "cook_rating": "toss_up_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nc-03",
+   "office": "house",
+   "state": "NC",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Greg Murphy",
+     "surname": "Murphy",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Raymond Smith Jr.",
+     "surname": "Smith",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Daniel Cavender",
+     "surname": "Cavender",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_3rd_Congressional_District_election,_2026",
+    "https://dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf"
+   ],
+   "notes": "Confirmed against the NC State Board of Elections general candidate list (ballot names 'Greg Murphy', 'Raymond Smith', 'Daniel Cavender'). 'Smith' is very common; the detector should match on the full name.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "North Carolina 3rd congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nc-05",
+   "office": "house",
+   "state": "NC",
+   "district": "05",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Virginia Foxx",
+     "surname": "Foxx",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Chuck Hubbard",
+     "surname": "Hubbard",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Robert Luffman",
+     "surname": "Luffman",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_5th_Congressional_District_election,_2026",
+    "https://dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf"
+   ],
+   "notes": "NC State Board of Elections list: Virginia Foxx (REP), Robert B. Luffman (LIB), Chuck Hubbard (DEM). David Clayton (unaffiliated) withdrew, per Ballotpedia, and is not on the ballot.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "North Carolina 5th congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nc-09",
+   "office": "house",
+   "state": "NC",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Richard Hudson",
+     "surname": "Hudson",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Richard Ojeda",
+     "surname": "Ojeda",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_9th_Congressional_District_election,_2026"
+   ],
+   "notes": "Both candidates' first name is Richard; match on surname.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "North Carolina 9th congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nc-11",
+   "office": "house",
+   "state": "NC",
+   "district": "11",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jennifer Balkcom",
+     "surname": "Balkcom",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Jamie Ager",
+     "surname": "Ager",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Travis Groo",
+     "surname": "Groo",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_11th_Congressional_District_election,_2026",
+    "https://dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf",
+    "https://ncnewsline.com/2026/08/10/ncgop-to-select-new-nc-11-candidate-after-us-rep-edwards-withdrawal"
+   ],
+   "notes": "Open seat: incumbent Chuck Edwards (R) won the primary, then withdrew in August 2026. The district GOP committee picked state Rep. Jennifer Balkcom on 10 Aug 2026 as the replacement nominee. Confirmed against the NC State Board of Elections list (ballot name 'Jennifer Capps Balkcom'). Edwards is not on the general ballot.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "North Carolina 11th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nc-13",
+   "office": "house",
+   "state": "NC",
+   "district": "13",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Brad Knott",
+     "surname": "Knott",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Paul Barringer",
+     "surname": "Barringer",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Steven Swinton",
+     "surname": "Swinton",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_13th_Congressional_District_election,_2026",
+    "https://dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf"
+   ],
+   "notes": "Confirmed against the NC State Board of Elections list (Barringer DEM, Swinton LIB, Knott REP).",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "North Carolina 13th congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ne-01",
+   "office": "house",
+   "state": "NE",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mike Flood",
+     "surname": "Flood",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Christopher Backemeyer",
+     "surname": "Backemeyer",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Dan Hartong",
+     "surname": "Hartong",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Nik Sandman",
+     "surname": "Sandman",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nebraska%27s_1st_Congressional_District_election,_2026",
+    "https://nebraskaexaminer.com/voter-guides/contests/2026-general-u-s-house-district-1",
+    "https://votesee.org/ballot/nebraska/district-1"
+   ],
+   "notes": "Hartong is the America First Party (Nebraska) nominee; some sources list him as Daniel Hartong. Press often say 'Chris Backemeyer'. 'Flood' is a common word, so the text filter may get false matches.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Nebraska 1st congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ne-02",
+   "office": "house",
+   "state": "NE",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Denise Powell",
+     "surname": "Powell",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brinker Harding",
+     "surname": "Harding",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Michael Foreman",
+     "surname": "Foreman",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nebraska%27s_2nd_Congressional_District_election,_2026",
+    "https://nebraskaexaminer.com/voter-guides/contests/2026-general-u-s-house-district-2"
+   ],
+   "notes": "Open seat (Don Bacon retiring). Not cross-checked against the Nebraska Secretary of State list.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Nebraska 2nd congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nh-01",
+   "office": "house",
+   "state": "NH",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Stefany Shaheen",
+     "surname": "Shaheen",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Anthony DiLorenzo",
+     "surname": "DiLorenzo",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "https://mm.nh.gov/files/uploads/sos/docs/2026-ge-candidate-list.pdf"
+   ],
+   "notes": "Open seat (Chris Pappas not running for re-election to the House). NH SOS general-election candidate list shows only Shaheen (DEM) and DiLorenzo (REP). Detector caution: the surname 'Shaheen' also belongs to US Senator Jeanne Shaheen, so NH news will often use the name in other contexts; match on 'Stefany Shaheen'.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "New Hampshire 1st congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nj-02",
+   "office": "house",
+   "state": "NJ",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jeff Van Drew",
+     "surname": "Van Drew",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Zack Mullock",
+     "surname": "Mullock",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Ramon Mora Jr.",
+     "surname": "Mora",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_Jersey%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Mora is an independent; New Jersey Globe reported in June 2026 that he stays on the ballot.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "New Jersey 2nd congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nj-07",
+   "office": "house",
+   "state": "NJ",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Tom Kean Jr.",
+     "surname": "Kean",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Rebecca Bennett",
+     "surname": "Bennett",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Seamus O'Toole",
+     "surname": "O'Toole",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_Jersey%27s_7th_Congressional_District_election,_2026",
+    "https://whyy.org/articles/election-2026-new-jersey-7th-congressional-district-voter-guide"
+   ],
+   "notes": "O'Toole is an independent who files by petition; 'Stop Israel's Genocide' is his ballot slogan, not a registered party (Ballotpedia lists it as a party; WHYY calls him an independent). Mapped to I. Ballotpedia uses 'Thomas Kean Jr.'. Not cross-checked against the New Jersey Division of Elections list.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "New Jersey 7th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nj-09",
+   "office": "house",
+   "state": "NJ",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Nellie Pou",
+     "surname": "Pou",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Rosemary Pino",
+     "surname": "Pino",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Terrisa Bukovinac",
+     "surname": "Bukovinac",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_Jersey%27s_9th_Congressional_District_election,_2026"
+   ],
+   "notes": "Bukovinac's ballot slogan/party is 'Save Our Babies' ('other'). Ballot names may be 'Nelida \"Nellie\" Pou' and 'Rosemary \"Rosie\" Pino'.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "New Jersey 9th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nm-02",
+   "office": "house",
+   "state": "NM",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Gabriel Vasquez",
+     "surname": "Vasquez",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Greg Cunningham",
+     "surname": "Cunningham",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_Mexico%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "New Mexico 2nd congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "notes": "",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nv-01",
+   "office": "house",
+   "state": "NV",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Dina Titus",
+     "surname": "Titus",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Carrie Buck",
+     "surname": "Buck",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Steven St John",
+     "surname": "St John",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Bobby Khan",
+     "surname": "Khan",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nevada%27s_1st_Congressional_District_election,_2026",
+    "https://silverstateelection.nv.gov/"
+   ],
+   "notes": "Confirmed against the Nevada results page template (Buck REP, Khan NPP, St John NPP, Titus DEM). St John and Khan are No Political Party (mapped to I); ballot names 'Steven \"Chap\" St John' and 'Afzal \"Bobby\" Khan'. Nevada ballots also offer 'None of these candidates'. 'Buck' is a common word.",
+   "poll_close_et": "2026-11-03T22:00:00-05:00",
+   "query": "Nevada 1st congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nv-02",
+   "office": "house",
+   "state": "NV",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Teresa Benitez-Thompson",
+     "surname": "Benitez-Thompson",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "David Flippo",
+     "surname": "Flippo",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Lynn Chapman",
+     "surname": "Chapman",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nevada%27s_2nd_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat (Mark Amodei not running). Lynn Chapman is the Independent American Party nominee ('other'). Nevada ballots also include a 'None of these candidates' line. Not cross-checked against the Nevada SOS list.",
+   "poll_close_et": "2026-11-03T22:00:00-05:00",
+   "query": "Nevada 2nd congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nv-03",
+   "office": "house",
+   "state": "NV",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Susie Lee",
+     "surname": "Lee",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Marty O'Donnell",
+     "surname": "O'Donnell",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Jon Kamerath",
+     "surname": "Kamerath",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nevada%27s_3rd_Congressional_District_election,_2026"
+   ],
+   "notes": "Kamerath is the Independent American Party nominee. 'Lee' is a common name, so the text filter may get false matches.",
+   "poll_close_et": "2026-11-03T22:00:00-05:00",
+   "query": "Nevada 3rd congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-nv-04",
+   "office": "house",
+   "state": "NV",
+   "district": "04",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Steven Horsford",
+     "surname": "Horsford",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Cody Whipple",
+     "surname": "Whipple",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Russell Best",
+     "surname": "Best",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "William Johnson",
+     "surname": "Johnson",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nevada%27s_4th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/Nevada%27s_4th_Congressional_District"
+   ],
+   "notes": "Best is the Independent American Party nominee (party 'other'). Johnson is No Political Party (mapped to I). Nevada ballots also offer 'None of these candidates'. 'Best' is a common word. Not cross-checked against the Nevada Secretary of State list.",
+   "poll_close_et": "2026-11-03T22:00:00-05:00",
+   "query": "Nevada 4th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ny-03",
+   "office": "house",
+   "state": "NY",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Tom Suozzi",
+     "surname": "Suozzi",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Michael LiPetri Jr.",
+     "surname": "LiPetri",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_York%27s_3rd_Congressional_District_election,_2026",
+    "https://elections.ny.gov/certification-november-3-2026-general-election"
+   ],
+   "notes": "Fusion voting: LiPetri is on the Republican and Conservative lines; Ballotpedia lists Suozzi on the Democratic line only. Rematch of 2024. Ballot-line detail not checked against the NYS Board of Elections certification text.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "New York 3rd congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ny-04",
+   "office": "house",
+   "state": "NY",
+   "district": "04",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Laura Gillen",
+     "surname": "Gillen",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Jeanine Driscoll",
+     "surname": "Driscoll",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Blay Tarnoff",
+     "surname": "Tarnoff",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_York%27s_4th_Congressional_District_election,_2026",
+    "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
+   ],
+   "notes": "NY fusion voting, per the state certification (7 Oct 2026): Gillen on the Democratic line only (no Working Families candidate); Driscoll on Republican and Conservative lines; Tarnoff on the Libertarian line.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "New York 4th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ny-17",
+   "office": "house",
+   "state": "NY",
+   "district": "17",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mike Lawler",
+     "surname": "Lawler",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Cait Conley",
+     "surname": "Conley",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_York%27s_17th_Congressional_District_election,_2026",
+    "https://elections.ny.gov/certification-november-3-2026-general-election"
+   ],
+   "notes": "Fusion voting: Lawler is also on the Conservative line; Conley is also on the Working Families line. Confirmed against the NY State Board of Elections certification (search snippet). Ballotpedia uses 'Michael Lawler'.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "New York 17th congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ny-19",
+   "office": "house",
+   "state": "NY",
+   "district": "19",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Josh Riley",
+     "surname": "Riley",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Peter Oberacker",
+     "surname": "Oberacker",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_York%27s_19th_Congressional_District_election,_2026"
+   ],
+   "notes": "Fusion voting: Riley is on the Democratic and Working Families lines; Oberacker on the Republican and Conservative lines (per Ballotpedia).",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "New York 19th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-ny-21",
+   "office": "house",
+   "state": "NY",
+   "district": "21",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Blake Gendebien",
+     "surname": "Gendebien",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Anthony Constantino",
+     "surname": "Constantino",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_York%27s_21st_Congressional_District_election,_2026",
+    "https://elections.ny.gov/system/files/documents/2026/10/accessible-2026-general-ballot-certification-10.7.2026.pdf"
+   ],
+   "notes": "Open seat: incumbent Elise Stefanik (R) not running for re-election. NY fusion voting, per the state certification: Constantino on Republican and Taxpayer Rights lines; no Conservative or Working Families candidate. Write-in: Christopher Schmidt (Independent), not on the state certification; left out.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "New York 21st congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-oh-01",
+   "office": "house",
+   "state": "OH",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Greg Landsman",
+     "surname": "Landsman",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Eric Conroy",
+     "surname": "Conroy",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Nathan Weise",
+     "surname": "Weise",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_1st_Congressional_District_election,_2026",
+    "https://usatoday.com/elections/results/2026-11-03/us/oh/body/us-house"
+   ],
+   "notes": "Not cross-checked against the Ohio Secretary of State list.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "Ohio 1st congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-oh-07",
+   "office": "house",
+   "state": "OH",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Max Miller",
+     "surname": "Miller",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Brian Poindexter",
+     "surname": "Poindexter",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_7th_Congressional_District_election,_2026",
+    "https://votesee.org/ballot/ohio/district-7"
+   ],
+   "notes": "Write-in candidates excluded: Thahbia Asad and Andrey Martinichin (both Independent write-ins, per Ballotpedia). Ballotpedia flags its list as possibly incomplete; votesee says 2 candidates are on the ballot. Not checked against a county board list. 'Miller' is a common surname; match on 'Max Miller'.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "Ohio 7th congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-oh-09",
+   "office": "house",
+   "state": "OH",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Marcy Kaptur",
+     "surname": "Kaptur",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Derek Merrin",
+     "surname": "Merrin",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_9th_Congressional_District_election,_2026"
+   ],
+   "notes": "Write-in: Kathy McKinstry (Independent); left out. Ohio redrew its congressional map in October 2025.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "Ohio 9th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-oh-10",
+   "office": "house",
+   "state": "OH",
+   "district": "10",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mike Turner",
+     "surname": "Turner",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Kristina Knickerbocker",
+     "surname": "Knickerbocker",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Thomas McMasters",
+     "surname": "McMasters",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_10th_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia uses 'Michael Turner'. Not cross-checked against the Ohio Secretary of State list.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "Ohio 10th congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-oh-13",
+   "office": "house",
+   "state": "OH",
+   "district": "13",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Emilia Sykes",
+     "surname": "Sykes",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Carey Coleman",
+     "surname": "Coleman",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Sandeep Dixit",
+     "surname": "Dixit",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_13th_Congressional_District_election,_2026",
+    "https://beaconjournal.com/story/news/politics/elections/2026/09/28/emilia-sykes-carey-coleman-sandeep-dixit-compete-for-ohio-13th-district-u-s-house-seat/91901922007",
+    "https://boe.ohio.gov/summit/c/upload/Election_CandidateList.pdf"
+   ],
+   "notes": "Dixit is an independent. Ballotpedia flags its list as possibly incomplete; the Akron Beacon Journal and Summit County Board of Elections filings agree on these three.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "Ohio 13th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-oh-15",
+   "office": "house",
+   "state": "OH",
+   "district": "15",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mike Carey",
+     "surname": "Carey",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Don Leonard",
+     "surname": "Leonard",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brennan Barrington",
+     "surname": "Barrington",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_15th_Congressional_District_election,_2026"
+   ],
+   "notes": "Write-ins: Gary Josephson and Samuel Ronan (both Independent); left out. County ballots list Carey, Leonard and Barrington plus a write-in line. Ohio redrew its congressional map in October 2025.",
+   "poll_close_et": "2026-11-03T19:30:00-05:00",
+   "query": "Ohio 15th congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-pa-01",
+   "office": "house",
+   "state": "PA",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Brian Fitzpatrick",
+     "surname": "Fitzpatrick",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Bob Harvie",
+     "surname": "Harvie",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania%27s_1st_Congressional_District_election,_2026",
+    "https://whyy.org/articles/4-pennsylvania-congressional-races-2026"
+   ],
+   "notes": "Two-candidate race per Ballotpedia and press. Not cross-checked against the Pennsylvania Department of State list.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Pennsylvania 1st congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-pa-07",
+   "office": "house",
+   "state": "PA",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Ryan Mackenzie",
+     "surname": "Mackenzie",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Bob Brooks",
+     "surname": "Brooks",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania%27s_7th_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia lists only these two. Not cross-checked against the Pennsylvania Department of State list.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Pennsylvania 7th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-pa-08",
+   "office": "house",
+   "state": "PA",
+   "district": "08",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Rob Bresnahan",
+     "surname": "Bresnahan",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Paige Cognetti",
+     "surname": "Cognetti",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania%27s_8th_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia name: Rob Bresnahan Jr.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Pennsylvania 8th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-pa-10",
+   "office": "house",
+   "state": "PA",
+   "district": "10",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Scott Perry",
+     "surname": "Perry",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Janelle Stelson",
+     "surname": "Stelson",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania%27s_10th_Congressional_District_election,_2026",
+    "https://spotlightpa.org/news/2026/10/scott-perry-janelle-stelson-10th-congressional-district-election-anti-corruption-campaign-finance-elections"
+   ],
+   "notes": "Two-candidate race per Ballotpedia and press. Not cross-checked against the Pennsylvania Department of State list.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Pennsylvania 10th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-sc-01",
+   "office": "house",
+   "state": "SC",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Nancy Lacore",
+     "surname": "Lacore",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Jenny Honeycutt",
+     "surname": "Honeycutt",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Bill Reeside",
+     "surname": "Reeside",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/South_Carolina%27s_1st_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat (Nancy Mace not running for re-election to the House). Press often uses 'Jenny Costa Honeycutt' and sometimes spells the Democrat 'LaCore'; check the exact ballot names with the SC Election Commission. Excluded: Clayton Cuteri (Independent, write-in per Ballotpedia). Withdrawn or disqualified: Margo Ellis (Alliance Party), Paul Volkman (L).",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "South Carolina 1st congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-tx-09",
+   "office": "house",
+   "state": "TX",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Leticia Gutierrez",
+     "surname": "Gutierrez",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Alex Mealer",
+     "surname": "Mealer",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_9th_Congressional_District_election,_2026"
+   ],
+   "notes": "Open seat: Rep. Al Green (D), who held the old 9th, is not on this ballot; Texas redrew its map mid-decade. Mealer's full first name is Alexandra. Ballotpedia notes 'the candidate list in this election may not be complete'.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Texas 9th congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-tx-15",
+   "office": "house",
+   "state": "TX",
+   "district": "15",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Monica De La Cruz",
+     "surname": "De La Cruz",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Bobby Pulido",
+     "surname": "Pulido",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_15th_Congressional_District_election,_2026",
+    "https://sos.state.tx.us/elections/forms/2026-ballot-cert.pdf"
+   ],
+   "notes": "Confirmed against the Texas Secretary of State ballot certification (De La Cruz REP, Pulido DEM only). District lines changed in the 2025 Texas mid-decade redistricting.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Texas 15th congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-tx-23",
+   "office": "house",
+   "state": "TX",
+   "district": "23",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Katy Padilla Stout",
+     "surname": "Padilla Stout",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brandon Herrera",
+     "surname": "Herrera",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Ben Mendoza",
+     "surname": "Mendoza",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_23rd_Congressional_District_election,_2026",
+    "https://sos.state.tx.us/elections/forms/2026-ballot-cert.pdf",
+    "https://houstonchronicle.com/politics/texas-take/article/abbott-texans-congress-tony-gonzales-22403054.php",
+    "https://news.ballotpedia.org/2026/04/22/tony-gonzales-resignation-leaves-texas-23rd-congressional-district-vacant"
+   ],
+   "notes": "VACANT: Rep. Tony Gonzales (R) resigned on April 14, 2026, after dropping his re-election bid. No special election is on the Nov 3 ballot: the Houston Chronicle reports Gov. Abbott never set one, and the Texas SOS ballot certification (Aug 28) lists only the regular race. The House Clerk lists the special election date as TBD. Seat stays vacant until the winner of this regular election takes office in January 2027. Confirmed against the Texas SOS certification: Brandon Herrera (REP), Katy Padilla Stout (DEM), Ben Mendoza (IND). No declared write-ins for TX-23 on the SOS write-in certification. Check how the press shortens 'Padilla Stout' (it may be just 'Stout' or 'Padilla').",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Texas 23rd congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-tx-28",
+   "office": "house",
+   "state": "TX",
+   "district": "28",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Henry Cuellar",
+     "surname": "Cuellar",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Tano Tijerina",
+     "surname": "Tijerina",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Marlon Duran",
+     "surname": "Duran",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_28th_Congressional_District_election,_2026"
+   ],
+   "notes": "District redrawn in Texas's mid-decade redistricting.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Texas 28th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-tx-34",
+   "office": "house",
+   "state": "TX",
+   "district": "34",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Vicente Gonzalez",
+     "surname": "Gonzalez",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Eric Flores",
+     "surname": "Flores",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Chris Royal",
+     "surname": "Royal",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Eddie Espinoza",
+     "surname": "Espinoza",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_34th_Congressional_District_election,_2026",
+    "https://govexperts.com/texas-2026-elections-candidates",
+    "https://caller.com/story/news/politics/elections/2026/10/14/2026-november-midterm-election-for-corpus-christi-nueces-san-patricio-aransas-kleberg-county/92063413007"
+   ],
+   "notes": "Ballot and state-certification listings show four candidates. Ballotpedia uses 'Vicente Gonzalez Jr.'. District lines changed in the 2025 Texas mid-decade redistricting. 'Royal' is a common word.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Texas 34th congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-tx-35",
+   "office": "house",
+   "state": "TX",
+   "district": "35",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Johnny Garcia",
+     "surname": "Garcia",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Carlos De La Cruz",
+     "surname": "De La Cruz",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_35th_Congressional_District_election,_2026",
+    "https://sos.state.tx.us/elections/forms/2026-ballot-cert.pdf"
+   ],
+   "notes": "Open seat: Greg Casar is not on this district's ballot (Ballotpedia: no incumbent in the race). Confirmed against the Texas SOS certification: Carlos De La Cruz (REP), Johnny C. Garcia (DEM); no Libertarian, Green or independent. Ballot name is 'Johnny C. Garcia'. 'Garcia' is a very common surname; match on the full name.",
+   "poll_close_et": "2026-11-03T20:00:00-05:00",
+   "query": "Texas 35th congressional district election results 2026",
+   "cook_rating": "toss_up_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-va-01",
+   "office": "house",
+   "state": "VA",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Rob Wittman",
+     "surname": "Wittman",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Shannon Taylor",
+     "surname": "Taylor",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Virginia%27s_1st_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia name: Robert J. Wittman. 'Taylor' is also a common first name, so the text filter may get false matches.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Virginia 1st congressional district election results 2026",
+   "cook_rating": "toss_up_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-va-02",
+   "office": "house",
+   "state": "VA",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jen Kiggans",
+     "surname": "Kiggans",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Elaine Luria",
+     "surname": "Luria",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Matt Baker",
+     "surname": "Baker",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Bishop Staten",
+     "surname": "Staten",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Virginia%27s_2nd_Congressional_District_election,_2026",
+    "https://elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-federal-offices",
+    "https://virginiamercury.com/2026/09/28/luria-and-kiggans-rematch-in-va-s-2nd-congressional-district-among-most-watched-races-in-nation"
+   ],
+   "notes": "Ballot names: 'Jen A. Kiggans', 'Elaine G. Luria', 'J. Matt Baker', Geral(d) D. \"Bishop\" Staten. In Sept 2026 Luria's campaign sued the Virginia Department of Elections to remove Staten over petition signatures; later reports (28 Sep) still list both independents on the ballot. Outcome of the suit not confirmed. Ashley Maria Euceda-Mendoza is a write-in (excluded). 'Baker' is a common word.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Virginia 2nd congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-va-05",
+   "office": "house",
+   "state": "VA",
+   "district": "05",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "John McGuire",
+     "surname": "McGuire",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Tom Perriello",
+     "surname": "Perriello",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Cooke Harvey",
+     "surname": "Harvey",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Virginia%27s_5th_Congressional_District_election,_2026",
+    "https://elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-all-offices",
+    "https://cardinalnews.org/2026/10/23/the-5th-district-has-an-independent-on-the-ballot-cooke-harvey"
+   ],
+   "notes": "Virginia ELECT candidate list shows Independent 'Cooke C. Harvey'. Excluded: Chris Register (Independent, write-in per Ballotpedia).",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Virginia 5th congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-va-07",
+   "office": "house",
+   "state": "VA",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Eugene Vindman",
+     "surname": "Vindman",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Douglas Ollivant",
+     "surname": "Ollivant",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Taner Demirci Lopez",
+     "surname": "Lopez",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Alaha Ahrar",
+     "surname": "Ahrar",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Joshua Ertle",
+     "surname": "Ertle",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Randall Terry",
+     "surname": "Terry",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Virginia%27s_7th_Congressional_District_election,_2026",
+    "https://elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-all-offices",
+    "https://vpap.org/offices/us-representative-7/elections",
+    "https://virginiamercury.com/voter-guides/contests/general-election-7th-congressional-district"
+   ],
+   "notes": "Six candidates on the ballot. Press names: 'Doug Ollivant', 'Taner Lopez', 'Josh Ertle'. Virginia Mercury (12 Oct) reports Ollivant is staying in the race after a cancer diagnosis. 'Terry' is also a common first name, so the text filter may get false matches.",
+   "poll_close_et": "2026-11-03T19:00:00-05:00",
+   "query": "Virginia 7th congressional district election results 2026",
+   "cook_rating": "likely_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-wa-03",
+   "office": "house",
+   "state": "WA",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Marie Gluesenkamp Perez",
+     "surname": "Gluesenkamp Perez",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "John Braun",
+     "surname": "Braun",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Washington%27s_3rd_Congressional_District_election,_2026",
+    "https://ballotpedia.org/Washington%27s_3rd_Congressional_District"
+   ],
+   "notes": "Top-two general election. Cook lists the holder as 'Perez'; the press uses 'Gluesenkamp Perez', so the detector should match both. Washington is all-mail and counts for days. Not cross-checked against the Washington Secretary of State list.",
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "query": "Washington 3rd congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-wa-05",
+   "office": "house",
+   "state": "WA",
+   "district": "05",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Michael Baumgartner",
+     "surname": "Baumgartner",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Carmela Conroy",
+     "surname": "Conroy",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Washington%27s_5th_Congressional_District_election,_2026"
+   ],
+   "notes": "Washington top-two system: these two advanced from the August primary. Not cross-checked against the Washington SOS list.",
+   "poll_close_et": "2026-11-03T23:00:00-05:00",
+   "query": "Washington 5th congressional district election results 2026",
+   "cook_rating": "likely_r",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-wi-01",
+   "office": "house",
+   "state": "WI",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Bryan Steil",
+     "surname": "Steil",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Mitchell Berman",
+     "surname": "Berman",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Wisconsin%27s_1st_Congressional_District_election,_2026"
+   ],
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Wisconsin 1st congressional district election results 2026",
+   "cook_rating": "lean_r",
+   "notes": "",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  },
+  {
+   "id": "house-wi-03",
+   "office": "house",
+   "state": "WI",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Derrick Van Orden",
+     "surname": "Van Orden",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Rebecca Cooke",
+     "surname": "Cooke",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Alexander Kent",
+     "surname": "Kent",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Rustin Provance",
+     "surname": "Provance",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Wisconsin%27s_3rd_Congressional_District_election,_2026",
+    "https://buffalocountywi.gov/wp-content/uploads/November-2026-Tabular-Statement-of-Votes-Cast-Website.pdf",
+    "https://piercecountyjournal.news/stories/district-3-between-cooke-van-orden-two-write-ins,208703"
+   ],
+   "notes": "Sources conflict on the independents: the Pierce County Journal calls Kent and Provance write-ins, but Buffalo County's official results template prints both as 'Ind.' with a separate write-in line, and Ballotpedia lists them as on the ballot. Included; please verify against the Wisconsin Elections Commission list. Kent's full name is Alexander Valiensi Kent.",
+   "poll_close_et": "2026-11-03T21:00:00-05:00",
+   "query": "Wisconsin 3rd congressional district election results 2026",
+   "cook_rating": "lean_d",
+   "review": {
+    "status": "draft",
+    "checked_by": []
+   }
+  }
+ ]
+}

@@ -1,0 +1,968 @@
+{
+ "generated_at": "2026-10-31T18:47:26Z",
+ "count_note": "29 House races (batch 1). DRAFT: needs a person's check before use. Write-ins excluded. Candidates are from Ballotpedia, cross-checked against state election office lists or official ballots where noted in each race's notes.",
+ "races": [
+  {
+   "id": "house-ak-al",
+   "office": "house",
+   "state": "AK",
+   "district": "AL",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Nick Begich",
+     "surname": "Begich",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Bill Hill",
+     "surname": "Hill",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Hafner",
+     "surname": "Hafner",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Jim McDermott",
+     "surname": "McDermott",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/United_States_House_of_Representatives_election_in_Alaska,_2026",
+    "https://ballotpedia.org/Alaska%27s_At-Large_Congressional_District",
+    "https://alaskapublic.org/news/politics/elections/2026-09-01/in-alaskas-u-s-house-race-a-libertarian-and-a-federal-inmate-advance-after-late-withdrawals",
+    "https://elections.alaska.gov/election-candidates"
+   ],
+   "notes": "Ranked-choice general election (top-four primary on 18 Aug 2026); a winner may not be known until RCV tabulation, which Alaska runs after all ballots arrive. Ballotpedia lists Begich as Nicholas Begich. Bill Hill is nonpartisan (mapped to I). After the primary, John Brendan Williams (D, 5th place) and Matthew Schultz (D) withdrew, and McDermott (L, 8th place) moved onto the general ballot. News reports say Hafner is in federal prison; he is on the ballot. Lady Donna Dutchess is a write-in (excluded). Tom Begich withdrew from the governor's race by 31 Aug and is off the ballot (see governor-ak sources), but older pages about him will still match 'Begich', so match the full name; 'Hill' is a common word."
+  },
+  {
+   "id": "house-az-01",
+   "office": "house",
+   "state": "AZ",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Amish Shah",
+     "surname": "Shah",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Jay Feely",
+     "surname": "Feely",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Monica Alponte",
+     "surname": "Alponte",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Arizona%27s_1st_Congressional_District_election,_2026",
+    "https://azmirror.com/voter-guides/contests/congressional-district-1",
+    "https://app.enhancedvoting.com/results/public/Arizona/110326GeneralElection"
+   ],
+   "notes": "Open seat (incumbent David Schweikert not running for re-election). Ballot name for Feely is 'Thomas \"Jay\" Feely IV'. Write-ins excluded: Gage Thunder (no party preference) and Dev Gupta (independent)."
+  },
+  {
+   "id": "house-ca-13",
+   "office": "house",
+   "state": "CA",
+   "district": "13",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Adam Gray",
+     "surname": "Gray",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Kevin Lincoln II",
+     "surname": "Lincoln",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/California%27s_13th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/California%27s_13th_Congressional_District"
+   ],
+   "notes": "Top-two general election. Not cross-checked against the California Secretary of State list. California counts late mail ballots for weeks; calls can come days after the election."
+  },
+  {
+   "id": "house-ca-48",
+   "office": "house",
+   "state": "CA",
+   "district": "48",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Marni von Wilpert",
+     "surname": "von Wilpert",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Jim Desmond",
+     "surname": "Desmond",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/California%27s_48th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/California%27s_48th_Congressional_District"
+   ],
+   "notes": "Open seat (Darrell Issa not running). Top-two general election (primary 2 Jun 2026). Not cross-checked against the California Secretary of State list. The detector should also match 'Wilpert' (press may write 'Von Wilpert')."
+  },
+  {
+   "id": "house-co-05",
+   "office": "house",
+   "state": "CO",
+   "district": "05",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jeff Crank",
+     "surname": "Crank",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Jessica Killin",
+     "surname": "Killin",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Christopher Mitchell",
+     "surname": "Mitchell",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "Mark Elworth Jr.",
+     "surname": "Elworth",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Colorado%27s_5th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/Colorado%27s_5th_Congressional_District",
+    "https://votesee.org/ballot/colorado/district-5"
+   ],
+   "notes": "Mitchell is the American Constitution Party nominee (party 'other'). Steven Fuller (unaffiliated) is a write-in (excluded). 'Crank' is a common word. Not cross-checked against the Colorado Secretary of State list."
+  },
+  {
+   "id": "house-fl-09",
+   "office": "house",
+   "state": "FL",
+   "district": "09",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Darren Soto",
+     "surname": "Soto",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Dan Green",
+     "surname": "Green",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_9th_Congressional_District_election,_2026",
+    "https://dos.elections.myflorida.com/candidates/CanList.asp?elecid=20261103-GEN"
+   ],
+   "notes": "Confirmed against the Florida Division of Elections general election candidate list (both qualified). 'Green' is a common word and a party name; the detector filter should require the full name or context."
+  },
+  {
+   "id": "house-fl-16",
+   "office": "house",
+   "state": "FL",
+   "district": "16",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Sydney Gruters",
+     "surname": "Gruters",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Kelly Kirschner",
+     "surname": "Kirschner",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Mark Davis",
+     "surname": "Davis",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_16th_Congressional_District_election,_2026",
+    "https://dos.elections.myflorida.com/candidates/CanList.asp?elecid=20261103-GEN",
+    "https://wgcu.org/elections/2026-10-16/three-very-different-candidates-vying-for-congress-in-florida-district-16"
+   ],
+   "notes": "Open seat (Vern Buchanan retiring). Confirmed against the Florida Division of Elections list. Mark Davis is No Party Affiliation (mapped to I). Surname 'Gruters' is shared with Joe Gruters, who is not a candidate in this race."
+  },
+  {
+   "id": "house-fl-27",
+   "office": "house",
+   "state": "FL",
+   "district": "27",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Maria Elvira Salazar",
+     "surname": "Salazar",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Eliott Rodriguez",
+     "surname": "Rodriguez",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Florida%27s_27th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/Florida%27s_27th_Congressional_District",
+    "https://votesee.org/ballot/florida/district-27"
+   ],
+   "notes": "Press often writes 'María Elvira Salazar' (accent). Some outlets misspell Rodriguez's first name as 'Elliott'. This district's row in the Florida Division of Elections list was past the fetch limit and was not read directly."
+  },
+  {
+   "id": "house-ia-03",
+   "office": "house",
+   "state": "IA",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Zach Nunn",
+     "surname": "Nunn",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Sarah Trone Garriott",
+     "surname": "Trone Garriott",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Iowa%27s_3rd_Congressional_District_election,_2026",
+    "https://iowacapitaldispatch.com/voter-guides/contests/2026-us-house-district-3-general"
+   ],
+   "notes": "Two-candidate race per Ballotpedia and local press. The detector should match 'Trone Garriott' and 'Garriott'. Not cross-checked against the Iowa Secretary of State list."
+  },
+  {
+   "id": "house-ks-02",
+   "office": "house",
+   "state": "KS",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Derek Schmidt",
+     "surname": "Schmidt",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Don Coover",
+     "surname": "Coover",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "John Hauer",
+     "surname": "Hauer",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Kansas%27_2nd_Congressional_District_election,_2026",
+    "https://myvoteinfo.voteks.org/VoterView/Ballot/GetSampleBallotImage?SampleBallotKey=11072081",
+    "https://kansasreflector.com/voter-guides/2026-kansas-general-election"
+   ],
+   "notes": "Confirmed against an official Kansas sample ballot (search snippet: Hauer L, Schmidt R, Coover D)."
+  },
+  {
+   "id": "house-mi-04",
+   "office": "house",
+   "state": "MI",
+   "district": "04",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Bill Huizenga",
+     "surname": "Huizenga",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Sean McCann",
+     "surname": "McCann",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Shafina Barnett",
+     "surname": "Barnett",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Michigan%27s_4th_Congressional_District_election,_2026",
+    "https://mi-boe.entellitrak.com/etk-mi-boe-prod/page.request.do?electionType=GEN&electionYear=2026&page=page.miboePublicReport"
+   ],
+   "notes": "Confirmed against the Michigan Bureau of Elections general election candidate listing (McCann D, Huizenga R, Barnett Green)."
+  },
+  {
+   "id": "house-mi-10",
+   "office": "house",
+   "state": "MI",
+   "district": "10",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Michael Bouchard",
+     "surname": "Bouchard",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Christina Hines",
+     "surname": "Hines",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Kwabena Nkromo",
+     "surname": "Nkromo",
+     "party": "G",
+     "incumbent": false
+    },
+    {
+     "name": "Mike Saliba",
+     "surname": "Saliba",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Andrea Kirby",
+     "surname": "Kirby",
+     "party": "other",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Michigan%27s_10th_Congressional_District_election,_2026",
+    "https://mlive.com/news/detroit/2026/10/the-5-candidates-vying-to-replace-us-rep-john-james.html",
+    "https://mi-boe.entellitrak.com/etk-mi-boe-prod/page.request.do?electionType=GEN&electionYear=2026&page=page.miboePublicReport"
+   ],
+   "notes": "Open seat (incumbent John James not running for re-election). Kirby is the Working Class Party nominee (party 'other'). Press names vary: 'Christina Bertrand Hines' and 'Michael Bouchard Jr.' (MLive). This district's row in the state listing was past the fetch limit; five candidates agree across Ballotpedia, MLive and a results-page template."
+  },
+  {
+   "id": "house-mo-02",
+   "office": "house",
+   "state": "MO",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Ann Wagner",
+     "surname": "Wagner",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Fred Wellman",
+     "surname": "Wellman",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brandon Daugherty",
+     "surname": "Daugherty",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Missouri%27s_2nd_Congressional_District_election,_2026",
+    "https://myleaderpaper.com/news/three-face-off-for-2nd-congressional-district-seat/article_040f9694-849a-47cd-aeb5-8df9e1622cf7.html"
+   ],
+   "notes": "Ballotpedia lists Wellman as Frederick Wellman; the press uses Fred. Not cross-checked against the Missouri Secretary of State list."
+  },
+  {
+   "id": "house-nc-03",
+   "office": "house",
+   "state": "NC",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Greg Murphy",
+     "surname": "Murphy",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Raymond Smith Jr.",
+     "surname": "Smith",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Daniel Cavender",
+     "surname": "Cavender",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_3rd_Congressional_District_election,_2026",
+    "https://dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf"
+   ],
+   "notes": "Confirmed against the NC State Board of Elections general candidate list (ballot names 'Greg Murphy', 'Raymond Smith', 'Daniel Cavender'). 'Smith' is very common; the detector should match on the full name."
+  },
+  {
+   "id": "house-nc-11",
+   "office": "house",
+   "state": "NC",
+   "district": "11",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jennifer Balkcom",
+     "surname": "Balkcom",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Jamie Ager",
+     "surname": "Ager",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Travis Groo",
+     "surname": "Groo",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/North_Carolina%27s_11th_Congressional_District_election,_2026",
+    "https://dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf",
+    "https://ncnewsline.com/2026/08/10/ncgop-to-select-new-nc-11-candidate-after-us-rep-edwards-withdrawal"
+   ],
+   "notes": "Open seat: incumbent Chuck Edwards (R) won the primary, then withdrew in August 2026. The district GOP committee picked state Rep. Jennifer Balkcom on 10 Aug 2026 as the replacement nominee. Confirmed against the NC State Board of Elections list (ballot name 'Jennifer Capps Balkcom'). Edwards is not on the general ballot."
+  },
+  {
+   "id": "house-ne-02",
+   "office": "house",
+   "state": "NE",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Denise Powell",
+     "surname": "Powell",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Brinker Harding",
+     "surname": "Harding",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Eric Michael Foreman",
+     "surname": "Foreman",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nebraska%27s_2nd_Congressional_District_election,_2026",
+    "https://nebraskaexaminer.com/voter-guides/contests/2026-general-u-s-house-district-2"
+   ],
+   "notes": "Open seat (Don Bacon retiring). Not cross-checked against the Nebraska Secretary of State list."
+  },
+  {
+   "id": "house-nj-07",
+   "office": "house",
+   "state": "NJ",
+   "district": "07",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Tom Kean Jr.",
+     "surname": "Kean",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Rebecca Bennett",
+     "surname": "Bennett",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Seamus O'Toole",
+     "surname": "O'Toole",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_Jersey%27s_7th_Congressional_District_election,_2026",
+    "https://whyy.org/articles/election-2026-new-jersey-7th-congressional-district-voter-guide"
+   ],
+   "notes": "O'Toole is an independent who files by petition; 'Stop Israel's Genocide' is his ballot slogan, not a registered party (Ballotpedia lists it as a party; WHYY calls him an independent). Mapped to I. Ballotpedia uses 'Thomas Kean Jr.'. Not cross-checked against the New Jersey Division of Elections list."
+  },
+  {
+   "id": "house-nv-01",
+   "office": "house",
+   "state": "NV",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Dina Titus",
+     "surname": "Titus",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Carrie Buck",
+     "surname": "Buck",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Steven St John",
+     "surname": "St John",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Bobby Khan",
+     "surname": "Khan",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nevada%27s_1st_Congressional_District_election,_2026",
+    "https://silverstateelection.nv.gov/"
+   ],
+   "notes": "Confirmed against the Nevada results page template (Buck REP, Khan NPP, St John NPP, Titus DEM). St John and Khan are No Political Party (mapped to I); ballot names 'Steven \"Chap\" St John' and 'Afzal \"Bobby\" Khan'. Nevada ballots also offer 'None of these candidates'. 'Buck' is a common word."
+  },
+  {
+   "id": "house-nv-04",
+   "office": "house",
+   "state": "NV",
+   "district": "04",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Steven Horsford",
+     "surname": "Horsford",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Cody Whipple",
+     "surname": "Whipple",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Russell Best",
+     "surname": "Best",
+     "party": "other",
+     "incumbent": false
+    },
+    {
+     "name": "William Johnson",
+     "surname": "Johnson",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Nevada%27s_4th_Congressional_District_election,_2026",
+    "https://ballotpedia.org/Nevada%27s_4th_Congressional_District"
+   ],
+   "notes": "Best is the Independent American Party nominee (party 'other'). Johnson is No Political Party (mapped to I). Nevada ballots also offer 'None of these candidates'. 'Best' is a common word. Not cross-checked against the Nevada Secretary of State list."
+  },
+  {
+   "id": "house-ny-17",
+   "office": "house",
+   "state": "NY",
+   "district": "17",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mike Lawler",
+     "surname": "Lawler",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Cait Conley",
+     "surname": "Conley",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/New_York%27s_17th_Congressional_District_election,_2026",
+    "https://elections.ny.gov/certification-november-3-2026-general-election"
+   ],
+   "notes": "Fusion voting: Lawler is also on the Conservative line; Conley is also on the Working Families line. Confirmed against the NY State Board of Elections certification (search snippet). Ballotpedia uses 'Michael Lawler'."
+  },
+  {
+   "id": "house-oh-01",
+   "office": "house",
+   "state": "OH",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Greg Landsman",
+     "surname": "Landsman",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Eric Conroy",
+     "surname": "Conroy",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Nathan Weise",
+     "surname": "Weise",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_1st_Congressional_District_election,_2026",
+    "https://usatoday.com/elections/results/2026-11-03/us/oh/body/us-house"
+   ],
+   "notes": "Not cross-checked against the Ohio Secretary of State list."
+  },
+  {
+   "id": "house-oh-10",
+   "office": "house",
+   "state": "OH",
+   "district": "10",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Mike Turner",
+     "surname": "Turner",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Kristina Knickerbocker",
+     "surname": "Knickerbocker",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Thomas McMasters",
+     "surname": "McMasters",
+     "party": "L",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Ohio%27s_10th_Congressional_District_election,_2026"
+   ],
+   "notes": "Ballotpedia uses 'Michael Turner'. Not cross-checked against the Ohio Secretary of State list."
+  },
+  {
+   "id": "house-pa-01",
+   "office": "house",
+   "state": "PA",
+   "district": "01",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Brian Fitzpatrick",
+     "surname": "Fitzpatrick",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Bob Harvie",
+     "surname": "Harvie",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania%27s_1st_Congressional_District_election,_2026",
+    "https://whyy.org/articles/4-pennsylvania-congressional-races-2026"
+   ],
+   "notes": "Two-candidate race per Ballotpedia and press. Not cross-checked against the Pennsylvania Department of State list."
+  },
+  {
+   "id": "house-pa-10",
+   "office": "house",
+   "state": "PA",
+   "district": "10",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Scott Perry",
+     "surname": "Perry",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Janelle Stelson",
+     "surname": "Stelson",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Pennsylvania%27s_10th_Congressional_District_election,_2026",
+    "https://spotlightpa.org/news/2026/10/scott-perry-janelle-stelson-10th-congressional-district-election-anti-corruption-campaign-finance-elections"
+   ],
+   "notes": "Two-candidate race per Ballotpedia and press. Not cross-checked against the Pennsylvania Department of State list."
+  },
+  {
+   "id": "house-tx-15",
+   "office": "house",
+   "state": "TX",
+   "district": "15",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Monica De La Cruz",
+     "surname": "De La Cruz",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Bobby Pulido",
+     "surname": "Pulido",
+     "party": "D",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_15th_Congressional_District_election,_2026",
+    "https://sos.state.tx.us/elections/forms/2026-ballot-cert.pdf"
+   ],
+   "notes": "Confirmed against the Texas Secretary of State ballot certification (De La Cruz REP, Pulido DEM only). District lines changed in the 2025 Texas mid-decade redistricting."
+  },
+  {
+   "id": "house-tx-34",
+   "office": "house",
+   "state": "TX",
+   "district": "34",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Vicente Gonzalez",
+     "surname": "Gonzalez",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "Eric Flores",
+     "surname": "Flores",
+     "party": "R",
+     "incumbent": false
+    },
+    {
+     "name": "Chris Royal",
+     "surname": "Royal",
+     "party": "L",
+     "incumbent": false
+    },
+    {
+     "name": "Eddie Espinoza",
+     "surname": "Espinoza",
+     "party": "G",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Texas%27_34th_Congressional_District_election,_2026",
+    "https://govexperts.com/texas-2026-elections-candidates",
+    "https://caller.com/story/news/politics/elections/2026/10/14/2026-november-midterm-election-for-corpus-christi-nueces-san-patricio-aransas-kleberg-county/92063413007"
+   ],
+   "notes": "Ballot and state-certification listings show four candidates. Ballotpedia uses 'Vicente Gonzalez Jr.'. District lines changed in the 2025 Texas mid-decade redistricting. 'Royal' is a common word."
+  },
+  {
+   "id": "house-va-02",
+   "office": "house",
+   "state": "VA",
+   "district": "02",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Jen Kiggans",
+     "surname": "Kiggans",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Elaine Luria",
+     "surname": "Luria",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Matt Baker",
+     "surname": "Baker",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Bishop Staten",
+     "surname": "Staten",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Virginia%27s_2nd_Congressional_District_election,_2026",
+    "https://elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-federal-offices",
+    "https://virginiamercury.com/2026/09/28/luria-and-kiggans-rematch-in-va-s-2nd-congressional-district-among-most-watched-races-in-nation"
+   ],
+   "notes": "Ballot names: 'Jen A. Kiggans', 'Elaine G. Luria', 'J. Matt Baker', Geral(d) D. \"Bishop\" Staten. In Sept 2026 Luria's campaign sued the Virginia Department of Elections to remove Staten over petition signatures; later reports (28 Sep) still list both independents on the ballot. Outcome of the suit not confirmed. Ashley Maria Euceda-Mendoza is a write-in (excluded). 'Baker' is a common word."
+  },
+  {
+   "id": "house-wa-03",
+   "office": "house",
+   "state": "WA",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Marie Gluesenkamp Perez",
+     "surname": "Gluesenkamp Perez",
+     "party": "D",
+     "incumbent": true
+    },
+    {
+     "name": "John Braun",
+     "surname": "Braun",
+     "party": "R",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Washington%27s_3rd_Congressional_District_election,_2026",
+    "https://ballotpedia.org/Washington%27s_3rd_Congressional_District"
+   ],
+   "notes": "Top-two general election. Cook lists the holder as 'Perez'; the press uses 'Gluesenkamp Perez', so the detector should match both. Washington is all-mail and counts for days. Not cross-checked against the Washington Secretary of State list."
+  },
+  {
+   "id": "house-wi-03",
+   "office": "house",
+   "state": "WI",
+   "district": "03",
+   "special": false,
+   "uncontested": false,
+   "candidates": [
+    {
+     "name": "Derrick Van Orden",
+     "surname": "Van Orden",
+     "party": "R",
+     "incumbent": true
+    },
+    {
+     "name": "Rebecca Cooke",
+     "surname": "Cooke",
+     "party": "D",
+     "incumbent": false
+    },
+    {
+     "name": "Alexander Kent",
+     "surname": "Kent",
+     "party": "I",
+     "incumbent": false
+    },
+    {
+     "name": "Rustin Provance",
+     "surname": "Provance",
+     "party": "I",
+     "incumbent": false
+    }
+   ],
+   "sources": [
+    "https://ballotpedia.org/Wisconsin%27s_3rd_Congressional_District_election,_2026",
+    "https://buffalocountywi.gov/wp-content/uploads/November-2026-Tabular-Statement-of-Votes-Cast-Website.pdf",
+    "https://piercecountyjournal.news/stories/district-3-between-cooke-van-orden-two-write-ins,208703"
+   ],
+   "notes": "Sources conflict on the independents: the Pierce County Journal calls Kent and Provance write-ins, but Buffalo County's official results template prints both as 'Ind.' with a separate write-in line, and Ballotpedia lists them as on the ballot. Included; please verify against the Wisconsin Elections Commission list. Kent's full name is Alexander Valiensi Kent."
+  }
+ ]
+}

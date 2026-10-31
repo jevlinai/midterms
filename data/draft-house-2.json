@@ -1,0 +1,868 @@
+{
+  "generated_at": "2026-10-31T18:47:49Z",
+  "races": [
+    {
+      "id": "house-al-02",
+      "office": "house",
+      "state": "AL",
+      "district": "02",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Shomari Figures",
+          "surname": "Figures",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Rhett Marques",
+          "surname": "Marques",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Alabama%27s_2nd_Congressional_District_election,_2026"
+      ],
+      "notes": "Alabama redrew its map in May 2026 (reinstating a 2023 map after Louisiana v. Callais); primary moved to Aug 11, 2026. Ballotpedia lists only these two general-election candidates; not cross-checked against the Alabama SOS list."
+    },
+    {
+      "id": "house-az-02",
+      "office": "house",
+      "state": "AZ",
+      "district": "02",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Eli Crane",
+          "surname": "Crane",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Jonathan Nez",
+          "surname": "Nez",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Curtis Goodwin",
+          "surname": "Goodwin",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Arizona%27s_2nd_Congressional_District_election,_2026"
+      ],
+      "notes": "Arizona SOS results page lists Crane, Nez, Goodwin plus write-in lines. One aggregator (bipartisan.org) labels Goodwin (I); Ballotpedia and others list him as Libertarian."
+    },
+    {
+      "id": "house-ca-22",
+      "office": "house",
+      "state": "CA",
+      "district": "22",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "David Valadao",
+          "surname": "Valadao",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Randy Villegas",
+          "surname": "Villegas",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/California%27s_22nd_Congressional_District_election,_2026"
+      ],
+      "notes": "California top-two system: these two advanced from the June primary. Ballotpedia lists him as David G. Valadao."
+    },
+    {
+      "id": "house-co-03",
+      "office": "house",
+      "state": "CO",
+      "district": "03",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Jeff Hurd",
+          "surname": "Hurd",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Dwayne Romero",
+          "surname": "Romero",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Cory Robertson",
+          "surname": "Robertson",
+          "party": "L",
+          "incumbent": false
+        },
+        {
+          "name": "Clifton Brown",
+          "surname": "Brown",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Colorado%27s_3rd_Congressional_District_election,_2026",
+        "https://coloradosos.gov/pubs/elections/vote/generalCandidates.html"
+      ],
+      "notes": "Colorado SOS official list (certified Sept 4): Dwayne L. Romero (D), Jeff Hurd (R), Cory Robertson (Libertarian), Clifton Brown (Unaffiliated, mapped to I). 'Brown' is a common surname; the detector filter may need the full name."
+    },
+    {
+      "id": "house-co-08",
+      "office": "house",
+      "state": "CO",
+      "district": "08",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Gabe Evans",
+          "surname": "Evans",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Manny Rutinel",
+          "surname": "Rutinel",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Dave Wood",
+          "surname": "Wood",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Colorado%27s_8th_Congressional_District_election,_2026",
+        "https://coloradosos.gov/pubs/elections/vote/generalCandidates.html"
+      ],
+      "notes": "Colorado SOS lists the Libertarian as 'Dave Wood'; Ballotpedia uses 'David Wood'. No write-ins listed for CD8 on the SOS list."
+    },
+    {
+      "id": "house-fl-13",
+      "office": "house",
+      "state": "FL",
+      "district": "13",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Anna Paulina Luna",
+          "surname": "Luna",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Leela Gray",
+          "surname": "Gray",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Tony D'Arrigo",
+          "surname": "D'Arrigo",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Florida%27s_13th_Congressional_District_election,_2026",
+        "https://dos.elections.myflorida.com/candidates/CanList.asp?elecid=20261103-GEN"
+      ],
+      "notes": "Florida DOS lists D'Arrigo as NPA (No Party Affiliation, mapped to I). Confirmed against the FL DOS candidate list."
+    },
+    {
+      "id": "house-fl-22",
+      "office": "house",
+      "state": "FL",
+      "district": "22",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Pia Dandiya",
+          "surname": "Dandiya",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Casey Askar",
+          "surname": "Askar",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Florida%27s_22nd_Congressional_District_election,_2026",
+        "https://dos.elections.myflorida.com/candidates/CanList.asp?elecid=20261103-GEN"
+      ],
+      "notes": "Open seat. FL DOS candidate list shows only Askar (REP) and Dandiya (DEM) qualified for the general in District 22, no NPA or write-in. Note: Lois Frankel appears on the FL DOS list as the Democratic nominee in District 23, not 22, so she is running in a different district rather than retiring; check that the 'OPEN (Frankel)' label is right for this numbering."
+    },
+    {
+      "id": "house-ia-01",
+      "office": "house",
+      "state": "IA",
+      "district": "01",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Mariannette Miller-Meeks",
+          "surname": "Miller-Meeks",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Christina Bohannan",
+          "surname": "Bohannan",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Michael Bridgford",
+          "surname": "Bridgford",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Iowa%27s_1st_Congressional_District_election,_2026",
+        "https://sos.iowa.gov/sites/default/files/2026-08/2026%20General%20-%20Candidate%20List%20Database%20-%20All%20Elections_1.pdf"
+      ],
+      "notes": "Iowa SOS lists Bridgford as 'No Party' (mapped to I). Third Miller-Meeks vs Bohannan contest."
+    },
+    {
+      "id": "house-in-01",
+      "office": "house",
+      "state": "IN",
+      "district": "01",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Frank Mrvan",
+          "surname": "Mrvan",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Barb Regnitz",
+          "surname": "Regnitz",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Indiana%27s_1st_Congressional_District_election,_2026"
+      ],
+      "notes": "Write-in candidates excluded: Alexander Degman (Independent) and James Johnson (Independent), per Ballotpedia. Not cross-checked against the Indiana Election Division list."
+    },
+    {
+      "id": "house-ky-06",
+      "office": "house",
+      "state": "KY",
+      "district": "06",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Zach Dembo",
+          "surname": "Dembo",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Ralph Alvarado",
+          "surname": "Alvarado",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Pete Lynch",
+          "surname": "Lynch",
+          "party": "other",
+          "incumbent": false
+        },
+        {
+          "name": "Jay Bowman",
+          "surname": "Bowman",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Kentucky%27s_6th_Congressional_District_election,_2026",
+        "https://spectrumnews1.com/ky/louisville/news/2026/10/27/kentucky-sixth-toss-up"
+      ],
+      "notes": "Open seat (Andy Barr not running for re-election to the House). Pete Lynch is the Kentucky Party nominee ('other'). Robert Quigley (Independent) is marked as a write-in candidate by Ballotpedia and excluded; the Kentucky Lantern voter guide lists him among candidates, so check whether his name is printed on the ballot. Some aggregators list Lynch as Independent."
+    },
+    {
+      "id": "house-mi-07",
+      "office": "house",
+      "state": "MI",
+      "district": "07",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Tom Barrett",
+          "surname": "Barrett",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "William Lawrence",
+          "surname": "Lawrence",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Shane Dedrick",
+          "surname": "Dedrick",
+          "party": "G",
+          "incumbent": false
+        },
+        {
+          "name": "Felix Thibodeau",
+          "surname": "Thibodeau",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Michigan%27s_7th_Congressional_District_election,_2026",
+        "https://cdn.oaklandcountymi.gov/oakland-sitefinity-prod/docs/default-source/clerk/official-candidate-list.pdf?sfvrsn=d12ce45c_1",
+        "https://michiganadvance.com/voter-guides/contests/7th-district-representative-in-congress"
+      ],
+      "notes": "Felix Thibodeau is the Working Class Party nominee ('other'). Confirmed against the Oakland County official candidate list (Dem Lawrence, Rep Barrett, Grn Dedrick, WC Thibodeau). Lawrence also goes by 'Will Lawrence' in the press."
+    },
+    {
+      "id": "house-mn-01",
+      "office": "house",
+      "state": "MN",
+      "district": "01",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Brad Finstad",
+          "surname": "Finstad",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Jake Johnson",
+          "surname": "Johnson",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Minnesota%27s_1st_Congressional_District_election,_2026"
+      ],
+      "notes": "Johnson is the DFL (Democratic-Farmer-Labor) nominee, mapped to D. Ballotpedia and votesee list two candidates; one aggregator says 3 candidates, so check the Minnesota SOS list for a minor-party entry. 'Johnson' is a very common surname; the filter may need the full name."
+    },
+    {
+      "id": "house-mt-01",
+      "office": "house",
+      "state": "MT",
+      "district": "01",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Sam Forstag",
+          "surname": "Forstag",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Aaron Flint",
+          "surname": "Flint",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Nick Sheedy",
+          "surname": "Sheedy",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Montana%27s_1st_Congressional_District_election,_2026"
+      ],
+      "notes": "Open seat (Ryan Zinke not running). Sample ballot text and Ballotpedia list Sheedy as Libertarian; one aggregator lists him as Ind. Not cross-checked against the Montana SOS certified list."
+    },
+    {
+      "id": "house-nc-05",
+      "office": "house",
+      "state": "NC",
+      "district": "05",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Virginia Foxx",
+          "surname": "Foxx",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Chuck Hubbard",
+          "surname": "Hubbard",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Robert Luffman",
+          "surname": "Luffman",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/North_Carolina%27s_5th_Congressional_District_election,_2026",
+        "https://dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf"
+      ],
+      "notes": "NC State Board of Elections list: Virginia Foxx (REP), Robert B. Luffman (LIB), Chuck Hubbard (DEM). David Clayton (unaffiliated) withdrew, per Ballotpedia, and is not on the ballot."
+    },
+    {
+      "id": "house-nc-13",
+      "office": "house",
+      "state": "NC",
+      "district": "13",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Brad Knott",
+          "surname": "Knott",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Paul Barringer",
+          "surname": "Barringer",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Steven Swinton",
+          "surname": "Swinton",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/North_Carolina%27s_13th_Congressional_District_election,_2026",
+        "https://dl.ncsbe.gov/Elections/2026/Candidate%20Filing/2026_general_candidate_list_by_contest_federal_and_state.pdf"
+      ],
+      "notes": "Confirmed against the NC State Board of Elections list (Barringer DEM, Swinton LIB, Knott REP)."
+    },
+    {
+      "id": "house-nh-01",
+      "office": "house",
+      "state": "NH",
+      "district": "01",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Stefany Shaheen",
+          "surname": "Shaheen",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Anthony DiLorenzo",
+          "surname": "DiLorenzo",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+        "https://mm.nh.gov/files/uploads/sos/docs/2026-ge-candidate-list.pdf"
+      ],
+      "notes": "Open seat (Chris Pappas not running for re-election to the House). NH SOS general-election candidate list shows only Shaheen (DEM) and DiLorenzo (REP). Detector caution: the surname 'Shaheen' also belongs to US Senator Jeanne Shaheen, so NH news will often use the name in other contexts; match on 'Stefany Shaheen'."
+    },
+    {
+      "id": "house-nj-09",
+      "office": "house",
+      "state": "NJ",
+      "district": "09",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Nellie Pou",
+          "surname": "Pou",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Rosemary Pino",
+          "surname": "Pino",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Terrisa Bukovinac",
+          "surname": "Bukovinac",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/New_Jersey%27s_9th_Congressional_District_election,_2026"
+      ],
+      "notes": "Bukovinac's ballot slogan/party is 'Save Our Babies' ('other'). Ballot names may be 'Nelida \"Nellie\" Pou' and 'Rosemary \"Rosie\" Pino'."
+    },
+    {
+      "id": "house-nv-02",
+      "office": "house",
+      "state": "NV",
+      "district": "02",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Teresa Benitez-Thompson",
+          "surname": "Benitez-Thompson",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "David Flippo",
+          "surname": "Flippo",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Lynn Chapman",
+          "surname": "Chapman",
+          "party": "other",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Nevada%27s_2nd_Congressional_District_election,_2026"
+      ],
+      "notes": "Open seat (Mark Amodei not running). Lynn Chapman is the Independent American Party nominee ('other'). Nevada ballots also include a 'None of these candidates' line. Not cross-checked against the Nevada SOS list."
+    },
+    {
+      "id": "house-ny-03",
+      "office": "house",
+      "state": "NY",
+      "district": "03",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Tom Suozzi",
+          "surname": "Suozzi",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Michael LiPetri Jr.",
+          "surname": "LiPetri",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/New_York%27s_3rd_Congressional_District_election,_2026",
+        "https://elections.ny.gov/certification-november-3-2026-general-election"
+      ],
+      "notes": "Fusion voting: LiPetri is on the Republican and Conservative lines; Ballotpedia lists Suozzi on the Democratic line only. Rematch of 2024. Ballot-line detail not checked against the NYS Board of Elections certification text."
+    },
+    {
+      "id": "house-ny-19",
+      "office": "house",
+      "state": "NY",
+      "district": "19",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Josh Riley",
+          "surname": "Riley",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Peter Oberacker",
+          "surname": "Oberacker",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/New_York%27s_19th_Congressional_District_election,_2026"
+      ],
+      "notes": "Fusion voting: Riley is on the Democratic and Working Families lines; Oberacker on the Republican and Conservative lines (per Ballotpedia)."
+    },
+    {
+      "id": "house-oh-07",
+      "office": "house",
+      "state": "OH",
+      "district": "07",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Max Miller",
+          "surname": "Miller",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Brian Poindexter",
+          "surname": "Poindexter",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Ohio%27s_7th_Congressional_District_election,_2026",
+        "https://votesee.org/ballot/ohio/district-7"
+      ],
+      "notes": "Write-in candidates excluded: Thahbia Asad and Andrey Martinichin (both Independent write-ins, per Ballotpedia). Ballotpedia flags its list as possibly incomplete; votesee says 2 candidates are on the ballot. Not checked against a county board list. 'Miller' is a common surname; match on 'Max Miller'."
+    },
+    {
+      "id": "house-oh-13",
+      "office": "house",
+      "state": "OH",
+      "district": "13",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Emilia Sykes",
+          "surname": "Sykes",
+          "party": "D",
+          "incumbent": true
+        },
+        {
+          "name": "Carey Coleman",
+          "surname": "Coleman",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Sandeep Dixit",
+          "surname": "Dixit",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Ohio%27s_13th_Congressional_District_election,_2026",
+        "https://beaconjournal.com/story/news/politics/elections/2026/09/28/emilia-sykes-carey-coleman-sandeep-dixit-compete-for-ohio-13th-district-u-s-house-seat/91901922007",
+        "https://boe.ohio.gov/summit/c/upload/Election_CandidateList.pdf"
+      ],
+      "notes": "Dixit is an independent. Ballotpedia flags its list as possibly incomplete; the Akron Beacon Journal and Summit County Board of Elections filings agree on these three."
+    },
+    {
+      "id": "house-pa-07",
+      "office": "house",
+      "state": "PA",
+      "district": "07",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Ryan Mackenzie",
+          "surname": "Mackenzie",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Bob Brooks",
+          "surname": "Brooks",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Pennsylvania%27s_7th_Congressional_District_election,_2026"
+      ],
+      "notes": "Ballotpedia lists only these two. Not cross-checked against the Pennsylvania Department of State list."
+    },
+    {
+      "id": "house-sc-01",
+      "office": "house",
+      "state": "SC",
+      "district": "01",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Nancy Lacore",
+          "surname": "Lacore",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Jenny Honeycutt",
+          "surname": "Honeycutt",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Bill Reeside",
+          "surname": "Reeside",
+          "party": "L",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/South_Carolina%27s_1st_Congressional_District_election,_2026"
+      ],
+      "notes": "Open seat (Nancy Mace not running for re-election to the House). Press often uses 'Jenny Costa Honeycutt' and sometimes spells the Democrat 'LaCore'; check the exact ballot names with the SC Election Commission. Excluded: Clayton Cuteri (Independent, write-in per Ballotpedia). Withdrawn or disqualified: Margo Ellis (Alliance Party), Paul Volkman (L)."
+    },
+    {
+      "id": "house-tx-23",
+      "office": "house",
+      "state": "TX",
+      "district": "23",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Katy Padilla Stout",
+          "surname": "Padilla Stout",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Brandon Herrera",
+          "surname": "Herrera",
+          "party": "R",
+          "incumbent": false
+        },
+        {
+          "name": "Ben Mendoza",
+          "surname": "Mendoza",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Texas%27_23rd_Congressional_District_election,_2026",
+        "https://sos.state.tx.us/elections/forms/2026-ballot-cert.pdf",
+        "https://houstonchronicle.com/politics/texas-take/article/abbott-texans-congress-tony-gonzales-22403054.php",
+        "https://news.ballotpedia.org/2026/04/22/tony-gonzales-resignation-leaves-texas-23rd-congressional-district-vacant"
+      ],
+      "notes": "VACANT: Rep. Tony Gonzales (R) resigned on April 14, 2026, after dropping his re-election bid. No special election is on the Nov 3 ballot: the Houston Chronicle reports Gov. Abbott never set one, and the Texas SOS ballot certification (Aug 28) lists only the regular race. The House Clerk lists the special election date as TBD. Seat stays vacant until the winner of this regular election takes office in January 2027. Confirmed against the Texas SOS certification: Brandon Herrera (REP), Katy Padilla Stout (DEM), Ben Mendoza (IND). No declared write-ins for TX-23 on the SOS write-in certification. Check how the press shortens 'Padilla Stout' (it may be just 'Stout' or 'Padilla')."
+    },
+    {
+      "id": "house-tx-35",
+      "office": "house",
+      "state": "TX",
+      "district": "35",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Johnny Garcia",
+          "surname": "Garcia",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Carlos De La Cruz",
+          "surname": "De La Cruz",
+          "party": "R",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Texas%27_35th_Congressional_District_election,_2026",
+        "https://sos.state.tx.us/elections/forms/2026-ballot-cert.pdf"
+      ],
+      "notes": "Open seat: Greg Casar is not on this district's ballot (Ballotpedia: no incumbent in the race). Confirmed against the Texas SOS certification: Carlos De La Cruz (REP), Johnny C. Garcia (DEM); no Libertarian, Green or independent. Ballot name is 'Johnny C. Garcia'. 'Garcia' is a very common surname; match on the full name."
+    },
+    {
+      "id": "house-va-05",
+      "office": "house",
+      "state": "VA",
+      "district": "05",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "John McGuire",
+          "surname": "McGuire",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Tom Perriello",
+          "surname": "Perriello",
+          "party": "D",
+          "incumbent": false
+        },
+        {
+          "name": "Cooke Harvey",
+          "surname": "Harvey",
+          "party": "I",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Virginia%27s_5th_Congressional_District_election,_2026",
+        "https://elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-all-offices",
+        "https://cardinalnews.org/2026/10/23/the-5th-district-has-an-independent-on-the-ballot-cooke-harvey"
+      ],
+      "notes": "Virginia ELECT candidate list shows Independent 'Cooke C. Harvey'. Excluded: Chris Register (Independent, write-in per Ballotpedia)."
+    },
+    {
+      "id": "house-wa-05",
+      "office": "house",
+      "state": "WA",
+      "district": "05",
+      "special": false,
+      "uncontested": false,
+      "candidates": [
+        {
+          "name": "Michael Baumgartner",
+          "surname": "Baumgartner",
+          "party": "R",
+          "incumbent": true
+        },
+        {
+          "name": "Carmela Conroy",
+          "surname": "Conroy",
+          "party": "D",
+          "incumbent": false
+        }
+      ],
+      "sources": [
+        "https://ballotpedia.org/Washington%27s_5th_Congressional_District_election,_2026"
+      ],
+      "notes": "Washington top-two system: these two advanced from the August primary. Not cross-checked against the Washington SOS list."
+    }
+  ]
+}
