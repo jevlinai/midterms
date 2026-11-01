@@ -39,5 +39,6 @@ def load_races(path=None):
     path = path or ROOT / "data" / "races.json"
     races = json.loads(pathlib.Path(path).read_text())["races"]
     for r in races:
-        r.setdefault("name", display_name(r))
+        if not r.get("name"):
+            r["name"] = display_name(r)
     return {r["id"]: r for r in races}

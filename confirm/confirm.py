@@ -30,7 +30,8 @@ CONFIRMED = STATE / "confirmed.json"
 LOG = STATE / "confirm-log.jsonl"
 PROPOSALS = STATE / "proposals.json"
 TWO_PEOPLE = {"senate", "governor"}
-AP_HOSTS = ("apnews.com",)
+# Election night: AP only. CONFIRM_HOSTS exists for dry runs on other events (e.g. "espn.com,nfl.com").
+AP_HOSTS = tuple(h.strip() for h in os.environ.get("CONFIRM_HOSTS", "apnews.com").split(",") if h.strip())
 
 
 def load(path, default):
@@ -98,7 +99,7 @@ def cmd_confirm(race, confirmed, args):
         sys.exit(f"winner must be exactly one of: {sorted(names)}")
     host = urllib.parse.urlsplit(args.url).netloc.lower().removeprefix("www.")
     if not any(host == h or host.endswith("." + h) for h in AP_HOSTS):
-        sys.exit("the link must be AP's own call (apnews.com)")
+        sys.exit(f"the link must be AP's own call ({', '.join(AP_HOSTS)})")
     t = parse_time(args.time)
     if t < dt.datetime.fromisoformat(race["poll_close_et"]):
         sys.exit("AP does not call a race before its polls close; check the time")
