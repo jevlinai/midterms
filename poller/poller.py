@@ -244,6 +244,21 @@ def run_round(tick, races, cfg, key, spend, raw_dir):
     return stats
 
 
+def spent_in_raw(raw_dir, since):
+    """Sum Jevlin's reported cost over stored poller records in raw/<date>/ for dates >= since."""
+    total = 0
+    for day in sorted(p for p in raw_dir.glob("????-??-??") if p.name >= since):
+        for f in day.glob("round-*.jsonl.gz"):
+            try:
+                with gzip.open(f, "rt") as fh:
+                    for line in fh:
+                        if line.endswith("\n"):
+                            total += ((json.loads(line).get("summary") or {}).get("cost_micros") or 0)
+            except (EOFError, OSError):
+                pass
+    return total
+
+
 def load_inactive():
     p = ROOT / "state" / "inactive.json"
     if not p.exists():
@@ -262,6 +277,8 @@ def main():
     ap.add_argument("--once", action="store_true", help="run one round now, for the given races, ignoring poll close times")
     ap.add_argument("--dry-run", action="store_true", help="print the schedule and estimated cost; no calls")
     ap.add_argument("--budget-usd", type=float, help="required for live runs: stop when Jevlin's reported spend reaches this")
+    ap.add_argument("--count-spend-since", help="YYYY-MM-DD: on start, count spend already recorded in raw/ from this ET date "
+                                                "on, so a restarted poller keeps one budget for the whole night")
     args = ap.parse_args()
 
     cfg = json.loads(pathlib.Path(args.config).read_text())
@@ -280,6 +297,9 @@ def main():
 
     key = load_key()
     spend = Spend(args.budget_usd)
+    if args.count_spend_since:
+        spend.add(spent_in_raw(pathlib.Path(args.raw_dir), args.count_spend_since))
+        log(f"spend already recorded since {args.count_spend_since}: ${spend.micros/1e6:.2f} of ${args.budget_usd}")
     raw_dir = pathlib.Path(args.raw_dir)
     minutes = cfg["night"]["round_minutes"]
 

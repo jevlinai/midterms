@@ -27,7 +27,7 @@ from agent.guard import check_post, check_summary_post, weighted_length
 from agent.store import Store, now_iso
 from agent.xpost import TWEETS_URL, XClient, XError
 
-STATUSES = ("queued", "published", "rejected")
+STATUSES = ("queued", "published", "rejected", "stale")
 _ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{2,80}$")
 
 
@@ -97,7 +97,12 @@ class Drafts:
         draft_id = f"{race_id}-{key[:8]}"
         p = self.path(draft_id)
         if p.exists():
-            return json.loads(p.read_text())
+            d = json.loads(p.read_text())
+            if d["status"] == "stale":  # the same text again for a new call: queue it again, re-checked
+                d.update(status="queued", guard={"ok": ok, "reasons": reasons, "checked_at": now_iso()},
+                         requeued_at=now_iso())
+                self._save(d)
+            return d
         d = {"id": draft_id, "race_id": race_id, "text": text, "source": source,
              "guard": {"ok": ok, "reasons": reasons, "checked_at": now_iso()},
              "status": "queued", "created_at": now_iso(), "attempt_key": key,
@@ -125,6 +130,16 @@ class Drafts:
         self._save(d)
         return d
 
+    def mark_stale(self, draft_id: str, reason: str) -> dict:
+        """A queued draft whose race is no longer called (or whose call changed): publish refuses it."""
+        d = self.get(draft_id)
+        if d["status"] != "queued":
+            return d
+        d["status"] = "stale"
+        d["stale"] = {"at": now_iso(), "reason": reason}
+        self._save(d)
+        return d
+
     # publish (human only) -------------------------------------------------------------------
 
     def _reply_target(self, d: dict) -> str | None:
@@ -147,6 +162,10 @@ class Drafts:
             raise NotAuthorized(f"{draft_id} was rejected by {d['rejected']['by']}")
         if d["status"] == "published":
             raise NotAuthorized(f"{draft_id} is already published: {d['published']['url']}")
+        if d["status"] == "stale":
+            raise NotAuthorized(f"{draft_id} is stale: {d['stale']['reason']}")
+        if d["status"] != "queued":
+            raise NotAuthorized(f"{draft_id} is {d['status']}, not queued")
 
         ok, reasons = self.guard(d, state)
         d["guard"] = {"ok": ok, "reasons": reasons, "checked_at": now_iso()}

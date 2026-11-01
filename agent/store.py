@@ -29,6 +29,12 @@ CREATE TABLE IF NOT EXISTS attempts (
   authorized_by TEXT, reply_to TEXT, tweet_id TEXT, url TEXT, error TEXT,
   created_at TEXT NOT NULL, updated_at TEXT NOT NULL
 );
+-- post-drafter: one row per race it has drafted (so a restart never drafts twice), and an
+-- append-only list of drafts made (for the hourly cap)
+CREATE TABLE IF NOT EXISTS drafted (
+  race_id TEXT PRIMARY KEY, draft_id TEXT NOT NULL, call_key TEXT NOT NULL, drafted_at TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS drafts_made (race_id TEXT NOT NULL, draft_id TEXT NOT NULL, at TEXT NOT NULL);
 """
 
 # Jevlin search spend is recorded too, but the LLM caps only count LLM rows.
@@ -99,6 +105,24 @@ class Store:
                        "COALESCE(SUM(usd),0) AS usd FROM spend WHERE run_id=? AND step=? AND model NOT LIKE ?",
                       (run_id, step, NON_LLM_PREFIX + "%"))
         return dict(r)
+
+    # post-drafter ----------------------------------------------------------------------------
+
+    def drafted(self, race_id: str) -> dict | None:
+        r = self._one("SELECT * FROM drafted WHERE race_id=?", (race_id,))
+        return dict(r) if r else None
+
+    def record_drafted(self, race_id: str, draft_id: str, call_key: str, *, made: bool = True) -> None:
+        now = now_iso()
+        self._exec("INSERT INTO drafted VALUES (?,?,?,?) ON CONFLICT(race_id) DO UPDATE SET draft_id=excluded.draft_id, "
+                   "call_key=excluded.call_key, drafted_at=excluded.drafted_at", (race_id, draft_id, call_key, now))
+        if made:
+            self._exec("INSERT INTO drafts_made VALUES (?,?,?)", (race_id, draft_id, now))
+
+    def drafts_made_since(self, t: datetime) -> int:
+        r = self._one("SELECT COUNT(*) AS n FROM drafts_made WHERE at>=?",
+                      (t.astimezone(timezone.utc).isoformat(timespec="seconds"),))
+        return int(r["n"])
 
     # attempts -------------------------------------------------------------------------------
 

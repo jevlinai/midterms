@@ -51,6 +51,18 @@ class Schedule(unittest.TestCase):
         self.assertEqual(poller.round_start(at(3, 19, 7), 5), at(3, 19, 5))
 
 
+class SpendRecount(unittest.TestCase):
+    def test_counts_only_dates_from_since(self):
+        import gzip, tempfile
+        with tempfile.TemporaryDirectory() as d:
+            d = pathlib.Path(d)
+            for day, cost in (("2026-11-02", 5000), ("2026-11-03", 27000), ("2026-11-04", 27000)):
+                (d / day).mkdir()
+                with gzip.open(d / day / "round-x.jsonl.gz", "wt") as fh:
+                    fh.write(json.dumps({"summary": {"cost_micros": cost}}) + "\n")
+            self.assertEqual(poller.spent_in_raw(d, "2026-11-03"), 54000)
+
+
 class Summary(unittest.TestCase):
     def test_flags_cache_hit_trimmed_and_missing(self):
         resp = {

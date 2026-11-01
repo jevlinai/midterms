@@ -18,3 +18,6 @@ state/drafts/
 state/agent.sqlite*
 detector/eval/*.sqlite
 !detector/eval/*.jsonl
+!data/review-log.jsonl
+logs/
+prereg/*.tar

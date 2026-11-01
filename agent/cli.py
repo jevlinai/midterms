@@ -8,6 +8,8 @@
   call-finder [--once] [--races a,b] [--fetch]
                                  find AP calls for closed, uncalled races -> state/proposals.json
                                  (validated proposals only; every outcome -> state/call_finder.jsonl)
+  post-drafter [--once] [--interval 60]
+                                 draft posts as races get called (posting set, max MIDTERMS_DRAFTS_PER_HOUR)
   thread                         draft the results thread (the version the leaderboard supports) -> queue,
                                  and both versions -> notes/thread-draft.md (needs MIDTERMS_REPO_URL)
   track [--once] [--races a,b] --budget-usd N [--dry-run]
@@ -79,7 +81,8 @@ def cmd_drafts(a) -> int:
         print("no drafts")
     for d in ds:
         guard = "pass" if d["guard"]["ok"] else "FAIL"
-        extra = d["published"]["url"] if d.get("published") else (f"by {d['rejected']['by']}" if d.get("rejected") else "")
+        extra = d["published"]["url"] if d.get("published") else (f"by {d['rejected']['by']}" if d.get("rejected") else
+                                                                  (d["stale"]["reason"] if d.get("stale") else ""))
         print(f"{d['id']}  {d['status']:<9}  guard {guard}  {d['source']:<8}  {d['created_at']}  {extra}")
         print("    " + d["text"].replace("\n", "\n    "))
     return 0
@@ -141,6 +144,25 @@ def cmd_call_finder(a) -> int:
     return 0
 
 
+def cmd_post_drafter(a) -> int:
+    from agent import post_drafter
+    from agent.budget import Budget
+    from agent.call_finder import load_races
+    from agent.drafts import Drafts
+    from agent.store import Store
+
+    model = config.model_name()
+    store = Store()
+    budget = Budget.from_env(store, model)  # a billed model needs the three caps
+    drafts, races = Drafts(store=store), load_races()
+    kw = dict(races=races, model=model, budget=budget)
+    if a.once:
+        print(json.dumps(post_drafter.run_pass(_state(), drafts, store, **kw)))
+        return 0
+    post_drafter.loop(_state, drafts, store, interval_s=a.interval, **kw)
+    return 0
+
+
 def cmd_thread(a) -> int:
     from agent import thread
     from agent.drafts import Drafts
@@ -193,7 +215,7 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("race_id")
     s.set_defaults(fn=cmd_draft_post)
     s = sub.add_parser("drafts", help="list the draft queue")
-    s.add_argument("--status", choices=["queued", "published", "rejected"])
+    s.add_argument("--status", choices=["queued", "published", "rejected", "stale"])
     s.set_defaults(fn=cmd_drafts)
     s = sub.add_parser("publish", help="a person posts one draft to X")
     s.add_argument("id")
@@ -215,6 +237,10 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop searching when this run's Jevlin spend reaches this (default 1.00)")
     s.add_argument("--interval", type=int, default=300, help="seconds between rounds (default 300)")
     s.set_defaults(fn=cmd_call_finder)
+    s = sub.add_parser("post-drafter", help="draft posts automatically as races get called (never publishes)")
+    s.add_argument("--once", action="store_true")
+    s.add_argument("--interval", type=int, default=60, help="seconds between passes (default 60)")
+    s.set_defaults(fn=cmd_post_drafter)
     s = sub.add_parser("thread", help="draft the results thread from the final state -> queue + notes/thread-draft.md")
     s.set_defaults(fn=cmd_thread)
     s = sub.add_parser("track", help="the pre-registered agent track (Agent on Jevlin) -> raw/agent/")
