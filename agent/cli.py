@@ -129,9 +129,16 @@ def cmd_call_finder(a) -> int:
 
     model_id = config.model_name("MIDTERMS_CALL_FINDER_MODEL")
     store = Store()
+    from agent.jevlin import budget_since
+
+    since = budget_since(a.budget_scope, a.budget_since)
     finder = CallFinder(client=JevlinClient(), model=build_model(model_id, max_tokens=1500),
                         budget=Budget.from_env(store, model_id), store=store, races=load_races(),
-                        run_id=new_run_id("callfinder"), fetch=a.fetch, jevlin_cap_usd=a.jevlin_cap_usd)
+                        run_id=new_run_id("callfinder"), fetch=a.fetch, jevlin_cap_usd=a.jevlin_cap_usd,
+                        budget_since=since)
+    if since:
+        print(f"Jevlin cap ${a.jevlin_cap_usd} for all call-finder runs since {since:%Y-%m-%d} ET; "
+              f"spent so far ${finder.jevlin_spent():.3f}", file=sys.stderr)
     race_ids = [r.strip() for r in a.races.split(",")] if a.races else None
     if a.once:
         results = run_once(finder, _state(), race_ids=race_ids, refresh=a.refresh)
@@ -198,8 +205,11 @@ def cmd_track(a) -> int:
         return 0
     if a.budget_usd is None:
         raise ConfigError("a live run needs --budget-usd (Jevlin spend cap for this run; CLAUDE.md rule 6)")
+    from agent.jevlin import budget_since
+
+    since = budget_since(a.budget_scope, a.budget_since)
     model = a.model or cfg["model"]
-    results = track.run(cfg=cfg, races=races, once=a.once, budget_usd=a.budget_usd, model=model)
+    results = track.run(cfg=cfg, races=races, once=a.once, budget_usd=a.budget_usd, model=model, budget_since=since)
     for r in results:
         print(json.dumps(r))
     return 0
@@ -236,6 +246,11 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--jevlin-cap-usd", type=float, default=float(os.environ.get("MIDTERMS_CALL_FINDER_CAP_USD", "1.0")),
                    help="stop searching when this run's Jevlin spend reaches this (default 1.00)")
     s.add_argument("--interval", type=int, default=300, help="seconds between rounds (default 300)")
+    s.add_argument("--budget-scope", choices=["run", "day"],
+                   help="run: this process only (default); day: all of this command's Jevlin spend in the ledger "
+                        "since 00:00 ET on --budget-since (or today), across restarts")
+    s.add_argument("--budget-since", metavar="YYYY-MM-DD", help="ET date the day-scoped budget counts from "
+                   "(implies --budget-scope day)")
     s.set_defaults(fn=cmd_call_finder)
     s = sub.add_parser("post-drafter", help="draft posts automatically as races get called (never publishes)")
     s.add_argument("--once", action="store_true")
@@ -249,6 +264,11 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--budget-usd", type=float, help="required: stop when this run's Jevlin spend reaches it")
     s.add_argument("--dry-run", action="store_true", help="print the schedule's checks and Jevlin upper bound; no calls")
     s.add_argument("--model", help="override the pre-registered model (rehearsals only; e.g. offline)")
+    s.add_argument("--budget-scope", choices=["run", "day"],
+                   help="run: this process only (default); day: all of this command's Jevlin spend in the ledger "
+                        "since 00:00 ET on --budget-since (or today), across restarts")
+    s.add_argument("--budget-since", metavar="YYYY-MM-DD", help="ET date the day-scoped budget counts from "
+                   "(implies --budget-scope day)")
     s.set_defaults(fn=cmd_track)
     a = p.parse_args(argv)
     try:

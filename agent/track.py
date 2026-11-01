@@ -178,13 +178,19 @@ def schedule_end(races: list[dict], cfg: dict) -> datetime | None:
 # ---------- spend ----------
 
 class JevlinSpend:
-    """Jevlin dollars for this run, against --budget-usd. Thread-safe; checked before every call."""
+    """Jevlin dollars against --budget-usd: this run's, or (with `since`, --budget-scope day) every track
+    run's since that time, read from the ledger, so a restarted job continues the same budget.
+    Thread-safe; checked before every call."""
 
-    def __init__(self, store: Store, run_id: str, budget_usd: float):
-        self.store, self.run_id, self.budget_usd = store, run_id, budget_usd
+    STEP_PREFIX = "track."
+
+    def __init__(self, store: Store, run_id: str, budget_usd: float, since: datetime | None = None):
+        self.store, self.run_id, self.budget_usd, self.since = store, run_id, budget_usd, since
         self.lock = threading.Lock()
 
     def spent(self) -> float:
+        if self.since is not None:
+            return self.store.jevlin_spend_since(self.STEP_PREFIX, self.since)
         return self.store.jevlin_spend_for_run(self.run_id)
 
     def exceeded(self) -> bool:
@@ -581,14 +587,16 @@ def dry_run(races: list[dict], cfg: dict) -> dict:
 
 def run(*, cfg: dict, races: list[dict], once: bool, budget_usd: float, model: str | Any,
         client: JevlinClient | None = None, store: Store | None = None, raw_dir: Path | None = None,
-        poller_dir: Path | None = None, run_id: str | None = None, now_fn=lambda: datetime.now(ET), sleep_fn=time.sleep) -> list[dict]:
+        poller_dir: Path | None = None, run_id: str | None = None, budget_since: datetime | None = None, now_fn=lambda: datetime.now(ET), sleep_fn=time.sleep) -> list[dict]:
     from agent.runtime import new_run_id
 
     store = store or Store()
     run_id = run_id or new_run_id("track")
     label = model if isinstance(model, str) else "offline"
     budget = Budget.from_env(store, label)
-    jevlin = JevlinSpend(store, run_id, budget_usd)
+    jevlin = JevlinSpend(store, run_id, budget_usd, since=budget_since)
+    scope = f"all track runs since {budget_since:%Y-%m-%d %H:%M} ET" if budget_since else "this run"
+    log(f"Jevlin budget ${budget_usd} for {scope}; spent so far ${jevlin.spent():.3f}")
     client = client or JevlinClient(base_url=cfg["jevlin"]["base_url"], timeout=cfg["jevlin"]["timeout_seconds"])
     raw_dir = Path(raw_dir or (config.raw_root() / "agent" if cfg["output"]["raw_dir"] == "raw/agent" else config.ROOT / cfg["output"]["raw_dir"]))
     if label != cfg["model"]:

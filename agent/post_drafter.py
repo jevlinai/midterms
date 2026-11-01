@@ -94,7 +94,7 @@ def run_pass(state: dict, drafts: Drafts, store: Store, *, races: dict[str, dict
             continue  # drafted for this call already (survives restarts)
         live = [d for d in by_race.get(rid, []) if d["status"] in ("queued", "published")]
         if rec is None and live:
-            store.record_drafted(rid, live[0]["id"], call_key(race), made=False)  # drafted by hand earlier
+            store.record_drafted(rid, live[0]["id"], call_key(race), made=False, at=now)  # drafted by hand earlier
             log(f"skip {rid}: already has draft {live[0]['id']} ({live[0]['status']})")
             continue
         todo.append(race)
@@ -108,7 +108,7 @@ def run_pass(state: dict, drafts: Drafts, store: Store, *, races: dict[str, dict
                 f"{stats['capped']} races wait for a later pass")
             break
         d = draft_for_race(race["id"], state, drafts, model=model, final_text=final_text, budget=budget, store=store)
-        store.record_drafted(race["id"], d["id"], call_key(race))
+        store.record_drafted(race["id"], d["id"], call_key(race), at=now)
         stats["drafted"] += 1
         why = f"; agent draft not used: {'; '.join(d['agent_reasons'])}" if d.get("agent_reasons") else ""
         log(f"drafted {race['id']} -> {d['id']} ({d['source']}, guard {'pass' if d['guard']['ok'] else 'FAIL'}){why}")

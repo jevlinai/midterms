@@ -239,3 +239,20 @@ def test_validate_matches_names_loosely_but_maps_to_the_listed_name(races):
     p, why = validate({**GOOD, "winner": "  abigail   SPANBERGER "}, races["governor-va-2025"], pages,
                       poll_close="2025-11-04T19:00:00-05:00", now=NOW)
     assert why == [] and p["winner"] == "Abigail Spanberger"
+
+
+def test_a_restarted_call_finder_continues_the_day_budget(races, va_state):
+    from agent.jevlin import budget_since
+    from agent.store import Store
+
+    since = budget_since("day", None)
+    first = FakeJevlin()
+    finder = make_finder(Store(), races, first, GOOD, jevlin_cap_usd=0.02, budget_since=since)
+    [r] = run_once(finder, va_state, now=NOW)
+    assert r["status"] == "proposed" and len(first.requests) == 1  # $0.022 spent
+
+    restarted = FakeJevlin()  # new process, new run id, same ledger
+    finder = make_finder(Store(), races, restarted, GOOD, jevlin_cap_usd=0.02, budget_since=since)
+    finder.run_id = "cf_restarted"
+    [r] = run_once(finder, va_state, now=NOW, refresh=True)
+    assert r["status"] == "skipped" and "since" in r["reasons"][0] and restarted.requests == []

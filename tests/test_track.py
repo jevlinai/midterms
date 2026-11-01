@@ -452,3 +452,53 @@ def test_reuse_round_end_to_end(fake, store, raw):
                         store=store, raw_dir=raw / "agent", poller_dir=raw, run_id="track_test",
                         now_fn=lambda: datetime(2026, 11, 3, 19, 44, tzinfo=ET))
     assert stats["ok"] == 1 and stats["no_baseline"] == 1 and fake.requests == []
+
+
+# ---------- Jevlin budget across restarts (--budget-scope day) ----------
+
+def test_a_restart_continues_the_day_budget_instead_of_resetting(isolated):
+    from agent.jevlin import budget_since
+    from agent.store import Store
+
+    since = budget_since("day", None)  # today, 00:00 ET
+    kw = dict(cfg={**CFG_LIVE, "max_workers": 1}, races=[RACES[0]], once=True, budget_usd=0.02, model=offline(),
+              raw_dir=isolated / "raw", now_fn=lambda: datetime(2026, 11, 3, 19, 14, tzinfo=ET))
+    first = FakeJevlin(cost_micros=22000)
+    track.run(**kw, client=client(first), store=Store(), run_id="track_run1", budget_since=since)
+    assert first.count("/v1/search") == 1  # $0.022 spent, over the $0.02 budget
+
+    # launchd restarts the job: new process, new run id, same ledger
+    after = FakeJevlin(cost_micros=22000)
+    [stats] = track.run(**kw, client=client(after), store=Store(), run_id="track_run2", budget_since=since)
+    assert after.requests == [] and stats["budget"] == 1
+
+    # with the old per-run scope, the restart would have spent again
+    per_run = FakeJevlin(cost_micros=22000)
+    track.run(**kw, client=client(per_run), store=Store(), run_id="track_run3")
+    assert per_run.count("/v1/search") == 1
+
+
+def test_day_budget_counts_only_this_commands_spend_since_the_date(store):
+    from agent.jevlin import budget_since
+
+    since = budget_since(None, "2026-10-01")
+    store.record_spend("other", "jevlin", "call_finder.search", {}, 5.0)  # another command's spend
+    store.record_spend("r1", "jevlin", "track.jevlin_search", {}, 0.5)
+    store.record_spend("r1", "claude-sonnet-5-5", "agent", {}, 9.0)      # LLM spend has its own caps
+    assert track.JevlinSpend(store, "r2", 1.0, since=since).spent() == 0.5
+    assert track.JevlinSpend(store, "r2", 1.0, since=since).exceeded() is False
+    assert track.JevlinSpend(store, "r2", 1.0, since=budget_since("day", "2099-01-01")).spent() == 0.0
+
+
+def test_budget_scope_options():
+    from datetime import date
+
+    from agent.jevlin import budget_since
+
+    assert budget_since(None, None) is None and budget_since("run", None) is None
+    assert budget_since(None, "2026-11-03") == datetime(2026, 11, 3, 0, 0, tzinfo=ET)  # --budget-since implies day
+    assert budget_since("day", None, today=date(2026, 11, 3)) == datetime(2026, 11, 3, tzinfo=ET)
+    with pytest.raises(ConfigError, match="needs --budget-scope day"):
+        budget_since("run", "2026-11-03")
+    with pytest.raises(ConfigError, match="YYYY-MM-DD"):
+        budget_since("day", "3 Nov")

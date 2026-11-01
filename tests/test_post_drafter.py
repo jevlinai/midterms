@@ -134,9 +134,8 @@ def test_hourly_cap(setup):
     assert lines[-1].startswith("cap reached: 3 drafts in the last hour")
     # the next pass in the same hour drafts nothing
     assert run(state, races, store=store, per_hour=3, now=NOW + timedelta(minutes=30))[0]["drafted"] == 0
-    # rolling: the drafts were recorded at the real time; an hour after that, 3 more
-    later = datetime.now(timezone.utc) + timedelta(minutes=61)
-    assert run(state, races, store=store, per_hour=3, now=later)[0]["drafted"] == 3
+    # rolling hour: 61 minutes later, 3 more
+    assert run(state, races, store=store, per_hour=3, now=NOW + timedelta(minutes=61))[0]["drafted"] == 3
 
 
 def test_the_cap_comes_from_the_environment(setup, monkeypatch):

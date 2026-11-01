@@ -188,10 +188,17 @@ def validate(raw: dict, race_entry: dict, pages: list[dict], *, poll_close: str 
 class CallFinder:
     def __init__(self, *, client: JevlinClient, model: BaseChatModel, budget: Budget, store: Store,
                  races: dict[str, dict], run_id: str, fetch: bool = False, jevlin_cap_usd: float = 1.0,
-                 year: int = 2026, recency: str | None = "day", round_minutes: int = 5):
+                 year: int = 2026, recency: str | None = "day", round_minutes: int = 5,
+                 budget_since: datetime | None = None):
         self.client, self.model, self.budget, self.store = client, model, budget, store
         self.races, self.run_id, self.fetch = races, run_id, fetch
         self.jevlin_cap_usd, self.year, self.recency, self.round_minutes = jevlin_cap_usd, year, recency, round_minutes
+        self.budget_since = budget_since  # --budget-scope day: count every call-finder run since then
+
+    def jevlin_spent(self) -> float:
+        if self.budget_since is not None:
+            return self.store.jevlin_spend_since("call_finder.", self.budget_since)
+        return self.store.jevlin_spend_for_run(self.run_id)
 
     def query(self, race: dict) -> str:
         return f"AP race call {display_name(race)} {self.year}"
@@ -212,8 +219,9 @@ class CallFinder:
         entry = self.races.get(race["id"])
         if entry is None:
             return {**base, "status": "error", "reasons": ["race is not in data/races.json"]}
-        if (spent := self.store.jevlin_spend_for_run(self.run_id)) >= self.jevlin_cap_usd:
-            return {**base, "status": "skipped", "reasons": [f"Jevlin cap for this run reached (${spent:.3f})"]}
+        if (spent := self.jevlin_spent()) >= self.jevlin_cap_usd:
+            scope = "since " + f"{self.budget_since:%Y-%m-%d} ET" if self.budget_since else "for this run"
+            return {**base, "status": "skipped", "reasons": [f"Jevlin cap {scope} reached (${spent:.3f})"]}
 
         body = self.search_body(entry)
         rnd = now.astimezone(timezone.utc)

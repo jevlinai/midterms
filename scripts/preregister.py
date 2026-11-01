@@ -139,7 +139,8 @@ def main():
     files = [(n, sha256((ROOT / n).read_bytes())) for n in sorted(METHOD_FILES)]
     write_md(sha256(tar), files, q["model"], stamp.isoformat(timespec="seconds"), commit)
     print(f"\nFROZEN. SHA-256 {sha256(tar)}, Jev {q['model']}. Now: git add detector/questions.json "
-          f"PREREGISTRATION.md prereg/ && git commit && git push; then post the hash from @jevlinai.")
+          f"PREREGISTRATION.md && git commit && git push; then post the hash from @jevlinai. "
+          f"(The tar in prereg/ is rebuildable from the commit; `verify` checks it.)")
 
 
 if __name__ == "__main__":

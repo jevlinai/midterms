@@ -10,6 +10,7 @@ measurement; it falls back to ~/.jevlin/credentials.json. The key is never print
 import json
 import os
 import time
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import httpx
@@ -92,3 +93,26 @@ class JevlinClient:
 
 def cost_usd(resp: dict) -> float:
     return float(((resp or {}).get("usage") or {}).get("cost_micros") or 0) / 1e6
+
+
+ET = timezone(timedelta(hours=-5))  # EST: DST ended 1 Nov 2026
+
+
+def budget_since(scope: str | None, since: str | None, *, today: date | None = None) -> datetime | None:
+    """When a command's Jevlin budget starts counting.
+
+    scope "run" (the default without --budget-since): this process only -> None.
+    scope "day" (the default with --budget-since): all of this command's Jevlin spend in the ledger since
+    00:00 ET on --budget-since (or today in ET), across runs, so a restart continues the same budget."""
+    scope = scope or ("day" if since else "run")
+    if scope not in ("run", "day"):
+        raise ConfigError("--budget-scope must be run or day")
+    if scope == "run":
+        if since:
+            raise ConfigError("--budget-since needs --budget-scope day")
+        return None
+    try:
+        d = date.fromisoformat(since) if since else (today or datetime.now(ET).date())
+    except ValueError:
+        raise ConfigError(f"--budget-since must be YYYY-MM-DD, got {since!r}") from None
+    return datetime(d.year, d.month, d.day, tzinfo=ET)

@@ -98,6 +98,12 @@ class Store:
                       (NON_LLM_PREFIX + "%", run_id))
         return float(r["s"])
 
+    def jevlin_spend_since(self, step_prefix: str, t: datetime) -> float:
+        """Jevlin dollars recorded by one command (steps starting with `step_prefix`) since `t`, across runs."""
+        r = self._one("SELECT COALESCE(SUM(usd),0) AS s FROM spend WHERE model LIKE ? AND step LIKE ? AND at>=?",
+                      (NON_LLM_PREFIX + "%", step_prefix + "%", t.astimezone(timezone.utc).isoformat(timespec="seconds")))
+        return float(r["s"])
+
     def spend_by_step(self, run_id: str, step: str) -> dict:
         """LLM tokens and dollars recorded under one step label (e.g. one track check)."""
         r = self._one("SELECT COUNT(*) AS calls, COALESCE(SUM(input),0) AS input, COALESCE(SUM(cache_read),0) AS "
@@ -112,8 +118,10 @@ class Store:
         r = self._one("SELECT * FROM drafted WHERE race_id=?", (race_id,))
         return dict(r) if r else None
 
-    def record_drafted(self, race_id: str, draft_id: str, call_key: str, *, made: bool = True) -> None:
-        now = now_iso()
+    def record_drafted(self, race_id: str, draft_id: str, call_key: str, *, made: bool = True,
+                       at: datetime | None = None) -> None:
+        """`at`: the same clock the hourly cap is checked with."""
+        now = at.astimezone(timezone.utc).isoformat(timespec="seconds") if at else now_iso()
         self._exec("INSERT INTO drafted VALUES (?,?,?,?) ON CONFLICT(race_id) DO UPDATE SET draft_id=excluded.draft_id, "
                    "call_key=excluded.call_key, drafted_at=excluded.drafted_at", (race_id, draft_id, call_key, now))
         if made:
