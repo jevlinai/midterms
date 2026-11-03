@@ -102,7 +102,19 @@ def active_races(races, tick, cfg, inactive):
     return out
 
 
-def build_request(race, cfg):
+def build_trace(race, round_id, cfg):
+    """Jevlin's lineage envelope (API.md: `trace`): every search for one race is one session, so the
+    Jevlin console shows each race as a thread, one turn per round. It does not change how the search
+    runs; Jevlin drops a malformed envelope silently."""
+    t = cfg.get("trace")
+    if not t:
+        return None
+    return {"v": 1, "harness": t["harness"], "session_id": f"{t['session_prefix']}{race['id']}",
+            "turn_id": f"round-{round_id}", "call_id": f"{race['id']}-{round_id}"}
+
+
+def build_request(race, cfg, round_id=None):
+    trace = build_trace(race, round_id, cfg) if round_id else None
     return {
         "query": race["query"],
         "providers": cfg["providers"],
@@ -113,6 +125,7 @@ def build_request(race, cfg):
         # "refresh": skip the router's shared cache read and search live (Jevlin, deployed 3 Nov), so every
         # round is fresh; the response says usage.cache_refresh: true.
         **({"cache": cfg["cache"]} if cfg.get("cache") else {}),
+        **({"trace": trace} if trace else {}),
     }
 
 
@@ -121,7 +134,7 @@ def build_request(race, cfg):
 def search(race, round_id, cfg, key):
     """One call for one race. Retries once on 429 or 5xx with the same Idempotency-Key,
     so a retry that reaches a request which already ran is replayed, not billed again."""
-    body = build_request(race, cfg)
+    body = build_request(race, cfg, round_id)
     data = json.dumps(body).encode()
     headers = {
         "authorization": f"Bearer {key}",

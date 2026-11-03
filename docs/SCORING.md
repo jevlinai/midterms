@@ -48,4 +48,8 @@ Before 5:00pm ET on Tue 3 Nov:
 2. Compute the SHA-256 of a tarball of those files, and publish it: commit it to `PREREGISTRATION.md` and post it from @jevlinai.
 3. Polls close at 6:00pm ET.
 
-**Engines (6):** Exa, Brave, Parallel, Perplexity, Serper, TinyFish. A first freeze at 8:29am ET on 3 Nov (SHA-256 `ee5f5a94…`) also included Telem. Telem combines other providers rather than being one, so it was removed and the method frozen again before the hash was posted; the first hash showed on jevlin.ai/midterms for about two hours and was never used.
+**Engines (6):** Exa, Brave, Parallel, Perplexity, Serper, TinyFish.
+
+**Trace label:** every request carries Jevlin's `trace` envelope, so each race is one session (thread) in the Jevlin console and each round one turn in it. It changes nothing about how a search runs.
+
+**Earlier freezes, replaced before the hash was posted:** 8:29am ET (SHA-256 `ee5f5a94…`) included a seventh engine, Telem, which combines other providers rather than being one; 9:25am ET (SHA-256 `1e9bfa22…`) had the six engines but no trace label. Neither hash was posted; the first showed on jevlin.ai/midterms for about two hours, the second for about two hours after it.

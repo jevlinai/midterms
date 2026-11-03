@@ -19,6 +19,19 @@ def at(day, hh, mm=0):
 RACE = {"id": "senate-ga", "poll_close_et": "2026-11-03T19:00:00-05:00", "query": "q"}
 
 
+class Request(unittest.TestCase):
+    def test_trace_makes_each_race_one_session_and_each_round_one_turn(self):
+        body = poller.build_request(RACE, CFG, "20261103T2105")
+        tr = body["trace"]
+        self.assertEqual(tr["session_id"], "midterms-2026-senate-ga")
+        self.assertEqual((tr["turn_id"], tr["call_id"]), ("round-20261103T2105", "senate-ga-20261103T2105"))
+        self.assertEqual((tr["v"], tr["harness"]), (1, "jevlin-midterms"))
+        import re
+        self.assertRegex(tr["session_id"], r"^[A-Za-z0-9_-]{1,128}$")
+        self.assertNotIn("trace", poller.build_request(RACE, CFG))  # no round, no trace
+        self.assertEqual(body["providers"], CFG["providers"])        # nothing else changes
+
+
 class Schedule(unittest.TestCase):
     def ids(self, tick, inactive=()):
         return [r["id"] for r in poller.active_races([RACE], tick, CFG, set(inactive))]
