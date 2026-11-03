@@ -4,7 +4,7 @@ The method for measuring which search engine finds US election results first was
 
 - **SHA-256 of the method archive:** `0d5581c776215f968e559f89995e686627d9d926d2851d70e8cd06ed1037ec03`
 - committed_at: 2026-11-03T13:03:28-05:00
-- **Parent commit:** `6741663904c59e5a7c36e68594cf6b2919048950`
+- **Parent commit:** `6b0d3bd810825fd8f2b7af3be33db716d2569e54`
 - **Detector model:** TypeSafe `jev-1.14.0` (pinned in `detector/questions.json`)
 
 The archive is a deterministic tar of the files below (sorted names, zeroed timestamps and owners), built by `scripts/preregister.py`. To check it, run `uv run python scripts/preregister.py verify` on this commit.
