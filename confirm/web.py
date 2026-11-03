@@ -14,6 +14,8 @@ Reachable only where it listens: CONFIRM_WEB_HOST (default 127.0.0.1; on the Mac
 address). Writes need a same-origin JSON request, so another site open in the same browser can't post.
 One request at a time, so two clicks never race on confirmed.json.
 """
+from __future__ import annotations
+
 import contextlib
 import datetime as dt
 import io
