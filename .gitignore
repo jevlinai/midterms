@@ -21,3 +21,6 @@ detector/eval/*.sqlite
 !data/review-log.jsonl
 logs/
 prereg/*.tar
+
+# Internal briefing for Claude Code; kept on disk, not published
+CLAUDE.md
