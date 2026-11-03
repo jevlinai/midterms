@@ -14,7 +14,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 REPO="$(pwd)"
-JOBS=(poller detector detector-eng state call-finder post-drafter autopost)  # agent track dropped 3 Nov
+JOBS=(poller detector detector-eng state call-finder post-drafter autopost confirm-web)  # agent track dropped 3 Nov
 LA="$HOME/Library/LaunchAgents"
 DOMAIN="gui/$(id -u)"
 label() { echo "ai.jevlin.midterms.$1"; }

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Confirm AP Calls</title>
+<style>
+/* One column of race cards, the next action first. Big targets for a phone at 5am. */
+:root{
+  --bg:#f5f6f8; --panel:#fff; --fg:#121820; --muted:#5d6676; --line:#dde1e8;
+  --accent:#1d4ed8; --accent-fg:#fff; --ok:#15803d; --ok-bg:#e6f4ea; --warn:#b45309; --warn-bg:#fdf1e2; --bad:#b91c1c;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif; --mono:ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0e1217; --panel:#161b22; --fg:#e8ecf2; --muted:#98a2b3; --line:#2a313d;
+  --accent:#7aa2ff; --accent-fg:#0b1020; --ok:#4ade80; --ok-bg:#12291b; --warn:#f5b25b; --warn-bg:#2d2213; --bad:#f87171; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.45 var(--sans)}
+.wrap{max-width:720px;margin:0 auto;padding:16px max(16px,env(safe-area-inset-left)) 64px max(16px,env(safe-area-inset-right));display:grid;gap:14px}
+h1{font-size:22px;margin:0}
+.bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.bar b{color:var(--fg)}
+.who{display:flex;gap:8px;align-items:center}
+input,select{font:inherit;border:1px solid var(--line);border-radius:8px;padding:9px 10px;background:var(--panel);color:var(--fg);min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;display:grid;gap:10px}
+.card.has{border-color:var(--accent)}
+.title{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.title b{font-size:17px}
+.muted{color:var(--muted);font-size:14px}
+.prop{display:grid;gap:6px}
+.winner{font-size:20px;font-weight:700}
+.quote{font-size:14px;color:var(--muted);border-left:3px solid var(--line);padding-left:10px;overflow-wrap:anywhere}
+.btn{font:inherit;font-weight:600;border-radius:10px;padding:12px 14px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer;text-align:center;text-decoration:none;display:block}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.btn.ok{background:var(--ok);color:#fff;border-color:var(--ok)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.row{display:grid;gap:8px}
+@media (min-width:520px){.row.two{grid-template-columns:1fr 1fr}}
+.msg{font-size:14px;border-radius:8px;padding:8px 10px}
+.msg.err{background:var(--warn-bg);color:var(--warn)}
+.msg.good{background:var(--ok-bg);color:var(--ok)}
+details summary{cursor:pointer;color:var(--muted);font-size:14px}
+h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:10px 2px 0;font-weight:600}
+.called{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:15px}
+.called a{color:var(--accent)}
+.empty{color:var(--muted);font-size:15px;padding:6px 2px}
+.note{font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Confirm AP calls</h1>
+  <div class="bar" id="bar">Loading…</div>
+  <div class="who"><label for="who" class="muted">Your name</label><input id="who" autocomplete="name" placeholder="type your name"></div>
+  <p class="note">Open AP's link, check it says AP called the race for that person, then press the green button. Nothing shows on jevlin.ai until you do.</p>
+  <div id="flash"></div>
+  <h2>Waiting for you</h2>
+  <div id="waiting" class="row"></div>
+  <h2>Confirmed</h2>
+  <div id="called" class="row"></div>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+const opened = new Set();     // races whose AP link was opened on this page
+const openForms = new Set();  // races with a manual form or retract box open: don't redraw under the user
+let busy = false;
+try { $("who").value = localStorage.getItem("confirm-who") || ""; } catch {}
+$("who").addEventListener("input", () => { try { localStorage.setItem("confirm-who", $("who").value.trim()); } catch {} });
+
+function h(tag, attrs = {}, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
+    if (k === "text") el.textContent = v;
+    else if (k.startsWith("on")) el.addEventListener(k.slice(2), v);
+    else el.setAttribute(k, v === true ? "" : v);
+  }
+  for (const c of kids.flat()) if (c != null) el.append(c);
+  return el;
+}
+const et = (iso) => iso ? new Date(iso).toLocaleTimeString("en-US", {timeZone: "America/New_York", hour: "numeric", minute: "2-digit"}).replace(" AM", "am").replace(" PM", "pm") + " ET" : "no time";
+function flash(ok, text) { $("flash").replaceChildren(h("div", {class: "msg " + (ok ? "good" : "err"), text})); window.scrollTo({top: 0, behavior: "smooth"}); }
+
+async function post(path, body) {
+  const by = $("who").value.trim();
+  if (!by) { flash(false, "Type your name first."); $("who").focus(); return null; }
+  busy = true;
+  try {
+    const r = await fetch(path, {method: "POST", headers: {"content-type": "application/json"}, body: JSON.stringify({...body, by})});
+    const j = await r.json();
+    flash(j.ok, j.message || (j.ok ? "Done." : "Refused."));
+    return j;
+  } catch (e) { flash(false, "Couldn't reach the Mac mini: " + e.message); return null; }
+  finally { busy = false; load(true); }
+}
+
+function waitingCard(r) {
+  const p = r.proposal;
+  const card = h("article", {class: "card" + (p ? " has" : "")},
+    h("div", {class: "title"}, h("b", {text: r.name}), h("span", {class: "muted", text: `polls closed ${r.minutes_since_close} min ago`})));
+  if (p && p.winner) {
+    const accept = h("button", {class: "btn ok", disabled: !opened.has(r.id)}, `I checked AP: called for ${p.winner}`);
+    const timeIn = p.ap_call_time ? null : h("input", {type: "datetime-local", "aria-label": "AP call time (ET)"});
+    accept.addEventListener("click", () => {
+      if (timeIn && !timeIn.value) { flash(false, "Add AP's call time (ET) from the page first."); timeIn.focus(); return; }
+      post("/api/accept", {race_id: r.id, time: timeIn ? timeIn.value : undefined});
+    });
+    card.append(...[h("div", {class: "prop"},
+      h("div", {class: "muted", text: "Proposed by the call finder (not a confirmation)"}),
+      h("div", {class: "winner", text: p.winner}),
+      h("div", {class: "muted", text: p.ap_call_time ? `AP call time: ${et(p.ap_call_time)}` : "AP call time not found: enter it from AP's page"}),
+      p.quote ? h("div", {class: "quote", text: "“" + p.quote + "”"}) : null),
+      h("a", {class: "btn primary", href: p.ap_url, target: "_blank", rel: "noopener noreferrer",
+        onclick: () => { opened.add(r.id); accept.disabled = false; }}, "Open AP's page ↗"),
+      timeIn ? h("label", {class: "muted"}, "AP call time (ET) ", timeIn) : null,
+      accept,
+      opened.has(r.id) ? null : h("div", {class: "note", text: "The green button unlocks once you've opened AP's page."})].filter(Boolean));
+  } else {
+    card.append(h("div", {class: "muted", text: "No proposal yet. The call finder checks AP every few minutes."}));
+  }
+  card.append(manualForm(r));
+  return card;
+}
+
+function manualForm(r) {
+  const sel = h("select", {}, h("option", {value: "", text: "Winner…"}), r.candidates.map(c => h("option", {value: c.name, text: `${c.name}${c.party ? " (" + c.party + ")" : ""}`})));
+  const t = h("input", {type: "datetime-local", "aria-label": "AP call time (ET)"});
+  const u = h("input", {type: "url", placeholder: "https://apnews.com/…"});
+  const d = h("details", {}, h("summary", {text: "Confirm by hand (AP called it but there's no proposal, or it's wrong)"}),
+    h("div", {class: "row", style: "margin-top:8px"}, sel, h("div", {class: "row two"}, t, u),
+      h("button", {class: "btn ok", onclick: () => {
+        if (!sel.value || !t.value || !u.value) { flash(false, "Winner, AP's call time (ET) and AP's link are all needed."); return; }
+        post("/api/confirm", {race_id: r.id, winner: sel.value, time: t.value, url: u.value});
+      }}, "Confirm this AP call")));
+  d.open = openForms.has(r.id);
+  d.addEventListener("toggle", () => d.open ? openForms.add(r.id) : openForms.delete(r.id));
+  return d;
+}
+
+function calledRow(r) {
+  const c = r.call;
+  const reason = h("input", {placeholder: "Why? e.g. AP withdrew the call"});
+  const d = h("details", {}, h("summary", {text: "Retract"}),
+    h("div", {class: "row", style: "margin-top:8px"}, reason,
+      h("button", {class: "btn", onclick: () => {
+        if (!reason.value.trim()) { flash(false, "Say why you're retracting it."); reason.focus(); return; }
+        post("/api/retract", {race_id: r.id, reason: reason.value.trim()});
+      }}, `Retract ${r.name}`)));
+  d.open = openForms.has("x-" + r.id);
+  d.addEventListener("toggle", () => d.open ? openForms.add("x-" + r.id) : openForms.delete("x-" + r.id));
+  return h("div", {class: "card"},
+    h("div", {class: "called"}, h("span", {}, h("b", {text: r.name}), " ", h("span", {class: "muted", text: `· ${c.winner} · ${et(c.ap_call_time)}`})),
+      h("a", {href: c.ap_url, target: "_blank", rel: "noopener noreferrer", text: "AP ↗"})), d);
+}
+
+async function load(force) {
+  if (!force && (busy || openForms.size || document.activeElement?.matches("input,select"))) return;
+  try {
+    const s = await (await fetch("/api/status", {cache: "no-store"})).json();
+    const withProp = s.waiting.filter(w => w.proposal && w.proposal.winner).length;
+    $("bar").replaceChildren(
+      h("span", {}, h("b", {text: withProp}), " proposals waiting"),
+      h("span", {}, h("b", {text: s.waiting.length - withProp}), " closed, no proposal"),
+      h("span", {}, h("b", {text: s.called_total}), " confirmed"),
+      s.next_close ? h("span", {}, "next close ", h("b", {text: et(s.next_close)}), ` (${s.next_close_count} races)`) : null,
+      h("span", {text: "updated " + new Date().toLocaleTimeString([], {hour: "numeric", minute: "2-digit", second: "2-digit"})}));
+    $("waiting").replaceChildren(...(s.waiting.length ? s.waiting.map(waitingCard) : [h("p", {class: "empty", text: "Nothing waiting. Races appear here once their polls close."})]));
+    $("called").replaceChildren(...(s.called.length ? s.called.map(calledRow) : [h("p", {class: "empty", text: "None yet."})]));
+  } catch (e) { $("bar").textContent = "Can't reach the Mac mini. Retrying…"; }
+}
+load(true);
+setInterval(load, 20000);
+</script>
+</body>
+</html>
