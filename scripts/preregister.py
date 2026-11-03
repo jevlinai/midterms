@@ -76,10 +76,11 @@ def blockers():
     unchecked = [r["id"] for r in races["races"] if r.get("review", {}).get("status") != "checked"]
     if unchecked:
         out.append(f"{len(unchecked)} races not checked by a person yet (data/REVIEW.md), e.g. {unchecked[:3]}")
-    two = [r["id"] for r in races["races"] if r["office"] in ("senate", "governor")
-           and r.get("review", {}).get("status") == "checked" and len(set(r["review"].get("checked_by", []))) < 2]
-    if two:
-        out.append(f"{len(two)} Senate/Governor races checked by fewer than 2 people")
+    # One person per race since 3 Nov (election night is staffed by one person; scripts/review.py need()).
+    nobody = [r["id"] for r in races["races"] if r.get("review", {}).get("status") == "checked"
+              and not r["review"].get("checked_by")]
+    if nobody:
+        out.append(f"{len(nobody)} races marked checked with no name")
     dirty = subprocess.run(["git", "status", "--porcelain", "--", *METHOD_FILES], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     if dirty:
         out.append("method files have uncommitted changes:\n    " + dirty.replace("\n", "\n    "))
