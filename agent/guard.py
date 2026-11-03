@@ -15,7 +15,7 @@ Rules
    the confirmed winner). This catches an invented name the lists above can't know about.
 6. Engines: only engines in the measurement, only engines that cover this race, and a "first"
    claim must name an engine in the race's `first`. Engine results exist only for called races.
-7. Numbers: "N min ahead of/behind Google", "after polls closed", "after/before AP" must equal
+7. Numbers: "N min ahead of/behind Serper", "after polls closed", "after/before AP" must equal
    the named engine's number; every other number must be one of this race's numbers (the
    ported `check_text`); the only free number is the year 2026. Clock times must be the AP call
    time or poll close, in ET.
@@ -35,7 +35,7 @@ LIVE_URL = "jevlin.ai/midterms"
 ALLOWED_HOSTS = {"jevlin.ai", "www.jevlin.ai"}
 
 # Words and phrases that are commentary, prediction, odds or party talk. Matched case-insensitively
-# on word boundaries. "ahead"/"behind" are allowed only about engines vs Google (rule 7).
+# on word boundaries. "ahead"/"behind" are allowed only about engines vs Serper (rule 7).
 BANNED = [
     "projected", "projects", "projection", "likely", "unlikely", "probably", "should", "will win", "would win",
     "expected to", "poised", "on track", "favored", "favoured", "favorite", "favourite", "frontrunner",
@@ -64,7 +64,7 @@ CLOCK_RE = re.compile(r"\b(\d{1,2})(?::(\d{2}))?\s*([ap])\.?m\.?(?![a-z])", re.I
 CAP_RUN = re.compile(r"\b[A-Z][\w'.-]*(?:[ \t]+[A-Z][\w'.-]*)+")
 MINUTE_CLAIM = re.compile(
     r"(?<![\w.])(\d+(?:\.\d+)?)\s*(?:min|mins|minutes?)\b"
-    r"(?:\s+(ahead of|behind|before|after)\s+(Google|AP\b|AP's call|the AP call|polls?\s+clos\w*|poll\s+close))?",
+    r"(?:\s+(ahead of|behind|before|after)\s+(Serper|AP\b|AP's call|the AP call|polls?\s+clos\w*|poll\s+close))?",
     re.IGNORECASE)
 
 STATE_NAMES = {
@@ -80,7 +80,7 @@ STATE_NAMES = {
     "WI": "Wisconsin", "WY": "Wyoming", "DC": "District of Columbia",
 }
 VOCAB = {
-    "AP", "ET", "EST", "Live", "Google", "Serper", "Jevlin", "Associated", "Press", "First", "Election", "Night",
+    "AP", "ET", "EST", "Live", "Serper", "Jevlin", "Associated", "Press", "First", "Election", "Night",
     "Midterms", "Midterm", "US", "U.S.", "Senate", "House", "Governor", "Governor's", "Gubernatorial", "District",
     "Special", "Race", "Results", "Result", "Search", "Engine", "The", "A", "No", "It", "At", "In", "On", "For",
     "Both", "All", "Of", "And", "Congressional", "Seat", "Tuesday", "Wednesday", "Nov", "November", "Via",
@@ -130,7 +130,7 @@ def clock(iso: str) -> str:
 
 
 def _labels(state: dict) -> list[tuple[str, str]]:
-    """(name as written, engine id), longest first, including short forms ("Perplexity", "Google")."""
+    """(name as written, engine id), longest first, including short forms ("Perplexity", "Serper")."""
     out = []
     for eid, e in engine_map(state).items():
         label = e.get("label", eid)
@@ -165,7 +165,7 @@ def _blank(text: str, spans: list[tuple[int, int]]) -> str:
 def _race_numbers(race: dict) -> list[float]:
     vals = []
     for e in (race.get("engines") or {}).values():
-        for k in ("minutes_after_close", "minutes_vs_call", "lead_vs_google"):
+        for k in ("minutes_after_close", "minutes_vs_call", "lead_vs_serper"):
             if isinstance(e.get(k), (int, float)) and not isinstance(e.get(k), bool):
                 vals.append(float(e[k]))
     return vals
@@ -184,6 +184,18 @@ def check_post(text: str, race_id: str, state: dict) -> tuple[bool, list[str]]:
     called = is_called(race)
     call = race.get("call") or {}
     ap_url = call.get("ap_url") if called else None
+
+    # 00. the post opens with the race's name, exactly as the page shows it
+    rname = (race or {}).get("name") or race_id
+    if not text.strip().lower().startswith(rname.lower()):
+        reasons.append(f"must start with the race name {rname!r} (no notes before it)")
+    # 0. we measure Serper, not Google: no post may name Google
+    if re.search(r"\bgoogle\b", text, re.IGNORECASE):
+        reasons.append("names Google: the baseline is Serper, and we don't measure Google itself")
+
+    # 0b. no baseline: engines are ranked, never set against each other
+    if re.search(r"\b(?:ahead of|behind|tied with)\s+(?!polls?\b|poll\b|AP\b|the AP\b)", text, re.IGNORECASE):
+        reasons.append("compares engines with each other ('ahead of', 'behind', 'tied with'); posts rank engines by minutes after polls closed")
 
     # 1. length
     if (n := weighted_length(text)) > MAX_WEIGHTED:
@@ -296,17 +308,17 @@ def check_post(text: str, race_id: str, state: dict) -> tuple[bool, list[str]]:
         claim_spans.append(m.span())
         value = float(m.group(1))
         rel, ref = (m.group(2) or "").lower(), (m.group(3) or "").lower()
-        before = [eid for pos, eid in eng if pos < m.start() and eid != baseline]
+        before = [eid for pos, eid in eng if pos < m.start()]  # no baseline: any engine can carry a number
         subject = before[-1] if before else ((race.get("first") or [None])[0])
         e = engines_data.get(subject) if subject and called else None
         if e is None:
             reasons.append(f"{m.group(0)!r}: no engine result to back this number")
             continue
-        if ref.startswith("google"):
-            lead = e.get("lead_vs_google")
+        if ref.startswith("serper"):
+            lead = e.get("lead_vs_serper")
             want = lead if rel == "ahead of" else (-lead if lead is not None else None)
             if want is None or abs(want - value) > 1e-9 or (lead is not None and rel == "ahead of" and lead <= 0):
-                reasons.append(f"{m.group(0)!r} does not match {subject}'s lead over Google ({lead})")
+                reasons.append(f"{m.group(0)!r} does not match {subject}'s lead over Serper ({lead})")
         elif ref.startswith("poll"):
             if rel != "after" or e.get("minutes_after_close") != value:
                 reasons.append(f"{m.group(0)!r} does not match {subject}'s minutes after poll close "
@@ -317,14 +329,14 @@ def check_post(text: str, race_id: str, state: dict) -> tuple[bool, list[str]]:
             if want is None or abs(want - value) > 1e-9:
                 reasons.append(f"{m.group(0)!r} does not match {subject}'s minutes vs AP's call ({mvc})")
         else:
-            vals = [e.get(k) for k in ("minutes_after_close", "minutes_vs_call", "lead_vs_google")]
+            vals = [e.get(k) for k in ("minutes_after_close", "minutes_vs_call", "lead_vs_serper")]
             if not any(isinstance(v, (int, float)) and abs(abs(v) - value) < 1e-9 for v in vals):
                 reasons.append(f"{m.group(0)!r} is not one of {subject}'s numbers")
-    if re.search(r"\btied with Google\b", body_no_names, re.IGNORECASE):
+    if re.search(r"\btied with Serper\b", body_no_names, re.IGNORECASE):
         before = [eid for _, eid in eng if eid != baseline]
         e = engines_data.get(before[0]) if before and called else None
-        if not e or e.get("lead_vs_google") != 0:
-            reasons.append("says 'tied with Google' but the lead over Google is not 0")
+        if not e or e.get("lead_vs_serper") != 0:
+            reasons.append("says 'tied with Serper' but the lead over Serper is not 0")
     rest = _blank(body_no_names, claim_spans)
     rest = CLOCK_RE.sub(" ", rest)
     chk = check_text(rest, _race_numbers(race) if called else [])
@@ -359,32 +371,15 @@ def template_post(race_id: str, state: dict) -> str:
         raise ValueError(f"{race_id} is not called; there is no post for an uncalled race")
     call = race["call"]
     emap = engine_map(state)
-    baseline = next((k for k, v in emap.items() if v.get("baseline")), "serper")
     head = f"{race.get('name') or race_id}. AP called it at {clock(call['ap_call_time'])} ET {call['ap_url']}"
-    first = [e for e in (race.get("first") or []) if e in emap and e in (race.get("engines") or {})]
-    if len(first) > 1 and "jevlin" in first:
-        first.remove("jevlin")  # the computed union always ties the earliest engine
+    first = [e for e in (race.get("first") or []) if e in emap and e in (race.get("engines") or {}) and e != "jevlin"]
     if not first:
         line = "No search engine has found the result yet."
     else:
-        others = [e for e in first if e != baseline]
-        labels = [emap[e].get("label", e) for e in others]
-        if not others:
-            line = f"First search engine to find the result: {emap[baseline].get('label', baseline)}."
-        else:
-            lead = race["engines"][others[0]].get("lead_vs_google")
-            who = _join(labels)
-            noun = "engines" if len(labels) > 1 else "engine"
-            # Decided from the lead alone, so inconsistent data can never produce a failing post.
-            if lead == 0:
-                line = f"First search {noun} to find the result: {who}, tied with Google."
-            elif lead is None:
-                line = (f"First search {noun} to find the result: {who}. "
-                        f"{emap[baseline].get('label', baseline)} has not found it yet.")
-            elif lead > 0:
-                line = f"First search {noun} to find the result: {who}, {lead:g} min ahead of Google."
-            else:
-                line = f"First search {noun} to find the result: {who}."
+        # Every engine is ranked the same way; there is no baseline in public posts.
+        labels = [emap[e].get("label", e) for e in first]
+        mins = race["engines"][first[-1]].get("minutes_after_close")  # the guard reads a number as the last-named engine's
+        line = f"First to find it: {_join(labels)}" + (f", {mins:g} min after polls closed." if mins is not None else ".")
     return f"{head}\n{line}\nLive: {LIVE_URL}"
 
 
@@ -407,11 +402,11 @@ def check_answer(text: str, state: dict) -> list[str]:
 
 SINGLE_KINDS = ("baseline", "computed", "agent")
 THREAD_VOCAB = {"Which", "We", "AI", "Fastest", "Median", "One", "Agent", "Every", "Full", "Race", "Method",
-                "Taking", "SHA-256", "Senate", "Governor"}
+                "Taking", "SHA-256", "Senate", "Governor", "No", "Asking", "US", "Slowest", "An", "On", "That's", "One", "Can", "Last", "Here's", "Supersearch", "Every", "The", "Superintelligence", "Code", "Results", "Median", "So", "Then", "Asking"}
 _HASH_RE = re.compile(r"\b[0-9a-f]{8,64}\b")
 _SHA_LABEL = re.compile(r"SHA-256", re.IGNORECASE)
-_AI_CLAIM = re.compile(r"faster than Google", re.IGNORECASE)
-_GOOGLE_CLAIM = re.compile(r"\bGoogle (?:\(via Serper\) )?was (?:faster|as fast)", re.IGNORECASE)
+_AI_CLAIM = re.compile(r"AI search was faster|faster than Serper", re.IGNORECASE)
+_SERPER_CLAIM = re.compile(r"\bSerper was (?:faster|as fast)", re.IGNORECASE)
 
 
 def board_rows(state: dict) -> dict[str, dict]:
@@ -423,11 +418,36 @@ def single_engines(state: dict) -> list[str]:
     return [e["id"] for e in state.get("engines", []) if not e.get("computed") and not e.get("agent")]
 
 
+def first_coverage(state: dict) -> dict:
+    """The thread's lead: across called races, which single engines were first (earliest found_at among
+    the measured engines, ties included). Asking every engine at once is first on every race any engine
+    found, by construction; the point is whether one engine alone was."""
+    singles = single_engines(state)
+    called = [r for r in state.get("races", []) if is_called(r)]
+    counts = {e: 0 for e in singles}
+    found = 0
+    for r in called:
+        ts = {e: (r.get("engines") or {}).get(e, {}).get("found_at") for e in singles}
+        ts = {e: v for e, v in ts.items() if v}
+        if not ts:
+            continue
+        found += 1
+        best = min(datetime.fromisoformat(v) for v in ts.values())
+        for e, v in ts.items():
+            if datetime.fromisoformat(v) == best:
+                counts[e] += 1
+    top = max(counts.values(), default=0)
+    return {"called": len(called), "found": found, "counts": counts, "best_first": top,
+            "best": sorted(e for e, c in counts.items() if c == top and top),
+            "engines_first": sum(1 for c in counts.values() if c),
+            "one_engine_everywhere": found > 0 and top == found}
+
+
 def results_outcome(state: dict) -> dict:
     """Which pre-written thread the leaderboard supports. AI search is "faster" only if the fastest
-    AI engine, or the agent, has a strictly lower median minutes-after-close than Google (via Serper).
-    A tie goes to Google: we never claim AI was faster unless the median says so. `jevlin` is reported
-    beside it but never decides, because it includes Google."""
+    AI engine, or the agent, has a strictly lower median minutes-after-close than Serper.
+    A tie goes to Serper: we never claim AI was faster unless the median says so. `jevlin` is reported
+    beside it but never decides, because it includes Serper."""
     rows = board_rows(state)
     emap = engine_map(state)
     baseline = next((k for k, v in emap.items() if v.get("baseline")), "serper")
@@ -437,7 +457,7 @@ def results_outcome(state: dict) -> dict:
                      (rows.get(e) or {}).get("wrong") or 0, e)
     ai = [e for e in single_engines(state) if e != baseline and e in rows]
     if not ai or baseline not in rows:
-        raise ValueError("the leaderboard has no AI engine or no Google (via Serper) row")
+        raise ValueError("the leaderboard has no AI engine or no Serper row")
     best = min(ai, key=key)
     g = med(baseline) if med(baseline) is not None else inf
     contenders = [e for e in (best, "agent") if e in rows and med(e) is not None]
@@ -445,15 +465,15 @@ def results_outcome(state: dict) -> dict:
         raise ValueError("no engine found any result; there is no thread to write")
     faster = sorted((e for e in contenders if med(e) < g), key=key)
     ai_faster = bool(faster)
-    return {"version": "ai_faster" if ai_faster else "google_faster", "best": best, "baseline": baseline,
-            "lead": faster[0] if faster else best,  # the engine the headline shows against Google
+    return {"version": "ai_faster" if ai_faster else "serper_faster", "best": best, "baseline": baseline,
+            "lead": faster[0] if faster else best,  # the engine the headline shows against Serper
             "tie": not ai_faster and med(best) is not None and med(best) == g,
             "agent_faster": "agent" in contenders and med("agent") < g}
 
 
 def check_summary_post(text: str, state: dict, *, repo_url: str | None = None) -> tuple[bool, list[str]]:
     """The guard for a results-thread post. Numbers next to an engine must be that engine's leaderboard
-    numbers ("N min" = median minutes after close, "N min ahead of Google" = median lead, "N wrong" =
+    numbers ("N min" = median minutes after close, "N min ahead of Serper" = median lead, "N wrong" =
     wrong answers, anything else one of its row's values); other numbers must be totals from the
     state. No candidate names, no commentary, only known links, and the headline must be the one the
     leaderboard supports."""
@@ -463,6 +483,8 @@ def check_summary_post(text: str, state: dict, *, repo_url: str | None = None) -
         return False, ["empty post"]
     if (n := weighted_length(text)) > MAX_WEIGHTED:
         reasons.append(f"too long: {n} of {MAX_WEIGHTED} (links count 23)")
+    if re.search(r"\bgoogle\b", text, re.IGNORECASE):
+        reasons.append("names Google: the baseline is Serper, and we don't measure Google itself")
     prereg = state.get("prereg") or {}
     allowed_prefixes = [_norm_url(u) for u in (repo_url, prereg.get("url")) if u]
     for u in _urls(text):
@@ -505,9 +527,9 @@ def check_summary_post(text: str, state: dict, *, repo_url: str | None = None) -
     except ValueError as e:
         return False, reasons + [str(e)]
     if _AI_CLAIM.search(body) and out["version"] != "ai_faster":
-        reasons.append("says AI search was faster than Google, but the leaderboard says Google was as fast or faster")
-    if _GOOGLE_CLAIM.search(body) and out["version"] != "google_faster":
-        reasons.append("says Google was faster, but the leaderboard says an AI search was faster")
+        reasons.append("says AI search was faster than Serper, but the leaderboard says Serper was as fast or faster")
+    if _SERPER_CLAIM.search(body) and out["version"] != "serper_faster":
+        reasons.append("says Serper was faster, but the leaderboard says an AI search was faster")
 
     # numbers, per engine segment
     rows = board_rows(state)
@@ -521,7 +543,7 @@ def check_summary_post(text: str, state: dict, *, repo_url: str | None = None) -
     for a, b, eid in segs:
         row = rows.get(eid)
         seg = body[a:b]
-        for m in re.finditer(r"(?<![\w.])(\d+(?:\.\d+)?)\s*(?:min\b(\s+ahead of Google)?|wrong\b)?", seg):
+        for m in re.finditer(r"(?<![\w.])(\d+(?:\.\d+)?)\s*(?:min\b(\s+ahead of Serper)?|wrong\b)?", seg):
             claimed.append((a + m.start(), a + m.end()))
             if row is None:
                 reasons.append(f"{eid} has no leaderboard row for {m.group(0)!r}")
@@ -530,7 +552,7 @@ def check_summary_post(text: str, state: dict, *, repo_url: str | None = None) -
             tol = 0.5 * 10 ** -len((m.group(1).split(".") + [""])[1]) + 1e-9
             word = m.group(0)[len(m.group(1)):].strip().lower()
             if word.startswith("min") and m.group(2):
-                want, what = row.get("median_lead_vs_google"), "median lead over Google"
+                want, what = row.get("median_lead_vs_serper"), "median lead over Serper"
             elif word.startswith("min"):
                 want, what = row.get("median_minutes_after_close"), "median minutes after poll close"
             elif word == "wrong":
@@ -547,6 +569,8 @@ def check_summary_post(text: str, state: dict, *, repo_url: str | None = None) -
     summary = state.get("summary") or {}
     totals = [float(x) for x in summary.values() if isinstance(x, (int, float)) and not isinstance(x, bool)]
     totals.append(float(len(single_engines(state))))
+    cov = first_coverage(state)
+    totals += [float(cov[k]) for k in ("called", "found", "best_first", "engines_first")]
     for raw in check_text(rest, totals).unsupported:
         reasons.append(f"number {raw!r} is not a total in the results")
     return (not reasons), list(dict.fromkeys(reasons))

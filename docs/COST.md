@@ -13,7 +13,7 @@ One race, one round, 7 engines:
 | parallel-search | $0.005 |
 | perplexity-search | $0.005 |
 | telem | $0.0025 |
-| serper (Google) | $0.0003 |
+| serper | $0.0003 |
 | tinyfish | $0 |
 | **Total** | **≈ $0.025 listed; $0.02735 measured** |
 
@@ -35,7 +35,7 @@ Extras:
 - **Smoke tests and the dry run:** under $20.
 
 ## How often to check
-Each race is checked once per round (every 5 or 10 minutes), not every second. Search indexes pick up new pages in minutes to hours, so 5-minute rounds are the finest resolution worth paying for, and 10-minute rounds probably lose little. A cheaper option is to check every 5 minutes for the first 2 hours after a race's polls close (when most calls happen), then every 15 minutes.
+Each race is checked once per round (every 5 or 10 minutes), not every second. Search indexes pick up new pages in minutes to hours, so 5-minute rounds are the finest resolution worth paying for, and 10-minute rounds probably lose little. **Decided 3 Nov:** every 5 minutes for the first 3 hours after a race's polls close (when most calls and first finds happen), then every 15 minutes until 12 hours after close, then hourly. Upper bound for the night with no stop rule: 156 races × (36 + 36) checks ≈ 11,200 checks ≈ $280, inside the $350 poller cap (every 5 minutes for 12 hours would be ≈ $560).
 
 ## Rate
 

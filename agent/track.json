@@ -6,7 +6,10 @@
  "max_tokens": 4000,
  "prompt": "agent/prompts/track.txt",
  "election_date": "2026-11-03",
- "offices": ["senate", "governor"],
+ "offices": [
+  "senate",
+  "governor"
+ ],
  "round_minutes": 10,
  "round_offset_minutes": 4,
  "active_hours": 3,
@@ -20,7 +23,15 @@
  },
  "jevlin": {
   "base_url": "https://api.jevlin.ai",
-  "providers": ["exa", "brave", "parallel-search", "perplexity-search", "serper", "tinyfish", "telem"],
+  "providers": [
+   "exa",
+   "brave",
+   "parallel-search",
+   "perplexity-search",
+   "serper",
+   "tinyfish",
+   "telem"
+  ],
   "tier": "max",
   "recency": "day",
   "view": "merged",
@@ -33,9 +44,12 @@
  "first_search_options": {
   "poller_raw_dir": "raw",
   "max_age_minutes": 10,
-  "_note": "reuse_poller: search 1 is the latest poller record for the race (raw/<ET date>/round-<id>.jsonl.gz, completed lines only, not a cache hit, HTTP 200) whose round start is at or before the agent round's start and at most max_age_minutes older. It costs the track $0 (the poller paid for it) and is logged by poller round and request_id. No such record: the check is 'no_baseline' and makes no call. 'live' sends the pre-registered query itself; only once Jevlin's cache-skip field is set in jevlin_extra_request_fields, because the router cache is shared with the poller. In both modes the model may not send a query that normalises (lowercase, collapsed whitespace) to the pre-registered query."
+  "_note": "reuse_poller: search 1 is the latest poller record for the race (raw/<ET date>/round-<id>.jsonl.gz, completed lines only, not a cache hit, HTTP 200) whose round start is at or before the agent round's start and at most max_age_minutes older. It costs the track $0 (the poller paid for it) and is logged by poller round and request_id. No such record and fallback 'live' (decided 3 Nov, after the NFL dry run showed 10 of 18 checks skipped on cache hits): the code sends the pre-registered query itself with cache 'refresh', billed to the track. In both modes the model may not send a query that normalises (lowercase, collapsed whitespace) to the pre-registered query.",
+  "fallback": "live"
  },
- "jevlin_extra_request_fields": {},
+ "jevlin_extra_request_fields": {
+  "cache": "refresh"
+ },
  "shown_to_model": {
   "results_per_search": 15,
   "chars_per_result": 700,
@@ -48,5 +62,6 @@
   "cache_hit_voids_record": true,
   "_note": "An item is kept only if its URL came back from one of this check's searches or fetches and its snippet appears word for word in the text Jevlin returned for that URL; its title is taken from Jevlin, not from the model. cache_hit_voids_record mirrors the poller: a record whose steps replayed a cached response is marked summary.cache_hit and build_state skips it."
  },
- "max_workers": 8
+ "max_workers": 8,
+ "_cache_note": "jevlin_extra_request_fields cache 'refresh' (Jevlin router, deployed 3 Nov): every agent search skips the shared cache read and runs live; the poller sends the same field."
 }

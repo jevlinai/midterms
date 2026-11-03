@@ -47,6 +47,24 @@ from agent.store import Store, now_iso
 PROMPT = (Path(__file__).parent / "prompts" / "call_finder.txt").read_text()
 OFFICE_ORDER = {"senate": 0, "governor": 1, "house": 2}
 AP_HOSTS = ("apnews.com",)
+DEFAULT_QUERY = "AP race call {name} {year}"
+
+
+def call_hosts() -> tuple[str, ...]:
+    """Where calls are looked for. Default AP; MIDTERMS_CALL_HOSTS overrides it for rehearsals
+    (the NFL dry run uses espn.com,nfl.com). Comma-separated hosts."""
+    v = os.environ.get("MIDTERMS_CALL_HOSTS", "").strip()
+    return tuple(h.strip().lower() for h in v.split(",") if h.strip()) if v else AP_HOSTS
+
+
+def load_prompt() -> str:
+    """The extraction prompt: prompts/call_finder.txt, or the file named by MIDTERMS_CALL_PROMPT
+    (a name inside agent/prompts/, e.g. call_finder_nfl.txt for the NFL dry run)."""
+    name = os.environ.get("MIDTERMS_CALL_PROMPT", "").strip()
+    if not name:
+        return PROMPT
+    path = (Path(__file__).parent / "prompts" / Path(name).name)
+    return path.read_text()
 MAX_PAGE_CHARS = 6000
 MAX_PAGES_TO_MODEL = 6
 MAX_QUOTE_CHARS = 300
@@ -105,7 +123,7 @@ def norm_url(u: str) -> str:
 
 def is_ap(url: str) -> bool:
     host = norm_url(url).split("/", 1)[0]
-    return any(host == h or host.endswith("." + h) for h in AP_HOSTS)
+    return any(host == h or host.endswith("." + h) for h in call_hosts())
 
 
 def surname(c: dict) -> str:
@@ -147,7 +165,7 @@ def validate(raw: dict, race_entry: dict, pages: list[dict], *, poll_close: str 
     url = str(raw.get("ap_url") or "")
     page = next((p for p in pages if norm_url(p["url"]) == norm_url(url)), None)
     if not is_ap(url):
-        reasons.append(f"ap_url {url[:120]!r} is not an apnews.com page")
+        reasons.append(f"ap_url {url[:120]!r} is not an {' or '.join(call_hosts())} page")
     elif page is None:
         reasons.append("ap_url is not one of the pages this search returned")
 
@@ -194,6 +212,7 @@ class CallFinder:
         self.races, self.run_id, self.fetch = races, run_id, fetch
         self.jevlin_cap_usd, self.year, self.recency, self.round_minutes = jevlin_cap_usd, year, recency, round_minutes
         self.budget_since = budget_since  # --budget-scope day: count every call-finder run since then
+        self.prompt = load_prompt()
 
     def jevlin_spent(self) -> float:
         if self.budget_since is not None:
@@ -201,11 +220,11 @@ class CallFinder:
         return self.store.jevlin_spend_for_run(self.run_id)
 
     def query(self, race: dict) -> str:
-        return f"AP race call {display_name(race)} {self.year}"
+        return os.environ.get("MIDTERMS_CALL_QUERY", DEFAULT_QUERY).format(name=display_name(race), year=self.year)
 
     def search_body(self, race: dict) -> dict:
-        body: dict[str, Any] = {"query": self.query(race), "tier": "balanced", "domain_filter": list(AP_HOSTS),
-                                "view": "merged", "merged_limit": 10}
+        body: dict[str, Any] = {"query": self.query(race), "tier": "balanced", "domain_filter": list(call_hosts()),
+                                "view": "merged", "merged_limit": 10, "cache": "refresh"}
         if self.recency:
             body["recency"] = self.recency
         return body
@@ -244,7 +263,7 @@ class CallFinder:
             self._fetch_into(relevant[:2])
 
         self.budget.check(self.run_id)
-        msg = self.model.invoke([SystemMessage(PROMPT), HumanMessage(self._prompt(race, entry, relevant))])
+        msg = self.model.invoke([SystemMessage(self.prompt), HumanMessage(self._prompt(race, entry, relevant))])
         self.budget.record(self.run_id, msg, "call_finder.extract")
         try:
             raw = parse_json_object(message_text(msg))

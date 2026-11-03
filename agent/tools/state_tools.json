@@ -19,7 +19,7 @@
   },
   {
    "name": "leaderboard",
-   "description": "Per-engine totals: median minutes from poll close to found, races found first, lead over Google, never found, wrong answers, cost per check. Optionally for one office.",
+   "description": "Per-engine totals: median minutes from poll close to found, races found first, lead over Serper, never found, wrong answers, cost per check. Optionally for one office.",
    "input_schema": {"type": "object", "properties": {"office": {"type": "string", "enum": ["senate", "governor", "house"]}}}
   },
   {
@@ -40,7 +40,7 @@
     "highlight_races": {"type": "array", "items": {"type": "string"}, "maxItems": 60},
     "highlight_engine": {"type": "string"},
     "open_race": {"type": "string"},
-    "sort_leaderboard": {"type": "string", "enum": ["median_minutes_after_close", "found_first", "median_lead_vs_google", "wrong", "never_found"]},
+    "sort_leaderboard": {"type": "string", "enum": ["median_minutes_after_close", "found_first", "median_lead_vs_serper", "wrong", "never_found"]},
     "filter": {"type": "object", "properties": {
       "status": {"type": "string", "enum": ["open", "closed", "called"]},
       "first_engine": {"type": "string"}

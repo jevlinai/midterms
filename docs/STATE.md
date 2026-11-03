@@ -18,11 +18,10 @@ A synthetic example (fake states and candidates, for building and testing only) 
     {"id": "brave", "label": "Brave"},
     {"id": "parallel-search", "label": "Parallel"},
     {"id": "perplexity-search", "label": "Perplexity"},
-    {"id": "serper", "label": "Google (via Serper)", "baseline": true},
+    {"id": "serper", "label": "Serper", "baseline": true},
     {"id": "tinyfish", "label": "TinyFish"},
     {"id": "telem", "label": "Telem"},
     {"id": "jevlin", "label": "Jevlin, all engines", "computed": true},   // earliest of the 7, from the same calls
-    {"id": "agent", "label": "Agent on Jevlin", "agent": true}            // Senate + Governor only
   ],
 
   "summary": {"races": 156, "polls_closed": 80, "called": 41, "leader": "perplexity-search"},
@@ -47,7 +46,7 @@ A synthetic example (fake states and candidates, for building and testing only) 
         "found_at": "2026-11-03T20:25:00-05:00",   // round start; null = not found (yet)
         "minutes_after_close": 85,
         "minutes_vs_call": 13,                      // found_at − ap_call_time; negative = before AP's call
-        "lead_vs_google": 4,                        // serper.found_at − exa.found_at; positive = ahead of Google
+        "lead_vs_serper": 4,                        // serper.found_at − exa.found_at; positive = ahead of Serper
         "wrong_at": null,                           // first round naming a different candidate
         "url": "https://…",                         // the first page that named the winner
         "failed_rounds": 0
@@ -62,7 +61,7 @@ A synthetic example (fake states and candidates, for building and testing only) 
     "median_minutes_after_close": 22,
     "found_within": {"30": 25, "60": 33, "180": 39},
     "found_first": 9,
-    "median_lead_vs_google": 3,
+    "median_lead_vs_serper": 3,
     "never_found": 2,
     "wrong": 1,
     "failed_rounds": 4,
@@ -72,7 +71,6 @@ A synthetic example (fake states and candidates, for building and testing only) 
 ```
 
 Notes
-- `minutes_*` are whole minutes. Resolution is one round (5 minutes on the night; 10 for the agent track).
+- `minutes_*` are whole minutes. Resolution is one round (5 minutes on the night).
 - `jevlin` is computed: `found_at = min(found_at over the 7 engines)`, `wrong_at = min(wrong_at over the 7)`. Cost per check is the whole call's.
-- `agent` appears only on Senate and Governor races.
 - Sorting the leaderboard is the reader's choice. The default is `median_minutes_after_close`, ascending, with `wrong` always shown beside it.

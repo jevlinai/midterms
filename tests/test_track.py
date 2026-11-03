@@ -18,6 +18,7 @@ from agent.models import OfflinePlanModel, PlannedCall
 
 ET = track.ET
 CFG = track.load_config()
+CFG_NO_FALLBACK = {**CFG, "first_search_options": {**CFG["first_search_options"], "fallback": None}}
 CFG_LIVE = {**CFG, "first_search": "live"}  # search 1 sent by the code (after cache-skip lands)
 
 RACES = [
@@ -100,7 +101,8 @@ def test_jevlin_request_matches_the_poller():
     assert CFG["model"] == "claude-sonnet-5-5" and CFG["offices"] == ["senate", "governor"]
     assert (CFG["budget"]["max_searches"], CFG["budget"]["max_fetches"]) == (3, 2)
     assert (CFG["round_minutes"], CFG["round_offset_minutes"], CFG["active_hours"]) == (10, 4, 3)
-    assert CFG["jevlin_extra_request_fields"] == {}
+    assert CFG["jevlin_extra_request_fields"] == {"cache": "refresh"} and poller["cache"] == "refresh"
+    assert CFG["first_search_options"]["fallback"] == "live"
     assert CFG["first_search"] == "reuse_poller" and CFG["first_search_options"]["max_age_minutes"] == 10
 
 
@@ -393,7 +395,7 @@ def test_search_1_reuses_the_latest_usable_poller_record(fake, store, raw):
 def test_failed_and_other_race_poller_records_are_not_used(fake, store, raw):
     write_poller(raw, "20261103T1905", [poller_record("governor-yy", "20261103T1905")])
     write_poller(raw, "20261103T1910", [poller_record("senate-xx", "20261103T1910", status=502)])
-    rec = check(fake, store, cfg=CFG, poller_dir=raw)
+    rec = check(fake, store, cfg=CFG_NO_FALLBACK, poller_dir=raw)
     assert rec["status"] == "no_baseline"
 
 
@@ -407,7 +409,7 @@ def test_no_recent_poller_record_is_no_baseline_with_no_call(store, raw):
             calls.append(1)
             return super()._generate(*a, **k)
 
-    rec = check(fake, store, cfg=CFG, poller_dir=raw, model=Counting(plan=[], final_text=GOOD_ANSWER))
+    rec = check(fake, store, cfg=CFG_NO_FALLBACK, poller_dir=raw, model=Counting(plan=[], final_text=GOOD_ANSWER))
     assert rec["status"] == "no_baseline" and "no search made" in rec["error"]
     assert fake.requests == [] and calls == [] and rec["steps"] == [] and rec["items"] == []
     from detector.detect import engine_items
@@ -424,15 +426,15 @@ def test_on_the_night_search_1_is_the_pollers_10_round(fake, store, raw):
 
 def test_ten_minutes_old_is_still_usable(fake, store, raw):
     write_poller(raw, "20261103T1904", [poller_record("senate-xx", "20261103T1904")])
-    assert check(fake, store, cfg=CFG, poller_dir=raw)["status"] == "ok"  # agent round 19:14
+    assert check(fake, store, cfg=CFG_NO_FALLBACK, poller_dir=raw)["status"] == "ok"  # agent round 19:14
     write_poller(raw, "20261103T1903", [poller_record("governor-yy", "20261103T1903")])
-    assert check(fake, store, cfg=CFG, poller_dir=raw, race=RACES[1])["status"] == "no_baseline"  # 11 min
+    assert check(fake, store, cfg=CFG_NO_FALLBACK, poller_dir=raw, race=RACES[1])["status"] == "no_baseline"  # 11 min
 
 
 def test_agent_records_are_never_taken_as_the_poller_baseline(fake, store, raw):
     agent_like = {**poller_record("senate-xx", "20261103T1910"), "source": "agent"}
     write_poller(raw, "20261103T1910", [agent_like])
-    assert check(fake, store, cfg=CFG, poller_dir=raw)["status"] == "no_baseline"
+    assert check(fake, store, cfg=CFG_NO_FALLBACK, poller_dir=raw)["status"] == "no_baseline"
 
 
 @pytest.mark.parametrize("q", ["Example Senate election results 2026", "  example   SENATE election results 2026 "])
@@ -448,10 +450,18 @@ def test_the_model_may_not_resend_the_pre_registered_query(fake, store, raw, q):
 
 def test_reuse_round_end_to_end(fake, store, raw):
     write_poller(raw, "20261103T1940", [poller_record("senate-xx", "20261103T1940")])
-    [stats] = track.run(cfg=CFG, races=RACES[:2], once=True, budget_usd=1, model=offline(), client=client(fake),
+    [stats] = track.run(cfg=CFG_NO_FALLBACK, races=RACES[:2], once=True, budget_usd=1, model=offline(), client=client(fake),
                         store=store, raw_dir=raw / "agent", poller_dir=raw, run_id="track_test",
                         now_fn=lambda: datetime(2026, 11, 3, 19, 44, tzinfo=ET))
     assert stats["ok"] == 1 and stats["no_baseline"] == 1 and fake.requests == []
+
+
+def test_without_a_fresh_poller_record_search_1_is_sent_live_with_cache_refresh(fake, store, raw):
+    write_poller(raw, "20261103T1910", [poller_record("senate-xx", "20261103T1910", cache_hit=True)])
+    rec = check(fake, store, cfg=CFG, poller_dir=raw)
+    assert rec["status"] == "ok" and rec["first_search_used"] == "live_fallback"
+    sent = [b for p, b, _ in fake.requests if p == "/v1/search"]
+    assert sent[0]["query"] == RACES[0]["query"] and all(b.get("cache") == "refresh" for b in sent)
 
 
 # ---------- Jevlin budget across restarts (--budget-scope day) ----------

@@ -8,7 +8,7 @@ state/findings.jsonl. Incremental: remembers how many lines of each raw file it 
 Scoring mode (pre-registered, docs/SCORING.md):
   page   (primary) a page is judged on all the text any engine returned for that URL in that round,
          and every engine that returned the URL gets the credit. Engines return snippets of very
-         different lengths (Google via Serper ~120 chars, Exa ~1,000), so judging each engine on its
+         different lengths (Serper ~120 chars, Exa ~1,000), so judging each engine on its
          own snippet would reward snippet length, not finding the page.
   engine (secondary) each engine judged on its own title + snippet only.
 

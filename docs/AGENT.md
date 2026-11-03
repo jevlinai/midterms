@@ -52,7 +52,7 @@ The agent can write drafts. It has no tool that posts.
 3. A person runs `uv run midterms publish <id> --by <name>`. It shows the text and runs the check again against the current results. It posts to X only if `MIDTERMS_PUBLISH_LIVE=true` is set; otherwise it prints what it would send. A ledger in `state/agent.sqlite` keys each post by race and text, so the same post cannot go out twice.
 4. `uv run midterms reject <id> --by <name>` takes a draft out of the queue.
 
-`uv run midterms thread` drafts the results thread from the final leaderboard. Both versions are written in advance ("AI search was faster than Google" and "Google was faster"), and the leaderboard decides which one is queued: AI search is called faster only if the fastest AI engine, or the agent, has a lower median than Google (via Serper). A tie counts as Google. The thread is queued as a reply chain, and each part is published like any other draft.
+`uv run midterms thread` drafts the results thread from the final leaderboard. Post 1 leads with what holds whatever the ranking: no single engine was first on every race (how many races the best one was first on, and how many engines were first at least once), and asking every engine at once had each result as soon as the fastest one did. If one engine was first everywhere, post 1 says so instead. Post 2 is the ranking against Serper, written in two versions in advance ("AI search was faster" and "Serper was faster"); the leaderboard decides which is queued, and a tie counts as Serper. The thread is queued as a reply chain, and each part is published like any other draft.
 
 ## What was pre-registered
 

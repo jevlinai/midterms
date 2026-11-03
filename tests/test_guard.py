@@ -32,25 +32,25 @@ def test_template_passes_for_every_called_race(state):
 
 def test_template_follows_launch_md(state):
     led_race = next(r for r in state["races"] if r["status"] == "called" and len(r["first"]) == 1
-                    and r["first"][0] != "serper" and (r["engines"][r["first"][0]]["lead_vs_google"] or 0) > 0)
+                    and r["first"][0] != "serper" and (r["engines"][r["first"][0]]["lead_vs_serper"] or 0) > 0)
     e = state["engines"]
     label = next(x["label"] for x in e if x["id"] == led_race["first"][0])
-    lead = led_race["engines"][led_race["first"][0]]["lead_vs_google"]
+    mins = led_race["engines"][led_race["first"][0]]["minutes_after_close"]
     t = template_post(led_race["id"], state)
     assert t == (f"{led_race['name']}. AP called it at {clock(led_race['call']['ap_call_time'])} ET "
-                 f"{led_race['call']['ap_url']}\nFirst search engine to find the result: {label}, {lead:g} min ahead "
-                 "of Google.\nLive: jevlin.ai/midterms")
+                 f"{led_race['call']['ap_url']}\nFirst to find it: {label}, {mins:g} min after polls "
+                 "closed.\nLive: jevlin.ai/midterms")
 
 
 @pytest.mark.parametrize("edit", [
     lambda r: r.update(first=[]),                                        # nobody found it yet
-    lambda r: r.update(first=["serper"]),                                # Google first
+    lambda r: r.update(first=["serper"]),                                # Serper first
     lambda r: r.update(first=["exa", "brave"]),                          # a tie between two engines
-    lambda r: (r.update(first=["exa", "serper"]), r["engines"]["exa"].update(lead_vs_google=0)),  # tied with Google
+    lambda r: (r.update(first=["exa", "serper"]), r["engines"]["exa"].update(lead_vs_serper=0)),  # tied with Serper
     lambda r: r.update(first=["exa", "serper"]),                         # inconsistent data: still passes
-    lambda r: (r.update(first=["exa"]), r["engines"]["exa"].update(lead_vs_google=-5)),  # inconsistent: no number
+    lambda r: (r.update(first=["exa"]), r["engines"]["exa"].update(lead_vs_serper=-5)),  # inconsistent: no number
     lambda r: r.update(first=["jevlin", "exa"]),                         # the computed union ties the earliest
-    lambda r: (r.update(first=["exa"]), r["engines"]["exa"].update(lead_vs_google=None)),  # Google never found it
+    lambda r: (r.update(first=["exa"]), r["engines"]["exa"].update(lead_vs_serper=None)),  # Serper never found it
     lambda r: r.update(name="North Carolina 14th Congressional District House Special Election"),
     lambda r: r["call"].update(ap_call_time="2026-11-04T00:07:00-05:00"),  # just after midnight ET
     lambda r: r["call"].update(ap_url="https://apnews.com/article/" + "x" * 200),  # links count 23
@@ -70,26 +70,26 @@ def test_no_template_for_an_uncalled_race(state):
 # ---------- the guard rejects ----------
 
 def test_rejects_a_wrong_minute_count(led_race, state):
-    lead = led_race["engines"][led_race["first"][0]]["lead_vs_google"]
-    t = good_post(led_race, state).replace(f"{lead:g} min ahead", f"{lead + 5:g} min ahead")
+    mins = led_race["engines"][led_race["first"][0]]["minutes_after_close"]
+    t = good_post(led_race, state).replace(f"{mins:g} min after polls", f"{mins + 5:g} min after polls")
     assert "does not match" in reasons(t, led_race["id"], state)
 
 
 def test_rejects_a_minute_count_attributed_to_the_wrong_engine(led_race, state):
     first = led_race["first"][0]
     other = next(e for e, v in led_race["engines"].items()
-                 if e not in (first, "serper", "jevlin") and v["lead_vs_google"] != v_lead(led_race, first))
+                 if e not in (first, "serper", "jevlin") and v["lead_vs_serper"] != v_lead(led_race, first))
     label = {"exa": "Exa", "brave": "Brave", "parallel-search": "Parallel", "perplexity-search": "Perplexity",
              "tinyfish": "TinyFish", "telem": "Telem", "agent": "Agent on Jevlin"}[other]
     lead = v_lead(led_race, first)
     t = (f"{led_race['name']}. AP called it at {clock(led_race['call']['ap_call_time'])} ET {led_race['call']['ap_url']}\n"
-         f"{label} was {lead:g} min ahead of Google.\nLive: jevlin.ai/midterms")
-    assert led_race["engines"][other]["lead_vs_google"] != lead
-    assert "lead over Google" in reasons(t, led_race["id"], state)
+         f"{label} was {lead:g} min ahead of Serper.\nLive: jevlin.ai/midterms")
+    assert led_race["engines"][other]["lead_vs_serper"] != lead
+    assert "compares engines" in reasons(t, led_race["id"], state)
 
 
 def v_lead(race, eid):
-    return race["engines"][eid]["lead_vs_google"]
+    return race["engines"][eid]["lead_vs_serper"]
 
 
 def test_rejects_a_stray_number(led_race, state):
@@ -174,7 +174,7 @@ def test_rejects_a_wrong_first_claim(led_race, state):
     wrong = next(e for e in ("exa", "brave", "telem", "tinyfish") if e not in led_race["first"])
     label = {"exa": "Exa", "brave": "Brave", "telem": "Telem", "tinyfish": "TinyFish"}[wrong]
     first_label = next(x["label"] for x in state["engines"] if x["id"] == led_race["first"][0])
-    t = good_post(led_race, state).replace(f"result: {first_label},", f"result: {label},")
+    t = good_post(led_race, state).replace(f"find it: {first_label},", f"find it: {label},")
     assert "was first" in reasons(t, led_race["id"], state)
 
 
@@ -207,3 +207,27 @@ def test_check_answer_flags_candidates_of_uncalled_races(state):
     r = uncalled(state)
     assert check_answer(f"{r['candidates'][1]['name']} is winning.", state)
     assert check_answer("Perplexity was first in 12 races.", state) == []
+
+
+def test_a_post_that_says_google_is_rejected(state, led_race):
+    from agent.guard import check_post, template_post
+    text = template_post(led_race["id"], state).replace("Live:", "Google had it too.\nLive:")
+    ok, reasons = check_post(text, led_race["id"], state)
+    assert not ok and any("Google" in r for r in reasons), text
+
+
+def test_a_note_before_the_post_or_a_missing_race_name_is_rejected(led_race, state):
+    from agent.guard import check_post, template_post
+    good = template_post(led_race["id"], state)
+    for bad in ("Three engines tied for first, so I'll name all three.\n\n" + good,
+                good.replace(led_race["name"], "NFL game", 1)):
+        ok, reasons = check_post(bad, led_race["id"], state)
+        assert not ok and any("must start with the race name" in r for r in reasons), bad
+
+
+def test_engines_are_never_set_against_each_other(led_race, state):
+    from agent.guard import check_post, template_post
+    for phrase in ("12 min ahead of Serper", "behind Exa", "tied with Serper"):
+        text = template_post(led_race["id"], state).replace("Live:", f"Exa was {phrase}.\nLive:")
+        ok, reasons = check_post(text, led_race["id"], state)
+        assert not ok and any("compares engines" in r for r in reasons), text

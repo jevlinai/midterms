@@ -21,7 +21,7 @@ def with_medians(state, **medians):
 
 
 @pytest.fixture
-def google_wins(state):
+def serper_wins(state):
     return with_medians(state, serper=10)
 
 
@@ -30,66 +30,53 @@ def drafts(store):
     return Drafts(store=store)
 
 
-def test_example_state_supports_ai_faster_and_every_post_passes(state):
-    out = results_outcome(state)
-    assert out["version"] == "ai_faster" and out["best"] == "exa"
-    posts = thread.compose(state, "ai_faster", REPO)
-    assert "AI search was faster than Google." in posts[0] and "Exa: 30 min median from poll close (4 wrong)" in posts[0]
+def test_one_version_seven_posts_and_every_post_passes(state):
+    assert thread.VERSIONS == ("results",)
+    posts = thread.compose(state, "results", REPO)
+    assert len(posts) == 7
+    for e in ("Exa", "Brave", "Parallel", "Perplexity", "Serper", "TinyFish", "Telem"):
+        assert f"\n{e}: " in posts[2]
     assert all(ok for ok, _ in thread.check_thread(posts, state, REPO)), thread.check_thread(posts, state, REPO)
 
 
-def test_google_faster_is_said_plainly(google_wins):
-    out = results_outcome(google_wins)
-    assert out["version"] == "google_faster"
-    posts = thread.compose(google_wins, "google_faster", REPO)
-    assert "Google was faster than AI search." in posts[0]
-    assert "Google (via Serper): 10 min median from poll close (6 wrong)" in posts[0]
-    assert all(ok for ok, _ in thread.check_thread(posts, google_wins, REPO))
-    # and the AI headline is refused on this data
-    ok, why = check_summary_post(thread.compose(google_wins, "ai_faster", REPO)[0], google_wins, repo_url=REPO)
-    assert not ok and "Google was as fast or faster" in " ".join(why)
+def test_no_baseline_anywhere_in_the_thread(serper_wins):
+    posts = thread.compose(serper_wins, "results", REPO)
+    text = "\n".join(posts)
+    assert "ahead of" not in text and "faster than" not in text
+    assert posts[2].splitlines()[1] == "Serper: 10 min (6 wrong)"  # ranked first, like any engine
+    assert all(ok for ok, _ in thread.check_thread(posts, serper_wins, REPO))
 
 
-def test_a_tie_goes_to_google(state):
-    s = with_medians(state, exa=35)
-    out = results_outcome(s)
-    assert out["version"] == "google_faster" and out["tie"]
-    assert "Google was as fast as AI search." in thread.compose(s, "google_faster", REPO)[0]
+def test_claims_of_beating_an_engine_are_refused(state, serper_wins):
+    ok, why = check_summary_post("AI search was faster than Serper.", serper_wins, repo_url=REPO)
+    assert not ok and "Serper was as fast or faster" in " ".join(why)
 
 
-def test_the_agent_alone_beating_google_is_ai_faster_with_the_agent_as_lead(state):
-    s = with_medians(state, exa=50, brave=50, **{"parallel-search": 50, "perplexity-search": 50}, tinyfish=50,
-                     telem=50, agent=20)
-    out = results_outcome(s)
-    assert out["version"] == "ai_faster" and out["lead"] == "agent"
-    head = thread.compose(s, "ai_faster", REPO)[0]
-    assert "Agent on Jevlin: 20 min" in head
-    assert check_summary_post(head, s, repo_url=REPO)[0]
-
-
-def test_jevlin_never_decides_the_headline(state):
-    s = with_medians(state, exa=40, brave=40, **{"parallel-search": 40, "perplexity-search": 40}, tinyfish=40,
-                     telem=40, agent=40, jevlin=1)
-    assert results_outcome(s)["version"] == "google_faster"
-
-
-@pytest.mark.parametrize("old,new,why", [
-    ("Exa: 30 min median", "Exa: 25 min median", "does not match exa's median"),
-    ("(4 wrong).\nGoogle", "(0 wrong).\nGoogle", "does not match exa's wrong"),
-    ("114 races", "120 races", "not a total"),
-    ("AI search was faster than Google.", "AI search was faster than Google, a landslide.", "commentary"),
-])
-def test_the_guard_checks_every_number_and_word(state, old, new, why):
-    head = thread.compose(state, "ai_faster", REPO)[0]
-    assert old in head
-    ok, reasons = check_summary_post(head.replace(old, new), state, repo_url=REPO)
-    assert not ok and why in " ".join(reasons), reasons
+def test_the_guard_checks_every_number_and_word(state):
+    from agent.guard import first_coverage
+    posts = thread.compose(state, "results", REPO)
+    line = posts[2].splitlines()[1]                      # e.g. "Serper: 27.5 min (6 wrong)"
+    name, rest = line.split(": ", 1)
+    mins, wrong = rest.split(" min (")[0], rest.split("(")[1].split(" wrong")[0]
+    cov = first_coverage(state)
+    cases = [
+        (posts[2], line, line.replace(f"{mins} min", f"{float(mins) + 3:g} min"), "median"),
+        (posts[2], line, line.replace(f"({wrong} wrong)", f"({int(wrong) + 9} wrong)"), "wrong"),
+        (posts[2], f"ranking, {cov['called']} races", f"ranking, {cov['called'] + 6} races", "not a total"),
+        (posts[1], f"first on {cov['best_first']} of", f"first on {cov['best_first'] + 4} of", "not a total"),
+        (posts[1], "That's supersearch.", "That's supersearch, a landslide.", "commentary"),
+    ]
+    for post, old, new, why in cases:
+        assert old in post, (old, post)
+        ok, reasons = check_summary_post(post.replace(old, new), state, repo_url=REPO)
+        assert not ok and why in " ".join(reasons), (new, reasons)
 
 
 def test_the_guard_checks_links_hash_and_candidates(state):
-    method = thread.compose(state, "ai_faster", REPO)[3]
-    assert check_summary_post(method, state, repo_url=REPO)[0]
-    assert "link not allowed" in " ".join(check_summary_post(method.replace(REPO, "https://evil.example/x"), state,
+    posts = thread.compose(state, "results", REPO)
+    method, close = posts[4], posts[6]
+    assert check_summary_post(method, state, repo_url=REPO)[0] and check_summary_post(close, state, repo_url=REPO)[0]
+    assert "link not allowed" in " ".join(check_summary_post(close.replace(REPO, "https://evil.example/x"), state,
                                                              repo_url=REPO)[1])
     assert "not the pre-registration hash" in " ".join(check_summary_post(
         method.replace("0000000000000000", "deadbeefdeadbeef"), state, repo_url=REPO)[1])
@@ -97,31 +84,30 @@ def test_the_guard_checks_links_hash_and_candidates(state):
     assert "names candidate" in " ".join(check_summary_post(f"Thanks, {name}.", state, repo_url=REPO)[1])
 
 
-def test_queue_is_a_reply_chain_and_publish_posts_it_in_order(google_wins, drafts, x_client, fake_x):
-    queued = thread.queue_thread(google_wins, drafts, REPO)
+def test_queue_is_a_reply_chain_and_publish_posts_it_in_order(serper_wins, drafts, x_client, fake_x):
+    queued = thread.queue_thread(serper_wins, drafts, REPO)
     assert [d["position"] for d in queued] == list(range(1, len(queued) + 1))
-    assert all(d["kind"] == "thread" and d["thread_id"] == "thread-google-faster" for d in queued)
+    assert all(d["kind"] == "thread" and d["thread_id"] == "thread-results" for d in queued)
     assert [d["reply_to_draft"] for d in queued] == [None] + [d["id"] for d in queued[:-1]]
     with pytest.raises(NotAuthorized, match="not published yet"):
-        drafts.publish(queued[1]["id"], by="gaurav", state=google_wins, live=True, client=x_client)
-    ids = [drafts.publish(d["id"], by="gaurav", state=google_wins, live=True, client=x_client).tweet_id for d in queued]
+        drafts.publish(queued[1]["id"], by="gaurav", state=serper_wins, live=True, client=x_client)
+    ids = [drafts.publish(d["id"], by="gaurav", state=serper_wins, live=True, client=x_client).tweet_id for d in queued]
     assert "reply" not in fake_x.bodies[0]
     assert [b["reply"]["in_reply_to_tweet_id"] for b in fake_x.bodies[1:]] == ids[:-1]
 
 
 def test_publish_rechecks_the_thread_against_the_current_state(state, drafts, x_client, fake_x):
-    queued = thread.queue_thread(state, drafts, REPO)  # ai_faster
-    flipped = with_medians(state, serper=10)          # a late correction: Google was faster after all
+    queued = thread.queue_thread(state, drafts, REPO)
+    flipped = with_medians(state, exa=99)             # a late correction changes Exa's median
     with pytest.raises(NotAuthorized, match="guard fails"):
-        drafts.publish(queued[0]["id"], by="gaurav", state=flipped, live=True, client=x_client)
+        drafts.publish(queued[2]["id"], by="gaurav", state=flipped, live=True, client=x_client)
     assert fake_x.requests == []
 
 
-def test_notes_have_both_versions_and_say_which_is_supported(state, isolated):
+def test_notes_have_the_thread_with_guard_results(state, isolated):
     text = thread.write_notes(isolated / "notes" / "thread-draft.md", state, REPO)
-    assert "## Version: ai_faster (SUPPORTED by the data)" in text
-    assert "## Version: google_faster (NOT supported by the data: do not post)" in text
-    assert "Google was faster than AI search." in text
+    assert "through Jevlin" in text and "No single engine was first on every race." in text
+    assert "guard pass" in text and "guard FAIL" not in text
 
 
 def test_the_repo_link_is_required(monkeypatch):
@@ -129,3 +115,43 @@ def test_the_repo_link_is_required(monkeypatch):
         thread.repo_url()
     monkeypatch.setenv("MIDTERMS_REPO_URL", REPO + "/")
     assert thread.repo_url() == REPO
+
+
+def test_a_thread_post_that_says_google_is_rejected(state):
+    from agent.guard import check_summary_post
+    ok, reasons = check_summary_post("Which search found election results first? Google.", state, repo_url="https://github.com/jevlinai/midterms")
+    assert not ok and any("Google" in r for r in reasons)
+
+
+def test_the_thread_leads_with_asking_every_engine(state):
+    from agent.guard import first_coverage
+    cov = first_coverage(state)
+    lead = thread.compose(state, "results", REPO)[1]
+    assert lead == thread.compose(with_medians(state, serper=10), "results", REPO)[1]  # true whichever engine wins
+    assert "No single engine was first on every race." in lead
+    assert f"first on {cov['best_first']} of {cov['found']}" in lead and cov["best_first"] < cov["found"]
+    assert "One Jevlin call asks all of them, so you don't have to guess which." in lead
+    assert check_summary_post(lead, state, repo_url=REPO)[0]
+
+
+def test_one_engine_first_everywhere_is_said_instead(state):
+    s = copy.deepcopy(state)
+    for r in s["races"]:
+        ts = [x["found_at"] for e, x in (r.get("engines") or {}).items() if x.get("found_at")]
+        if ts and "exa" in r["engines"]:
+            r["engines"]["exa"]["found_at"] = min(ts, key=lambda v: v)  # exa ties the earliest everywhere it ran
+    from agent.guard import first_coverage
+    cov = first_coverage(s)
+    if not cov["one_engine_everywhere"]:
+        pytest.skip("example state has called races exa never ran on")
+    lead = thread.compose_lead(s)
+    assert "One engine was first on every race any engine found: Exa." in lead
+    assert check_summary_post(lead, s, repo_url=REPO)[0]
+
+
+def test_the_thread_is_a_race_and_closes_on_superintelligence(state):
+    posts = thread.compose(state, "results", REPO)
+    assert "through Jevlin" in posts[0] and "agent" not in posts[0].lower()
+    assert "Jevlin agent" not in "\n".join(posts)
+    assert "Superintelligence" in posts[5] and "supersearch" in posts[6]
+    assert "mnipresent" not in "\n".join(posts)

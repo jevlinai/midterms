@@ -11,7 +11,7 @@
 2. **Model check:** TypeSafe Jev (`detector/questions.json`, exact model version pinned at the freeze) is given the race, its candidates, the page text and the page's reported publish date, and answers four typed questions: which candidate the text says won (or none); whether it is about this race in the 3 Nov 2026 general election; whether it reports a call, projection, concession or declared winner rather than a lead; and whether the winner is said to have beaten someone who isn't a candidate in this race (a sign of an earlier election). The page names candidate X only if all four pass the thresholds in `questions.json`. Validation on 783 real pages from past elections and primaries: `detector/eval/RESULTS.md` (no false winners, 84% recall).
 3. The detector never sees AP's call. It reports which candidate a page names; the confirmed winner is applied afterwards (`state/build_state.py`).
 
-**Primary rule: page level.** A page is judged on all the text that any engine returned for that URL in that round, and every engine that returned the URL gets the credit. Engines return snippets of very different lengths (Google via Serper about 120 characters, Exa about 1,000), so judging each engine only on its own snippet would measure snippet length, not whether the engine found the page. **Secondary rule (reported, not ranked): engine level**, each engine judged on its own title and snippet only.
+**Primary rule: page level.** A page is judged on all the text that any engine returned for that URL in that round, and every engine that returned the URL gets the credit. Engines return snippets of very different lengths (Serper about 120 characters, Exa about 1,000), so judging each engine only on its own snippet would measure snippet length, not whether the engine found the page. **Secondary rule (reported, not ranked): engine level**, each engine judged on its own title and snippet only.
 
 ### Pre-written "results" pages are excluded
 Some sites publish pages that already name winners before any vote is counted (found in testing on 31 Oct: a site whose pages said the Georgia Senate and Arizona governor races had been won, three days before the election). The detector can't tell such a page from a real report. So:
@@ -19,17 +19,18 @@ Some sites publish pages that already name winners before any vote is counted (f
 - Any **site** (the last two labels of the host, e.g. `aheadofprint.com`) with a page that the detector says named a winner of any race before that race's polls closed is **excluded for every race, all night**, for every engine and the agent alike.
 - Pre-close rounds never count as found or wrong. The excluded sites are listed in `state.json` (`excluded_sites`) and on the page.
 
-### Computed and agent rows
+### Computed row
 - **Jevlin, all engines:** `t_found[jevlin] = min over the 7 engines of t_found[e]`, and the same for `t_wrong`. It is what one Jevlin call returned; nothing extra is run.
-- **Agent on Jevlin:** an agent (model, prompt, step budget and tools frozen in `agent/prompts/track.txt` and `agent/track.json`) searches through Jevlin for Senate and Governor races every 10 minutes for 3 hours after polls close. The pages it would cite are judged by the same detector. Model output can vary between runs; every step is logged in `raw/agent/`.
+- **No agent row.** An "Agent on Jevlin" track (an AI agent searching through Jevlin on Senate and Governor races) was built and rehearsed, then dropped from the method on 3 Nov, before the freeze. Its code stays in `agent/track.py` but does not run and is not scored.
 
-Resolution is one polling round (5 minutes on election night, 1 hour after). Every engine is asked in the same call, so they all share each round's timestamp.
+Resolution is one polling round: every 5 minutes for the first 3 hours after a race's polls close, every 15 minutes (:00, :15, :30, :45) from then to 12 hours after close, and every hour after that (`night` and `followup` in `poller/config.json`). The same schedule applies to every engine. Every engine is asked in the same call, so they all share each round's timestamp.
 
 ## Metrics per engine
 - **Time to found:** `t_found − t_close`, in minutes. Report the median across races, and the share of races found within 30 minutes, 1 hour and 3 hours.
 - **Versus the call:** `t_found − t_call`. A negative value means the engine had a page naming the winner before AP's call, usually from early returns or other outlets' projections. Report it, but don't rank on it.
 - **Found first:** the number of races where `e` had the earliest `t_found`. Ties share the credit.
-- **Lead over Google:** `t_found[serper] − t_found[e]`, median across races that both engines found.
+- **Lead over Serper:** `t_found[serper] − t_found[e]`, median across races that both engines found. Kept in the data for reference only. There is no baseline in anything public: every engine is ranked the same way, and "Jevlin, all engines" (the earliest of the 7 for each race) is the row the results lead with.
+- **First coverage (the thread's lead):** for each single engine, the number of called races on which it was first (ties count for each); the best engine's count, out of the races any engine found; and how many engines were first at least once.
 - **Never found:** the number of races with no `t_found` before the race went inactive.
 - **Wrong:** the number of races with any `t_wrong`. Show it beside every other number.
 

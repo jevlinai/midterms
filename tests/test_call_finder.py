@@ -256,3 +256,19 @@ def test_a_restarted_call_finder_continues_the_day_budget(races, va_state):
     finder.run_id = "cf_restarted"
     [r] = run_once(finder, va_state, now=NOW, refresh=True)
     assert r["status"] == "skipped" and "since" in r["reasons"][0] and restarted.requests == []
+
+
+def test_rehearsal_overrides_hosts_query_and_prompt(monkeypatch, store, races):
+    from agent import call_finder as cf
+    assert cf.call_hosts() == ("apnews.com",)
+    monkeypatch.setenv("MIDTERMS_CALL_HOSTS", "espn.com, nfl.com")
+    monkeypatch.setenv("MIDTERMS_CALL_QUERY", "{name} final score")
+    monkeypatch.setenv("MIDTERMS_CALL_PROMPT", "call_finder_nfl.txt")
+    assert cf.call_hosts() == ("espn.com", "nfl.com")
+    assert cf.is_ap("https://www.espn.com/nfl/game/_/gameId/1") and not cf.is_ap("https://apnews.com/x")
+    finder = CallFinder(client=None, model=None, budget=None, store=store, races=races, run_id="t")
+    race = next(iter(races.values()))
+    body = finder.search_body(race)
+    assert body["domain_filter"] == ["espn.com", "nfl.com"]
+    assert body["query"].endswith("final score") and "AP" not in body["query"]
+    assert "NFL game" in finder.prompt

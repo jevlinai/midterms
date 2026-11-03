@@ -45,13 +45,13 @@ def state() -> dict:
 
 
 def called_with_lead(state: dict) -> dict:
-    """A called race whose first engine is not Google and is ahead of Google by > 0 minutes."""
+    """A called race whose first engine is not Serper and is ahead of Serper by > 0 minutes."""
     for r in state["races"]:
         if r["status"] == "called" and r["first"] and "serper" not in r["first"]:
-            lead = r["engines"][r["first"][0]].get("lead_vs_google")
+            lead = r["engines"][r["first"][0]].get("lead_vs_serper")
             if isinstance(lead, (int, float)) and lead > 0:
                 return r
-    raise AssertionError("example state has no called race led by a non-Google engine")
+    raise AssertionError("example state has no called race led by a non-Serper engine")
 
 
 @pytest.fixture

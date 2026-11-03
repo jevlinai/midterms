@@ -31,7 +31,7 @@ def test_a_call_in_the_file_is_never_shown_unless_status_is_called(state):
                      "ap_url": "https://example.com/leak", "confirmed_by": []}
         r["first"] = ["exa"]
         r["engines"] = {"exa": {"found_at": "2026-11-03T21:05:00-05:00", "minutes_after_close": 35,
-                                "minutes_vs_call": 5, "lead_vs_google": 3, "wrong_at": None,
+                                "minutes_vs_call": 5, "lead_vs_serper": 3, "wrong_at": None,
                                 "url": "https://example.com/candidate-wins-race", "failed_rounds": 2}}
 
     s = mutate(state, rid, leak)
@@ -39,7 +39,7 @@ def test_a_call_in_the_file_is_never_shown_unless_status_is_called(state):
     blob = json.dumps(out)
     assert out["call"] is None and out["first"] == []
     assert out["engines"]["exa"] == {"label": "Exa", "found_at": None, "minutes_after_close": None,
-                                     "minutes_vs_call": None, "lead_vs_google": None, "wrong_at": None, "url": None,
+                                     "minutes_vs_call": None, "lead_vs_serper": None, "wrong_at": None, "url": None,
                                      "failed_rounds": 2}
     assert "example.com/leak" not in blob and "candidate-wins-race" not in blob
     # nor through any other tool

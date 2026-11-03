@@ -133,6 +133,19 @@ def cmd_confirm(race, confirmed, args):
         print(f"Recorded. {race['name']} needs a second, different person to confirm before it shows.")
 
 
+def cmd_accept(race, confirmed, proposals, args):
+    """Confirm the agent's proposal as it stands, after opening its link and checking it.
+    --time is needed when the proposal has no call time (or to correct it)."""
+    p = proposals.get(race["id"])
+    if not p:
+        sys.exit(f"no proposal for {race['id']}; use `confirm` with --winner/--time/--url")
+    t = args.time or p.get("ap_call_time")
+    if not t:
+        sys.exit("the proposal has no call time: add --time (ET, e.g. 2026-11-03T21:42) from the page")
+    print(f"Accepting the agent's proposal for {race['name']}: {p['winner']}\n  link:  {p['ap_url']}\n  quote: {p.get('quote')}")
+    cmd_confirm(race, confirmed, argparse.Namespace(winner=p["winner"], time=str(t)[:16], url=p["ap_url"], by=args.by))
+
+
 def cmd_retract(race, confirmed, args):
     entry = confirmed.get(race["id"])
     if not entry:
@@ -151,6 +164,8 @@ def main(argv=None):
     c = sub.add_parser("confirm"); c.add_argument("race_id")
     c.add_argument("--winner", required=True); c.add_argument("--time", required=True, help="AP call time, ET, e.g. 2026-11-03T21:42")
     c.add_argument("--url", required=True); c.add_argument("--by", required=True)
+    a = sub.add_parser("accept", help="confirm the agent's proposal after checking its link")
+    a.add_argument("race_id"); a.add_argument("--by", required=True); a.add_argument("--time", help="call time, ET, if the proposal has none")
     r = sub.add_parser("retract"); r.add_argument("race_id"); r.add_argument("--by", required=True); r.add_argument("--reason", required=True)
     args = ap.parse_args(argv)
 
@@ -164,6 +179,8 @@ def main(argv=None):
         cmd_show(race, confirmed, proposals)
     elif args.cmd == "confirm":
         cmd_confirm(race, confirmed, args)
+    elif args.cmd == "accept":
+        cmd_accept(race, confirmed, proposals, args)
     else:
         cmd_retract(race, confirmed, args)
 

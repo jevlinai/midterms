@@ -13,9 +13,12 @@
  "recency": "day",
  "view": "merged",
  "merged_limit": 50,
+ "cache": "refresh",
  "night": {
   "round_minutes": 5,
-  "active_hours": 12
+  "active_hours": 12,
+  "slow_after_hours": 3,
+  "slow_round_minutes": 15
  },
  "followup": {
   "round_minutes": 60,

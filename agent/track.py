@@ -465,11 +465,15 @@ def run_check(race: dict, tick: datetime, *, cfg: dict, client: JevlinClient, je
             opts = cfg["first_search_options"]
             base = poller_baseline(Path(poller_dir or (config.raw_root() if opts["poller_raw_dir"] == "raw" else config.ROOT / opts["poller_raw_dir"])), race["id"], tick,
                                    opts["max_age_minutes"])
-            if base is None:
+            if base is None and opts.get("fallback") == "live":
+                rec["first_search_used"] = "live_fallback"  # no fresh poller record: search 1 is sent live
+                first = chk.search(race["query"], by="code")
+            elif base is None:
                 rec.update(status="no_baseline", error=f"no usable poller record for {race['id']} in the "
                            f"{opts['max_age_minutes']} minutes up to round {rid}; no search made")
                 raise _Skip()
-            first = chk.reuse_poller(base)
+            else:
+                first = chk.reuse_poller(base)
         else:
             first = chk.search(race["query"], by="code")
         user_message = render_user_message(cfg, race, first)

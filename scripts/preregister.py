@@ -36,9 +36,6 @@ METHOD_FILES = [
     "detector/jev.py",
     "detector/detect.py",
     "state/build_state.py",
-    "agent/track.json",
-    "agent/prompts/track.txt",
-    "agent/track.py",
     "docs/SCORING.md",
 ]
 

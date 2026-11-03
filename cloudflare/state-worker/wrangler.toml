@@ -1,0 +1,11 @@
+# Deployed to Hammad's Cloudflare account (decided 3 Nov): the data lives there, the page on jevlin.ai reads it.
+#   npx wrangler kv namespace create midterms     -> put the id below
+#   npx wrangler deploy
+name = "midterms-state"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "MIDTERMS"
+id = "948024aab2e74ba88be0a719c18eb525"

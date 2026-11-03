@@ -35,6 +35,26 @@ class Confirm(unittest.TestCase):
     def saved(self):
         return json.loads(C.CONFIRMED.read_text())["senate-zz"]
 
+    def test_accept_uses_the_proposal(self):
+        C.PROPOSALS.write_text(json.dumps({"senate-zz": {"race_id": "senate-zz", "winner": "Ada Alpha",
+            "ap_call_time": "2026-11-03T20:05:00-05:00", "ap_url": "https://apnews.com/article/x", "quote": "q"}}))
+        self.run_cmd("accept", "senate-zz", "--by", "one")
+        s = self.saved()
+        self.assertEqual((s["winner"], s["ap_url"], s["confirmed_by"]), ("Ada Alpha", "https://apnews.com/article/x", ["one"]))
+        self.assertTrue(s["ap_call_time"].startswith("2026-11-03T20:05"))
+
+    def test_accept_needs_a_time_when_the_proposal_has_none(self):
+        C.PROPOSALS.write_text(json.dumps({"senate-zz": {"winner": "Ada Alpha", "ap_call_time": None,
+                                                         "ap_url": "https://apnews.com/article/x"}}))
+        with self.assertRaises(SystemExit):
+            self.run_cmd("accept", "senate-zz", "--by", "one")
+        self.run_cmd("accept", "senate-zz", "--by", "one", "--time", "2026-11-03T20:10")
+        self.assertTrue(self.saved()["ap_call_time"].startswith("2026-11-03T20:10"))
+
+    def test_accept_without_a_proposal_refuses(self):
+        with self.assertRaises(SystemExit):
+            self.run_cmd("accept", "senate-zz", "--by", "one")
+
     def test_two_different_people_for_senate(self):
         self.run_cmd(*OK, "--by", "one")
         self.assertFalse(C.is_called(self.saved(), RACES["senate-zz"]))

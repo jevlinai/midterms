@@ -9,12 +9,12 @@
 #
 # Settings live in ~/.config/midterms/env (never printed): TYPESAFE_API_KEY, ANTHROPIC_API_KEY,
 # optional ALERT_WEBHOOK (Slack/Discord), CF_ACCOUNT_ID/CF_KV_NAMESPACE_ID/CF_API_TOKEN (page data),
-# NIGHT_POLLER_BUDGET (350), NIGHT_TRACK_BUDGET (45), NIGHT_CALLFINDER_BUDGET (20), NIGHT_SINCE (2026-11-03).
+# NIGHT_POLLER_BUDGET (350), NIGHT_CALLFINDER_BUDGET (20), NIGHT_SINCE (2026-11-03).
 # Jevlin key: ~/.jevlin/credentials.json. Start before 4:45pm ET Tue (first pre-close sweep: 5:00pm ET).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 REPO="$(pwd)"
-JOBS=(poller detector detector-eng state track call-finder post-drafter)
+JOBS=(poller detector detector-eng state call-finder post-drafter)  # agent track dropped 3 Nov
 LA="$HOME/Library/LaunchAgents"
 DOMAIN="gui/$(id -u)"
 label() { echo "ai.jevlin.midterms.$1"; }

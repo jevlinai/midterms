@@ -20,7 +20,7 @@ from agent import config
 CONTRACT_PATH = Path(__file__).parent / "tools" / "state_tools.json"
 OFFICES = ("senate", "governor", "house")
 STATUSES = ("open", "closed", "called")
-ENGINE_FIELDS = ("found_at", "minutes_after_close", "minutes_vs_call", "lead_vs_google", "wrong_at", "url",
+ENGINE_FIELDS = ("found_at", "minutes_after_close", "minutes_vs_call", "lead_vs_serper", "wrong_at", "url",
                  "failed_rounds")
 WITHIN = ("30", "60", "180")
 
@@ -79,13 +79,13 @@ def _median(xs: list[float]) -> float | None:
 def _engine_row(e: dict, called: bool) -> dict:
     """One engine's numbers for a race. Uncalled: only the count of failed rounds survives."""
     if not called:
-        return {"found_at": None, "minutes_after_close": None, "minutes_vs_call": None, "lead_vs_google": None,
+        return {"found_at": None, "minutes_after_close": None, "minutes_vs_call": None, "lead_vs_serper": None,
                 "wrong_at": None, "url": None, "failed_rounds": _num(e.get("failed_rounds")) or 0}
     url = e.get("url")
     return {"found_at": e.get("found_at") if isinstance(e.get("found_at"), str) else None,
             "minutes_after_close": _num(e.get("minutes_after_close")),
             "minutes_vs_call": _num(e.get("minutes_vs_call")),
-            "lead_vs_google": _num(e.get("lead_vs_google")),
+            "lead_vs_serper": _num(e.get("lead_vs_serper")),
             "wrong_at": e.get("wrong_at") if isinstance(e.get("wrong_at"), str) else None,
             "url": url if isinstance(url, str) and url.startswith(("https://", "http://")) else None,
             "failed_rounds": _num(e.get("failed_rounds")) or 0}
@@ -149,7 +149,7 @@ def list_races(state: dict, office: str | None = None, state_code: str | None = 
                      "district": r["district"], "status": r["status"], "pending_reason": r["pending_reason"],
                      "poll_close_et": r["poll_close_et"], "first": r["first"],
                      "minutes_after_close": lead["minutes_after_close"] if lead else None,
-                     "lead_vs_google": lead["lead_vs_google"] if lead else None})
+                     "lead_vs_serper": lead["lead_vs_serper"] if lead else None})
     return {"count": len(rows), "races": rows[:limit], "truncated": len(rows) > limit}
 
 
@@ -168,14 +168,14 @@ def leaderboard(state: dict, office: str | None = None) -> dict:
         covered = [r for r in races if eid in r["engines"]]
         found = [r["engines"][eid] for r in covered if r["engines"][eid]["found_at"]]
         mins = [e["minutes_after_close"] for e in found if e["minutes_after_close"] is not None]
-        leads = [e["lead_vs_google"] for e in found if e["lead_vs_google"] is not None]
+        leads = [e["lead_vs_serper"] for e in found if e["lead_vs_serper"] is not None]
         rows.append({
             "engine": eid, "label": label,
             "races_scored": len(covered),
             "median_minutes_after_close": _median(mins),
             "found_within": {w: sum(1 for m in mins if m <= int(w)) for w in WITHIN},
             "found_first": sum(1 for r in covered if eid in r["first"]),
-            "median_lead_vs_google": _median(leads),
+            "median_lead_vs_serper": _median(leads),
             "never_found": len(covered) - len(found),
             "wrong": sum(1 for r in covered if r["engines"][eid]["wrong_at"]),
             "failed_rounds": sum(r["engines"][eid]["failed_rounds"] for r in covered),

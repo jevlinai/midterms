@@ -33,10 +33,18 @@ def per_hour_cap() -> int:
     return int(v) if v else DEFAULT_PER_HOUR
 
 
+def posting_offices() -> tuple[str, ...]:
+    """Offices whose called races are always drafted. MIDTERMS_POSTING_OFFICES overrides the default
+    (senate,governor), e.g. for the NFL dry run (nfl,nfl-track). Toss-up House races are added either way."""
+    v = os.environ.get("MIDTERMS_POSTING_OFFICES", "").strip()
+    return tuple(x.strip() for x in v.split(",") if x.strip()) if v else ("senate", "governor")
+
+
 def posting_set(races: dict[str, dict]) -> set[str]:
     out = set()
+    offices = posting_offices()
     for rid, r in races.items():
-        if r.get("office") in ("senate", "governor"):
+        if r.get("office") in offices:
             out.add(rid)
         elif r.get("office") == "house" and str(r.get("cook_rating") or "").startswith("toss_up"):
             out.add(rid)

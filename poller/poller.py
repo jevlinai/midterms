@@ -68,12 +68,16 @@ def round_start(t, minutes):
 def active_races(races, tick, cfg, inactive):
     """Races to search in the round starting at `tick`.
 
-    Night cadence: from poll close until close + active_hours.
+    Night cadence: every round for the first slow_after_hours after poll close, then only on
+    slow_round_minutes boundaries (e.g. :00, :15, :30, :45) until close + active_hours (decided 3 Nov:
+    most calls and first finds land in the first hours; this keeps the night inside the budget).
     After that: only on follow-up boundaries (hourly), until followup.ends_at.
     A race the detector has marked inactive (every engine found the confirmed winner in two
     consecutive rounds) is never searched again.
     """
     night_h = cfg["night"]["active_hours"]
+    slow_after_h = cfg["night"].get("slow_after_hours", night_h)
+    slow_min = cfg["night"].get("slow_round_minutes", cfg["night"]["round_minutes"])
     fu_min = cfg["followup"]["round_minutes"]
     fu_end = parse_time(cfg["followup"]["ends_at"])
     out = []
@@ -88,8 +92,11 @@ def active_races(races, tick, cfg, inactive):
                    for m in cfg.get("preclose_sweep_minutes", [])):
                 out.append(r)
             continue
-        if tick < close + dt.timedelta(hours=night_h):
+        if tick < close + dt.timedelta(hours=slow_after_h):
             out.append(r)
+        elif tick < close + dt.timedelta(hours=night_h):
+            if tick.astimezone(ET).minute % slow_min == 0:
+                out.append(r)
         elif tick < fu_end and tick.astimezone(ET).minute % fu_min == 0:
             out.append(r)
     return out
@@ -103,6 +110,9 @@ def build_request(race, cfg):
         "recency": cfg["recency"],
         "view": cfg["view"],
         "merged_limit": cfg["merged_limit"],
+        # "refresh": skip the router's shared cache read and search live (Jevlin, deployed 3 Nov), so every
+        # round is fresh; the response says usage.cache_refresh: true.
+        **({"cache": cfg["cache"]} if cfg.get("cache") else {}),
     }
 
 
@@ -172,6 +182,7 @@ def summarize(resp, cfg):
     return {
         "request_id": resp.get("request_id"),
         "cache_hit": bool(usage.get("cache_hit")),
+        "cache_refresh": bool(usage.get("cache_refresh")),
         "deadline_hit": bool(usage.get("deadline_hit")),
         "cost_micros": usage.get("cost_micros"),
         "latency_ms": usage.get("latency_ms"),

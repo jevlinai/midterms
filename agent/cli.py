@@ -173,15 +173,12 @@ def cmd_post_drafter(a) -> int:
 def cmd_thread(a) -> int:
     from agent import thread
     from agent.drafts import Drafts
-    from agent.guard import results_outcome
 
     state, repo = _state(), thread.repo_url()
-    out = results_outcome(state)
     path = thread.notes_path()
     thread.write_notes(path, state, repo)
     queued = thread.queue_thread(state, Drafts(), repo)
-    print(f"the leaderboard supports: {out['version']} (fastest AI engine: {out['best']})")
-    print(f"both versions written to {path}")
+    print(f"thread written to {path}")
     for d in queued:
         print(f"queued {d['id']} ({d['position']}/{d['of']}){' reply to ' + d['reply_to_draft'] if d['reply_to_draft'] else ''}")
     print("publish them in order: uv run midterms publish <id> --by NAME (each part replies to the previous one)")

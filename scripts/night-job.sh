@@ -28,7 +28,6 @@ case "$JOB" in
       else uv run python state/build_state.py || alert "state build failed"; fi
       sleep 60
     done ;;
-  track)         exec uv run midterms track --budget-usd "${NIGHT_TRACK_BUDGET:-45}" --budget-since "$SINCE" ;;
   call-finder)   exec uv run midterms call-finder --interval 300 --jevlin-cap-usd "${NIGHT_CALLFINDER_BUDGET:-20}" --budget-since "$SINCE" ;;
   post-drafter)  exec uv run midterms post-drafter --interval 60 ;;
   *) alert "unknown job $JOB"; exit 2 ;;

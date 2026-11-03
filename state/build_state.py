@@ -7,7 +7,7 @@ Rules carried into the file (docs/SCORING.md):
 - A race shows a winner only when its call is confirmed (two people for Senate and Governor).
 - found_at / wrong_at are measured against the confirmed winner, so they exist only for called races.
 - Rounds that were cache hits don't count, for any engine.
-- "jevlin" = the earliest of the 7 engines; "agent" = the agent track, Senate and Governor only.
+- "jevlin" = the earliest of the 7 engines. (The agent track was dropped from the method on 3 Nov.)
 
 Also writes state/inactive.json for the poller: called races where every one of the 7 engines has
 named the confirmed winner in two consecutive rounds.
@@ -30,11 +30,11 @@ from detector.races import ROOT, load_races  # noqa: E402
 ET = dt.timezone(dt.timedelta(hours=-5))
 ENGINES = [
     ("exa", "Exa", 0.007), ("brave", "Brave", 0.005), ("parallel-search", "Parallel", 0.005),
-    ("perplexity-search", "Perplexity", 0.005), ("serper", "Google (via Serper)", 0.0003),
+    ("perplexity-search", "Perplexity", 0.005), ("serper", "Serper", 0.0003),
     ("tinyfish", "TinyFish", 0.0), ("telem", "Telem", 0.00505),
 ]
 SEVEN = [e for e, _, _ in ENGINES]
-COMPETITORS = SEVEN + ["agent"]
+COMPETITORS = list(SEVEN)  # the agent track was dropped on 3 Nov; its records, if any, are ignored
 
 
 def round_time(round_id):
@@ -113,7 +113,7 @@ def engine_result(rows, winner, close, call_t, others):
     t = found[0] if found else None
     return {
         "found_at": iso(t), "minutes_after_close": minutes(t, close), "minutes_vs_call": minutes(t, call_t),
-        "lead_vs_google": None, "wrong_at": iso(wrong),
+        "lead_vs_serper": None, "wrong_at": iso(wrong),
         "url": (found[1].get(winner) or [None])[0] if found else None,
         "failed_rounds": sum(1 for _, _, st, _ in rows if st != "ok"),
         "_t": t, "_wrong": wrong,
@@ -155,15 +155,15 @@ def build(races, findings, confirmed, pending, prereg, now):
                 ws = [x["_wrong"] for x in seven if x["_wrong"]]
                 t, w = (min(ts) if ts else None), (min(ws) if ws else None)
                 res["jevlin"] = {"found_at": iso(t), "minutes_after_close": minutes(t, close),
-                                 "minutes_vs_call": minutes(t, call_t), "lead_vs_google": None, "wrong_at": iso(w),
+                                 "minutes_vs_call": minutes(t, call_t), "lead_vs_serper": None, "wrong_at": iso(w),
                                  "url": next((x["url"] for x in seven if x["_t"] == t), None) if t else None,
                                  "failed_rounds": 0, "_t": t, "_wrong": w}
             g = res.get("serper", {}).get("_t")
             for e, x in res.items():
                 if e != "serper" and g and x["_t"]:
-                    x["lead_vs_google"] = minutes(g, x["_t"])
+                    x["lead_vs_serper"] = minutes(g, x["_t"])
                 elif e == "serper" and g:
-                    x["lead_vs_google"] = 0
+                    x["lead_vs_serper"] = 0
             best = min((x["_t"] for e, x in res.items() if e in COMPETITORS and x["_t"]), default=None)
             race["first"] = sorted(e for e, x in res.items() if e in COMPETITORS and best and x["_t"] == best)
             race["engines"] = {e: {k: v for k, v in x.items() if not k.startswith("_")} for e, x in res.items()}
@@ -173,17 +173,17 @@ def build(races, findings, confirmed, pending, prereg, now):
 
     called = [x for x in out_races if x["status"] == "called"]
     board = []
-    costs = {e: c for e, _, c in ENGINES} | {"jevlin": sum(c for _, _, c in ENGINES), "agent": None}
-    for e in SEVEN + ["jevlin", "agent"]:
+    costs = {e: c for e, _, c in ENGINES} | {"jevlin": sum(c for _, _, c in ENGINES)}
+    for e in SEVEN + ["jevlin"]:
         rows = [x["engines"][e] for x in called if e in x["engines"]]
         got = [y["minutes_after_close"] for y in rows if y["found_at"]]
-        leads = [y["lead_vs_google"] for y in rows if y["lead_vs_google"] is not None]
+        leads = [y["lead_vs_serper"] for y in rows if y["lead_vs_serper"] is not None]
         board.append({
             "engine": e, "races_scored": len(rows),
             "median_minutes_after_close": statistics.median(got) if got else None,
             "found_within": {k: sum(1 for m in got if m <= int(k)) for k in ("30", "60", "180")},
             "found_first": sum(1 for x in called if e in x["first"]),
-            "median_lead_vs_google": statistics.median(leads) if leads else None,
+            "median_lead_vs_serper": statistics.median(leads) if leads else None,
             "never_found": sum(1 for y in rows if not y["found_at"]),
             "wrong": sum(1 for y in rows if y["wrong_at"]),
             "failed_rounds": sum(y["failed_rounds"] for y in rows),
@@ -192,8 +192,7 @@ def build(races, findings, confirmed, pending, prereg, now):
     ranked = sorted((b for b in board if b["median_minutes_after_close"] is not None and b["engine"] != "jevlin"),
                     key=lambda b: b["median_minutes_after_close"])
     engines = [{"id": e, "label": l, **({"baseline": True} if e == "serper" else {})} for e, l, _ in ENGINES]
-    engines += [{"id": "jevlin", "label": "Jevlin, all engines", "computed": True},
-                {"id": "agent", "label": "Agent on Jevlin", "agent": True}]
+    engines += [{"id": "jevlin", "label": "Jevlin, all engines", "computed": True}]
     state = {
         "version": 1, "generated_at": now.isoformat(), "round_minutes": 5, "prereg": prereg,
         "engines": engines,

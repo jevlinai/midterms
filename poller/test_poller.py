@@ -31,7 +31,15 @@ class Schedule(unittest.TestCase):
 
     def test_active_from_close(self):
         self.assertEqual(self.ids(at(3, 19, 0)), ["senate-ga"])
-        self.assertEqual(self.ids(at(4, 6, 55)), ["senate-ga"])  # close + 11h55
+        self.assertEqual(self.ids(at(3, 21, 55)), ["senate-ga"])  # close + 2h55: every 5 minutes
+
+    def test_every_15_minutes_after_3_hours(self):
+        self.assertEqual(self.ids(at(3, 22, 0)), ["senate-ga"])   # close + 3h, on a :15 boundary
+        self.assertEqual(self.ids(at(3, 22, 5)), [])
+        self.assertEqual(self.ids(at(3, 22, 10)), [])
+        self.assertEqual(self.ids(at(3, 22, 15)), ["senate-ga"])
+        self.assertEqual(self.ids(at(4, 6, 45)), ["senate-ga"])   # close + 11h45
+        self.assertEqual(self.ids(at(4, 6, 55)), [])
 
     def test_followup_hourly_only(self):
         self.assertEqual(self.ids(at(4, 7, 5)), [])  # past 12h, not on the hour

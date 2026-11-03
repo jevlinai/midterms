@@ -49,7 +49,7 @@ class Build(unittest.TestCase):
         s, inactive = build(RACES, {"senate-zz": f}, {"senate-zz": conf(["one", "two"])}, {}, PRE, NOW)
         r = next(x for x in s["races"] if x["id"] == "senate-zz")
         self.assertEqual(r["engines"]["exa"]["minutes_after_close"], 5)
-        self.assertEqual(r["engines"]["exa"]["lead_vs_google"], 5)       # Google found at 19:10
+        self.assertEqual(r["engines"]["exa"]["lead_vs_serper"], 5)       # Serper found at 19:10
         self.assertEqual(r["engines"]["brave"]["wrong_at"], t(19, 0).isoformat())
         self.assertEqual(r["first"], ["exa"])
         self.assertEqual(r["engines"]["jevlin"]["minutes_after_close"], 5)
