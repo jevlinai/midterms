@@ -7,9 +7,9 @@ Rules carried into the file (docs/SCORING.md):
 - A race shows a winner only when its call is confirmed (two people for Senate and Governor).
 - found_at / wrong_at are measured against the confirmed winner, so they exist only for called races.
 - Rounds that were cache hits don't count, for any engine.
-- "jevlin" = the earliest of the 7 engines. (The agent track was dropped from the method on 3 Nov.)
+- "jevlin" = the earliest of the 6 engines. (The agent track was dropped from the method on 3 Nov.)
 
-Also writes state/inactive.json for the poller: called races where every one of the 7 engines has
+Also writes state/inactive.json for the poller: called races where every one of the 6 engines has
 named the confirmed winner in two consecutive rounds.
 """
 import argparse
@@ -31,10 +31,10 @@ ET = dt.timezone(dt.timedelta(hours=-5))
 ENGINES = [
     ("exa", "Exa", 0.007), ("brave", "Brave", 0.005), ("parallel-search", "Parallel", 0.005),
     ("perplexity-search", "Perplexity", 0.005), ("serper", "Serper", 0.0003),
-    ("tinyfish", "TinyFish", 0.0), ("telem", "Telem", 0.00505),
-]
-SEVEN = [e for e, _, _ in ENGINES]
-COMPETITORS = list(SEVEN)  # the agent track was dropped on 3 Nov; its records, if any, are ignored
+    ("tinyfish", "TinyFish", 0.0),
+]  # Telem removed on 3 Nov before the hash was posted: it combines other providers rather than being one
+SIX = [e for e, _, _ in ENGINES]
+COMPETITORS = list(SIX)  # the agent track was dropped on 3 Nov; its records, if any, are ignored
 
 
 def round_time(round_id):
@@ -149,14 +149,14 @@ def build(races, findings, confirmed, pending, prereg, now):
             others = {x["name"] for x in r["candidates"]} - {winner}
             rows = findings.get(r["id"], {})
             res = {e: engine_result(rows[e], winner, close, call_t, others) for e in COMPETITORS if e in rows}
-            seven = [res[e] for e in SEVEN if e in res]
-            if seven:
-                ts = [x["_t"] for x in seven if x["_t"]]
-                ws = [x["_wrong"] for x in seven if x["_wrong"]]
+            six = [res[e] for e in SIX if e in res]
+            if six:
+                ts = [x["_t"] for x in six if x["_t"]]
+                ws = [x["_wrong"] for x in six if x["_wrong"]]
                 t, w = (min(ts) if ts else None), (min(ws) if ws else None)
                 res["jevlin"] = {"found_at": iso(t), "minutes_after_close": minutes(t, close),
                                  "minutes_vs_call": minutes(t, call_t), "lead_vs_serper": None, "wrong_at": iso(w),
-                                 "url": next((x["url"] for x in seven if x["_t"] == t), None) if t else None,
+                                 "url": next((x["url"] for x in six if x["_t"] == t), None) if t else None,
                                  "failed_rounds": 0, "_t": t, "_wrong": w}
             g = res.get("serper", {}).get("_t")
             for e, x in res.items():
@@ -167,14 +167,14 @@ def build(races, findings, confirmed, pending, prereg, now):
             best = min((x["_t"] for e, x in res.items() if e in COMPETITORS and x["_t"]), default=None)
             race["first"] = sorted(e for e, x in res.items() if e in COMPETITORS and best and x["_t"] == best)
             race["engines"] = {e: {k: v for k, v in x.items() if not k.startswith("_")} for e, x in res.items()}
-            if all(e in rows and twice_in_a_row(rows[e], winner) for e in SEVEN):
+            if all(e in rows and twice_in_a_row(rows[e], winner) for e in SIX):
                 inactive.append(r["id"])
         out_races.append(race)
 
     called = [x for x in out_races if x["status"] == "called"]
     board = []
     costs = {e: c for e, _, c in ENGINES} | {"jevlin": sum(c for _, _, c in ENGINES)}
-    for e in SEVEN + ["jevlin"]:
+    for e in SIX + ["jevlin"]:
         rows = [x["engines"][e] for x in called if e in x["engines"]]
         got = [y["minutes_after_close"] for y in rows if y["found_at"]]
         leads = [y["lead_vs_serper"] for y in rows if y["lead_vs_serper"] is not None]

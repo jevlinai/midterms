@@ -20,8 +20,7 @@ A synthetic example (fake states and candidates, for building and testing only) 
     {"id": "perplexity-search", "label": "Perplexity"},
     {"id": "serper", "label": "Serper", "baseline": true},
     {"id": "tinyfish", "label": "TinyFish"},
-    {"id": "telem", "label": "Telem"},
-    {"id": "jevlin", "label": "Jevlin, all engines", "computed": true},   // earliest of the 7, from the same calls
+    {"id": "jevlin", "label": "Jevlin, all engines", "computed": true},   // earliest of the 6, from the same calls
   ],
 
   "summary": {"races": 156, "polls_closed": 80, "called": 41, "leader": "perplexity-search"},
@@ -72,5 +71,5 @@ A synthetic example (fake states and candidates, for building and testing only) 
 
 Notes
 - `minutes_*` are whole minutes. Resolution is one round (5 minutes on the night).
-- `jevlin` is computed: `found_at = min(found_at over the 7 engines)`, `wrong_at = min(wrong_at over the 7)`. Cost per check is the whole call's.
+- `jevlin` is computed: `found_at = min(found_at over the 6 engines)`, `wrong_at = min(wrong_at over the 6)`. Cost per check is the whole call's.
 - Sorting the leaderboard is the reader's choice. The default is `median_minutes_after_close`, ascending, with `wrong` always shown beside it.

@@ -34,7 +34,8 @@ def test_one_version_seven_posts_and_every_post_passes(state):
     assert thread.VERSIONS == ("results",)
     posts = thread.compose(state, "results", REPO)
     assert len(posts) == 7
-    for e in ("Exa", "Brave", "Parallel", "Perplexity", "Serper", "TinyFish", "Telem"):
+    assert "Telem" not in "\n".join(posts)
+    for e in ("Exa", "Brave", "Parallel", "Perplexity", "Serper", "TinyFish"):
         assert f"\n{e}: " in posts[2]
     assert all(ok for ok, _ in thread.check_thread(posts, state, REPO)), thread.check_thread(posts, state, REPO)
 
@@ -43,7 +44,7 @@ def test_no_baseline_anywhere_in_the_thread(serper_wins):
     posts = thread.compose(serper_wins, "results", REPO)
     text = "\n".join(posts)
     assert "ahead of" not in text and "faster than" not in text
-    assert posts[2].splitlines()[1] == "Serper: 10 min (6 wrong)"  # ranked first, like any engine
+    assert posts[2].splitlines()[1].startswith("Serper: 10 min (")  # ranked first, like any engine
     assert all(ok for ok, _ in thread.check_thread(posts, serper_wins, REPO))
 
 

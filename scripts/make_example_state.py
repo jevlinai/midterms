@@ -16,7 +16,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 ENGINES = [
     ("exa", "Exa", 0.007), ("brave", "Brave", 0.005), ("parallel-search", "Parallel", 0.005),
     ("perplexity-search", "Perplexity", 0.005), ("serper", "Serper", 0.0003),
-    ("tinyfish", "TinyFish", 0.0), ("telem", "Telem", 0.00505),
+    ("tinyfish", "TinyFish", 0.0),
 ]
 FAKE = ["Alpha", "Bravo", "Cedar", "Delta", "Ember", "Flint", "Grove", "Harbor", "Iris", "Juniper"]
 NOW = dt.datetime(2026, 11, 3, 23, 30, tzinfo=dt.timezone(dt.timedelta(hours=-5)))

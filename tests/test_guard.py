@@ -80,7 +80,7 @@ def test_rejects_a_minute_count_attributed_to_the_wrong_engine(led_race, state):
     other = next(e for e, v in led_race["engines"].items()
                  if e not in (first, "serper", "jevlin") and v["lead_vs_serper"] != v_lead(led_race, first))
     label = {"exa": "Exa", "brave": "Brave", "parallel-search": "Parallel", "perplexity-search": "Perplexity",
-             "tinyfish": "TinyFish", "telem": "Telem", "agent": "Agent on Jevlin"}[other]
+             "tinyfish": "TinyFish", "agent": "Agent on Jevlin"}[other]
     lead = v_lead(led_race, first)
     t = (f"{led_race['name']}. AP called it at {clock(led_race['call']['ap_call_time'])} ET {led_race['call']['ap_url']}\n"
          f"{label} was {lead:g} min ahead of Serper.\nLive: jevlin.ai/midterms")
@@ -171,8 +171,8 @@ def test_rejects_other_links(led_race, state):
 
 
 def test_rejects_a_wrong_first_claim(led_race, state):
-    wrong = next(e for e in ("exa", "brave", "telem", "tinyfish") if e not in led_race["first"])
-    label = {"exa": "Exa", "brave": "Brave", "telem": "Telem", "tinyfish": "TinyFish"}[wrong]
+    wrong = next(e for e in ("exa", "brave", "tinyfish", "serper") if e not in led_race["first"])
+    label = {"exa": "Exa", "brave": "Brave", "tinyfish": "TinyFish", "serper": "Serper"}[wrong]
     first_label = next(x["label"] for x in state["engines"] if x["id"] == led_race["first"][0])
     t = good_post(led_race, state).replace(f"find it: {first_label},", f"find it: {label},")
     assert "was first" in reasons(t, led_race["id"], state)

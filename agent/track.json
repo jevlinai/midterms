@@ -29,8 +29,7 @@
    "parallel-search",
    "perplexity-search",
    "serper",
-   "tinyfish",
-   "telem"
+   "tinyfish"
   ],
   "tier": "max",
   "recency": "day",

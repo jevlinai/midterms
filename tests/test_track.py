@@ -95,7 +95,7 @@ def check(fake, store, *, model=None, cfg=CFG_LIVE, poller_dir=None, budget_usd=
 def test_jevlin_request_matches_the_poller():
     poller = json.loads((config.ROOT / "poller" / "config.json").read_text())
     j = CFG["jevlin"]
-    assert j["providers"] == poller["providers"] and len(j["providers"]) == 7
+    assert j["providers"] == poller["providers"] and len(j["providers"]) == 6
     assert (j["tier"], j["recency"], j["view"], j["merged_limit"]) == \
         (poller["tier"], poller["recency"], poller["view"], poller["merged_limit"])
     assert CFG["model"] == "claude-sonnet-5-5" and CFG["offices"] == ["senate", "governor"]

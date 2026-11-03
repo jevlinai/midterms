@@ -4,7 +4,7 @@ These are Jevlin's current per-call rates, from `../Jevlin-core/deploy/live/sear
 
 ## One check
 
-One race, one round, 7 engines:
+One race, one round, 6 engines (Telem was removed on 3 Nov; its row is kept below for the record):
 
 | Engine | Per call |
 |---|---|
@@ -42,7 +42,7 @@ Each race is checked once per round (every 5 or 10 minutes), not every second. S
 At the peak (around 9–10pm ET, when most races are active), full scope means about 400 active races per 5-minute round. That's about 80 checks a minute in total (each race still only once per round), or about 9 provider calls a second across all races and 7 engines. Before Tuesday, confirm with Usman:
 - each provider's rate limit,
 - our key's rate and concurrency limits in Jevlin, and its daily spend cap (`GET /v1/limits`),
-- that the max tier's per-query ceiling covers all 7 engines.
+- that the max tier's per-query ceiling covers all 6 engines.
 
 ## Rule
 Before any run bigger than a smoke test, state the expected spend and get a yes from Hammad.

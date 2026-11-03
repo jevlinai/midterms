@@ -6,8 +6,7 @@
   "parallel-search",
   "perplexity-search",
   "serper",
-  "tinyfish",
-  "telem"
+  "tinyfish"
  ],
  "tier": "max",
  "recency": "day",
@@ -27,7 +26,7 @@
  "spread_fraction": 0.6,
  "timeout_seconds": 60,
  "max_workers": 16,
- "est_cost_per_check_usd": 0.025,
+ "est_cost_per_check_usd": 0.023,
  "preclose_sweep_minutes": [
   60,
   15

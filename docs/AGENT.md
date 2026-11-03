@@ -62,7 +62,7 @@ Before the first polls closed (Tue 3 Nov 2026, 6:00pm ET), we committed the meth
   - the model, `claude-sonnet-5-5`, and its effort setting
   - the step budget: 3 searches and 2 fetches per check
   - the schedule: Senate and Governor races, every 10 minutes from 4 minutes after poll close, for 3 hours
-  - the Jevlin request: the same 7 engines, tier, recency and view as the poller
+  - the Jevlin request: the same 6 engines, tier, recency and view as the poller
 - `agent/prompts/track.txt`: the agent's instructions, word for word.
 - The rules around the model:
   - Search 1 is the poller's own result for the race's pre-registered query, not a new call.

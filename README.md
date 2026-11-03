@@ -1,8 +1,8 @@
 # Midterms: which search finds election results first?
 
-On US election night (3 November 2026), we ask seven search engines about every race, every 5 minutes, through [Jevlin](https://jevlin.ai). We record how soon after polls close each engine first returns a page that names the winner.
+On US election night (3 November 2026), we ask six search engines about every race, every 5 minutes, through [Jevlin](https://jevlin.ai). We record how soon after polls close each engine first returns a page that names the winner.
 
-The engines are Exa, Brave, Parallel, Perplexity, Serper, TinyFish and Telem.
+The engines are Exa, Brave, Parallel, Perplexity, Serper and TinyFish.
 
 - Live page: **jevlin.ai/midterms**
 - Method: [docs/SCORING.md](docs/SCORING.md), frozen and hashed before polls closed (see `PREREGISTRATION.md`)

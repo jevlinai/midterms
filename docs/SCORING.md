@@ -20,7 +20,7 @@ Some sites publish pages that already name winners before any vote is counted (f
 - Pre-close rounds never count as found or wrong. The excluded sites are listed in `state.json` (`excluded_sites`) and on the page.
 
 ### Computed row
-- **Jevlin, all engines:** `t_found[jevlin] = min over the 7 engines of t_found[e]`, and the same for `t_wrong`. It is what one Jevlin call returned; nothing extra is run.
+- **Jevlin, all engines:** `t_found[jevlin] = min over the 6 engines of t_found[e]`, and the same for `t_wrong`. It is what one Jevlin call returned; nothing extra is run.
 - **No agent row.** An "Agent on Jevlin" track (an AI agent searching through Jevlin on Senate and Governor races) was built and rehearsed, then dropped from the method on 3 Nov, before the freeze. Its code stays in `agent/track.py` but does not run and is not scored.
 
 Resolution is one polling round: every 5 minutes for the first 3 hours after a race's polls close, every 15 minutes (:00, :15, :30, :45) from then to 12 hours after close, and every hour after that (`night` and `followup` in `poller/config.json`). The same schedule applies to every engine. Every engine is asked in the same call, so they all share each round's timestamp.
@@ -29,7 +29,7 @@ Resolution is one polling round: every 5 minutes for the first 3 hours after a r
 - **Time to found:** `t_found − t_close`, in minutes. Report the median across races, and the share of races found within 30 minutes, 1 hour and 3 hours.
 - **Versus the call:** `t_found − t_call`. A negative value means the engine had a page naming the winner before AP's call, usually from early returns or other outlets' projections. Report it, but don't rank on it.
 - **Found first:** the number of races where `e` had the earliest `t_found`. Ties share the credit.
-- **Lead over Serper:** `t_found[serper] − t_found[e]`, median across races that both engines found. Kept in the data for reference only. There is no baseline in anything public: every engine is ranked the same way, and "Jevlin, all engines" (the earliest of the 7 for each race) is the row the results lead with.
+- **Lead over Serper:** `t_found[serper] − t_found[e]`, median across races that both engines found. Kept in the data for reference only. There is no baseline in anything public: every engine is ranked the same way, and "Jevlin, all engines" (the earliest of the 6 for each race) is the row the results lead with.
 - **First coverage (the thread's lead):** for each single engine, the number of called races on which it was first (ties count for each); the best engine's count, out of the races any engine found; and how many engines were first at least once.
 - **Never found:** the number of races with no `t_found` before the race went inactive.
 - **Wrong:** the number of races with any `t_wrong`. Show it beside every other number.
@@ -44,6 +44,8 @@ Resolution is one polling round: every 5 minutes for the first 3 hours after a r
 
 ## Pre-registration
 Before 5:00pm ET on Tue 3 Nov:
-1. Commit `data/races.json` (with its queries), `poller/config.json`, `detector/questions.json` with the pinned Jev version, `detector/textmatch.py`, the agent track's prompt and config, and this file.
+1. Commit `data/races.json` (with its queries), `poller/config.json`, `detector/questions.json` with the pinned Jev version, `detector/textmatch.py` and this file.
 2. Compute the SHA-256 of a tarball of those files, and publish it: commit it to `PREREGISTRATION.md` and post it from @jevlinai.
 3. Polls close at 6:00pm ET.
+
+**Engines (6):** Exa, Brave, Parallel, Perplexity, Serper, TinyFish. A first freeze at 8:29am ET on 3 Nov (SHA-256 `ee5f5a94…`) also included Telem. Telem combines other providers rather than being one, so it was removed and the method frozen again before the hash was posted; the first hash showed on jevlin.ai/midterms for about two hours and was never used.
