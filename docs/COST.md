@@ -1,10 +1,10 @@
 # Cost
 
-These are Jevlin's current per-call rates, from `../Jevlin-core/deploy/live/searchrouter.toml`. Jevlin has no bulk pricing with any provider. Usman tops up providers inside Jevlin; we never call providers directly.
+These are Jevlin's current per-call rates, from `../Jevlin-core/deploy/live/searchrouter.toml`. Jevlin has no bulk pricing with any provider. Every search goes through Jevlin; we never call providers directly.
 
 ## One check
 
-One race, one round, 6 engines (Telem was removed on 3 Nov; its row is kept below for the record):
+One race, one round, 6 engines:
 
 | Engine | Per call |
 |---|---|
@@ -12,10 +12,9 @@ One race, one round, 6 engines (Telem was removed on 3 Nov; its row is kept belo
 | brave | $0.005 |
 | parallel-search | $0.005 |
 | perplexity-search | $0.005 |
-| telem | $0.0025 |
 | serper | $0.0003 |
 | tinyfish | $0 |
-| **Total** | **≈ $0.025 listed; $0.02735 measured** |
+| **Total** | **≈ $0.0223** (measured on 3 Nov: $0.0223) |
 
 Adding exa-lite ($0.004) and parallel-fast ($0.001) brings it to about $0.030, but they share indexes with exa and parallel, so leave them out.
 
@@ -39,7 +38,7 @@ Each race is checked once per round (every 5 or 10 minutes), not every second. S
 
 ## Rate
 
-At the peak (around 9–10pm ET, when most races are active), full scope means about 400 active races per 5-minute round. That's about 80 checks a minute in total (each race still only once per round), or about 9 provider calls a second across all races and 7 engines. Before Tuesday, confirm with Usman:
+At the peak (around 9–10pm ET, when most races are active), full scope means about 400 active races per 5-minute round. That's about 80 checks a minute in total (each race still only once per round), or about 8 provider calls a second across all races and 6 engines. Confirm before a run like this:
 - each provider's rate limit,
 - our key's rate and concurrency limits in Jevlin, and its daily spend cap (`GET /v1/limits`),
 - that the max tier's per-query ceiling covers all 6 engines.

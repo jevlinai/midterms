@@ -82,7 +82,7 @@ def test_publish_refuses_a_draft_that_never_passed(drafts, led_race, state, x_cl
 def test_a_second_publish_of_the_same_draft_is_refused(drafts, queued, state, x_client, fake_x):
     drafts.publish(queued["id"], by="hammad", state=state, live=True, client=x_client)
     with pytest.raises(NotAuthorized, match="already published"):
-        drafts.publish(queued["id"], by="usman", state=state, live=True, client=x_client)
+        drafts.publish(queued["id"], by="someone-else", state=state, live=True, client=x_client)
     assert len(fake_x.requests) == 1
 
 

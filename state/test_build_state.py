@@ -11,7 +11,7 @@ RACES = {
     "house-zz-01": {"id": "house-zz-01", "office": "house", "state": "GA", "district": "01", "name": "Test House",
                     "poll_close_et": "2026-11-03T19:00:00-05:00", "candidates": CANDS},
 }
-SIX = ["exa", "brave", "parallel-search", "perplexity-search", "serper", "tinyfish", "telem"]
+SIX = ["exa", "brave", "parallel-search", "perplexity-search", "serper", "tinyfish"]
 NOW = dt.datetime(2026, 11, 3, 22, 0, tzinfo=ET)
 PRE = {"sha256": None, "committed_at": None, "url": None}
 

@@ -31,7 +31,7 @@ case "$JOB" in
   call-finder)   exec uv run midterms call-finder --interval 300 --jevlin-cap-usd "${NIGHT_CALLFINDER_BUDGET:-20}" --budget-since "$SINCE" ;;
   post-drafter)  exec uv run midterms post-drafter --interval 60 ;;
   confirm-web)
-    # The confirm page, on the Mac mini's Tailscale address only.
+    # The confirm page: set CONFIRM_WEB_HOST in the env file to the machine's private (e.g. Tailscale) address.
     export CONFIRM_WEB_HOST="${CONFIRM_WEB_HOST:-127.0.0.1}"
     exec uv run python confirm/web.py ;;
   autopost)

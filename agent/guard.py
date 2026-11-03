@@ -356,7 +356,7 @@ def _surname(name: str | None, candidates: list[dict]) -> str | None:
     return parts[-1] if len(parts) > 1 else None
 
 
-# ---------- the fallback template (notes/LAUNCH.md, "Live post template") ----------
+# ---------- the fixed live post template ----------
 
 def _join(labels: list[str]) -> str:
     return labels[0] if len(labels) == 1 else ", ".join(labels[:-1]) + " and " + labels[-1]
