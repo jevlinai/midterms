@@ -30,5 +30,10 @@ case "$JOB" in
     done ;;
   call-finder)   exec uv run midterms call-finder --interval 300 --jevlin-cap-usd "${NIGHT_CALLFINDER_BUDGET:-20}" --budget-since "$SINCE" ;;
   post-drafter)  exec uv run midterms post-drafter --interval 60 ;;
+  autopost)
+    # Posts only with MIDTERMS_AUTOPOST_LIVE=true and MIDTERMS_AUTOPOST_ANCHOR=<post id> in the env file.
+    # Stop at once: touch state/STOP_POSTING.
+    export MIDTERMS_PUBLISH_LIVE="${MIDTERMS_AUTOPOST_LIVE:-false}"
+    exec uv run midterms autopost --interval 30 ;;
   *) alert "unknown job $JOB"; exit 2 ;;
 esac

@@ -25,6 +25,10 @@ def isolated(tmp_path, monkeypatch):
     monkeypatch.setenv("MIDTERMS_PROPOSALS", str(tmp_path / "proposals.json"))
     monkeypatch.setenv("MIDTERMS_CALL_FINDER_LOG", str(tmp_path / "call_finder.jsonl"))
     monkeypatch.setenv("MIDTERMS_STATE", str(EXAMPLE_STATE))
+    monkeypatch.setenv("MIDTERMS_AUTOPOST_STOP", str(tmp_path / "STOP_POSTING"))
+    monkeypatch.setenv("MIDTERMS_AUTOPOST_LAST_TRY", str(tmp_path / "autopost-last-try"))
+    for k in ("MIDTERMS_AUTOPOST_ANCHOR", "MIDTERMS_AUTOPOST_GAP_SECONDS", "MIDTERMS_AUTOPOST_MAX", "MIDTERMS_AUTOPOST_OFFICES"):
+        monkeypatch.delenv(k, raising=False)
     for k in ("MIDTERMS_PUBLISH_LIVE", "MIDTERMS_MODEL", "MIDTERMS_CALL_FINDER_MODEL", "ANTHROPIC_API_KEY",
               "MIDTERMS_RUN_CAP_USD", "MIDTERMS_DAILY_CAP_USD", "MIDTERMS_TOTAL_CAP_USD",
               "MIDTERMS_X_API_KEY", "MIDTERMS_X_API_SECRET", "MIDTERMS_X_ACCESS_TOKEN", "MIDTERMS_X_ACCESS_SECRET",

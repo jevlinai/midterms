@@ -9,6 +9,7 @@
                                  find AP calls for closed, uncalled races -> state/proposals.json
                                  (validated proposals only; every outcome -> state/call_finder.jsonl)
   post-drafter [--once] [--interval 60]
+  autopost [--anchor ID] [--once] [--interval 30]
                                  draft posts as races get called (posting set, max MIDTERMS_DRAFTS_PER_HOUR)
   thread                         draft the results thread (the version the leaderboard supports) -> queue,
                                  and both versions -> notes/thread-draft.md (needs MIDTERMS_REPO_URL)
@@ -170,6 +171,20 @@ def cmd_post_drafter(a) -> int:
     return 0
 
 
+def cmd_autopost(a) -> int:
+    from agent import autopost
+    from agent.drafts import Drafts
+    from agent.store import Store
+
+    drafts = Drafts(store=Store())
+    anchor = (a.anchor or os.environ.get("MIDTERMS_AUTOPOST_ANCHOR", "")).strip() or None
+    if a.once:
+        print(json.dumps(autopost.run_pass(_state(), drafts, anchor=anchor)))
+        return 0
+    autopost.loop(_state, drafts, anchor=anchor, interval_s=a.interval)
+    return 0
+
+
 def cmd_thread(a) -> int:
     from agent import thread
     from agent.drafts import Drafts
@@ -253,6 +268,11 @@ def main(argv: list[str] | None = None) -> int:
     s.add_argument("--once", action="store_true")
     s.add_argument("--interval", type=int, default=60, help="seconds between passes (default 60)")
     s.set_defaults(fn=cmd_post_drafter)
+    s = sub.add_parser("autopost", help="post each confirmed Senate/Governor call as a reply in @jevlinai's live thread")
+    s.add_argument("--anchor", help="id of the post the thread hangs under (default MIDTERMS_AUTOPOST_ANCHOR)")
+    s.add_argument("--once", action="store_true")
+    s.add_argument("--interval", type=int, default=30, help="seconds between passes (default 30)")
+    s.set_defaults(fn=cmd_autopost)
     s = sub.add_parser("thread", help="draft the results thread from the final state -> queue + notes/thread-draft.md")
     s.set_defaults(fn=cmd_thread)
     s = sub.add_parser("track", help="the pre-registered agent track (Agent on Jevlin) -> raw/agent/")
