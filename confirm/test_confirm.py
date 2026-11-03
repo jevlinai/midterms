@@ -55,6 +55,11 @@ class Confirm(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.run_cmd("accept", "senate-zz", "--by", "one")
 
+    def test_one_person_is_enough_by_default(self):
+        self.run_cmd(*OK, "--by", "one")
+        self.assertTrue(C.is_called(self.saved(), RACES["senate-zz"]))
+
+    @mock.patch.object(C, "TWO_PEOPLE", {"senate", "governor"})
     def test_two_different_people_for_senate(self):
         self.run_cmd(*OK, "--by", "one")
         self.assertFalse(C.is_called(self.saved(), RACES["senate-zz"]))
@@ -71,11 +76,13 @@ class Confirm(unittest.TestCase):
         with self.assertRaises(SystemExit):
             self.run_cmd("confirm", "senate-zz", "--winner", "Ada Alpha", "--time", "2026-11-03T18:00", "--url", "https://apnews.com/a", "--by", "x")
 
+    @mock.patch.object(C, "TWO_PEOPLE", {"senate", "governor"})
     def test_second_person_must_agree(self):
         self.run_cmd(*OK, "--by", "one")
         with self.assertRaises(SystemExit):
             self.run_cmd("confirm", "senate-zz", "--winner", "Ben Bravo", "--time", "2026-11-03T20:00", "--url", "https://apnews.com/article/x", "--by", "two")
 
+    @mock.patch.object(C, "TWO_PEOPLE", {"senate", "governor"})
     def test_retract(self):
         self.run_cmd(*OK, "--by", "one")
         self.run_cmd(*OK, "--by", "two")

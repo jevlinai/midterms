@@ -2,7 +2,8 @@
 
 The agent's call finder may leave a proposal in state/proposals.json (winner, AP call time, AP URL,
 the sentence it quoted). This tool shows it; the person checks AP's page themselves and types their
-name. Senate and Governor races need two different people before the call counts.
+name. One person's confirmation counts (decided 3 Nov: election night is staffed by one person).
+CONFIRM_TWO_PEOPLE=senate,governor brings back the two-person rule for those offices.
 
   python3 -I confirm/confirm.py list                      # races with polls closed and no confirmed call
   python3 -I confirm/confirm.py show senate-ga            # candidates, proposal, current confirmations
@@ -29,7 +30,7 @@ STATE = ROOT / "state"
 CONFIRMED = STATE / "confirmed.json"
 LOG = STATE / "confirm-log.jsonl"
 PROPOSALS = STATE / "proposals.json"
-TWO_PEOPLE = {"senate", "governor"}
+TWO_PEOPLE = {o.strip() for o in os.environ.get("CONFIRM_TWO_PEOPLE", "").split(",") if o.strip()}
 # Election night: AP only. CONFIRM_HOSTS exists for dry runs on other events (e.g. "espn.com,nfl.com").
 AP_HOSTS = tuple(h.strip() for h in os.environ.get("CONFIRM_HOSTS", "apnews.com").split(",") if h.strip())
 

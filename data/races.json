@@ -50,8 +50,10 @@
    ],
    "notes": "Top-four primary, ranked-choice general; if no one passes 50% of first choices, the tabulation runs later, so the call may come days after election night. TWO CANDIDATES SURNAMED SULLIVAN: incumbent Sen. Dan S. Sullivan (R; ballot 'Sullivan, Dan S.', Ballotpedia 'Daniel S. Sullivan') and retired teacher Daniel J. Sullivan Jr. The surname filter cannot tell them apart; the detector must match the full name/incumbent. Party of Daniel J. Sullivan Jr. is null on purpose: Ballotpedia and NBC (1 Sep) list him as Republican, but CBS reports the sample ballot shows him with no party affiliation. DOJ has asked Alaska to segregate ballots ranking him, and the governor has ordered an investigation (late Oct 2026), so his ballot status may be litigated. Gerald Heikes (R) advanced after Democrat David Leslie withdrew. Most polls close 8pm AKST (midnight ET); the Aleutians west of 169.5W close 8pm HAST (1am ET Wed 4 Nov), which is the value used. Media treat the state as callable from midnight ET.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -84,8 +86,10 @@
    ],
    "notes": "Open seat: Tommy Tuberville (R) ran for governor. Polls close 7pm CT (8pm ET); AP says ET-zone portions of Chambers, Lee and Russell counties also close 7pm CT.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -124,8 +128,10 @@
    ],
    "notes": "Ballotpedia flags the candidate list as possibly incomplete.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -156,7 +162,7 @@
      "incumbent": false
     },
     {
-     "name": "Robert Chew",
+     "name": "Bob Chew",
      "surname": "Chew",
      "party": "other",
      "incumbent": false
@@ -190,6 +196,12 @@
      "surname": "Wood",
      "party": "I",
      "incumbent": false
+    },
+    {
+     "name": "Blake Huber",
+     "surname": "Huber",
+     "party": "L",
+     "incumbent": false
     }
    ],
    "query": "Colorado Senate election results 2026",
@@ -200,8 +212,10 @@
    ],
    "notes": "Other-party labels: Baum = Approval Voting Party, Chew = Colorado Forward Party, Withrow = Unity Party. Dale, Kuebler, Wolfe listed Unaffiliated; Wood listed Independent. Ballotpedia flags the list as possibly incomplete. Write-in candidates listed by Ballotpedia are excluded. Mostly mail voting; ballots due 7pm MT (9pm ET).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -234,8 +248,10 @@
    ],
    "notes": "Three unaffiliated write-in candidates are excluded. Ballotpedia flags the list as possibly incomplete.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -274,8 +290,10 @@
    ],
    "notes": "Special election for the rest of Marco Rubio's term (ends Jan 2029). Moody was appointed in Jan 2025 (Ballotpedia lists 'Ashley B. Moody'). Gillespie is No Party Affiliation. Most polls close 7pm ET; the western panhandle (CT) closes 8pm ET, which is the value used.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -327,8 +345,10 @@
    ],
    "notes": "Majority required: if no candidate passes 50%, a runoff between the top two is held on 1 Dec 2026, so election night may produce no winner. Note surname 'Collins' also appears in the Maine race (Susan Collins). Write-in candidates listed by Ballotpedia are excluded.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -367,8 +387,10 @@
    ],
    "notes": "Open seat: Joni Ernst (R) not running. Polls close 8pm CT.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -413,8 +435,10 @@
    ],
    "notes": "No Democratic nominee on the general ballot per Ballotpedia. Southern Idaho (MT) closes 8pm MT (10pm ET); the northern panhandle (PT) closes 8pm PT (11pm ET), which is the value used. Networks treat most polls as closed at 10pm ET.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -455,8 +479,10 @@
    ],
    "notes": "Open seat: Dick Durbin (D) retiring. Harrington is the American Center Party nominee. The fetched Ballotpedia page was truncated before the general-election table; the three-candidate list comes from the Ballotpedia search summary and CBS Chicago ('three candidates are on the ballot').",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -495,8 +521,10 @@
    ],
    "notes": "Polls close 7pm local; the western MT-zone counties close 7pm MT (9pm ET), which is the value used (most of the state closes 8pm ET). Counties may keep polls open until 8pm CT. Note surname 'Graham' also appears in South Carolina (Darline Graham).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -535,8 +563,10 @@
    ],
    "notes": "Open seat: Mitch McConnell (R) retiring. Campbell is the Kentucky Party nominee. Write-in Thomas Murphy excluded. Eastern-zone polls close 6pm ET; central-zone polls close 6pm CT (7pm ET), which is the value used. Note surname 'Booker' also appears in New Jersey (Cory Booker).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -570,8 +600,10 @@
    ],
    "notes": "First use of Louisiana's closed party primaries for U.S. Senate; incumbent Bill Cassidy (R) lost the Republican primary. The November general is decided by plurality, with no runoff (Louisiana SOS). Polls close 8pm CT.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -628,8 +660,10 @@
    ],
    "notes": "Devincentis = American Independent Party; Tache = Party for Socialism and Liberation. Ballotpedia lists the incumbent as 'Edward J. Markey'.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -663,8 +697,10 @@
    ],
    "notes": "Ranked-choice voting: if no one passes 50% of first choices, the RCV tabulation happens days later, so the call may be delayed. Troy Jackson replaced Graham Platner as Democratic nominee on 25 Jul 2026. Ballotpedia lists six others, all write-ins (excluded). Note surname 'Collins' also appears in Georgia (Mike Collins).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -705,6 +741,12 @@
      "surname": "Long",
      "party": "other",
      "incumbent": false
+    },
+    {
+     "name": "Walter Kristy",
+     "surname": "Kristy",
+     "party": "other",
+     "incumbent": false
     }
    ],
    "query": "Michigan Senate election results 2026",
@@ -715,8 +757,10 @@
    ],
    "notes": "Open seat: Gary Peters (D) retiring. Long is the U.S. Taxpayers Party nominee. The candidate list comes from the Ballotpedia page summary; the fetched page was truncated before the candidate table. Most polls close 8pm ET; four western Upper Peninsula counties (CT) close 8pm CT (9pm ET), which is the value used.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -761,8 +805,10 @@
    ],
    "notes": "Open seat: Tina Smith (D) retiring. Write-in Alycia Gruenhagen excluded. Polls close 8pm CT.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -801,8 +847,10 @@
    ],
    "notes": null,
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -849,8 +897,10 @@
    ],
    "notes": "Open seat: Steve Daines (R) not on the ballot. The Lewis and Clark County publication ballot lists exactly these four; write-in Jami Woodman is excluded. Polls close 8pm MT.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -891,6 +941,12 @@
      "surname": "Deberry",
      "party": "I",
      "incumbent": false
+    },
+    {
+     "name": "Michael Dublin",
+     "surname": "Dublin",
+     "party": "G",
+     "incumbent": false
     }
    ],
    "query": "North Carolina Senate election results 2026",
@@ -901,8 +957,10 @@
    ],
    "notes": "Open seat: Thom Tillis (R) retiring. The list comes from the Ballotpedia page text ('Cooper, Whatley and three other candidates'); the fetched page was truncated before the candidate table.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -953,8 +1011,10 @@
    ],
    "notes": "No Democratic nominee; Osborn is listed as Nonpartisan/independent. Conboy = America First Party Nebraska; Marvin = Legal Marijuana Now Party; Richards = Nebraska Working People Party. All polls close at the same moment: 8pm CT / 7pm MT (9pm ET).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -993,8 +1053,10 @@
    ],
    "notes": "Open seat: Jeanne Shaheen (D) retiring. Sununu is former Sen. John E. Sununu. Laplante = Constitution Party. Poll hours vary by town (polls cannot close before 7pm); Green Papers gives 8pm ET as the media closing time ('reportedly').",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1039,8 +1101,10 @@
    ],
    "notes": "Fernandez = End the Corruption! Party; Kuniansky = Socialist Workers Party. Note surname 'Booker' also appears in Kentucky (Charles Booker).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1073,8 +1137,10 @@
    ],
    "notes": "The surname filter should also match the unaccented 'Lujan'.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1119,8 +1185,10 @@
    ],
    "notes": "Special election for the rest of JD Vance's term (ends Jan 2029). Husted was appointed in Jan 2025. Three independent write-ins excluded. Polls close 7:30pm ET. Note surname 'Brown' also appears in Texas (Ted Brown, L).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1173,8 +1241,10 @@
    ],
    "notes": "Regular election for the seat Markwayne Mullin left to become DHS Secretary. Appointed Sen. Alan Armstrong (R, since Mar 2026) is not a candidate, so there is no incumbent on the ballot. Per the Oklahoma AG's opinion of 29 Oct 2026, the 3 Nov winner also fills the rest of the current term; there is no separate special election. Polls close 7pm CT.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1219,8 +1289,10 @@
    ],
    "notes": "Merkley is cross-nominated by the Working Families Party; Henry by the Pacific Green and Progressive parties. Surname 'Smith' is very common, so the detector should match the full name 'Brock Smith'. Vote by mail; ballots due 8pm local. Most of the state is PT (11pm ET, the value used); Malheur County (MT) closes 10pm ET.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1259,8 +1331,10 @@
    ],
    "notes": null,
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1307,8 +1381,10 @@
    ],
    "notes": "Sen. Lindsey Graham (R) died on 11 Jul 2026. Gov. McMaster appointed his sister Darline Graham (also styled Darline Graham Nordone), who was sworn in on 14 Jul 2026 and won the special Republican primary and runoff to replace him on the November ballot. Hackett = Constitution Party. Write-in Catherine Fleming Bruce (D) excluded. Not confirmed whether the 3 Nov winner also fills the rest of the current term before 3 Jan 2027; no separate special election is listed. Note surname 'Graham' also appears in Kansas (David Graham, L).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1341,8 +1417,10 @@
    ],
    "notes": "No Democratic nominee. Polls close 7pm local; the western MT-zone part closes 9pm ET, which is the value used (the CT part closes 8pm ET).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1423,8 +1501,10 @@
    ],
    "notes": "Eight independents are on the ballot per Ballotpedia. All polls close at the same moment: 8pm ET / 7pm CT.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1464,8 +1544,10 @@
    ],
    "notes": "Incumbent John Cornyn (R) lost the Republican primary runoff to Paxton. The Texas SOS results page lists Paxton, Talarico and Brown plus write-ins (excluded); Ballotpedia's 'five other candidates' includes write-ins. Most polls close 7pm CT (8pm ET); El Paso and Hudspeth (MT) close 9pm ET, which is the value used. Note surname 'Brown' also appears in Ohio (Sherrod Brown).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1498,8 +1580,10 @@
    ],
    "notes": null,
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1538,8 +1622,10 @@
    ],
    "notes": "Wilson = Constitution Party. Write-in Rio Phillips excluded. Fox lists the Democrat as 'Rachel Anderson'. Green Papers marks the 7:30pm ET close as 'reportedly'; Ballotpedia gives 6:30am to 7:30pm.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1572,8 +1658,10 @@
    ],
    "notes": "Open seat: Cynthia Lummis (R) not on the ballot; Hageman is the at-large U.S. Representative.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1620,8 +1708,10 @@
    ],
    "notes": "Top-four primary; general uses ranked-choice voting, so the result may take days (RCV tabulation). Tom Begich (D), second in the primary, withdrew by 31 Aug 2026 and is off the ballot; Bernadette Wilson moved up. Latest close is 1am ET Wed 4 Nov (Aleutians, Hawaii-Aleutian time); most of Alaska closes at midnight ET. Surname 'Wilson' also appears in SC governor race (different state).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1654,8 +1744,10 @@
    ],
    "notes": "Write-in Ronald Burnette Jr. (Independent) excluded. Polls close 7pm CT statewide (8pm ET).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1694,8 +1786,10 @@
    ],
    "notes": null,
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1740,8 +1834,10 @@
    ],
    "notes": "Teri Hourihan is No Labels Party (party=other). Write-ins Gertritrude Gonzalez and Alice Novoa (R) excluded. Leezah Sun (I) withdrew. Ballotpedia notes its candidate list may not be complete.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1774,8 +1870,10 @@
    ],
    "notes": "Top-two general election (both advanced from the 2 June top-two primary). Counting typically takes days to weeks.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1838,8 +1936,10 @@
    ],
    "notes": "Party=other: Stephen Hamilton (American Constitution Party), Erik Underwood (Approval Voting Party), Jeff Peckman (Unity Party). Greg Lopez is Unaffiliated. Ballotpedia notes list may not be complete.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1872,8 +1972,10 @@
    ],
    "notes": "Lamont also on Working Families Party line; Fazio also on Independent Party of Connecticut line. Zenobia Adgers and Christian Noe (both Independent) are named in Ballotpedia's summary sentence, but the candidate table marks their tickets '(Write-in)'; excluded pending check against the CT Secretary of State list.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1942,8 +2044,10 @@
    ],
    "notes": "Five No Party Affiliation candidates mapped to I. Write-ins Kathy Anderson and Erik Morris excluded. Panhandle on Central time; statewide close 8pm ET. Ballotpedia notes list may not be complete.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -1976,8 +2080,10 @@
    ],
    "notes": "Georgia requires a majority in the general; if no candidate exceeds 50% a runoff follows. Rick Jackson won the 16 June Republican primary runoff over Burt Jones.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2010,8 +2116,10 @@
    ],
    "notes": "Ballotpedia's general table lists only these two candidates. Polls close 7pm HST = midnight ET (Wed 4 Nov).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2045,8 +2153,10 @@
    ],
    "notes": "Ballotpedia's page text was truncated before the general-election table; candidates confirmed from the Iowa SOS general-election candidate list (updated 19 Aug 2026) and Ballotpedia's summary sentence. Libertarian ticket (Nicholas Gluba) was removed from the ballot by the State Objection Panel.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2097,8 +2207,10 @@
    ],
    "notes": "'Pro-Life' is the candidate's legal name (Constitution Party; party=other). John R. Stegner is Unaffiliated. Write-in Jacob Burnett excluded. Northern panhandle on Pacific time; latest close 11pm ET. Ballotpedia notes list may not be complete.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2137,8 +2249,10 @@
    ],
    "notes": "Seven write-in candidates excluded (incl. Mike Vick, Griselda Romero). Ballotpedia notes list may not be complete.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2171,8 +2285,10 @@
    ],
    "notes": "Four western counties on Mountain time; latest close 9pm ET.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2211,8 +2327,10 @@
    ],
    "notes": "Andrea James is Unenrolled (mapped to I). Surname 'James' also used by MI Republican candidate (different state).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2257,8 +2375,10 @@
    ],
    "notes": "Cathy White is Working Class Party (party=other).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2297,8 +2417,10 @@
    ],
    "notes": "Write-ins Randy Wilcox (R) and John Glowa (I) excluded. Ballotpedia shows ranked-choice rounds for the June primaries; Maine's ranked-choice voting covers primaries and federal general elections, not the governor's general election, which is decided by plurality.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2352,8 +2474,10 @@
    ],
    "notes": "Ballotpedia's page text was truncated before the table ('Benson, James and five other candidates', which likely includes write-ins). Five ballot candidates confirmed by Michigan Public (26 Oct 2026) and the Ottawa County candidate list. Donna Brandenburg is U.S. Taxpayers Party (party=other). Michigan Public marks the Libertarian Party with an asterisk that was not explained in the text retrieved; Hudson is listed on the Ottawa County ballot list. Four Upper Peninsula counties on Central time; latest close 9pm ET.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2392,8 +2516,10 @@
    ],
    "notes": "Incumbent Tim Walz is not on the ballot. Steven Young is Green.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2438,8 +2564,10 @@
    ],
    "notes": "Party=other: Brett Lindstrom (America First Party Nebraska), Rick Beard (Legal Marijuana Now Party). Central and Mountain zones close together at 9pm ET.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2478,8 +2606,10 @@
    ],
    "notes": "Closing times vary by town (some 7pm, the remaining 8pm ET per The Hill); latest close used. Congress Countdown lists 7pm, which is the earliest close only.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2512,8 +2642,10 @@
    ],
    "notes": "Ballotpedia lists the Democratic nominee as Debra Haaland; the press often uses Deb Haaland.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2552,8 +2684,10 @@
    ],
    "notes": "Danielle Ford is No Political Party (mapped to I). SURNAME COLLISION: Aaron Ford (D) and Danielle Ford (I) share the surname 'Ford'; the winner detector must match full names in Nevada.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2586,8 +2720,10 @@
    ],
    "notes": "Hochul also on Working Families Party line; Blakeman also on Conservative and Vote Affordable lines. Write-ins Jonathan Makeley (Prohibition) and Jean Anglade excluded.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2629,8 +2765,10 @@
    ],
    "notes": "Ballotpedia's page text was truncated before the table; candidates confirmed from the Wood County Board of Elections certified list (26 Aug 2026) and the Ashtabula County list. Write-in tickets (e.g., Timothy Grady, Heather Hill) excluded.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2681,8 +2819,10 @@
    ],
    "notes": "Mike Mazzei is the Republican nominee after the 25 Aug Republican primary runoff against Gentner Drummond. Incumbent Kevin Stitt is term-limited.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2721,8 +2861,10 @@
    ],
    "notes": "Kotek also on Working Families Party line; Drazan also on Libertarian line. Brett Smith is Pacific Green Party (mapped to G). Mostly vote-by-mail; latest close 11pm ET (Pacific).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2767,8 +2909,10 @@
    ],
    "notes": null,
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2819,8 +2963,10 @@
    ],
    "notes": "Incumbent Daniel McKee is not on the general ballot. Three Independents on ballot.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2865,8 +3011,10 @@
    ],
    "notes": "Michael Addison is United Citizens Party (party=other).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -2899,8 +3047,10 @@
    ],
    "notes": "Larry Rhoden won a Republican primary runoff against Toby Doeden. Dan Ahlers advanced from the Democratic primary without appearing on the primary ballot.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3011,8 +3161,10 @@
    ],
    "notes": "Thirteen Independents on ballot per Ballotpedia; three write-ins excluded (Carlton Boleyjack, Stephen Maxwell, Jason Smith). Eastern and Central zones close together at 8pm ET. Surname 'Green' also used by HI incumbent (different state); 'Jackson' also in GA.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3051,8 +3203,10 @@
    ],
    "notes": "Four write-in Independents excluded. El Paso and Hudspeth counties on Mountain time; latest close 9pm ET. Ballotpedia notes list may not be complete.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3103,8 +3257,10 @@
    ],
    "notes": "If no candidate wins a majority, the Vermont General Assembly elects the governor. Party=other: Dean Roy (Freedom and Unity Party), June Goodband (Green Mountain Peace and Justice Party). Brian Judd is Independent.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3137,8 +3293,10 @@
    ],
    "notes": "Mark Grimek (Constitution Party) and Jamie Jo Carothers (Independent) are marked write-in in Ballotpedia's table and are excluded. Incumbent Tony Evers is not running.",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3177,8 +3335,10 @@
    ],
    "notes": "Rebecca Bextel is Constitution Party (party=other).",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3225,8 +3385,10 @@
    "query": "Alaska at-large congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3258,8 +3420,10 @@
    "query": "Alabama 2nd congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3291,8 +3455,10 @@
    "cook_rating": "likely_r",
    "notes": "",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3332,8 +3498,10 @@
    "query": "Arizona 1st congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3371,8 +3539,10 @@
    "query": "Arizona 2nd congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3418,8 +3588,10 @@
    "query": "Arizona 6th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3452,8 +3624,10 @@
    "query": "California 13th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3485,8 +3659,10 @@
    "query": "California 22nd congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3518,8 +3694,10 @@
    "query": "California 45th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3552,8 +3730,10 @@
    "query": "California 48th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3598,8 +3778,10 @@
    "query": "Colorado 3rd congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3638,8 +3820,10 @@
    "query": "Colorado 4th congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3685,8 +3869,10 @@
    "query": "Colorado 5th congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3725,8 +3911,10 @@
    "query": "Colorado 8th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3765,8 +3953,10 @@
    "query": "Florida 7th congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3799,8 +3989,10 @@
    "query": "Florida 9th congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3839,8 +4031,10 @@
    "query": "Florida 13th congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3878,8 +4072,10 @@
    "query": "Florida 14th congressional district election results 2026",
    "cook_rating": "toss_up_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3919,8 +4115,10 @@
    "query": "Florida 16th congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3953,8 +4151,10 @@
    "query": "Florida 22nd congressional district election results 2026",
    "cook_rating": "toss_up_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -3992,8 +4192,10 @@
    "query": "Florida 25th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4027,8 +4229,10 @@
    "query": "Florida 27th congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4067,8 +4271,10 @@
    "query": "Iowa 1st congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4112,8 +4318,10 @@
    "query": "Iowa 2nd congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4146,8 +4354,10 @@
    "query": "Iowa 3rd congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4179,8 +4389,10 @@
    "query": "Indiana 1st congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4212,8 +4424,10 @@
    "cook_rating": "lean_r",
    "notes": "",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4253,8 +4467,10 @@
    "query": "Kansas 2nd congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4299,8 +4515,10 @@
    "query": "Kentucky 6th congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4334,8 +4552,10 @@
    "query": "Maine 2nd congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4374,8 +4594,10 @@
    "query": "Michigan 4th congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4421,8 +4643,10 @@
    "query": "Michigan 7th congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4474,8 +4698,10 @@
    "query": "Michigan 8th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4527,8 +4753,10 @@
    "query": "Michigan 10th congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4560,8 +4788,10 @@
    "query": "Minnesota 1st congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4593,8 +4823,10 @@
    "query": "Minnesota 2nd congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4633,8 +4865,10 @@
    "query": "Missouri 2nd congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4672,8 +4906,10 @@
    "query": "Montana 1st congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4711,8 +4947,10 @@
    "query": "North Carolina 1st congressional district election results 2026",
    "cook_rating": "toss_up_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4751,8 +4989,10 @@
    "query": "North Carolina 3rd congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4791,8 +5031,10 @@
    "query": "North Carolina 5th congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4824,8 +5066,10 @@
    "query": "North Carolina 9th congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4865,8 +5109,10 @@
    "query": "North Carolina 11th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4905,8 +5151,10 @@
    "query": "North Carolina 13th congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4952,8 +5200,10 @@
    "query": "Nebraska 1st congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -4992,8 +5242,10 @@
    "query": "Nebraska 2nd congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5026,8 +5278,10 @@
    "query": "New Hampshire 1st congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5065,8 +5319,10 @@
    "query": "New Jersey 2nd congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5105,8 +5361,10 @@
    "query": "New Jersey 7th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5144,8 +5402,10 @@
    "query": "New Jersey 9th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5177,8 +5437,10 @@
    "cook_rating": "lean_d",
    "notes": "",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5223,8 +5485,10 @@
    "query": "Nevada 1st congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5262,8 +5526,10 @@
    "query": "Nevada 2nd congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5301,8 +5567,10 @@
    "query": "Nevada 3rd congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5347,8 +5615,10 @@
    "query": "Nevada 4th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5381,8 +5651,10 @@
    "query": "New York 3rd congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5421,8 +5693,10 @@
    "query": "New York 4th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5455,8 +5729,10 @@
    "query": "New York 17th congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5488,8 +5764,10 @@
    "query": "New York 19th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5522,8 +5800,10 @@
    "query": "New York 21st congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5562,8 +5842,10 @@
    "query": "Ohio 1st congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5596,8 +5878,10 @@
    "query": "Ohio 7th congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5629,8 +5913,10 @@
    "query": "Ohio 9th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5668,8 +5954,10 @@
    "query": "Ohio 10th congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5709,8 +5997,10 @@
    "query": "Ohio 13th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5748,8 +6038,10 @@
    "query": "Ohio 15th congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5782,8 +6074,10 @@
    "query": "Pennsylvania 1st congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5815,8 +6109,10 @@
    "query": "Pennsylvania 7th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5848,8 +6144,10 @@
    "query": "Pennsylvania 8th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5882,8 +6180,10 @@
    "query": "Pennsylvania 10th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5921,8 +6221,10 @@
    "query": "South Carolina 1st congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5954,8 +6256,10 @@
    "query": "Texas 9th congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -5988,8 +6292,10 @@
    "query": "Texas 15th congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6030,8 +6336,10 @@
    "query": "Texas 23rd congressional district election results 2026",
    "cook_rating": "lean_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6069,8 +6377,10 @@
    "query": "Texas 28th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6116,8 +6426,10 @@
    "query": "Texas 34th congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6150,8 +6462,10 @@
    "query": "Texas 35th congressional district election results 2026",
    "cook_rating": "toss_up_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6183,8 +6497,10 @@
    "query": "Virginia 1st congressional district election results 2026",
    "cook_rating": "toss_up_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6230,8 +6546,10 @@
    "query": "Virginia 2nd congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6271,8 +6589,10 @@
    "query": "Virginia 5th congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6331,8 +6651,10 @@
    "query": "Virginia 7th congressional district election results 2026",
    "cook_rating": "likely_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6365,8 +6687,10 @@
    "query": "Washington 3rd congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6398,8 +6722,10 @@
    "query": "Washington 5th congressional district election results 2026",
    "cook_rating": "likely_r",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6431,8 +6757,10 @@
    "cook_rating": "lean_r",
    "notes": "",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   },
   {
@@ -6478,8 +6806,10 @@
    "query": "Wisconsin 3rd congressional district election results 2026",
    "cook_rating": "lean_d",
    "review": {
-    "status": "draft",
-    "checked_by": []
+    "status": "checked",
+    "checked_by": [
+     "Hammad"
+    ]
    }
   }
  ]

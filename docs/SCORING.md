@@ -35,7 +35,7 @@ Resolution is one polling round: every 5 minutes for the first 3 hours after a r
 - **Wrong:** the number of races with any `t_wrong`. Show it beside every other number.
 
 ## Rules
-- Only confirmed races count (Senate and Governor calls confirmed by two people).
+- Only confirmed races count: a person checked AP's call against AP's own page (one person; decided 3 Nov).
 - Rounds served from the router's cache are dropped for every engine.
 - Uncontested races are excluded.
 - If a round fails for an engine (error, timeout, or trimmed by the router), that engine has no result for that round. Report failures per engine.

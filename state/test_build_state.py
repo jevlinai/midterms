@@ -30,9 +30,16 @@ def conf(by):
 
 
 class Build(unittest.TestCase):
-    def test_no_winner_until_two_people_confirm_senate(self):
+    def test_one_person_enough_for_senate_by_default(self):
+        s, _ = build(RACES, {}, {"senate-zz": conf(["one"])}, {}, PRE, NOW)
+        self.assertEqual(next(x for x in s["races"] if x["id"] == "senate-zz")["status"], "called")
+
+    def test_no_winner_until_two_people_confirm_senate_when_configured(self):
+        import confirm.confirm as C
+        from unittest import mock
         findings = {"senate-zz": {e: rows([], ["Ada Alpha"]) for e in SEVEN}}
-        s, _ = build(RACES, findings, {"senate-zz": conf(["one"])}, {}, PRE, NOW)
+        with mock.patch.object(C, "TWO_PEOPLE", {"senate", "governor"}):
+            s, _ = build(RACES, findings, {"senate-zz": conf(["one"])}, {}, PRE, NOW)
         r = next(x for x in s["races"] if x["id"] == "senate-zz")
         self.assertEqual(r["status"], "closed")
         self.assertIsNone(r["call"])

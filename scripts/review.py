@@ -1,6 +1,6 @@
 """Sign off races in data/races.json after checking them against the state's certified candidate list.
 
-  python3 -I scripts/review.py todo                       # races still to check (Senate/Governor need 2 people)
+  python3 -I scripts/review.py todo                       # races still to check
   python3 -I scripts/review.py show senate-ga             # candidates, sources and notes for one race
   python3 -I scripts/review.py ok senate-ga --by Hammad   # this person checked it
   python3 -I scripts/review.py fix senate-ga --by Hammad --note "added X (L), on the ballot per SOS list"
@@ -21,7 +21,7 @@ ET = dt.timezone(dt.timedelta(hours=-5))
 
 
 def need(r):
-    return 2 if r["office"] in ("senate", "governor") else 1
+    return 1  # decided 3 Nov: one person checks every race (Senate/Governor needed two before)
 
 
 def main():

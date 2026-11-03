@@ -1,6 +1,6 @@
 # Race list review (before pre-registration, Tue 3 Nov 5:00pm ET)
 
-`races.json` was drafted on 31 Oct from Ballotpedia, state and county election offices, and news, then merged with `scripts/build_races.py`. Every entry has `review.status: "draft"`. A person checks each race against the state election office's certified candidate list, then sets `status: "checked"` and adds their name to `checked_by`. Senate and Governor races need two names.
+`races.json` was drafted on 31 Oct from Ballotpedia, state and county election offices, and news, then merged with `scripts/build_races.py`. Every entry has `review.status: "draft"`. A person checks each race against the state election office's certified candidate list, then sets `status: "checked"` and adds their name to `checked_by`. One name per race (decided 3 Nov; Senate and Governor needed two before).
 
 ## Check these first (sources disagree or are incomplete)
 
