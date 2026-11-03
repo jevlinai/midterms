@@ -81,6 +81,9 @@ class Drafts:
     @staticmethod
     def guard(d: dict, state: dict) -> tuple[bool, list[str]]:
         """The guard for this kind of draft: a race post, or a results-thread post."""
+        if d.get("kind") == "opener":  # the live thread's fixed first reply: it must be that exact text
+            from agent.autopost import OPENER
+            return (d["text"].strip() == OPENER.strip(), [] if d["text"].strip() == OPENER.strip() else ["not the fixed opening reply"])
         if d.get("kind") == "thread":
             return check_summary_post(d["text"], state, repo_url=d.get("repo_url"))
         return check_post(d["text"], d["race_id"], state)

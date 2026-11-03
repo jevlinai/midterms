@@ -115,7 +115,7 @@ def run_pass(state: dict, drafts: Drafts, *, anchor: str | None, client=None, li
     posted_races = {d["race_id"] for d in drafts.list() if d["status"] == "published" and d.get("kind", "race") == "race"}
 
     for d in published:  # a call withdrawn after posting: a person deletes the reply on X
-        if d.get("kind") == "thread":
+        if d.get("kind") in ("thread", "opener"):
             continue
         r = races.get(d["race_id"])
         if r is None or not is_called(r):
@@ -127,8 +127,7 @@ def run_pass(state: dict, drafts: Drafts, *, anchor: str | None, client=None, li
         return out
 
     if not published:  # the opener first, right away
-        d = drafts.add(OPENER_ID, OPENER, state, source=SOURCE, kind="thread", thread_id=OPENER_ID,
-                       position=1, of=1, reply_to_tweet_id=str(anchor))
+        d = drafts.add(OPENER_ID, OPENER, state, source=SOURCE, kind="opener", reply_to_tweet_id=str(anchor))
         if live if live is not None else config.publish_live():
             last_try_file().parent.mkdir(parents=True, exist_ok=True)
             last_try_file().write_text(str(now))

@@ -119,3 +119,19 @@ def test_a_race_posted_by_hand_is_not_posted_again(state, drafts, x_client, fake
     autopost.run_pass(state, drafts, anchor=ANCHOR, live=True, client=x_client, gap_s=0)  # opener
     res = autopost.run_pass(state, drafts, anchor=ANCHOR, live=True, client=x_client, gap_s=0)
     assert res["posted"]["race_id"] != r["id"]
+
+
+def test_the_opener_posts_before_any_results_exist(state, drafts, x_client, fake_x):
+    s = copy.deepcopy(state)
+    for r in s["races"]:
+        r["status"], r["call"], r["first"], r["engines"] = "upcoming", None, [], {}
+    for row in s.get("leaderboard", []):
+        row["median_minutes_after_close"] = None
+    res = autopost.run_pass(s, drafts, anchor=ANCHOR, live=True, client=x_client, gap_s=0)
+    assert res["posted"]["race_id"] == autopost.OPENER_ID and res["posted"]["status"] == "posted"
+    assert fake_x.bodies[0]["text"] == autopost.OPENER
+
+
+def test_the_opener_guard_accepts_only_the_fixed_text(state, drafts):
+    d = drafts.add(autopost.OPENER_ID, autopost.OPENER + " Extra.", state, source="autopost", kind="opener")
+    assert d["guard"]["ok"] is False
