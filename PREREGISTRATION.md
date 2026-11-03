@@ -4,7 +4,7 @@ The method for measuring which search engine finds US election results first was
 
 - **SHA-256 of the method archive:** `1e9bfa222a9acdfd13ee1cbe149df7120f97475693cd486bb43beb4b6fb76efb`
 - committed_at: 2026-11-03T09:25:34-05:00
-- **Parent commit:** `67a414163a182ed1f5315e8eedc7ff2676934a1a`
+- **Parent commit:** `416247623c94ca9f510c18e840e8f09cfdc09c48`
 - **Detector model:** TypeSafe `jev-1.14.0` (pinned in `detector/questions.json`)
 
 The archive is a deterministic tar of the files below (sorted names, zeroed timestamps and owners), built by `scripts/preregister.py`. To check it, run `uv run python scripts/preregister.py verify` on this commit.
@@ -26,4 +26,4 @@ Any change after this point is logged in `CHANGES.md` with a timestamp, and publ
 
 ## Earlier freeze, replaced
 
-A first freeze at 8:29am ET on 3 Nov (SHA-256 `ee5f5a94d62b20b9c314c147b90e5b0f70b4626e9693543232e7e938b0873c69`, commit `27ae60d`) included a seventh engine, Telem. Telem combines other providers rather than being one, so it was removed and the method was frozen again, as above. The first hash showed on jevlin.ai/midterms for about two hours that morning and was never posted or used. Every other method file is unchanged between the two freezes.
+A first freeze at 8:29am ET on 3 Nov (SHA-256 `ee5f5a94d62b20b9c314c147b90e5b0f70b4626e9693543232e7e938b0873c69`, commit `d001000`) included a seventh engine, Telem. Telem combines other providers rather than being one, so it was removed and the method was frozen again, as above. The first hash showed on jevlin.ai/midterms for about two hours that morning and was never posted or used. Every other method file is unchanged between the two freezes.
