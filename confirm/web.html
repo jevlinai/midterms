@@ -53,6 +53,8 @@ h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute
 .qrow .qname a{font-weight:400;font-size:13px;color:var(--accent);margin-left:6px}
 .qrow .qsub{display:block;font-size:12px;color:var(--muted);font-weight:400}
 .qrow .btn{padding:9px 12px}
+.qtime{display:grid;gap:2px;min-width:0}
+.qtime input{width:100%}
 @media (max-width:620px){.qrow{grid-template-columns:1fr 1fr}.qrow .qname{grid-column:1 / -1}}
 label.muted{display:grid;gap:4px}
 </style>
@@ -65,7 +67,7 @@ label.muted{display:grid;gap:4px}
   <p class="note">Open AP's link, check it says AP called the race for that person, then press the green button. Nothing shows on jevlin.ai until you do.</p>
   <div id="flash"></div>
   <h2>Quick list: follow AP's table</h2>
-  <p class="note">Same order as AP's tables (poll close, then state). When AP shows ✓, pick the winner on that line and press Confirm. The time is set to poll close (when AP calls clear races): change it only if AP shows a later call time. AP's link is filled in for you.</p>
+  <p class="note">Same order as AP's tables (poll close, then state). When AP shows ✓, pick the winner on that line and press Confirm. The time is set to poll close (when AP calls clear races), in your own time zone like AP shows it: change it only if AP shows a later call time. The ET it will save is shown under it. AP's link is filled in for you.</p>
   <div class="qtabs" role="tablist">
     <button class="qtab" data-q="senate">Senate</button><button class="qtab" data-q="governor">Governor</button><button class="qtab" data-q="house">House</button>
   </div>
@@ -119,10 +121,11 @@ function waitingCard(r) {
       r.office === "house" ? `AP's ${r.state_name} House results ↗ (pick district ${r.district ?? ""})` : "AP's results page for this race ↗") : null);
   if (p && p.winner) {
     const accept = h("button", {class: "btn ok", "data-accept": "1", disabled: !opened.has(r.id)}, `I checked AP: called for ${p.winner}`);
-    const timeIn = p.ap_call_time ? null : h("input", {type: "datetime-local", "aria-label": "AP call time (ET)"});
+    const tf = p.ap_call_time ? null : timeField(null);
+    const timeIn = tf ? tf.input : null;
     accept.addEventListener("click", () => {
-      if (timeIn && !timeIn.value) { flash(false, "Add AP's call time (ET) from the page first."); timeIn.focus(); return; }
-      post("/api/accept", {race_id: r.id, time: timeIn ? timeIn.value : undefined});
+      if (tf && !tf.iso()) { flash(false, "Add AP's call time from the page first."); timeIn.focus(); return; }
+      post("/api/accept", {race_id: r.id, time: tf ? tf.iso() : undefined});
     });
     card.append(...[h("div", {class: "prop"},
       h("div", {class: "muted", text: "Proposed by the call finder (not a confirmation)"}),
@@ -134,7 +137,7 @@ function waitingCard(r) {
           onclick: () => { opened.add(r.id); accept.disabled = false; }}, "AP source ↗"))),
       r.ap_page ? null : h("a", {class: "btn primary", href: p.ap_url, target: "_blank", rel: "noopener noreferrer",
         onclick: () => { opened.add(r.id); accept.disabled = false; }}, "Open AP's page ↗"),
-      timeIn ? h("label", {class: "muted"}, "AP's call time, in ET (as AP shows it, not your local time) ", timeIn) : null,
+      tf ? h("label", {class: "muted"}, "AP's call time, exactly as AP shows it (your local time)", tf.input, tf.hint) : null,
       accept,
       opened.has(r.id) ? null : h("div", {class: "note", text: "The green button unlocks once you've opened AP's results page above (check AP's ✓ and its call time there)."})].filter(Boolean));
   } else {
@@ -146,15 +149,16 @@ function waitingCard(r) {
 
 function manualForm(r) {
   const sel = h("select", {}, h("option", {value: "", text: "Winner…"}), r.candidates.map(c => h("option", {value: c.name, text: `${c.name}${c.party ? " (" + c.party + ")" : ""}`})));
-  const t = h("input", {type: "datetime-local", "aria-label": "AP call time (ET)"});
+  const mtf = timeField(null);
+  const t = mtf.input;
   const u = h("input", {type: "url", placeholder: "https://apnews.com/…", value: r.ap_page || ""});
   const d = h("details", {}, h("summary", {text: "Confirm by hand (AP called it but there's no proposal, or it's wrong)"}),
     h("div", {class: "row", style: "margin-top:8px"}, sel,
-      h("div", {class: "row two"}, h("label", {class: "muted"}, "AP's call time, in ET (as AP shows it, not your local time)", t),
+      h("div", {class: "row two"}, h("label", {class: "muted"}, "AP's call time, exactly as AP shows it (your local time)", t, mtf.hint),
         h("label", {class: "muted"}, "AP's page (apnews.com)", u)),
       h("button", {class: "btn ok", onclick: () => {
-        if (!sel.value || !t.value || !u.value) { flash(false, "Winner, AP's call time (ET) and AP's link are all needed."); return; }
-        post("/api/confirm", {race_id: r.id, winner: sel.value, time: t.value, url: u.value});
+        if (!sel.value || !mtf.iso() || !u.value) { flash(false, "Winner, AP's call time and AP's link are all needed."); return; }
+        post("/api/confirm", {race_id: r.id, winner: sel.value, time: mtf.iso(), url: u.value});
       }}, "Confirm this AP call")));
   d.open = openForms.has(r.id);
   d.addEventListener("toggle", () => d.open ? openForms.add(r.id) : openForms.delete(r.id));
@@ -177,6 +181,25 @@ function calledRow(r) {
       h("a", {href: c.ap_url, target: "_blank", rel: "noopener noreferrer", text: "AP ↗"})), d);
 }
 
+// Times: the viewer types AP's call time as AP shows it, in the viewer's own time zone (AP shows local
+// times). The page converts it to an absolute time and shows the ET equivalent under the box.
+const pad = (n) => String(n).padStart(2, "0");
+function localInputValue(iso) {  // an ISO instant -> "yyyy-mm-ddThh:mm" in the viewer's time zone
+  if (!iso) return "";
+  const d = new Date(iso);
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+function etLabel(d) {
+  return d.toLocaleString("en-US", {timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit"}) + " ET";
+}
+function timeField(defaultIso) {
+  const input = h("input", {type: "datetime-local", "aria-label": "AP's call time, as AP shows it (your local time)", value: localInputValue(defaultIso)});
+  const hint = h("span", {class: "note"});
+  const update = () => { const d = input.value ? new Date(input.value) : null; hint.textContent = d && !isNaN(d) ? "= " + etLabel(d) : ""; };
+  input.addEventListener("input", update); update();
+  return {input, hint, iso: () => (input.value && !isNaN(new Date(input.value)) ? new Date(input.value).toISOString() : "")};
+}
+
 let quickOffice = "senate";
 try { quickOffice = localStorage.getItem("confirm-quick") || "senate"; } catch {}
 for (const b of document.querySelectorAll(".qtab")) b.addEventListener("click", () => {
@@ -188,10 +211,11 @@ const ordinal = (n) => { const v = n % 100; return n + (["th","st","nd","rd"][(v
 function quickRow(r) {
   const sel = h("select", {"aria-label": `Winner, ${r.name}`}, h("option", {value: "", text: "Winner…"}),
     r.candidates.map(c => h("option", {value: c.name, text: `${c.name}${c.party ? " (" + c.party + ")" : ""}`})));
-  const t = h("input", {type: "datetime-local", "aria-label": "AP call time (ET)", value: (r.poll_close_et || "").slice(0, 16)});
+  const qtf = timeField(r.poll_close_et);
+  const t = h("div", {class: "qtime"}, qtf.input, qtf.hint);
   const go = h("button", {class: "btn ok", onclick: () => {
     if (!sel.value) { flash(false, `Pick the winner for ${r.name} first.`); sel.focus(); return; }
-    post("/api/confirm", {race_id: r.id, winner: sel.value, time: t.value, url: r.ap_page});
+    post("/api/confirm", {race_id: r.id, winner: sel.value, time: qtf.iso(), url: r.ap_page});
   }}, "Confirm");
   const label = r.office === "house" ? `${r.state_name} ${ordinal(Number(r.district) || 0)}` : r.state_name;
   return h("div", {class: "qrow"},

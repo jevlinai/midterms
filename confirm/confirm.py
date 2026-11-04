@@ -64,8 +64,10 @@ def now_et():
 
 
 def parse_time(s):
-    t = dt.datetime.fromisoformat(s)
-    return t if t.tzinfo else t.replace(tzinfo=ET)
+    """A naive time is ET; a time with an offset (the confirm page sends the viewer's local time
+    converted to UTC) is converted to ET."""
+    t = dt.datetime.fromisoformat(s.replace("Z", "+00:00"))
+    return t.astimezone(ET) if t.tzinfo else t.replace(tzinfo=ET)
 
 
 def cmd_list(races, confirmed, proposals):

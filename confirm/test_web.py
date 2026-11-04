@@ -84,6 +84,12 @@ class Web(unittest.TestCase):
         self.assertEqual(code, 422)
         self.assertIn("future", out["message"])
 
+    def test_a_utc_time_from_the_page_is_saved_in_et(self):
+        code, out = W.handle_post("/api/confirm", {"race_id": "senate-zz", "by": "Hammad", "winner": "Ada Alpha",
+                                                   "time": "2026-11-04T01:05:00.000Z", "url": "https://apnews.com/article/x"})
+        self.assertEqual(code, 200, out)
+        self.assertEqual(C.load(C.CONFIRMED, {})["senate-zz"]["ap_call_time"], "2026-11-03T20:05:00-05:00")
+
     def test_a_name_is_required(self):
         C.PROPOSALS.write_text(json.dumps(PROPOSAL))
         self.assertEqual(W.handle_post("/api/accept", {"race_id": "senate-zz", "by": " "})[0], 400)
