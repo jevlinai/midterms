@@ -111,7 +111,7 @@ def cmd_confirm(race, confirmed, args):
     if t < dt.datetime.fromisoformat(race["poll_close_et"]):
         sys.exit("AP does not call a race before its polls close; check the time")
     if t > now_et() + dt.timedelta(minutes=5):
-        sys.exit("that call time is in the future; enter AP's time in ET (Eastern), not local time")
+        sys.exit("that call time is in the future: check the date and time against AP's page (reload the confirm page if it doesn't show the ET equivalent under the time box)")
     by = args.by.strip()
     if not by:
         sys.exit("--by is required")
