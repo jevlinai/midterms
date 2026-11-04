@@ -98,9 +98,12 @@ async function post(path, body) {
 function waitingCard(r) {
   const p = r.proposal;
   const card = h("article", {class: "card" + (p ? " has" : "")},
-    h("div", {class: "title"}, h("b", {text: r.name}), h("span", {class: "muted", text: `polls closed ${r.minutes_since_close} min ago`})));
+    h("div", {class: "title"}, h("b", {text: r.name}), h("span", {class: "muted", text: `polls closed ${r.minutes_since_close} min ago`})),
+    r.ap_page ? h("a", {class: "btn", href: r.ap_page, target: "_blank", rel: "noopener noreferrer",
+      onclick: () => { opened.add(r.id); const b = card.querySelector(".btn.ok"); if (b && b.dataset.accept) b.disabled = false; }},
+      r.office === "house" ? `AP's ${r.state_name} House results ↗ (pick district ${r.district ?? ""})` : "AP's results page for this race ↗") : null);
   if (p && p.winner) {
-    const accept = h("button", {class: "btn ok", disabled: !opened.has(r.id)}, `I checked AP: called for ${p.winner}`);
+    const accept = h("button", {class: "btn ok", "data-accept": "1", disabled: !opened.has(r.id)}, `I checked AP: called for ${p.winner}`);
     const timeIn = p.ap_call_time ? null : h("input", {type: "datetime-local", "aria-label": "AP call time (ET)"});
     accept.addEventListener("click", () => {
       if (timeIn && !timeIn.value) { flash(false, "Add AP's call time (ET) from the page first."); timeIn.focus(); return; }
@@ -126,7 +129,7 @@ function waitingCard(r) {
 function manualForm(r) {
   const sel = h("select", {}, h("option", {value: "", text: "Winner…"}), r.candidates.map(c => h("option", {value: c.name, text: `${c.name}${c.party ? " (" + c.party + ")" : ""}`})));
   const t = h("input", {type: "datetime-local", "aria-label": "AP call time (ET)"});
-  const u = h("input", {type: "url", placeholder: "https://apnews.com/…"});
+  const u = h("input", {type: "url", placeholder: "https://apnews.com/…", value: r.ap_page || ""});
   const d = h("details", {}, h("summary", {text: "Confirm by hand (AP called it but there's no proposal, or it's wrong)"}),
     h("div", {class: "row", style: "margin-top:8px"}, sel,
       h("div", {class: "row two"}, h("label", {class: "muted"}, "AP's call time, in ET (as AP shows it, not your local time)", t),

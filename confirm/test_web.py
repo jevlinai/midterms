@@ -41,6 +41,14 @@ class Web(unittest.TestCase):
         self.assertEqual(s["waiting"][0]["proposal"]["winner"], "Ada Alpha")
         self.assertEqual(s["waiting"][0]["minutes_since_close"], 90)
 
+    def test_each_race_links_to_its_ap_results_page(self):
+        self.assertEqual(W.ap_page({"state": "RI", "office": "senate"}),
+                         "https://apnews.com/projects/elections-2026/rhode-island-us-senate-results/")
+        self.assertEqual(W.ap_page({"state": "NH", "office": "governor"}),
+                         "https://apnews.com/projects/elections-2026/new-hampshire-governor-results/")
+        self.assertEqual(W.ap_page({"state": "VA", "office": "house"}),
+                         "https://apnews.com/projects/elections-2026/virginia-us-house-results/")
+
     def test_nothing_waits_before_polls_close(self):
         s = W.status(dt.datetime(2026, 11, 3, 18, 0, tzinfo=C.ET))
         self.assertEqual(s["waiting"], [])

@@ -33,6 +33,33 @@ PORT = int(os.environ.get("CONFIRM_WEB_PORT", "8787"))
 PAGE = pathlib.Path(__file__).resolve().parent / "web.html"
 
 
+STATE_NAMES = {
+    "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado",
+    "CT": "Connecticut", "DE": "Delaware", "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho",
+    "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana",
+    "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota",
+    "MS": "Mississippi", "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada",
+    "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico", "NY": "New York", "NC": "North Carolina",
+    "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania",
+    "RI": "Rhode Island", "SC": "South Carolina", "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas",
+    "UT": "Utah", "VT": "Vermont", "VA": "Virginia", "WA": "Washington", "WV": "West Virginia",
+    "WI": "Wisconsin", "WY": "Wyoming",
+}
+AP_BASE = "https://apnews.com/projects/elections-2026/"
+OFFICE_ORDER = {"senate": 0, "governor": 1, "house": 2}
+
+
+def ap_page(race: dict) -> str | None:
+    """AP's results page for the race (its URL scheme on election night): one page per state for
+    Senate and Governor, and one per state for House, where the district is picked on the page."""
+    name = STATE_NAMES.get(race.get("state") or "")
+    if not name:
+        return None
+    slug = name.lower().replace(" ", "-")
+    office = {"senate": "us-senate", "governor": "governor", "house": "us-house"}.get(race["office"])
+    return f"{AP_BASE}{slug}-{office}-results/" if office else None
+
+
 def run_cli(argv: list[str]) -> tuple[bool, str]:
     """Run confirm.py's own command; its sys.exit messages come back as errors."""
     out = io.StringIO()
@@ -55,7 +82,7 @@ def status(now: dt.datetime | None = None) -> dict:
         close = dt.datetime.fromisoformat(r["poll_close_et"])
         c = confirmed.get(r["id"])
         row = {"id": r["id"], "name": r.get("name") or r["id"], "office": r["office"],
-               "poll_close_et": r["poll_close_et"],
+               "poll_close_et": r["poll_close_et"], "ap_page": ap_page(r), "district": r.get("district"), "state_name": STATE_NAMES.get(r.get("state") or "", ""),
                "candidates": [{"name": x["name"], "party": x.get("party")} for x in r["candidates"]]}
         if close > now:
             upcoming.append(row)
@@ -67,7 +94,8 @@ def status(now: dt.datetime | None = None) -> dict:
         waiting.append({**row, "proposal": {k: p.get(k) for k in ("winner", "ap_call_time", "ap_url", "quote", "found_at")}
                         if p else None,
                         "minutes_since_close": int((now - close).total_seconds() // 60)})
-    waiting.sort(key=lambda x: (x["proposal"] is None, x["poll_close_et"], x["name"]))
+    # Senate and Governor first (they're posted to X), proposals first within each, then by poll close
+    waiting.sort(key=lambda x: (OFFICE_ORDER.get(x["office"], 3) > 1, x["proposal"] is None, x["poll_close_et"], x["name"]))
     called.sort(key=lambda x: max(x["call"].get("confirmed_at") or [""]), reverse=True)
     upcoming.sort(key=lambda x: x["poll_close_et"])
     nxt = upcoming[0]["poll_close_et"] if upcoming else None
