@@ -59,6 +59,10 @@ def is_called(entry, race):
     return entry is not None and not entry.get("retracted") and len(set(entry["confirmed_by"])) >= need
 
 
+def now_et():
+    return dt.datetime.now(ET)
+
+
 def parse_time(s):
     t = dt.datetime.fromisoformat(s)
     return t if t.tzinfo else t.replace(tzinfo=ET)
@@ -104,6 +108,8 @@ def cmd_confirm(race, confirmed, args):
     t = parse_time(args.time)
     if t < dt.datetime.fromisoformat(race["poll_close_et"]):
         sys.exit("AP does not call a race before its polls close; check the time")
+    if t > now_et() + dt.timedelta(minutes=5):
+        sys.exit("that call time is in the future; enter AP's time in ET (Eastern), not local time")
     by = args.by.strip()
     if not by:
         sys.exit("--by is required")

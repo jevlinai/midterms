@@ -1,4 +1,5 @@
 """Confirm tool safety checks. Run: python3 -m unittest confirm.test_confirm"""
+import datetime as dt
 import json
 import pathlib
 import tempfile
@@ -20,7 +21,8 @@ class Confirm(unittest.TestCase):
         d = pathlib.Path(self.tmp.name)
         self.patches = [mock.patch.object(C, "STATE", d), mock.patch.object(C, "CONFIRMED", d / "confirmed.json"),
                         mock.patch.object(C, "LOG", d / "log.jsonl"), mock.patch.object(C, "PROPOSALS", d / "p.json"),
-                        mock.patch.object(C, "load_races", lambda: RACES)]
+                        mock.patch.object(C, "load_races", lambda: RACES),
+                        mock.patch.object(C, "now_et", lambda: dt.datetime(2026, 11, 4, 3, 0, tzinfo=C.ET))]
         for p in self.patches:
             p.start()
 

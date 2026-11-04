@@ -24,7 +24,8 @@ class Web(unittest.TestCase):
         d = pathlib.Path(self.tmp.name)
         self.patches = [mock.patch.object(C, "STATE", d), mock.patch.object(C, "CONFIRMED", d / "confirmed.json"),
                         mock.patch.object(C, "LOG", d / "log.jsonl"), mock.patch.object(C, "PROPOSALS", d / "p.json"),
-                        mock.patch.object(C, "load_races", lambda: RACES)]
+                        mock.patch.object(C, "load_races", lambda: RACES),
+                        mock.patch.object(C, "now_et", lambda: dt.datetime(2026, 11, 4, 3, 0, tzinfo=C.ET))]
         for p in self.patches:
             p.start()
 
@@ -58,6 +59,12 @@ class Web(unittest.TestCase):
         self.assertEqual(code, 422)
         self.assertIn("AP", out["message"])
         self.assertFalse(C.CONFIRMED.exists())
+
+    def test_a_call_time_in_the_future_is_refused(self):
+        code, out = W.handle_post("/api/confirm", {"race_id": "senate-zz", "by": "Hammad", "winner": "Ada Alpha",
+                                                   "time": "2099-11-04T05:10", "url": "https://apnews.com/article/x"})
+        self.assertEqual(code, 422)
+        self.assertIn("future", out["message"])
 
     def test_a_name_is_required(self):
         C.PROPOSALS.write_text(json.dumps(PROPOSAL))

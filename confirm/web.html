@@ -45,6 +45,7 @@ h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute
 .called a{color:var(--accent)}
 .empty{color:var(--muted);font-size:15px;padding:6px 2px}
 .note{font-size:13px;color:var(--muted)}
+label.muted{display:grid;gap:4px}
 </style>
 </head>
 <body>
@@ -112,7 +113,7 @@ function waitingCard(r) {
       p.quote ? h("div", {class: "quote", text: "“" + p.quote + "”"}) : null),
       h("a", {class: "btn primary", href: p.ap_url, target: "_blank", rel: "noopener noreferrer",
         onclick: () => { opened.add(r.id); accept.disabled = false; }}, "Open AP's page ↗"),
-      timeIn ? h("label", {class: "muted"}, "AP call time (ET) ", timeIn) : null,
+      timeIn ? h("label", {class: "muted"}, "AP's call time, in ET (as AP shows it, not your local time) ", timeIn) : null,
       accept,
       opened.has(r.id) ? null : h("div", {class: "note", text: "The green button unlocks once you've opened AP's page."})].filter(Boolean));
   } else {
@@ -127,7 +128,9 @@ function manualForm(r) {
   const t = h("input", {type: "datetime-local", "aria-label": "AP call time (ET)"});
   const u = h("input", {type: "url", placeholder: "https://apnews.com/…"});
   const d = h("details", {}, h("summary", {text: "Confirm by hand (AP called it but there's no proposal, or it's wrong)"}),
-    h("div", {class: "row", style: "margin-top:8px"}, sel, h("div", {class: "row two"}, t, u),
+    h("div", {class: "row", style: "margin-top:8px"}, sel,
+      h("div", {class: "row two"}, h("label", {class: "muted"}, "AP's call time, in ET (as AP shows it, not your local time)", t),
+        h("label", {class: "muted"}, "AP's page (apnews.com)", u)),
       h("button", {class: "btn ok", onclick: () => {
         if (!sel.value || !t.value || !u.value) { flash(false, "Winner, AP's call time (ET) and AP's link are all needed."); return; }
         post("/api/confirm", {race_id: r.id, winner: sel.value, time: t.value, url: u.value});
