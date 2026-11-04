@@ -99,7 +99,7 @@ function waitingCard(r) {
   const p = r.proposal;
   const card = h("article", {class: "card" + (p ? " has" : "")},
     h("div", {class: "title"}, h("b", {text: r.name}), h("span", {class: "muted", text: `polls closed ${r.minutes_since_close} min ago`})),
-    r.ap_page ? h("a", {class: "btn", href: r.ap_page, target: "_blank", rel: "noopener noreferrer",
+    r.ap_page ? h("a", {class: "btn" + (p ? " primary" : ""), href: r.ap_page, target: "_blank", rel: "noopener noreferrer",
       onclick: () => { opened.add(r.id); const b = card.querySelector(".btn.ok"); if (b && b.dataset.accept) b.disabled = false; }},
       r.office === "house" ? `AP's ${r.state_name} House results ↗ (pick district ${r.district ?? ""})` : "AP's results page for this race ↗") : null);
   if (p && p.winner) {
@@ -113,12 +113,15 @@ function waitingCard(r) {
       h("div", {class: "muted", text: "Proposed by the call finder (not a confirmation)"}),
       h("div", {class: "winner", text: p.winner}),
       h("div", {class: "muted", text: p.ap_call_time ? `AP call time: ${et(p.ap_call_time)}` : "AP call time not found: enter it from AP's page"}),
-      p.quote ? h("div", {class: "quote", text: "“" + p.quote + "”"}) : null),
-      h("a", {class: "btn primary", href: p.ap_url, target: "_blank", rel: "noopener noreferrer",
+      p.quote ? h("div", {class: "quote", text: "“" + p.quote + "”"}) : null,
+      h("div", {class: "note"}, "Where the call finder found it: ",
+        h("a", {href: p.ap_url, target: "_blank", rel: "noopener noreferrer",
+          onclick: () => { opened.add(r.id); accept.disabled = false; }}, "AP source ↗"))),
+      r.ap_page ? null : h("a", {class: "btn primary", href: p.ap_url, target: "_blank", rel: "noopener noreferrer",
         onclick: () => { opened.add(r.id); accept.disabled = false; }}, "Open AP's page ↗"),
       timeIn ? h("label", {class: "muted"}, "AP's call time, in ET (as AP shows it, not your local time) ", timeIn) : null,
       accept,
-      opened.has(r.id) ? null : h("div", {class: "note", text: "The green button unlocks once you've opened AP's page."})].filter(Boolean));
+      opened.has(r.id) ? null : h("div", {class: "note", text: "The green button unlocks once you've opened AP's results page above (check AP's ✓ and its call time there)."})].filter(Boolean));
   } else {
     card.append(h("div", {class: "muted", text: "No proposal yet. The call finder checks AP every few minutes."}));
   }
