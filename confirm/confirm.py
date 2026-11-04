@@ -152,7 +152,8 @@ def cmd_accept(race, confirmed, proposals, args):
     if not t:
         sys.exit("the proposal has no call time: add --time (ET, e.g. 2026-11-03T21:42) from the page")
     print(f"Accepting the agent's proposal for {race['name']}: {p['winner']}\n  link:  {p['ap_url']}\n  quote: {p.get('quote')}")
-    cmd_confirm(race, confirmed, argparse.Namespace(winner=p["winner"], time=str(t)[:16], url=p["ap_url"], by=args.by))
+    # The whole string: parse_time keeps an offset (the page sends UTC) and reads a naive time as ET.
+    cmd_confirm(race, confirmed, argparse.Namespace(winner=p["winner"], time=str(t), url=p["ap_url"], by=args.by))
 
 
 def cmd_retract(race, confirmed, args):
