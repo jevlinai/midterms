@@ -28,3 +28,4 @@ CLAUDE.md
 snapshots/
 state/STOP_POSTING
 state/autopost-last-try
+state/last-push.json
