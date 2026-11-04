@@ -130,7 +130,7 @@ function waitingCard(r) {
     card.append(...[h("div", {class: "prop"},
       h("div", {class: "muted", text: "Proposed by the call finder (not a confirmation)"}),
       h("div", {class: "winner", text: p.winner}),
-      h("div", {class: "muted", text: p.ap_call_time ? `AP call time: ${et(p.ap_call_time)}` : "AP call time not found: enter it from AP's page"}),
+      h("div", {class: "muted", text: p.ap_call_time ? `AP call time: ${new Date(p.ap_call_time).toLocaleString("en-US", {month: "short", day: "numeric", hour: "numeric", minute: "2-digit"})} your time (as AP shows it) = ${et(p.ap_call_time)}` : "AP call time not found: enter it from AP's page"}),
       p.quote ? h("div", {class: "quote", text: "“" + p.quote + "”"}) : null,
       h("div", {class: "note"}, "Where the call finder found it: ",
         h("a", {href: p.ap_url, target: "_blank", rel: "noopener noreferrer",

@@ -24,3 +24,7 @@ prereg/*.tar
 
 # Internal briefing for Claude Code; kept on disk, not published
 CLAUDE.md
+
+snapshots/
+state/STOP_POSTING
+state/autopost-last-try

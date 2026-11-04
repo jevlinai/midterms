@@ -28,7 +28,9 @@ Or check files one at a time: `PREREGISTRATION.md` lists a SHA-256 for each meth
 
 ## Data
 
-Every query and every response from the night is published after it ends, along with the final results (`state.json`). Until then, the live page reads the current results from `https://midterms-state.hammadtariq.workers.dev/state`.
+Every search from the night is on Hugging Face: **[JevlinAI/us-midterms-2026-supersearch-results](https://huggingface.co/datasets/JevlinAI/us-midterms-2026-supersearch-results)**. Per search: the query, timings, each engine's status, latency and cost, and every result page each engine returned (URL, domain, title, rank). Plus the race list, AP calls, per-engine findings and the leaderboard. Page text is left out; it belongs to the publishers. `scripts/export_hf.py` builds it from the poller's raw files.
+
+The first cut is from 1:00pm ET on 4 November, with 112 of 156 races called. Uncalled races are still polled on the pre-registered schedule; the live page reads the current results from `https://midterms-state.hammadtariq.workers.dev/state`. Anything that happened outside the plan is in [docs/LOG.md](docs/LOG.md).
 
 ## Layout
 
@@ -37,7 +39,7 @@ Every query and every response from the night is published after it ends, along 
 - `detector/` the winner check
 - `confirm/` the tool a person uses to confirm AP calls
 - `state/` builds the results the page shows
-- `agent/` helpers for the night: finds AP calls for the confirmer and drafts posts (it never confirms or posts)
+- `agent/` helpers for the night: finds AP calls for the confirmer (it never confirms), and posts each confirmed Senate and Governor call as a reply in @jevlinai's live thread from a fixed template (`agent/autopost.py`)
 - `cloudflare/state-worker/` serves the live results to the page
 
 Race calls come from AP and are checked by a person before they appear. This is not an official results source.
