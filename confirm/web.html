@@ -45,6 +45,15 @@ h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute
 .called a{color:var(--accent)}
 .empty{color:var(--muted);font-size:15px;padding:6px 2px}
 .note{font-size:13px;color:var(--muted)}
+.qtabs{display:flex;gap:6px}
+.qtab{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:99px;padding:6px 14px;cursor:pointer}
+.qtab[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.qrow{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.5fr) minmax(0,1.4fr) auto;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.qrow .qname{font-weight:600;font-size:15px;min-width:0}
+.qrow .qname a{font-weight:400;font-size:13px;color:var(--accent);margin-left:6px}
+.qrow .qsub{display:block;font-size:12px;color:var(--muted);font-weight:400}
+.qrow .btn{padding:9px 12px}
+@media (max-width:620px){.qrow{grid-template-columns:1fr 1fr}.qrow .qname{grid-column:1 / -1}}
 label.muted{display:grid;gap:4px}
 </style>
 </head>
@@ -55,6 +64,12 @@ label.muted{display:grid;gap:4px}
   <div class="who"><label for="who" class="muted">Your name</label><input id="who" autocomplete="name" placeholder="type your name"></div>
   <p class="note">Open AP's link, check it says AP called the race for that person, then press the green button. Nothing shows on jevlin.ai until you do.</p>
   <div id="flash"></div>
+  <h2>Quick list: follow AP's table</h2>
+  <p class="note">Same order as AP's tables (poll close, then state). When AP shows ✓, pick the winner on that line and press Confirm. The time is set to poll close (when AP calls clear races): change it only if AP shows a later call time. AP's link is filled in for you.</p>
+  <div class="qtabs" role="tablist">
+    <button class="qtab" data-q="senate">Senate</button><button class="qtab" data-q="governor">Governor</button><button class="qtab" data-q="house">House</button>
+  </div>
+  <div id="quick" class="row"></div>
   <h2>Waiting for you</h2>
   <div id="waiting" class="row"></div>
   <h2>Confirmed</h2>
@@ -162,6 +177,36 @@ function calledRow(r) {
       h("a", {href: c.ap_url, target: "_blank", rel: "noopener noreferrer", text: "AP ↗"})), d);
 }
 
+let quickOffice = "senate";
+try { quickOffice = localStorage.getItem("confirm-quick") || "senate"; } catch {}
+for (const b of document.querySelectorAll(".qtab")) b.addEventListener("click", () => {
+  quickOffice = b.dataset.q; try { localStorage.setItem("confirm-quick", quickOffice); } catch {}
+  load(true);
+});
+const ordinal = (n) => { const v = n % 100; return n + (["th","st","nd","rd"][(v - 20) % 10] || ["th","st","nd","rd"][v] || "th"); };
+
+function quickRow(r) {
+  const sel = h("select", {"aria-label": `Winner, ${r.name}`}, h("option", {value: "", text: "Winner…"}),
+    r.candidates.map(c => h("option", {value: c.name, text: `${c.name}${c.party ? " (" + c.party + ")" : ""}`})));
+  const t = h("input", {type: "datetime-local", "aria-label": "AP call time (ET)", value: (r.poll_close_et || "").slice(0, 16)});
+  const go = h("button", {class: "btn ok", onclick: () => {
+    if (!sel.value) { flash(false, `Pick the winner for ${r.name} first.`); sel.focus(); return; }
+    post("/api/confirm", {race_id: r.id, winner: sel.value, time: t.value, url: r.ap_page});
+  }}, "Confirm");
+  const label = r.office === "house" ? `${r.state_name} ${ordinal(Number(r.district) || 0)}` : r.state_name;
+  return h("div", {class: "qrow"},
+    h("div", {class: "qname"}, label, r.ap_page ? h("a", {href: r.ap_page, target: "_blank", rel: "noopener noreferrer", text: "AP ↗"}) : null,
+      h("span", {class: "qsub", text: `polls closed ${et(r.poll_close_et)}`})),
+    sel, t, go);
+}
+
+function renderQuick(s) {
+  for (const b of document.querySelectorAll(".qtab")) b.setAttribute("aria-pressed", String(b.dataset.q === quickOffice));
+  const rows = s.waiting.filter(x => x.office === quickOffice && x.ap_page)
+    .sort((a, b) => a.poll_close_et.localeCompare(b.poll_close_et) || a.state_name.localeCompare(b.state_name) || (Number(a.district) || 0) - (Number(b.district) || 0));
+  $("quick").replaceChildren(...(rows.length ? rows.map(quickRow) : [h("p", {class: "empty", text: "Nothing left to confirm in this office right now."})]));
+}
+
 async function load(force) {
   if (!force && (busy || openForms.size || document.activeElement?.matches("input,select"))) return;
   try {
@@ -173,6 +218,7 @@ async function load(force) {
       h("span", {}, h("b", {text: s.called_total}), " confirmed"),
       s.next_close ? h("span", {}, "next close ", h("b", {text: et(s.next_close)}), ` (${s.next_close_count} races)`) : null,
       h("span", {text: "updated " + new Date().toLocaleTimeString([], {hour: "numeric", minute: "2-digit", second: "2-digit"})}));
+    renderQuick(s);
     $("waiting").replaceChildren(...(s.waiting.length ? s.waiting.map(waitingCard) : [h("p", {class: "empty", text: "Nothing waiting. Races appear here once their polls close."})]));
     $("called").replaceChildren(...(s.called.length ? s.called.map(calledRow) : [h("p", {class: "empty", text: "None yet."})]));
   } catch (e) { $("bar").textContent = "Can't reach the Mac mini. Retrying…"; }
