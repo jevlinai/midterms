@@ -28,7 +28,8 @@ case "$JOB" in
       else uv run python state/build_state.py || alert "state build failed"; fi
       sleep 60
     done ;;
-  call-finder)   exec uv run midterms call-finder --interval 300 --jevlin-cap-usd "${NIGHT_CALLFINDER_BUDGET:-20}" --budget-since "$SINCE" ;;
+  call-finder)   export MIDTERMS_CALL_PROVIDERS="${MIDTERMS_CALL_PROVIDERS:-serper,tinyfish}"
+                 exec uv run midterms call-finder --interval 300 --jevlin-cap-usd "${NIGHT_CALLFINDER_BUDGET:-20}" --budget-since "$SINCE" ;;
   post-drafter)  exec uv run midterms post-drafter --interval 60 ;;
   confirm-web)
     # The confirm page: set CONFIRM_WEB_HOST in the env file to the machine's private (e.g. Tailscale) address.

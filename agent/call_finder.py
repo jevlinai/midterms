@@ -225,6 +225,11 @@ class CallFinder:
     def search_body(self, race: dict) -> dict:
         body: dict[str, Any] = {"query": self.query(race), "tier": "balanced", "domain_filter": list(call_hosts()),
                                 "view": "merged", "merged_limit": 10, "cache": "refresh"}
+        # Election night (3 Nov): name cheap engines so a pass over 100+ closed races costs cents, not dollars.
+        # The call finder only proposes calls for a person to check; it is not part of the measurement.
+        prov = [x.strip() for x in os.environ.get("MIDTERMS_CALL_PROVIDERS", "").split(",") if x.strip()]
+        if prov:
+            body["providers"] = prov
         if self.recency:
             body["recency"] = self.recency
         return body
