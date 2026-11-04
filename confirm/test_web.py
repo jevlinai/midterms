@@ -49,6 +49,16 @@ class Web(unittest.TestCase):
         self.assertEqual(W.ap_page({"state": "VA", "office": "house"}),
                          "https://apnews.com/projects/elections-2026/virginia-us-house-results/")
 
+    def test_proposals_come_first_whatever_the_office(self):
+        races = dict(RACES)
+        races["house-zz-01"] = {"id": "house-zz-01", "office": "house", "state": "GA", "district": 1, "name": "Test House",
+                                "poll_close_et": "2026-11-03T19:00:00-05:00",
+                                "candidates": [{"name": "Cy Charlie", "party": "D", "incumbent": False}]}
+        C.PROPOSALS.write_text(json.dumps({"house-zz-01": {"winner": "Cy Charlie", "ap_url": "https://apnews.com/x"}}))
+        with mock.patch.object(C, "load_races", lambda: races):
+            ids = [w["id"] for w in W.status(NIGHT)["waiting"]]
+        self.assertEqual(ids, ["house-zz-01", "senate-zz"])
+
     def test_nothing_waits_before_polls_close(self):
         s = W.status(dt.datetime(2026, 11, 3, 18, 0, tzinfo=C.ET))
         self.assertEqual(s["waiting"], [])

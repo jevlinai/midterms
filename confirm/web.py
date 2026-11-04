@@ -94,8 +94,11 @@ def status(now: dt.datetime | None = None) -> dict:
         waiting.append({**row, "proposal": {k: p.get(k) for k in ("winner", "ap_call_time", "ap_url", "quote", "found_at")}
                         if p else None,
                         "minutes_since_close": int((now - close).total_seconds() // 60)})
-    # Senate and Governor first (they're posted to X), proposals first within each, then by poll close
-    waiting.sort(key=lambda x: (OFFICE_ORDER.get(x["office"], 3) > 1, x["proposal"] is None, x["poll_close_et"], x["name"]))
+    # Every proposal first (Senate/Governor before House), then the races with no proposal
+    # (Senate/Governor before House), each by poll close.
+    def has_prop(x):
+        return bool(x["proposal"] and x["proposal"].get("winner"))
+    waiting.sort(key=lambda x: (not has_prop(x), OFFICE_ORDER.get(x["office"], 3) > 1, x["poll_close_et"], x["name"]))
     called.sort(key=lambda x: max(x["call"].get("confirmed_at") or [""]), reverse=True)
     upcoming.sort(key=lambda x: x["poll_close_et"])
     nxt = upcoming[0]["poll_close_et"] if upcoming else None
