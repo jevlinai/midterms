@@ -24,7 +24,7 @@ case "$JOB" in
   detector-eng)  exec uv run python detector/detect.py --mode engine --interval 120 ;;
   state)
     while true; do
-      if [ -n "${CF_API_TOKEN:-}" ]; then uv run python state/build_state.py --push || alert "state build/push failed"
+      if [ -n "${CF_API_TOKEN:-}" ]; then { uv run python state/build_state.py && uv run python state/push_state.py; } || alert "state build/push failed"
       else uv run python state/build_state.py || alert "state build failed"; fi
       sleep 60
     done ;;

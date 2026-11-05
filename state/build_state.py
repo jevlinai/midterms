@@ -13,8 +13,6 @@ Also writes state/inactive.json for the poller: called races where every one of 
 named the confirmed winner in two consecutive rounds.
 """
 import argparse
-import hashlib
-import time
 import datetime as dt
 import json
 import os
@@ -240,22 +238,11 @@ def main():
                             read_prereg(), dt.datetime.now(ET))
     save_atomic(pathlib.Path(args.out), state)
     save_atomic(ROOT / "state" / "inactive.json", inactive)
-    pushed = False
     if args.push:
-        # Workers KV free tier allows 1,000 writes a day; this runs every minute. Push only when the
-        # results changed (ignoring generated_at), or every 30 minutes so the timestamp stays fresh.
-        mark = ROOT / "state" / "last-push.json"
-        body = hashlib.sha256(json.dumps({k: v for k, v in state.items() if k != "generated_at"},
-                                         sort_keys=True).encode()).hexdigest()
-        last = load(mark, {})
-        stale = time.time() - last.get("at", 0) > 1800
-        if body != last.get("sha") or stale:
-            push_kv(state)
-            save_atomic(mark, {"sha": body, "at": time.time()})
-            pushed = True
+        push_kv(state)
     s = state["summary"]
     print(f"state: {s['races']} races, {s['polls_closed']} closed, {s['called']} called, leader {s['leader']}; "
-          f"{len(inactive)} inactive{'; pushed to KV' if pushed else ('; unchanged, not pushed' if args.push else '')}")
+          f"{len(inactive)} inactive{'; pushed to KV' if args.push else ''}")
 
 
 if __name__ == "__main__":
