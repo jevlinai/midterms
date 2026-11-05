@@ -128,6 +128,10 @@ def handle_post(path: str, body: dict) -> tuple[int, dict]:
 
 
 class Handler(BaseHTTPRequestHandler):
+    # One request at a time (see main), so a client that stalls mid-request (a phone that slept)
+    # would block everyone after it. Drop any connection idle for 15 seconds.
+    timeout = 15
+
     def _send(self, code: int, body: bytes, ctype: str) -> None:
         self.send_response(code)
         self.send_header("content-type", ctype)
