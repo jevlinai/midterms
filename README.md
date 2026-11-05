@@ -1,12 +1,31 @@
 # Midterms: which search finds election results first?
 
-On US election night (Tuesday 3 November 2026), every Senate, Governor and competitive House race (156 in all) runs through [Jevlin](https://jevlin.ai): one call asks six search engines the same question, and we record how many minutes after polls close each engine first returns a page that names the winner.
+How fast do web search APIs surface news that just happened? On US election night (3 November 2026) we searched every Senate, Governor and competitive House race (156 in all) through [Jevlin](https://jevlin.ai): one call asks six search engines the same question, on a fixed schedule from each poll close. AP's call, checked by a person, gives every race an exact timestamp, so each engine gets a time: the first round in which one of its pages named the winner.
 
-The engines are Exa, Brave, Parallel, Perplexity, Serper and TinyFish. Every engine is ranked the same way, by minutes after polls closed. "Jevlin, all engines" is the earliest of the six for each race, from the same calls.
+The engines are Exa, Brave, Parallel, Perplexity, Serper and TinyFish. "All 6 at once" is the earliest of the six on each race, from the same calls.
 
 - Live page: **[jevlin.ai/midterms](https://jevlin.ai/midterms)**
-- Method: [docs/SCORING.md](docs/SCORING.md)
-- Pre-registration: [PREREGISTRATION.md](PREREGISTRATION.md)
+- Data: **[huggingface.co/datasets/JevlinAI/us-midterms-2026-supersearch-results](https://huggingface.co/datasets/JevlinAI/us-midterms-2026-supersearch-results)**
+- Method: [docs/SCORING.md](docs/SCORING.md) · Pre-registration: [PREREGISTRATION.md](PREREGISTRATION.md) · Deviations: [docs/LOG.md](docs/LOG.md)
+
+## Results
+
+The 112 races AP had called by 1:00pm ET on 4 November.
+
+| Engine | Found the winner before AP called it | Median minutes from poll close | First on (ties count) |
+|---|---|---|---|
+| Exa | 54 | 125 | 38 |
+| Serper | 49 | 135 | 52 |
+| TinyFish | 43 | 140 | 37 |
+| Brave | 35 | 170 | 21 |
+| Parallel | 35 | 145 | 24 |
+| Perplexity | 33 | 165 | 11 |
+| **All 6 at once** | **70** | **112.5** | |
+
+- No engine was first on every race; all six were first at least once. In 65 races the first page naming the winner came from one engine alone.
+- Across 9,297 searches, 68% of distinct result pages came from only one engine; per search, the best single engine returned pages from 11 sites (median), all six together from 21.
+- "Before AP called it" means a page naming the winner existed before AP's call (another outlet had called it, or the result was clear). No engine called a race.
+- Wrong-answer flags are under review (most are misreads of live results pages) and are not part of this table.
 
 ## How a race is measured
 
